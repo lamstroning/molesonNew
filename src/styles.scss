@@ -1,1 +1,48 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+body {
+  background-color: #E5E5E5;
+}
+.bg-primary {
+  background-color: #051C2C!important;
+}
+svg {
+  fill: currentColor;
+}
+.page-element {
+  overflow: hidden;
+  margin: 30px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+  .page-element-header {
+    position: relative;
+    padding: 20px 0;
+    margin-bottom: 10px;
+    .page-element-header-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #051C2C;
+    }
+
+    &:after {
+      background-color: #F4F4F5;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+    }
+  }
+  .page-element-header-line {
+       &:after {
+         content: '';
+       }
+     }
+  .page-element-header-full-line {
+    &:after {
+      content: '';
+      transform: scaleX(1.5);
+    }
+  }
+}
 /* You can add global styles to this file, and also import other style files */

@@ -3,14 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreComponent } from './core/core.component';
+
+
+import { ViewsModule } from './views/views.module';
+import {NotFoundComponent} from './views/pages/notFound/notfound.component';
+import {RouterModule, Routes} from '@angular/router';
+import {ViewsComponent} from './views/views.component';
+
+const appRoutes: Routes = [
+  { path: 'views', component: ViewsComponent}
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CoreComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    ViewsModule,
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

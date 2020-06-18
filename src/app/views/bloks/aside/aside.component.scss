@@ -1,0 +1,51 @@
+
+.left-menu {
+  width: 100%;
+  padding: 30px 40px;
+  .left-menu-item {
+    display: flex;
+    margin-top: 11px;
+    padding: 18px 20px;
+    transition: 0.2s;
+    color: #374956;
+    cursor: pointer;
+    border-radius: 4px;
+    .menu-ico {
+      transition: 0.2s;
+      padding: 0 23px;
+      color: #374956;
+    }
+    &:first-child{
+      margin-top: 0;
+    }
+    &:hover{
+      background-color: #051C2C;
+      color: white;
+      .menu-ico {
+        color: white;
+      }
+    }
+  }
+  .left-menu-item-active {
+    background-color: #051C2C;
+    color: white;
+    .menu-ico {
+      color: white;
+    }
+  }
+}
+.inviter-person {
+  .inviter-person-avatar{
+    background-image: url("/assets/img/avatars/avatar.png");
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  p {
+    font-size: 14px;
+    margin-bottom: 0;
+    b {
+      font-size: 18px;
+    }
+  }
+}

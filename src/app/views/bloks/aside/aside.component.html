@@ -1,0 +1,24 @@
+<div class="left-block">
+  <div class="left-menu page-element m-0">
+    <div *ngFor="let menuItem of menu.leftMenu" class="left-menu-item" [routerLink]="'/' + menuItem.link" [routerLinkActive]="'left-menu-item-active'">
+      <div  class="menu-ico" [inlineSVG]="menuItem.icon"></div>
+      <div class="menu-title">{{menuItem.title}}</div>
+    </div>
+  </div>
+  <div class="inviter-person page-element ml-0 mr-0">
+      <div class="page-element-header page-element-header-line">
+        <div class="row">
+          <div class="col-3">
+            <div class="inviter-person-avatar"></div>
+          </div>
+          <div class="col-8">
+            <p>Ваш пригласитель</p>
+            <p><b>Дмитрий Иванов</b></p>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+    <p>Контактная почта</p>
+    <p><b>ivanov@yandex.ru</b></p>
+  </div>
+</div>

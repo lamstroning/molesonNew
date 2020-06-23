@@ -1,0 +1,30 @@
+.statistic-row {
+  padding: 27px 0;
+  .statistic-type {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .statistic-end{
+    font-size: 20px;
+  }
+  .statistic-end-cost{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .statistic-cost {
+    color: #50606c;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+#canvas{
+  background-image: url("/assets/svg-icon/diogramm.svg");
+  width: 100%;
+  margin: 30px 0;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+}

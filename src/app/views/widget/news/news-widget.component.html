@@ -1,0 +1,26 @@
+<div class="slider">
+  <div class="mt-5 d-flex justify-content-between align-items-center">
+    <h2 class="mt-5">Новости</h2>
+    <div *ngIf="width > 1024" class="mt-5 btn btn-outline-primary pl-5 pr-5">Смотерть все</div>
+  </div>
+
+  <div class="news-container">
+    <div class="news-col">
+      <div class="news-block" style="background-image: url('/assets/img/news/news1.png')">
+        <div class="news-title">Как стать успешным?</div>
+        <div class="news-desc">Всего 1 шаг отделяет тебя от желаемого</div>
+      </div>
+      <div class="news-block" style="background-image: url('/assets/img/news/news2.png')">
+        <div class="news-title">Как стать успешным?</div>
+        <div class="news-desc">Всего 1 шаг отделяет тебя от желаемого</div>
+      </div>
+    </div>
+    <div class="news-col">
+      <div class="news-block" style="background-image: url('/assets/img/news/news3.png')">
+        <div class="news-title">Как выбрать франшизу?</div>
+        <div class="news-desc">20 этапов анализа</div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="width <= 1024" class="mt-5 btn btn-outline-primary pl-5 pr-5">Смотерть все</div>
+</div>

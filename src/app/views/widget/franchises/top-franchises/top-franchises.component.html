@@ -1,0 +1,50 @@
+<h2 class="mt-5">Актуальные франшизы</h2>
+<div *ngFor="let item of franchises" class="page-element p-0 ml-0 mr-0">
+  <div class="card-franchise">
+    <div class="card-franchise-img" [style.background-image]="'url(' + item.img + ')'"></div>
+    <div class="card-franchise-info">
+      <div class="page-element-header p-0 page-element-header-line">
+        <div class="row">
+          <div class="col-2">
+            <div class="franchise-avatar" [style.background-image]="'url(' + item.ico + ')'"></div>
+          </div>
+          <div class="col-7 name-block">
+            <p><b>Франшиза “{{item.name}}”</b></p>
+            <p>{{item.adresse}}</p>
+          </div>
+          <div class="col-3">
+            <p class="create-data m-0">01.02.2020</p>
+            <p class="country-block m-0">Россия</p>
+          </div>
+        </div>
+      </div>
+      <div class="progress-container">
+        <div class="d-flex justify-content-between mt-2">
+          <p class="mb-2">Прогресс</p>
+          <p class="mb-2">
+            <b>53%</b>
+          </p>
+        </div>
+        <div class="d-flex align-items-center">
+          <div class="progress-bar">
+            <div class="progress-bar-full" [style.width]="'53%'"></div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+          <p>45 участников</p>
+          <p>
+            <b>доступно 60 000 $</b>
+          </p>
+        </div>
+        <div class="card-bottom">
+          <div>
+            <p>Общая стоимость</p>
+            <b class="final-cost">100 000 $ / 6 966 336 ₽</b>
+          </div>
+          <div class="btn btn-secondary">Подробнее</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="btn btn-outline-secondary w-100">Смотреть все проекты</div>

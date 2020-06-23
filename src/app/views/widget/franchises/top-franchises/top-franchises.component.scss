@@ -1,0 +1,148 @@
+.card-franchise {
+  height: 319px;
+  padding: 30px 42px;
+  display: flex;
+  justify-content: space-between;
+  .franchise-avatar {
+    width: 45px;
+    border-radius: 50%;
+    height: 45px;
+    background-size: contain;
+  }
+  .card-franchise-img {
+    background-size: cover;
+    background-position: 50%;
+    width: 100%;
+    max-width: 290px;
+    position: relative;
+    height: calc(100% + 60px);
+    left: -42px;
+    top: -30px;
+  }
+  .card-franchise-info {
+    width: 100%;
+  }
+  .name-block {
+    padding: 0;
+    p {
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    b {
+      font-size: 20px;
+    }
+  }
+  .create-data {
+    opacity: 0.7;
+    font-size: 14px;
+    text-align: right;
+  }
+  .country-block {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 14px;
+    text-align: right;
+    &:before {
+      content: "";
+      display: block;
+      padding: 8px;
+      border-radius: 50%;
+      margin-right: 9px;
+      background-color: red;
+    }
+  }
+  .progress-bar {
+    width: 100%;
+    height: 5px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #EEEEEE;
+    .progress-bar-full {
+      height: 100%;
+      background-color: #FF9F19;
+    }
+  }
+  .card-bottom {
+    margin-top: 37px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .btn {
+      padding: 10px 42px;
+      font-weight: bold;
+    }
+    #final-cost {
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .card-franchise {
+    .card-bottom {
+      margin-top: 0;
+      .btn {
+        padding: 10px 22px;
+      }
+      #final-cost {
+        font-size: 14px;
+      }
+    }
+    .card-franchise-img{
+      max-width: 190px;
+      background-position: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .card-franchise {
+    height: auto;
+    flex-direction: column;
+    padding: 0;
+    .card-franchise-img {
+      max-width: 100%;
+      position: static;
+      height: 130px;
+    }
+    .page-element-header {
+      > .row {
+        margin: 20px 0;
+        align-items: center;
+      }
+    }
+    .country-block {
+      display: none;
+    }
+    .card-bottom {
+      border-top: 2px solid #f4f4f5;
+      padding-top: 10px;
+      flex-direction: column;
+      align-items: unset;
+      .btn {
+        margin: 20px 0;
+      }
+    }
+    .franchise-avatar {
+      width: 32px;
+      height: 32px;
+    }
+    .card-franchise-info {
+      padding: 0 15px;
+    }
+    .name-block {
+      padding: 0;
+      p {
+        margin-bottom: 5px;
+        font-size: 12px;
+      }
+      b {
+        font-size: 14px;
+      }
+    }
+    .country-block {
+      padding-left: 0;
+    }
+  }
+}

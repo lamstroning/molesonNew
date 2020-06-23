@@ -1,0 +1,46 @@
+.page-body {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-height: 531px;
+  .hor-line {
+    height: 100vh;
+    margin-top: 5px;
+    width: 1px;
+    background: #C4C4C4;
+  }
+  .operation-history {
+    width: 100%;
+    padding-left: 15px;
+    .operation-list {
+      position: relative;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .operation-list-type {
+        width: 13px;
+        height: 13px;
+        position: absolute;
+        top: 5px;
+        background-color: red;
+        border-radius: 50%;
+        left: -22px;
+      }
+      .operation-list-title {
+        font-size: 14px;
+        color:#051C2C;
+      }
+      .operation-list-money {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .operation-list-date {
+        color: #051C2C;
+        font-size: 14px;
+        opacity: 0.7;
+      }
+    }
+  }
+}

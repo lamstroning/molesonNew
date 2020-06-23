@@ -1,0 +1,25 @@
+.gradient-block {
+  background: radial-gradient(86.13% 2403.94% at 100% -4.09%, #FFFFFF 0%, rgba(255, 255, 255, 0.19) 0%, rgba(255, 255, 255, 0) 100%), #051C2C;
+  border-radius: 5px;
+}
+.balance-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+.balance-block {
+  color: white;
+  p {
+    margin-bottom: 0;
+  }
+  b {
+      font-size: 50px;
+  }
+}
+@media screen and (max-width: 1024px){
+  .balance-row {
+    flex-direction: column;
+    text-align: center;
+  }
+}

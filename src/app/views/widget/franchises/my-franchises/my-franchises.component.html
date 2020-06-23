@@ -1,0 +1,36 @@
+<div class="page-element ml-0 mr-0">
+  <div class="page-element-header p-0 pb-4 d-flex justify-content-between">
+    <div class="page-element-header-title">Мои франшизы</div>
+    <div class="btn btn-outline-primary">Подробнее</div>
+  </div>
+  <div *ngFor="let franchise of franchises" class="row border-top">
+    <div class="col-12 col-xl-6 pb-3 pt-3">
+      <div class="franchise-title">{{franchise.name}}</div>
+      <div class="franchise-adresse">{{franchise.adresse}}</div>
+    </div>
+    <div class="col-12 col-xl-6 mb-3 mt-3 border-left">
+      <div class="franchise-info">
+        <div class="row">
+          <div class="col-10 ">
+            <div class="franchise-status">
+              <div class="franchise-status-dot" [style.background-color]="getColor(franchise.status)"></div>
+              <div class="franchise-status-title">{{franchise.status}}</div>
+            </div>
+          </div>
+          <div class="col-2">{{franchise.balance}}$</div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div *ngIf="franchise.progress < 100" class="d-flex align-items-center">
+              {{franchise.progress + '%'}}
+              <div class="progress-bar">
+                <div class="progress-bar-full" [style.width]="franchise.progress + '%'"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

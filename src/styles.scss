@@ -1,4 +1,8 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import './assets/fonts/stylesheet.css';
+* {
+  font-family: 'Gilroy', sans-serif;
+}
 body {
   background-color: #E5E5E5;
 }

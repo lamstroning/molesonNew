@@ -1,0 +1,21 @@
+.social-links {
+  background-color: #E6E9EA;
+  border-radius: 4px;
+  margin-top: 15px;
+  align-items: center;
+  padding: 8px 20px;
+  display: flex;
+}
+
+.social-link-ico {
+  min-width: 20px;
+  min-height: 20px;
+  margin-right: 10px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1680px){
+  .social-link-name {
+    font-size: 12px;
+  }
+}

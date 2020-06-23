@@ -1,0 +1,35 @@
+.franchise-status {
+  display: flex;
+  align-items: center;
+  .franchise-status-dot {
+    border-radius: 50%;
+    margin-right: 15px;
+    width: 13px;
+    height: 13px;
+    background-color: #FF9F19;
+  }
+}
+.franchise-title {
+  font-size: 20px;
+  color: #051C2C;
+  font-weight: bold;
+}
+.progress-bar-full {
+  height: 100%;
+  background-color: #FF9F19;
+}
+.franchise-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.progress-bar {
+  margin-left: 15px;
+  max-width: 151px;
+  width: 100%;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #EEEEEE;
+}

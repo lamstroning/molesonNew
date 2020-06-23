@@ -1,0 +1,36 @@
+<div class="container-fluid p-0">
+  <header [class.open-header]="open">
+    <div class="header-container">
+      <div class="logo" [inlineSVG]="'/assets/svg-icon/logo.svg'"></div>
+      <div class="burger-btn" (click)="open = !open"></div>
+    </div>
+    <div *ngIf="width > 1024" class="header-container ml-auto">
+      <div class="header-element">
+        <app-wallet></app-wallet>
+      </div>
+      <div class="header-element">
+        <p>
+          <b>8 (800) 200 30 30</b>
+        </p>
+        <p>
+          moleson@yandex.ru
+        </p>
+      </div>
+      <div class="header-element profile">
+       <app-profile></app-profile>
+      </div>
+      <div class="header-element">
+        <app-lang></app-lang>
+      </div>
+    </div>
+    <div *ngIf="width <= 1024" class="header-container ml-auto">
+      <div class="header-element">
+          <app-profile></app-profile>
+      </div>
+      <div class="header-element">
+          <app-aside></app-aside>
+      </div>
+    </div>
+  </header>
+</div>
+

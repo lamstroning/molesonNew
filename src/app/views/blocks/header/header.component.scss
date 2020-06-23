@@ -1,0 +1,111 @@
+header  {
+  height: 90px;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+  background-color:  #051C2C;
+  .burger-btn {
+    display: none;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.2s;
+    height: 16px;
+    background-image: url("/assets/svg-icon/burger.svg");
+  }
+  .logo {
+    color: white;
+    width: 211px;
+    height: 36px;
+  }
+  .header-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dropdown-element {
+
+  }
+  .profile {
+    width: 284px;
+    position: relative;
+  }
+  .header-element {
+    height: 100%;
+    color: white;
+    padding: 20px 40px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    p {
+      font-size: 14px;
+      margin: 0;
+      b{
+        font-size: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1680px) {
+  header {
+    padding: 0 40px;
+    .header-element {
+      height: 100%;
+      color: white;
+      padding: 20px 40px;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      p {
+        font-size: 14px;
+        margin: 0;
+        b {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .open-header {
+    max-height: 100%;
+    overflow-y: auto;
+    .burger-btn {
+      transform: rotate(90deg);
+      background-image: url("/assets/svg-icon/cross.svg");
+    }
+  }
+  header {
+    z-index: 10000;
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    height: auto;
+    padding: 0 16px;
+    max-height: 56px;
+    align-items: flex-start;
+    background-color: white;
+    .header-container {
+      &:last-child {
+        flex-direction: column;
+      }
+      max-width: 100%;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .burger-btn {
+      display: block;
+    }
+    .logo {
+      color: #051C2C;
+      width: 91px;
+      height: 15px;
+      margin-top: -16px;
+    }
+    .header-element {
+      padding: 20px 0;
+      color: #051C2C;
+    }
+  }
+}

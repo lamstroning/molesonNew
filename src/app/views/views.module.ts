@@ -2,9 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
-import { HeaderComponent } from './bloks/header/header.component';
-import { FooterComponent } from './bloks/footer/footer.component';
-import { AsideComponent } from './bloks/aside/aside.component';
 import {ViewsComponent} from './views.component';
 import {DashboardModule} from './pages/dashboard/dashboard.module';
 import {CommonModule} from '@angular/common';
@@ -17,77 +14,48 @@ import { PartnersComponent } from './pages/partners/partners.component';
 import { DocsComponent } from './pages/docs/docs.component';
 import { HelpComponent } from './pages/help/help.component';
 import {HelpModule} from './pages/help/help.module';
+import { BalanceComponent } from './widget/balance/balance.component';
+import { AnaliticsComponent } from './widget/analitics/analitics.component';
+import { LastOperationsComponent } from './widget/last-operations/last-operations.component';
+import { SocialLinksComponent } from './widget/social-links/social-links.component';
+import { MyFranchisesComponent } from './widget/franchises/my-franchises/my-franchises.component';
+import { TopFranchisesComponent } from './widget/franchises/top-franchises/top-franchises.component';
+import {NewsWidgetComponent} from './widget/news/news-widget.component';
+import {FranchisesService} from '../core/franchises/franchises.service';
+import {BlocksModule} from './blocks/blocks.module';
+import {HeaderModule} from './blocks/header/header.module';
 
-const appRoutes: Routes = [
-  {
-    path: '',
-    component: ViewsComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: 'my-wallet',
-        component: MyWalletComponent
-      },
-      {
-        path: 'franchises',
-        component: FranchisesComponent
-      },
-      {
-        path: 'news',
-        component: NewsComponent
-      },
-      {
-        path: 'partners',
-        component: PartnersComponent
-      },
-      {
-        path: 'docs',
-        component: DocsComponent
-      },
-      {
-        path: 'help',
-        component: HelpComponent
-      },
-    ]
-  }
-];
+
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    HeaderComponent,
-    FooterComponent,
-    AsideComponent,
     ViewsComponent,
     MyWalletComponent,
     FranchisesComponent,
     NewsComponent,
+    NewsWidgetComponent,
     PartnersComponent,
     DocsComponent,
-    HelpComponent
-  ],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
-    AsideComponent
+    HelpComponent,
+    BalanceComponent,
+    AnaliticsComponent,
+    LastOperationsComponent,
+    SocialLinksComponent,
+    MyFranchisesComponent,
+    TopFranchisesComponent,
   ],
   imports: [
     DashboardModule,
+    BlocksModule,
     HttpClientModule,
     InlineSVGModule.forRoot(),
-    RouterModule.forChild(appRoutes),
-    CommonModule
+    CommonModule,
+    HeaderModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [FranchisesService],
   bootstrap: []
 })
 

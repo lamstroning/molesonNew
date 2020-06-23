@@ -5,8 +5,40 @@ body {
 .bg-primary {
   background-color: #051C2C!important;
 }
+.btn-primary {
+  background-color: #051C2C!important;
+  border-color: #051C2C!important;
+}
+.btn-success {
+  background-color: #31B984!important;
+  border-color: #31B984!important;
+}
+.bg-secondary {
+  background-color: #FF9F19!important;
+}
+.btn-secondary {
+  background-color: #FF9F19!important;
+  border-color: #FF9F19!important;
+}
+.btn-outline-primary {
+  border-color: #051C2C!important;
+  color: black!important;
+  &:hover {
+    background-color: #051C2C!important;
+    color: white!important;
+  }
+}
+.btn-outline-secondary {
+  border-color: #FF9F19!important;
+  color: black!important;
+  &:hover {
+    background-color: #FF9F19!important;
+    color: white!important;
+  }
+}
 svg {
   fill: currentColor;
+
 }
 .page-element {
   overflow: hidden;
@@ -15,6 +47,7 @@ svg {
   border-radius: 5px;
   padding: 30px;
   .page-element-header {
+    align-items: center;
     position: relative;
     padding: 20px 0;
     margin-bottom: 10px;
@@ -45,4 +78,43 @@ svg {
     }
   }
 }
-/* You can add global styles to this file, and also import other style files */
+.arrow-dropdown {
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    width: 9px;
+    cursor: pointer;
+    height: 5px;
+    background-repeat: no-repeat;
+    background-image: url(/assets/svg-icon/arrow.svg);
+    background-position-x: 50%;
+    background-size: contain;
+  }
+}
+.close {
+  position: absolute;
+  right: 20px;
+  background-image: url(/assets/svg-icon/cross.svg);
+  width: 16px;
+  height: 16px;
+  top: 20px;
+  cursor: pointer;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.slider {
+  max-width: 100%;
+  overflow: hidden;
+}
+.social-ico {
+  width: 20px;
+  color: white;
+  height: 14px;
+  path {
+    fill: white;
+  }
+}

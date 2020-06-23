@@ -3,10 +3,29 @@
   padding: 0 80px;
   .aside-menu{
     max-width: 380px;
-    width: 100%;
+    width: 30%;
   }
   .main-area {
     width: 100%;
-    margin: 0 80px;
+    margin-left: 80px;
+  }
+}
+@media screen and (max-width: 1680px) {
+  .page-area {
+    padding: 0 40px;
+    .main-area {
+      margin-left: 40px;
+    }
+  }
+}
+@media screen and (max-width: 1024px){
+  .aside-menu{
+    display: none;
+  }
+  .page-area {
+    padding: 0;
+    .main-area {
+      margin-left: 0;
+    }
   }
 }

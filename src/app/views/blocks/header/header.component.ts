@@ -1,22 +1,24 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class DashboardComponent implements OnInit {
-
+export class HeaderComponent implements OnInit {
   width;
+  open = false;
   constructor() { }
+
   ngOnInit() {
     this.width = window.innerWidth;
   }
 
-  // Изменение размера окна
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.width = event.target.innerWidth;
+    if (this.width > 1024) {
+      this.open = false;
+    }
   }
-
 }

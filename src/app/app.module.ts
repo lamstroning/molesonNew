@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreComponent } from './core/core.component';
 
 
 import { ViewsModule } from './views/views.module';
@@ -18,7 +17,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    CoreComponent,
     NotFoundComponent
   ],
   imports: [

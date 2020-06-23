@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {Menu} from '../../../core/config/menu.config';
 
 @Component({
@@ -8,9 +8,16 @@ import {Menu} from '../../../core/config/menu.config';
 })
 export class AsideComponent implements OnInit {
   menu = Menu;
+  open = false;
+  width = window.innerWidth;
   constructor() { }
 
   ngOnInit() {
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.open = false;
+    this.width = event.target.innerWidth;
+  }
 }

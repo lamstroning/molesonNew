@@ -1,0 +1,73 @@
+
+.btns-row {
+
+  .btn {
+
+  }
+}
+
+.profile-block {
+  display: flex;
+  justify-content: space-between;
+  .profile-block-col {
+    max-width: 530px;
+    width: 100%;
+  }
+  .profile-block-col.small-col {
+    max-width: 370px;
+  }
+}
+.profile-block-avatar {
+
+  .profile-block-avatar-header {
+
+    .profile-current-avatar {
+
+    }
+
+    .profile-current-name {
+
+    }
+  }
+
+  .profile-block-avatar-body {
+
+    .profile-avatar-info {
+
+      .profile-avatar-info-title {
+
+      }
+
+      .profile-avatar-info-desc {
+
+        p {
+
+        }
+      }
+    }
+  }
+}
+.profile-block-mail {
+
+  .page-element {
+
+    .mail-status {
+
+    }
+
+    .mail-input {
+
+      .default-input {
+
+      }
+    }
+
+    .moleson-btn {
+
+    }
+  }
+}
+.right-block {
+
+}
+

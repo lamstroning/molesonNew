@@ -1,34 +1,95 @@
-<div class="page-element ml-0 mr-0">
-  <div class="page-element-header p-0 pb-4 d-flex justify-content-between">
-    <div class="page-element-header-title">Мои франшизы</div>
-    <div class="btn btn-outline-primary">Подробнее</div>
-  </div>
-  <div *ngFor="let franchise of franchises" class="row border-top">
-    <div class="col-12 col-xl-6 pb-3 pt-3">
-      <div class="franchise-title">{{franchise.name}}</div>
-      <div class="franchise-adresse">{{franchise.adresse}}</div>
-    </div>
-    <div class="col-12 col-xl-6 mb-3 mt-3 border-left">
-      <div class="franchise-info">
-        <div class="row">
-          <div class="col-10 ">
-            <div class="franchise-status">
-              <div class="franchise-status-dot" [style.background-color]="getColor(franchise.status)"></div>
-              <div class="franchise-status-title">{{franchise.status}}</div>
+<div class="my-franchises" xmlns="http://www.w3.org/1999/html">
+  <h2 class="block-title">Мои франшизы</h2>
+  <div class="slider">
+    <div class="my-franchises-area">
+      <div *ngFor="let item of franchises | slice:0:3" class="page-element p-0 ml-0 mr-0">
+        <div class="card-franchise">
+          <div class="card-franchise-img" [style.background-image]="'url(' + item.img + ') '">
+            <div class="card-franchise-img-row">
+              <div *ngIf="item.progress < 100" class="status-block">
+                <div class="status-block-point" [style.background-color]="'#FF9F19'"></div>
+                Сбор инвестиций
+              </div>
+              <div *ngIf="item.progress === 100" class="status-block">
+                <div class="status-block-point" [style.background-color]="'#FF9F19'"></div>
+                Запуск
+              </div>
+              <div *ngIf="item.progress > 100" class="status-block">
+                <div class="status-block-point" [style.background-color]="'#31B984'"></div>
+                В работе
+              </div>
+              <div class="precent-block" [class.fill-precent]="item.progress > 100">22 %</div>
+            </div>
+            <div class="card-franchise-img-row mobile-show">
+              <p class="create-data m-0">01.02.2020</p>
+              <p class="country-block m-0">Россия</p>
             </div>
           </div>
-          <div class="col-2">{{franchise.balance}}$</div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div *ngIf="franchise.progress < 100" class="d-flex align-items-center">
-              {{franchise.progress + '%'}}
-              <div class="progress-bar">
-                <div class="progress-bar-full" [style.width]="franchise.progress + '%'"></div>
+          <div class="card-franchise-info">
+            <div class="page-element-header p-0 page-element-header-line">
+              <div class="franchise-head">
+                <div class="franchise-avatar"
+                     [style.background-image]="'url(' + item.ico + ')'"></div>
+                <div class="name-block">
+                  <p><b class="pre-name">{{item.name}}</b></p>
+                  <p class="adresse">{{item.adresse}}</p>
+                </div>
+                <div class="country-col">
+                  <p class="create-data m-0">01.02.2020</p>
+                  <p class="country-block m-0">Россия</p>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="item.progress <= 100" class="progress-container">
+              <div class="progress-info">
+                <p class="mb-2 progress-precent">Прогресс</p>
+                <p class="mb-2">
+                  <b class="progress-precent-num">{{item.progress}} %</b>
+                </p>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="progress-bar">
+                  <div class="progress-bar-full" [style.width]="item.progress + '%'" [style.background-color]="item.progress === 100 ? '#31b984' : '#ff9f19'"></div>
+                </div>
+              </div>
+              <div class="progress-info progress-info-last">
+                <p>45 участников</p>
+                <p>
+                  доступно <b>60 000 $</b>
+                </p>
+              </div>
+              <div class="card-bottom">
+                <div>
+                  <p class="final-cost-title">Общая стоимость</p>
+                  <b class="final-cost">100 000 $ / 6 966 336 ₽</b>
+                </div>
+                <div class="btn btn-franchise btn-secondary">Подробнее</div>
+              </div>
+            </div>
+            <div *ngIf="item.progress > 100" class="progress-container">
+              <div class="progress-container-result">
+                <div class="result-block">
+                  <div class="result-title">Рост с момента покупки</div>
+                  <div class="result-cost arrow-up" style="color: #31B984;font-weight: bold">450 $ (10%)</div>
+                </div>
+                <div class="result-block">
+                  <div class="result-title">Начисленно дивидендов</div>
+                  <div class="result-cost">1 000 $</div>
+                </div>
+              </div>
+              <div class="card-bottom border-top">
+                <div class="desktop-show count-part">
+                  <p>Кол-во долей</p>
+                  <b class="final-cost">40</b>
+                </div>
+                <div class="desktop-show">
+                <p>Стоимость</p>
+                <b class="final-cost">4 000 $</b>
+              </div>
+                <div class="btn btn-secondary btn-franchise">Подробнее</div>
               </div>
             </div>
           </div>
-          <div class="col-4"></div>
         </div>
       </div>
     </div>

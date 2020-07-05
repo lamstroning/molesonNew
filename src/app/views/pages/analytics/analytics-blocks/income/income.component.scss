@@ -1,0 +1,113 @@
+.income-header {
+  margin-top: 40px;
+  display: flex;
+
+
+}
+
+.income-info-block {
+  .income-title {
+    font-size: 18px;
+  }
+
+  .income-cost {
+    margin-top: 17px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+
+.income-subheader {
+  margin-top: 40px;
+
+  .income-info-block {
+    .income-cost {
+      margin-top: 14px;
+      font-size: 30px;
+    }
+  }
+}
+
+.income-body {
+  padding-right: 238px;
+  justify-content: space-between;
+  display: flex;
+  border-top: 1px solid #cdd2d5;
+  margin-top: 40px;
+  padding-top: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+  .income-header {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    .custom-arrow-dropdown {
+      width: calc(50% - 15px);
+      &:after {
+        right: 20px;
+      }
+      select {
+        width: 100%;
+      }
+    }
+
+  }
+  .income-subheader {
+    margin-top: 30px;
+  }
+  .income-body {
+    margin-top: 22px;
+    padding-right: 0;
+    flex-direction: column;
+    .income-info-block {
+      margin-top: 30px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-element-title {
+    display: none;
+  }
+  .income-header {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    .custom-arrow-dropdown {
+      width: 100%;
+      margin-top: 10px;
+      &:after {
+        right: 20px;
+      }
+      select {
+        width: 100%;
+      }
+    }
+  }
+  .income-body {
+    margin-top: 15px;
+    padding-right: 0;
+    padding-top: 0px;
+    flex-direction: column;
+    .income-info-block {
+      margin-top: 20px;
+    }
+  }
+  .income-info-block {
+    .income-title {
+      font-size: 12px;
+    }
+    .income-cost {
+      font-size: 16px;
+    }
+  }
+  .income-subheader {
+
+    .income-info-block {
+      .income-cost {
+        margin-top: 8px;
+        font-size: 24px;
+      }
+    }
+  }
+}

@@ -1,21 +1,70 @@
 .social-links {
   background-color: #E6E9EA;
   border-radius: 4px;
-  margin-top: 15px;
+  cursor: pointer;
+  margin-top: 22px;
   align-items: center;
   padding: 8px 20px;
   display: flex;
+  width: 70px;
+  height: 39px;
+  justify-content: center;
 }
-
+.social-link-name {
+  display: none;
+}
 .social-link-ico {
   min-width: 20px;
   min-height: 20px;
-  margin-right: 10px;
   background-position: 50%;
   background-repeat: no-repeat;
+}
+.row-social {
+  margin-top: 30px;
 }
 @media screen and (max-width: 1680px){
   .social-link-name {
     font-size: 12px;
+  }
+}
+@media screen and (max-width: 1024px) {
+ .page-element {
+   margin-top: 50px;
+ }
+  .social-link-ico {
+    margin-right: 15px;
+  }
+  .social-links {
+    width: 100%;
+    margin-top: 15px;
+    justify-content: center;
+  }
+  .social-link-name {
+    font-size: 12px;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+ .page-element {
+   margin-top: 50px;
+   padding: 20px;
+   .page-element-header {
+     .page-element-header-title {
+       font-size: 22px;
+       margin-top: 6px;
+       line-height: 27px;
+     }
+   }
+ }
+  .row-social {
+    margin-top: 14px;
+  }
+  .social-links {
+    margin-top: 16px;
+  }
+  .row-social-title {
+    font-size: 18px;
+    margin-top: 14px;
   }
 }

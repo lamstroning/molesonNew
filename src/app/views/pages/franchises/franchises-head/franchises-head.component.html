@@ -1,0 +1,50 @@
+<div class="franchises-head">
+  <div class="franchises-head-row mobile-show">
+    <div class="block-header">
+      <div class="back-btn" [routerLink]="'/dashboard'">
+        <div [inlineSVG]="'/assets/svg-icon/arrow.svg'" class="back-btn-arrow"></div>
+        На главную
+      </div>
+      <div class="block-header-title">
+        <h2>Франшизы</h2>
+      </div>
+    </div>
+  </div>
+  <div class="franchises-head-row">
+    <div class="franchises-head-col search-row">
+      <div class="search-ico" [inlineSVG]="'/assets/svg-icon/search.svg'"></div>
+      <label for="search-row">
+        <input class="default-field" placeholder="Название или адрес" id="search-row" type="text" (change)="franchisesService.filterFranchises()" [(ngModel)]="franchisesService.filterName">
+      </label>
+    </div>
+    <div class="franchises-head-col select-filter">
+      <label for="select-filter">
+        <div class="custom-arrow-dropdown default-field">
+          <select id="select-filter" class="form-control">
+            <option>Фильтр по категориям</option>
+          </select>
+        </div>
+      </label>
+    </div>
+    <div class="franchises-head-col">
+      <div #changeCatalog class="change-catalog-type">
+        <div class="change-catalog-container">
+          <div class="change-catalog" [class.active-type]="franchisesService.catalogBlock" (click)="catalogChange(true)">
+            <div class="change-catalog-type-element" [inlineSVG]="'/assets/svg-icon/block-catalog.svg'"></div>
+          </div>
+          <div class="change-catalog" [class.active-type]="!franchisesService.catalogBlock" (click)="catalogChange(false)" >
+            <div class="change-catalog-type-element" [inlineSVG]="'/assets/svg-icon/table-catalog.svg'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="franchises-head-row">
+    <div class="btns-row">
+      <div class="btn btn-white" [class.btn-active]="franchisesService.filterType === ''" (click)="scrollSlider('')">Все</div>
+      <div class="btn btn-white" [class.btn-active]="franchisesService.filterType === 'Сбор инвестиций'" (click)="scrollSlider('Сбор инвестиций')">Сбор средств</div>
+      <div class="btn btn-white" [class.btn-active]="franchisesService.filterType === 'Запуск'" (click)="scrollSlider('Запуск')">Запуск</div>
+      <div class="btn btn-white" [class.btn-active]="franchisesService.filterType === 'В работе'" (click)="scrollSlider('В работе')">В работе</div>
+    </div>
+  </div>
+</div>

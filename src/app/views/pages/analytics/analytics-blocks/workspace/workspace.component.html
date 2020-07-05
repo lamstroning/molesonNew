@@ -1,0 +1,48 @@
+<h3 class="page-element-title">
+  Франшизы в работе
+</h3>
+<div class="page-section">
+  <div *ngFor="let item of workStatus" class="page-section-row">
+    <div class="page-section-col">
+      <div class="status-point" [style.background-color]="item.color"></div>
+      <div class="franchise-name">{{item.name}}</div>
+    </div>
+    <div class="page-section-col">
+      <div class="franchise-cost">{{item.cost}} $ </div>
+      <div class="franchise-percent">({{item.percent}}%)</div>
+    </div>
+  </div>
+  <hr class="hr-full">
+</div>
+<h3 class="page-element-title">
+  На стадии запуска
+</h3>
+<div class="page-section">
+  <div *ngFor="let item of startStatus" class="page-section-row">
+    <div class="page-section-col">
+      <div class="status-point" [style.background-color]="item.color"></div>
+      <div class="franchise-name">{{item.name}}</div>
+    </div>
+    <div class="page-section-col">
+      <div class="franchise-cost">{{item.cost}} $ </div>
+      <div class="franchise-percent">({{item.percent}}%)</div>
+    </div>
+  </div>
+  <hr class="hr-full">
+</div>
+<h3 class="page-element-title">
+  Собирают инвестиции
+</h3>
+<div class="page-section">
+  <div *ngFor="let item of waitStatus" class="page-section-row">
+    <div class="page-section-col">
+      <div class="status-point" [style.background-color]="item.color"></div>
+      <div class="franchise-name">{{item.name}}</div>
+    </div>
+    <div class="page-section-col">
+      <div class="franchise-cost">{{item.cost}} $ </div>
+      <div class="franchise-percent">({{item.percent}}%)</div>
+    </div>
+  </div>
+  <hr class="hr-full last-hr">
+</div>

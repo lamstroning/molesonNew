@@ -1,0 +1,43 @@
+<div *ngIf="franchise.progress < 100" class="income">
+  <div class="income-header">
+    <div class="income-header-present-block">
+      {{franchise.precent}}
+    </div>
+    <div class="income-header-title">
+      Прогнозируемая доходность в год
+    </div>
+  </div>
+  <div class="income-body">
+    <div class="income-body-row">
+      <div class="income-body-title">Общая стоимость франшизы</div>
+      <div class="income-body-cost">
+        {{franchise.allCostDollars}} $ / {{franchise.allCost}} ₽
+      </div>
+    </div>
+    <div class="income-body-row">
+      <div class="income-body-title">Стоимость доли</div>
+      <div class="income-body-cost">
+        {{franchise.divideCost}} $ / {{franchise.divideCost * 69}} ₽
+      </div>
+    </div>
+    <div class="income-body-row">
+      <div class="income-btn">Купить долю</div>
+    </div>
+  </div>
+</div>
+<div *ngIf="franchise.progress >= 100" class="income">
+  <div class="income-body">
+    <div class="income-body-row">
+      <div class="income-finish">
+        <div class="income-finish-ico" [inlineSVG]="'/assets/svg-icon/success.svg'"></div>
+      </div>
+    </div>
+    <div class="income-body-row">
+      <div class="income-body-finish-title">Сбор средств завершен</div>
+      <div class="income-body-finish-desc">Сбор средств для данной франшизы завершен, ознакомьтесь с остальными проектами для инвестирования</div>
+    </div>
+    <div class="income-body-row">
+      <div class="income-btn finish-btn" [routerLink]="'/franchises'">Смотреть все проекты</div>
+    </div>
+  </div>
+</div>

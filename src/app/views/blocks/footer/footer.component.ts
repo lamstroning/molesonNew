@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
+  first = false;
+  second = false;
+  third = false;
   constructor() { }
 
   ngOnInit() {

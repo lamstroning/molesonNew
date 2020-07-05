@@ -1,21 +1,21 @@
 
 .left-menu {
   width: 100%;
-  padding: 30px 24px;
+  padding: 25px 24px;
   .left-menu-item {
     display: flex;
-    margin-top: 11px;
-    padding: 18px 20px;
+    margin-top: 8px;
+    padding: 13px 15px;
     transition: 0.2s;
     color: #374956;
     cursor: pointer;
     border-radius: 4px;
     .menu-ico {
       transition: 0.2s;
-      padding: 0 23px;
+      padding-right: 15px;
       color: #374956;
     }
-    &:first-child{
+    &:first-child {
       margin-top: 0;
     }
     &:hover{
@@ -34,24 +34,82 @@
     }
   }
 }
-.inviter-person {
-  .inviter-person-avatar{
-    background-image: url("/assets/img/avatars/avatar.png");
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.arrow-dropdown {
+  &:after {
+    right: 20px;
   }
+}
+.inviter-person {
+  position: relative;
+  padding: 20px 30px;
   p {
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 0;
     b {
-      font-size: 18px;
+      margin-top: 10px;
+      font-size: 16px;
     }
+  }
+  .arrow-dropdown {
+    color: black
   }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .left-menu {
     padding: 0;
+  }
+  .inviter-person {
+    margin: 0;
+    padding: 0;
+  }
+  .dropdown-header {
+    height: 0;
+    transition: 0.2s;
+    padding: 0;
+    overflow: hidden;
+    animation: closeHeaderElement 0.2s ease-in-out;
+  }
+  .mobile-header-title {
+    position: relative;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 20px 16px;
+    border-top: 1px solid #dee2e6!important;
+    &:after {
+      top: 32px;
+    }
+  }
+
+  .open-profile-block {
+    background-color: white;
+    color: #051C2C;
+    &:after {
+      transform: rotate(180deg);
+    }
+    .dropdown-header {
+      animation: openHeaderElement 0.2s ease-in-out;
+      height: 100%;
+      padding: 20px 0;
+    }
+  }
+  .contacts {
+    padding: 0 0 30px 16px;
+  }
+}
+@keyframes openHeaderElement {
+  from {
+    height: 0;
+  }
+  to {
+    height: 400px;
+  }
+}
+@keyframes closeHeaderElement {
+  from {
+    height: 400px
+  }
+  to {
+    height: 0;
   }
 }

@@ -1,40 +1,106 @@
 .page-block {
   display: flex;
-  padding-right: 15px;
-  padding-left: 15px;
-  .right-area
-  {
+
+  .right-area {
     max-width: 380px;
-    margin-left: 80px;
+    margin-left: 90px;
     width: 50%;
   }
+
   .main-area {
     width: 100%;
   }
 }
+
 .page-block.page-block-mobile {
   display: block;
-  .right-area
-  {
+
+  .right-area {
     max-width: 100%;
     margin-left: 0;
     width: 100%;
   }
+
   .main-area {
     width: 100%;
   }
 }
-@media screen and (max-width: 1680px){
+.mobile-show {
+  display: none;
+}
+.slider-container-element {
+  .page-element {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 1680px) {
   .page-block {
-    .right-area{
+    .right-area {
       margin-left: 40px;
     }
   }
 }
-@media screen and (max-width: 1024px){
+
+@media screen and (max-width: 1024px) {
+  .container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .recommend {
+    padding-top: 40px;
+    .recommend-img {
+      background-position: 50%;
+      background-image: url("/assets/svg-icon/recommend.svg");
+      width: 80%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin: 0 auto;
+      height: 150px;
+    }
+    .recommend-title {
+      margin-top: 30px;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+    }
+    .recommend-desc {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+  .recommend-btn {
+    padding: 12px 0;
+  }
+  .slider-container {
+    display: flex;
+
+    .slider-container-element {
+      min-width: 100%;
+      margin-right: 15px;
+    }
+  }
+  .desktop-show {
+    display: none;
+  }
+  .mobile-show {
+    display: block;
+  }
+  .right-area.desktop {
+    display: none;
+  }
   .page-block {
     .right-area {
       margin-left: 0;
     }
   }
 }
+  @media screen and (max-width: 480px) {
+    .container-fluid {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .page-element-header {
+      display: none!important;
+    }
+  }

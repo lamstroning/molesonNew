@@ -1,0 +1,62 @@
+<div class="top-franchises">
+  <div *ngFor="let franchise of franchisesService.franchisesList" class="page-element">
+    <div class="franchise-status franchise-status-mobile">
+      <div class="franchise-status-block">
+        <div class="franchise-status-dot" [style.background-color]="getColor(franchise.status)"></div>
+        <div class="franchise-status-title">{{franchise.status}}</div>
+      </div>
+      <div class="precent">
+        +{{franchise.precent + ' %'}}
+      </div>
+    </div>
+    <div class="franchise-body">
+      <div class="franchise-body-block">
+        <div class="main-info">
+          <div class="avatar" [style.background-image]="'url(' + franchise.ico + ')'"></div>
+          <div>
+            <div class="franchise-title">{{franchise.name}}</div>
+            <div class="franchise-adresse">{{franchise.adresse}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="franchise-body-block desktop-show">
+        <div class="status-block-body">
+          <div class="franchise-status-block">
+            <div class="franchise-status-dot" [style.background-color]="getColor(franchise.status)"></div>
+            <div class="franchise-status-title">{{franchise.status}}</div>
+          </div>
+        </div>
+        <div class="precent">
+          {{franchise.precent + ' %'}}
+        </div>
+      </div>
+      <div class="franchise-body-block progress-body">
+        <div class="progress-body-container">
+          <div class="progress-body-row">
+            <div class="progress-body-col">Прогресс</div>
+            <div class="progress-body-col">53%</div>
+          </div>
+          <div class="progress-body-row">
+            <div class="progress-bar">
+              <div class="progress-bar-full" [style.width]="'53%'"></div>
+            </div>
+          </div>
+            <div class="progress-body-row">
+              <div class="progress-body-col">45 уч.</div>
+              <div class="progress-body-col">60 000 $</div>
+          </div>
+        </div>
+      </div>
+      <div class="franchise-body-block">
+        <div class="franchise-body-last-block">
+          <div class="last-title">Общая стоимость</div>
+          <span>100 000 $</span>
+          <span class="separate">/</span>
+          <span>6 966 336 ₽</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-franchise">Смотреть все проекты</div>
+</div>
+

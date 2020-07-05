@@ -8,11 +8,6 @@ class MenuConfig {
       title: 'Главная'
     },
     {
-      link: 'my-wallet',
-      icon: 'money',
-      title: 'Мой кошелёк'
-    },
-    {
       link: 'franchises',
       icon: 'card',
       title: 'Франшизы'

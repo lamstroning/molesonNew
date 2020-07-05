@@ -4,7 +4,7 @@
   transition: 0.2s;
   padding-left: 50px;
   left: 0;
-  height: 90px;
+  height: 70px;
   top: 0;
   width: 284px;
   padding-right: 29px;
@@ -38,7 +38,7 @@
 }
 .open-block {
   background-color: white;
-  top: 90px;
+  top: 70px;
   left: 0;
   z-index: 10;
   padding: 0 20px;
@@ -50,6 +50,7 @@
   color: #051c2c;
   .open-block-row {
     display: flex;
+    cursor: pointer;
     align-items: center;
     padding: 30px 0;
     border-top: 1px solid #dee2e6;
@@ -61,6 +62,11 @@
       background-repeat: no-repeat;
     }
     .open-block-title {
+    }
+    .open-block-link {
+      font-size: 14px;
+      text-decoration-line: underline;
+      color: #31B984;
     }
   }
 }
@@ -76,12 +82,28 @@
 }
 @media screen and (max-width: 1024px) {
   .profile-block {
-    position: relative;
+    position: static;
     left: unset;
-    top: -30px;
-    padding: 0;
+    padding: 0 16px;
     .profile-name {
       font-weight: bold;
+    }
+  }
+  .mobile-header-title {
+    position: relative;
+    &:after {
+      top: 32px;
+      right: 16px;
+    }
+  }
+
+  .open-profile-block {
+    &:after {
+      transform: rotate(180deg);
+    }
+    .open-block {
+      max-height: 390px;
+      height: 0%;
     }
   }
   .close {
@@ -90,16 +112,30 @@
   .open-block {
     position: relative;
     top:20px;
+    padding: 0;
+    height: 0;
+    max-height: 0;
+
     .open-block-row {
       border-top: 0;
       font-weight: normal;
+      padding: 15px 0;
       font-size: 16px;
+      .open-block-ico {
+        width: 23px;
+        height: 23px;
+      }
+      .open-block-title {
+      }
+      .open-block-link {
+        font-size: 12px;
+      }
     }
   }
   .mobile-header-title {
     font-weight: bold;
     font-size: 18px;
-    padding: 20px 0;
+    padding: 20px 16px;
     border-top: 1px solid #dee2e6!important;
   }
 }

@@ -1,0 +1,110 @@
+
+<div class="page-area">
+  <div class="main-block">
+    <div class="block-header">
+      <div class="back-btn" [routerLink]="'/dashboard'">
+        <div [inlineSVG]="'/assets/svg-icon/arrow.svg'" class="back-btn-arrow"></div>
+        Назад
+      </div>
+      <div class="detail-card-header-block mobile-show">
+        <div class="star" [inlineSVG]="'/assets/svg-icon/star.svg'"></div>
+        <div class="share" [inlineSVG]="'/assets/svg-icon/news/share.svg'"></div>
+      </div>
+    </div>
+      <div *ngIf="currentFranchise" class="detail-card">
+        <div class="detail-card-top">
+          <div class="detail-card-header">
+            <div class="detail-card-header-block">
+              <div class="detail-card-title">{{currentFranchise.name}}</div>
+              <div class="detail-card-adresse">{{currentFranchise.adresse}}</div>
+            </div>
+            <div class="detail-card-header-block desktop-show">
+              <div class="star" [inlineSVG]="'/assets/svg-icon/star.svg'"></div>
+              <div class="share" [inlineSVG]="'/assets/svg-icon/news/share.svg'"></div>
+            </div>
+          </div>
+          <div class="detail-card-img-area">
+            <div class="detail-card-img" [style.background-image]="'url('+currentFranchise.img+')'"></div>
+            <div class="detail-card-img-slider">
+              <div *ngFor="let img of currentFranchise.imgList" class="detail-card-img-slide" [style.background-image]="'url('+img+')'"></div>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-block">
+          <div class="page-element page-element-top">
+            <app-franchises-progress [franchise]="currentFranchise"></app-franchises-progress>
+          </div>
+          <div class="page-element">
+            <app-franchises-income [franchise]="currentFranchise"></app-franchises-income>
+          </div>
+        </div>
+        <div class="btns-row">
+          <div class="btn">О франшизе</div>
+          <div class="btn">Прогнозы</div>
+          <div class="btn">Документация</div>
+          <div class="btn">Задайте вопрос</div>
+        </div>
+        <div class="detail-card-body">
+          <div class="detail-card-body-info">
+            <div class="page-element">
+              <div class="detail-card-body-info-title">История Black Star Wear</div>
+              <div class="detail-card-body-info-text">Российский бренд модной, молодежной одежды BLACK STAR WEAR был впервые запущен в 2010 году в составе музыкального лейбла BLACK STAR INC известным артистом Тимати и его партнером и другом Пашу. Первоначально бренд включал в себя всего несколько футболок с авторскими принтами в ограниченном количестве, но в результате стремительного роста популярности, было принято решение о расширении марки. На данный момент бренд BLACK STAR WEAR развивается самостоятельно.</div>
+              <div class="detail-card-body-info-title">Описание франшизы</div>
+              <div class="detail-card-body-info-text">Российский бренд модной, молодежной одежды BLACK STAR WEAR был впервые запущен в 2010 году в составе музыкального лейбла BLACK STAR INC известным артистом Тимати и его партнером и другом Пашу. Первоначально бренд включал в себя всего несколько футболок с авторскими принтами в ограниченном количестве, но в результате стремительного роста популярности, было принято решение о расширении марки. На данный момент бренд BLACK STAR WEAR развивается самостоятельно.</div>
+              <div class="detail-card-body-info-title">Преимущества</div>
+              <div class="detail-card-body-info-text">Минимальный риск, прибыльный бизнес при экономии ресурсов и времени на формирование стандартов товаров и услуг, бизнес-процессов, маркетинг и рекламу.</div>
+            </div>
+          </div>
+          <div class="detail-card-body-graphics">
+            <div class="detail-card-body-graphics-title">Рост с 2017 г.</div>
+            <div class="detail-card-body-graphics-precent">+128%</div>
+            <div class="detail-card-body-graphics-img"></div>
+          </div>
+        </div>
+          <div class="slider-block">
+            <div class="page-element">
+            <div class="slider-block-header">
+                <div class="slider-block-title">
+                  Перспективные франшизы
+                </div>
+                <div class="slider-btns">
+                  <div class="slider-btn">
+                    <div class="slider-btn-prev" [inlineSVG]="'/assets/svg-icon/arrow-b.svg'"></div>
+                  </div>
+                  <div class="slider-btn">
+                    <div class="slider-btn-next" [inlineSVG]="'/assets/svg-icon/arrow-b.svg'"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-container">
+              <app-perspectives [horizontal]="true"></app-perspectives>
+              <div class="slide-card">
+                <div class="slide-card-row">
+                  <div class="slide-card-logo"></div>
+                  <div class="slide-card-name"></div>
+                </div>
+                <div class="slide-card-row">
+                  <div class="slide-card-title"></div>
+                  <div class="slide-card-precent"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div *ngIf="!currentFranchise" class="detail-card">
+        <div class="page-element">
+          Франшиза была удалена, или еще не создана!
+        </div>
+      </div>
+    </div>
+  <div class="right-block">
+    <div class="page-element page-element-top">
+      <app-franchises-progress [franchise]="currentFranchise"></app-franchises-progress>
+    </div>
+    <div class="page-element">
+      <app-franchises-income [franchise]="currentFranchise"></app-franchises-income>
+    </div>
+  </div>
+</div>
+

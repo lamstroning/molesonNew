@@ -2,24 +2,245 @@
   background: radial-gradient(86.13% 2403.94% at 100% -4.09%, #FFFFFF 0%, rgba(255, 255, 255, 0.19) 0%, rgba(255, 255, 255, 0) 100%), #051C2C;
   border-radius: 5px;
 }
-.balance-row{
+.btn-outline-white {
+  border-width: 2px;
+}
+.balance-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
+  padding: 30px 30px 30px 40px;
+
+  &:last-child {
+    max-width: 727px;
+  }
 }
+.balance-btn {
+  width: 160px;
+  height: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  .btn-outline-white {
+    border-width: 2px;
+  }
+}
+.balance-line {
+  background: #FFFFFF;
+  opacity: 0.2;
+  margin: 0 20px 0 40px;
+}
+
 .balance-block {
   color: white;
+
   p {
     margin-bottom: 0;
   }
+
   b {
-      font-size: 50px;
+    font-size: 50px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 0 15px;
   }
 }
-@media screen and (max-width: 1024px){
+
+.balance-statistic {
+  .balance-statistic-title {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #FFFFFF;
+  }
+  .balance-statistic-price{
+      color: #FFFFFF;
+      font-size: 25px;
+      font-weight: bold;
+    }
+}
+
+.balance-income {
+  color: #31B984;
+  font-weight: bold;
+  font-size: 25px;
+  position: relative;
+  margin-left: 20px;
+
+  &:after {
+    top: 10px;
+    content: '';
+    position: absolute;
+    left: -20px;
+    height: 17px;
+    width: 12px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("/assets/svg-icon/arrow-up.svg");
+  }
+}
+
+.tablet-show {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
   .balance-row {
-    flex-direction: column;
     text-align: center;
+    align-items: center;
+    padding: 15px 60px;
+    width: 100%;
+    flex-direction: row;
+  }
+  .desktop-show {
+    display: none;
+  }
+  .tablet-show {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 80px;
+    .btn {
+      width: 50%;
+    }
+  }
+  .balance-statistic {
+    text-align: left;
+  }
+  .gradient-block {
+    border-radius: 0;
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+  .balance-mobile {
+    display: flex;
+    padding-top: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .balance-block {
+    margin: 0 auto;
+  }
+  .balance-block.tablet-show {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #balance-statistic-1 {
+    margin-top: 3px;
+
+    .balance-statistic-title {
+      margin-bottom: 5px;
+
+    }
+  }
+  #balance-statistic-2{
+    margin-top: 17px;
+    .balance-statistic-title {
+      margin-bottom: 5px;
+
+    }
+  }
+  #balance-statistic-3{
+    margin-top: 9px;
+    top: 8px;
+    position: relative;
+  }
+  .balance-mobile {
+    padding-top: 26px;
+    align-items: stretch;
+  }
+  .balance-block.tablet-show {
+    margin-top: 42px;
+  }
+  .balance-block.tablet-show {
+    flex-direction: column;
+    padding-bottom: 70px;
+    .btn {
+      width: 90%;
+      margin: 0 auto;
+      &:last-child {
+        margin-top: 20px;
+      }
+    }
+  }
+  .balance-mobile {
+    flex-direction: row;
+    .balance-row.left-block {
+      position: relative;
+      top: -7px;
+      left: -4px;
+      justify-content: center;
+      flex-direction: column;
+      display: flex;
+      p:first-child {
+        top: -3px;
+        position: relative;
+      }
+    }
+    .balance-row.right-block {
+      padding-left: 26px;
+      display: block;
+    }
+    .balance-line {
+      margin: 0;
+      position: relative;
+      left: 1px;
+      height: 250px;
+      width: 1px;
+    }
+    .balance-row {
+      .balance-block {
+        text-align: left;
+        p {
+          font-size: 16px;
+        }
+      }
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 0;
+      text-align: left;
+      p {
+        font-size: 12px;
+
+        b {
+          font-size: 35px;
+        }
+      }
+
+      .balance-statistic {
+        .balance-statistic-title {
+          margin-bottom: 0;
+          font-size: 12px;
+        }
+        .mb-0 {
+          margin-bottom: 15px!important;
+        }
+        .balance-income {
+          margin-top: 10px;
+          margin-left: 13px;
+          font-size: 20px;
+          position: relative;
+          top: -4px;
+          &:after {
+            top: 8px;
+            left: -14px;
+            height: 14px;
+            width: 12px;
+          }
+        }
+        .balance-statistic-price {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .gradient-block {
+    margin-left: -15px;
+    margin-right: -15px;
   }
 }

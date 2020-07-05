@@ -1,0 +1,159 @@
+.page-area {
+  display: flex;
+
+  .main-block {
+    width: 100%;
+
+    .block-body {
+      margin-top: 50px;
+    }
+  }
+
+  .page-element {
+    margin: 30px 0;
+  }
+
+  .right-block {
+    max-width: 380px;
+    width: 100%;
+    margin-left: 90px;
+  }
+}
+
+.operations-list {
+  &:last-child {
+    .operations-row {
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .operations-area {
+    .operations-data {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .operations-container {
+      .operations-row {
+        border-bottom: 1px solid #33051C2C;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 0;
+
+        &:first-child {
+          padding-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 50px;
+        }
+
+        .operations-col {
+          display: flex;
+          align-items: center;
+          .operations-png-ico {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: contain;
+            border-radius: 50%;
+          }
+          .operations-bg-ico {
+            width: 33px;
+            height: 33px;
+            display: flex;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+
+            .operations-ico {
+
+            }
+          }
+
+          .operations-title {
+            margin-left: 15px;
+            font-size: 20px;
+            color: #051C2C;
+          }
+
+          .operations-sum {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1480px) {
+
+  .right-block {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main-block {
+    margin: 40px 30px 30px 30px;
+  }
+  .operations-list {
+
+    .operations-area {
+      .operations-data {
+      }
+
+      .operations-container {
+        .operations-row {
+          .operations-col {
+            .operations-bg-ico {
+              .operations-ico {
+              }
+            }
+            .operations-title {
+              font-size: 18px;
+            }
+            .operations-sum {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-block {
+    margin: 15px 16px;
+  }
+
+
+  .operations-list {
+
+    .operations-area {
+      .operations-data {
+      }
+
+      .operations-container {
+        .operations-row {
+          .operations-col {
+            .operations-bg-ico {
+              .operations-ico {
+              }
+            }
+            .operations-title {
+              font-size: 14px;
+            }
+            .operations-sum {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

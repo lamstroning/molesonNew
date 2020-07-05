@@ -1,9 +1,9 @@
 header  {
-  height: 90px;
+  height: 70px;
   padding: 0 80px;
   display: flex;
   align-items: center;
-  transition: 0.2s;
+  transition: 0.4s;
   background-color:  #051C2C;
   .burger-btn {
     display: none;
@@ -16,32 +16,39 @@ header  {
   }
   .logo {
     color: white;
-    width: 211px;
-    height: 36px;
+    width: 126px;
+    height: 23px;
   }
   .header-container {
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  .dropdown-element {
-
+    .wallet-block {
+      min-width: 200px;
+    }
+    .contact-block {
+      min-width: 243px;
+    }
+    .lang-block {
+      min-width: 100px;
+      max-width: 117px;
+    }
   }
   .profile {
-    width: 284px;
+    min-width: 284px;
     position: relative;
   }
   .header-element {
     height: 100%;
     color: white;
-    padding: 20px 40px;
+    padding: 10px 40px;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     p {
-      font-size: 14px;
+      font-size: 12px;
       margin: 0;
       b{
-        font-size: 20px;
+        font-size: 18px;
       }
     }
   }
@@ -50,6 +57,7 @@ header  {
   header {
     padding: 0 40px;
     .header-element {
+      width: 100%;
       height: 100%;
       color: white;
       padding: 20px 40px;
@@ -64,10 +72,29 @@ header  {
     }
   }
 }
+@media screen and (max-width: 1480px) {
+  header  {
+    .header-container {
+      .header-element {
+        padding: 20px;
+      }
+      .wallet-block {
+      }
+      .contact-block {
+        min-width: 180px;
+      }
+      .lang-block {
+      }
+    }
+  }
+}
 @media screen and (max-width: 1024px) {
   .open-header {
     max-height: 100%;
     overflow-y: auto;
+    .header-element {
+      opacity: 1;
+    }
     .burger-btn {
       transform: rotate(90deg);
       background-image: url("/assets/svg-icon/cross.svg");
@@ -82,17 +109,23 @@ header  {
     overflow: hidden;
     flex-direction: column;
     height: auto;
-    padding: 0 16px;
+    padding: 0;
     max-height: 56px;
     align-items: flex-start;
     background-color: white;
     .header-container {
+      &:first-child {
+        padding: 0 16px;
+      }
       &:last-child {
         flex-direction: column;
       }
       max-width: 100%;
       width: 100%;
       margin-top: 20px;
+      .header-element {
+        padding: 0;
+      }
     }
     .burger-btn {
       display: block;
@@ -100,11 +133,14 @@ header  {
     .logo {
       color: #051C2C;
       width: 91px;
-      height: 15px;
-      margin-top: -16px;
+      height: 17px;
+      margin-top: -11px;
+      margin-left: 0;
     }
     .header-element {
-      padding: 20px 0;
+      transition: 0.2s;
+      opacity: 0;
+      padding: 0;
       color: #051C2C;
     }
   }

@@ -1,0 +1,94 @@
+.page-section {
+  .hr-full {
+    margin: 10px -40px 40px -40px;
+    height: 1px;
+    background-color: #cdd2d5;
+    border-top: none;
+  }
+  .last-hr {
+    display: none;
+  }
+  .page-section-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    border-top: 1px solid #cdd2d5;
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    .page-section-col {
+      display: flex;
+      align-items: center;
+
+      .status-point {
+        margin-right: 10px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+
+      .franchise-name {
+      }
+
+      .franchise-cost {
+        margin-right: 5px;
+      }
+
+      .franchise-percent {
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h3.page-element-title {
+    margin-bottom: 10px;
+  }
+  .page-section {
+    .last-hr {
+      display: block;
+      margin-bottom: 0!important;
+    }
+    hr.hr-full {
+      margin: 0 0 50px 0;
+      height: 1px;
+    }
+    .page-section-row {
+      padding: 20px 0;
+
+      &:first-child {
+
+      }
+
+      &:last-child {
+
+      }
+
+      .page-section-col {
+
+        .status-point {
+
+        }
+
+        .franchise-name {
+          font-size: 14px;
+        }
+
+        .franchise-cost {
+          font-size: 12px;
+        }
+
+        .franchise-percent {
+
+        }
+      }
+    }
+  }
+}

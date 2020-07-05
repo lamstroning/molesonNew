@@ -1,1 +1,29 @@
-<p>news works 2!</p>
+<div class="page-area">
+  <div class="main-block">
+    <div class="block-header mobile-show">
+      <div class="back-btn" [routerLink]="'/dashboard'">
+        <div [inlineSVG]="'/assets/svg-icon/arrow.svg'" class="back-btn-arrow"></div>
+        На главную
+      </div>
+      <div class="block-header-title">
+        <h2>Новости</h2>
+      </div>
+    </div>
+    <div class="news-catalog">
+      <div *ngFor="let newItem of newsList | slice:0:maxElements; let i = index"
+           class="news-catalog-item"
+           [class.row-first-element]="i  % 3 === 0"
+           [class.row-last-element]="i  % 3 + 1 === 3">
+        <app-news-card
+          *ngIf="i < maxElements"
+          [newCard]="newItem" [position]="i"></app-news-card>
+      </div>
+    </div>
+    <div *ngIf="newsList.length > maxElements" class="catalog-btn" (click)="maxElements = newsList.length">Смотреть еще</div>
+  </div>
+  <div class="right-block">
+    <app-news-breaking></app-news-breaking>
+    <app-social-links></app-social-links>
+  </div>
+</div>
+

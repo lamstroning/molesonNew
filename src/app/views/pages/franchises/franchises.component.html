@@ -1,1 +1,13 @@
-<p>franchises works!</p>
+<div class="page-area">
+  <div class="main-block">
+      <app-franchises-head></app-franchises-head>
+    <div class="catalog-page">
+      <div *ngIf="franchisesService.catalogBlock"><app-franchises-block-catalog></app-franchises-block-catalog></div>
+      <div *ngIf="!franchisesService.catalogBlock"><app-franchises-table-catalog></app-franchises-table-catalog></div>
+    </div>
+  </div>
+  <div class="right-block">
+    <app-last-operations></app-last-operations>
+    <app-social-links></app-social-links>
+  </div>
+</div>

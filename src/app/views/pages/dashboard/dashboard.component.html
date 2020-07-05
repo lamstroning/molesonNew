@@ -5,7 +5,7 @@
     <app-top-franchises></app-top-franchises>
     <app-news-widget></app-news-widget>
   </div>
-  <div class="right-area">
+  <div class="right-area desktop">
     <app-analitics></app-analitics>
     <app-last-operations></app-last-operations>
     <app-social-links></app-social-links>
@@ -13,43 +13,42 @@
 </div>
 
 
-<div *ngIf="width <= 1024" class="page-block page-block-mobile">
-  <div class="row">
-    <div class="col-12">
-      <div class="main-area">
-        <app-balance></app-balance>
-      </div>
-    </div>
-    <div class="col-12">
-      <div class="right-area">
+<div *ngIf="width <= 1024" class="page-block page-block-mobile container-fluid">
+  <app-balance></app-balance>
+  <app-my-franchises></app-my-franchises>
+  <div class="btns-row">
+    <div class="btn btn-white" [class.btn-active]="btnId === 0" (click)="scrollSlider(0)">Аналитика</div>
+    <div class="btn btn-white" [class.btn-active]="btnId === 1" (click)="scrollSlider(1)">Действия</div>
+    <div class="btn btn-white" [class.btn-active]="btnId === 2" (click)="scrollSlider(2)">Рекомендации</div>
+  </div>
+  <div #slider class="slider" (scroll)="switchBtn($event.target)">
+    <div class="slider-container">
+      <div class="slider-container-element">
         <app-analitics></app-analitics>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="main-area">
-        <app-my-franchises></app-my-franchises>
-        <app-top-franchises></app-top-franchises>
-      </div>
-    </div>
-    <div class="col-12">
-      <div class="right-area">
+      <div class="slider-container-element">
         <app-last-operations></app-last-operations>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="main-area slider">
-        <app-news-widget></app-news-widget>
+      <div class="slider-container-element">
+        <div class="page-element ml-0 mr-0">
+          <div class="page-element-header p-0 pb-4 page-element-header-full-line d-flex justify-content-between">
+            <div class="page-element-header-title">Рекомендации</div>
+            <div class="btn btn-primary desktop-show">Перейти в настройки</div>
+          </div>
+          <div class="recommend">
+            <div class="recommend-img"></div>
+            <div class="recommend-title">Личные данных</div>
+            <div class="recommend-desc">Заполните личные данные чтобы пользоваться всеми возможностями платформы
+              Moleson
+            </div>
+          </div>
+          <div class="recommend-btn btn btn-secondary mobile-show">Перейти в настройки</div>
+        </div>
       </div>
     </div>
-    <div class="col-12">
-      <div class="right-area">
-        <app-social-links></app-social-links>
-      </div>
-    </div>
   </div>
+  <app-top-franchises></app-top-franchises>
+  <app-news-widget></app-news-widget>
+  <app-social-links></app-social-links>
 </div>
 

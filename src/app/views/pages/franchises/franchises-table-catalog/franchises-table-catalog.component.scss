@@ -1,0 +1,336 @@
+.franchise-status-mobile {
+  .precent {
+    display: none;
+  }
+}
+
+.precent {
+  border: 1px solid #31B984;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 66px;
+  margin-right: 11px;
+  height: 44px;
+  margin-top: 13px;
+  display: flex;
+  margin-left: 9px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.top-franchises {
+
+  .page-element {
+    display: flex;
+    flex-direction: column;
+    padding: 22px 0 37px 40px;
+
+    .franchise-status {
+      display: flex;
+
+      .franchise-status-block {
+        display: flex;
+        align-items: center;
+
+        .franchise-status-dot {
+          margin-right: 10px;
+          width: 9px;
+          border-radius: 50%;
+          height: 9px;
+        }
+
+        .franchise-status-title {
+          font-size: 12px;
+        }
+      }
+
+    }
+
+    .franchise-body {
+      display: flex;
+      margin-top: 17px;
+
+      .status-block-body {
+        display: none;
+      }
+
+      .franchise-body-block {
+        padding: 0 35px;
+        border-left: 1px solid #33051C2C;
+        height: 60px;
+
+        &:first-child {
+          border-left: none;
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding: 0;
+        }
+
+        .main-info {
+          display: flex;
+
+          .avatar {
+            width: 32px;
+            height: 32px;
+            margin-right: 15px;
+            border-radius: 50%;
+            background-position: 50%;
+            background-size: contain;
+            padding-right: 20px;
+          }
+
+          .franchise-title {
+            font-weight: bold;
+            font-size: 20px;
+          }
+
+          .franchise-adresse {
+            max-width: 170px;
+            font-size: 14px;
+            margin-top: 3px;
+            line-height: 18px;
+          }
+        }
+      }
+
+      .franchise-body-last-block {
+        font-size: 16px;
+        padding-left: 46px;
+
+        .separate {
+          display: none;
+        }
+
+        .last-title {
+          font-size: 14px;
+          margin-top: -1px;
+        }
+
+        > span {
+          display: block;
+          font-weight: bold;
+        }
+      }
+
+      .franchise-body-block.progress-body {
+        font-size: 14px;
+        padding-top: 4px;
+        padding-left: 48px;
+        padding-right: 47px;
+
+        .progress-body-container {
+
+          .progress-body-row {
+            display: flex;
+            justify-content: space-between;
+
+            .progress-body-col {
+
+            }
+
+            .progress-body-row {
+
+            }
+
+            .progress-bar {
+              width: 189px;
+              margin: 7px 0;
+              height: 5px;
+              background: #EEEEEE;
+              border-radius: 19px;
+
+              .progress-bar-full {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .btn-franchise {
+
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .franchise-status-mobile {
+    .precent {
+
+    }
+  }
+
+  .precent {
+    margin-left: auto;
+  }
+
+  .top-franchises {
+
+    .page-element {
+      margin: 30px;
+
+      .franchise-status {
+
+        .franchise-status-block {
+          display: none;
+
+          .franchise-status-dot {
+            display: none;
+          }
+
+          .franchise-status-title {
+
+          }
+        }
+
+      }
+
+      .franchise-body {
+        .status-block-body {
+          display: block;
+
+          .franchise-status-block {
+            display: flex;
+            align-items: center;
+            min-width: 200px;
+
+            .franchise-status-dot {
+              width: 9px;
+              height: 9px;
+              margin-right: 10px;
+              border-radius: 50%;
+            }
+
+            .franchise-status-title {
+
+            }
+
+          }
+        }
+
+        .franchise-body-block {
+          border: none;
+
+          &:first-child {
+
+          }
+
+          &:last-child {
+          }
+
+          .main-info {
+
+            .avatar {
+            }
+
+            .franchise-title {
+
+            }
+
+            .franchise-adresse {
+              max-width: 100%;
+            }
+          }
+        }
+
+        .franchise-body-last-block {
+          display: none;
+
+          .separate {
+
+          }
+
+          .last-title {
+
+          }
+
+          > span {
+
+          }
+        }
+
+        .franchise-body-block.desktop-show {
+          display: flex;
+          justify-content: space-between;
+          flex: 1;
+          align-items: center;
+        }
+
+        .franchise-body-block.progress-body {
+          display: none;
+
+          .progress-body-container {
+
+            .progress-body-row {
+
+              .progress-body-col {
+
+              }
+
+              .progress-body-row {
+
+              }
+
+              .progress-bar {
+
+                .progress-bar-full {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .btn-franchise {
+
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .top-franchises {
+    .page-element {
+      margin: 16px;
+      padding: 20px;
+
+      .franchise-body {
+        font-size: 12px;
+        flex-direction: column;
+        .franchise-body-block {
+          padding: 0;
+          height: auto;
+          .main-info {
+            .franchise-adresse {
+              font-size: 12px;
+              margin-bottom: 20px;
+            }
+            .franchise-title {
+              font-size: 16px;
+            }
+          }
+        }
+        .franchise-body-block.desktop-show {
+          flex-direction: row-reverse;
+          padding-top: 20px;
+          border-top: 1px solid #33051C2C;
+          .precent {
+            margin: 0;
+          }
+        }
+        .status-block-body {
+          .franchise-status-block {
+            min-width: auto;
+          }
+        }
+      }
+    }
+  }
+
+}

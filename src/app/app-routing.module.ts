@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {ViewsComponent} from './views/views.component';
 import {NotFoundComponent} from './views/pages/notFound/notfound.component';
 
 
 const routes: Routes = [
+  {
+    path: 'analytics',
+    loadChildren: () => import('./views/pages/analytics/analytics.module').then(mod => mod.AnalyticsModule),
+  },
   {
     path: 'dashboard',
     loadChildren: () => import('./views/pages/dashboard/dashboard.module').then(mod => mod.DashboardModule),
@@ -33,6 +36,7 @@ const routes: Routes = [
     path: 'help',
     loadChildren: () => import('./views/pages/help/help.module').then(mod => mod.HelpModule),
   },
+
   { path: '**', component: NotFoundComponent }
 ];
 

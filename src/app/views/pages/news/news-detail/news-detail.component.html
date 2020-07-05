@@ -1,0 +1,51 @@
+<div class="page-area">
+  <div class="main-block">
+    <div class="block-header">
+      <div class="back-btn" [routerLink]="'/news'">
+        <div [inlineSVG]="'/assets/svg-icon/arrow.svg'" class="back-btn-arrow"></div>
+        Назад
+      </div>
+    </div>
+    <div class="page-element">
+        <div class="card-item">
+          <div class="card-item-top">
+            <div class="card-item-col">
+              <div class="card-item-data">{{newsDetail.date}}</div>
+            </div>
+            <div class="card-item-col">
+              <div class="card-item-social">
+                <div class="card-item-social-ico" [inlineSVG]="'/assets/svg-icon/news/views.svg'"></div>
+                <div class="card-item-social-title">{{newsDetail.views}}</div>
+              </div>
+              <div class="card-item-social" (click)="newsDetail.myLike = !newsDetail.myLike">
+                <div class="card-item-social-ico" [style.color]="newsDetail.myLike ? '#E74B4B' : '#828E96'" [inlineSVG]="'/assets/svg-icon/news/like.svg'"></div>
+                <div class="card-item-social-title">{{newsDetail.like + newsDetail.myLike}}</div>
+              </div>
+            </div>
+            <div class="card-item-col">
+              <div class="card-item-social">
+                <div class="card-item-social-title">Поделится</div>
+                <div class="card-item-social-ico" [inlineSVG]="'/assets/svg-icon/news/share.svg'"></div>
+              </div>
+          </div>
+          </div>
+          <div class="card-item-title">{{newsDetail.name}}</div>
+          <div class="card-item-img" [style.background-image]="'url('+newsDetail.img+')'"></div>
+          <div class="card-item-body">
+            <div class="card-item-full-desc-title">В детаялх</div>
+            <div class="card-item-full-desc">{{newsDetail.textDetail}}</div>
+            <a href="#" class="more-link">Читать дальше</a>
+          </div>
+        </div>
+
+      <div *ngIf="!newsDetail" class="detail-card">
+        Новость была удалена, или еще не создана!
+      </div>
+    </div>
+  </div>
+  <div class="right-block">
+    <app-news-breaking></app-news-breaking>
+    <app-social-links></app-social-links>
+  </div>
+</div>
+

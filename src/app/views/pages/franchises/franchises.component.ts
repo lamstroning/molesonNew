@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FranchisesService} from '../../../core/franchises/franchises.service';
 
 @Component({
   selector: 'app-franchises',
@@ -6,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./franchises.component.scss']
 })
 export class FranchisesComponent implements OnInit {
-
-  constructor() { }
+  constructor(public franchisesService: FranchisesService) { }
 
   ngOnInit() {
   }

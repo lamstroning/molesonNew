@@ -1,8 +1,8 @@
+<div class="d-flex justify-content-between align-items-center">
+    <h2 class="block-title">Новости</h2>
+    <div *ngIf="width > 1024" class="mt-5 btn btn-news btn-outline-primary pl-5 pr-5" [routerLink]="'/news'">Смотерть все</div>
+</div>
 <div class="slider">
-  <div class="mt-5 d-flex justify-content-between align-items-center">
-    <h2 class="mt-5">Новости</h2>
-    <div *ngIf="width > 1024" class="mt-5 btn btn-outline-primary pl-5 pr-5">Смотерть все</div>
-  </div>
 
   <div class="news-container">
     <div class="news-col">
@@ -22,5 +22,5 @@
       </div>
     </div>
   </div>
-  <div *ngIf="width <= 1024" class="mt-5 btn btn-outline-primary pl-5 pr-5">Смотерть все</div>
 </div>
+<div *ngIf="width <= 1024" class="btn btn-outline-primary pt-3 pb-3 w-100" [routerLink]="'/news'">Все новости</div>

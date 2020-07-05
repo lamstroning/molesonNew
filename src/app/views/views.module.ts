@@ -24,13 +24,22 @@ import {NewsWidgetComponent} from './widget/news/news-widget.component';
 import {FranchisesService} from '../core/franchises/franchises.service';
 import {BlocksModule} from './blocks/blocks.module';
 import {HeaderModule} from './blocks/header/header.module';
-
-
+import { AnalyticsComponent } from './pages/analytics/analytics.component';
+import {AnalyticsModule} from './pages/analytics/analytics.module';
+import { OperationsComponent } from './pages/operations/operations.component';
+import {NewsModule} from './pages/news/news.module';
+import {NewsDetailComponent} from './pages/news/news-detail/news-detail.component';
+import {FranchisesModule} from './pages/franchises/franchises.module';
+import { CabinetComponent } from './pages/auth/cabinet/cabinet.component';
+import { ProfileComponent } from './pages/auth/cabinet/profile/profile.component';
+import { SettingsComponent } from './pages/auth/cabinet/settings/settings.component';
+import { VerificationComponent } from './pages/auth/cabinet/verification/verification.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
+    NewsDetailComponent,
     ViewsComponent,
     MyWalletComponent,
     FranchisesComponent,
@@ -45,17 +54,29 @@ import {HeaderModule} from './blocks/header/header.module';
     SocialLinksComponent,
     MyFranchisesComponent,
     TopFranchisesComponent,
+    AnalyticsComponent,
+    OperationsComponent,
+    CabinetComponent,
+    ProfileComponent,
+    SettingsComponent,
+    VerificationComponent,
   ],
-  imports: [
-    DashboardModule,
-    BlocksModule,
-    HttpClientModule,
-    InlineSVGModule.forRoot(),
-    CommonModule,
-    HeaderModule,
-    RouterModule
-  ],
+    imports: [
+        DashboardModule,
+        BlocksModule,
+        HttpClientModule,
+        InlineSVGModule.forRoot(),
+        CommonModule,
+        HeaderModule,
+        RouterModule,
+        AnalyticsModule,
+        NewsModule,
+        FranchisesModule
+    ],
   providers: [FranchisesService],
+  exports: [
+    SocialLinksComponent
+  ],
   bootstrap: []
 })
 

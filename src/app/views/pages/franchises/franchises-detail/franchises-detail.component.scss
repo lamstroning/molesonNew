@@ -1,0 +1,293 @@
+.detail-card-header {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  .detail-card-header-block {
+    .detail-card-title {
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .detail-card-adresse {
+      margin-top: 8px;
+      padding-left: 10px;
+
+      &:before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        left: -10px;
+        top: 3px;
+        position: relative;
+        display: inline-block;
+        background-image: url(/assets/svg-icon/rus.svg);
+      }
+    }
+  }
+}
+
+.star {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.share {
+  display: inline-block;
+}
+.slider-container {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+.detail-card-img-area {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  .detail-card-img {
+    max-width: 770px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 410px;
+    border-radius: 5px;
+  }
+
+  .detail-card-img-slider {
+    margin-left: 30px;
+    max-width: 130px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 410px;
+
+    .detail-card-img-slide {
+      width: 100%;
+      height: 80px;
+      border-radius: 5px;
+    }
+  }
+}
+
+.detail-card-body {
+  display: flex;
+  margin-top: 40px;
+
+  .detail-card-body-info {
+    width: 610px;
+
+    .page-element {
+      margin-top: 0;
+    }
+    .detail-card-body-info-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin-top: 33px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .detail-card-body-graphics {
+    margin-left: 30px;
+    width: 290px;
+    height: 245px;
+    border-radius: 4px;
+    background: #FFFFFF;
+    position: relative;
+
+    .detail-card-body-graphics-title {
+      margin-top: 25px;
+      padding: 0 20px;
+      font-size: 14px;
+    }
+
+    .detail-card-body-graphics-precent {
+      padding: 0 20px;
+      font-weight: bold;
+      font-size: 30px;
+      color: #31B984;
+    }
+    .detail-card-body-graphics-img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      background-position-y: 100%;
+      background-image: url(/assets/svg-icon/graphic.svg);
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.btns-row {
+  margin-top: 30px;
+
+  .btn {
+    background-color: white;
+    width: 210px;
+    height: 40px;
+    font-size: 14px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+
+.detail-card-header-block.mobile-show {
+  display: none;
+}
+
+.detail-card-header-block.desktop-show {
+  display: flex;
+  align-items: center;
+  margin-right: 110px;
+}
+
+.slider-block {
+  .slider-block-header {
+    display: flex;
+    justify-content: space-between;
+
+    .slider-block-title {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .slider-btns {
+      display: flex;
+      width: 96px;
+      justify-content: space-between;
+      .slider-btn {
+        width: 33px;
+        height: 33px;
+        background: #E6E9EA;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        .slider-btn-prev {
+          transform: rotate(90deg);
+        }
+        .slider-btn-next {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+}
+.right-block {
+  .page-element-top {
+    margin-top:75px;
+  }
+}
+.mobile-block {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .mobile-block {
+    display: block;
+  }
+  .btns-row {
+    margin-left: 0;
+  }
+  .detail-card-body {
+    flex-direction: column;
+    .detail-card-body-info{
+      width: 100%;
+    }
+    .detail-card-body-graphics {
+      width: 100%;
+      margin-left: 0;
+      .detail-card-body-graphics-title {
+
+      }
+
+      .detail-card-body-graphics-precent {
+
+      }
+      .detail-card-body-graphics-img {
+        background-size: contain;
+        background-image: url(/assets/svg-icon/graphic-long.svg);
+
+      }
+    }
+  }
+  .slider-block {
+    .page-element {
+      padding: 0;
+      margin-top: 50px;
+      background: transparent;
+    }
+    .slider-block-header {
+
+      .slider-block-title {
+        font-size: 30px;
+      }
+
+      .slider-btns {
+        display: none;
+        .slider-btn {
+
+          .slider-btn-prev {
+          }
+          .slider-btn-next {
+
+          }
+        }
+      }
+    }
+  }
+  .detail-card-header-block.desktop-show {
+    display: none;
+  }
+  .detail-card-header-block.mobile-show {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+  }
+  .page-area {
+    padding: 0 16px;
+  }
+  .block-header {
+    .back-btn {
+      margin-top: 15px;
+    }
+  }
+  .detail-card-top {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .detail-card-img-area {
+      .detail-card-img {
+        margin: 0 -15px;
+        height: 285px;
+        max-width: calc(100% + 30px);
+        width: calc(100% + 30px);
+        border-radius: 0;
+      }
+
+      .detail-card-img-slider {
+        display: none;
+      }
+    }
+  }
+  .detail-card-header {
+    .detail-card-header-block {
+      .detail-card-title {
+        font-size: 20px;
+      }
+    }
+
+    .detail-card-adresse {
+      font-size: 12px;
+    }
+  }
+}

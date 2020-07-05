@@ -1,16 +1,42 @@
+.hide-header {
+  padding: 40px;
+  .page-element-header {
+    display: none!important;
+  }
+  .analytics{
+    #canvas{
+      margin-top: 0;
+    }
+  }
+  .btn-more {
+    display: none;
+  }
+}
+.btn-header {
+  width: 106px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
 .statistic-row {
   padding: 27px 0;
   .statistic-type {
     width: 13px;
     height: 13px;
     border-radius: 50%;
+    margin-right: 10px;
     display: inline-block;
   }
   .statistic-end{
     font-size: 20px;
   }
+  .statistic-title {
+    font-size: 18px;
+  }
   .statistic-end-cost{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
   }
   .statistic-cost {
@@ -19,12 +45,122 @@
     font-size: 20px;
   }
 }
+.mobile-show {
+  display: none;
+}
 #canvas{
   background-image: url("/assets/svg-icon/diogramm.svg");
   width: 100%;
   margin: 30px 0;
+  height: 226px;
   max-width: 100%;
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: contain;
+}
+
+@media screen and (max-width: 1024px) {
+  .analytics {
+    display: flex;
+    .analytics-block {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .statistic-row {
+        &:first-child {
+          border-top: none!important;
+        }
+        width: 100%;
+      }
+      #canvas {
+        width: 207px;
+        margin-right: auto;
+        height: 207px;
+      }
+    }
+  }
+  .mobile-show {
+    display: block;
+  }
+  .desktop-show {
+    display: none;
+  }
+  #canvas {
+    height: 164px;
+  }
+  .statistic-row {
+    padding: 20px 0;
+    .statistic-end{
+      font-size: 12px;
+    }
+    .statistic-end-cost {
+      font-size: 18px;
+    }
+    .statistic-cost {
+      margin-top: 15px;
+      font-size: 16px;
+    }
+    .statistic-title {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .page-element {
+    padding: 17px;
+    .page-element-header {
+      margin-bottom: 0;
+    }
+    .page-element-header-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #051C2C;
+    }
+  }
+  .analytics {
+    flex-direction: column;
+
+    .analytics-block {
+      width: 100%;
+      &:last-child {
+        margin-top: 23px;
+      }
+      #canvas {
+        width: 164px;
+        height: 164px;
+        margin: 14px auto 0;
+      }
+      .btn-more {
+        margin-top: 8px;
+        font-size: 14px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .statistic-row-end {
+
+    }
+    .statistic-row {
+        margin-top: -6px;
+      &:first-child {
+        margin-top: 0
+      }
+      .statistic-type {
+        width: 9px;
+        height: 9px;
+        margin-right: 9px;
+      }
+      .statistic-end-cost {
+        margin-top: 6px;
+      }
+      .statistic-cost {
+        margin-top: 11px;
+      }
+    }
+  }
 }

@@ -1,0 +1,46 @@
+<div class="page-area">
+  <div class="main-block">
+    <div class="block-header">
+      <div class="back-btn" [routerLink]="'/dashboard'">
+        <div [inlineSVG]="'/assets/svg-icon/arrow.svg'" class="back-btn-arrow"></div>
+        Назад
+      </div>
+      <div class="block-header-title">
+        <h2>Аналитика</h2>
+      </div>
+    </div>
+    <div class="btns-row">
+      <div class="btn btn-white" [class.btn-active]="btnId === 0" (click)="btnId = 0">Аналитика</div>
+      <div class="btn btn-white" [class.btn-active]="btnId === 1" (click)="btnId = 1">Франшизы</div>
+      <div class="btn btn-white" [class.btn-active]="btnId === 2" (click)="btnId = 2">Доходность</div>
+    </div>
+    <div class="block-body">
+      <div class="row mobile-row">
+        <div class="col-12 col-xl-7" [class.show-block]="btnId === 1">
+          <div class="page-element">
+            <app-workspace></app-workspace>
+          </div>
+        </div>
+        <div class="col-12 col-xl-5" [class.show-block]="btnId === 0">
+          <app-analitics [showHeader]="false"></app-analitics>
+        </div>
+        <div class="col-12 col-xl-12 bottom-block" [class.show-block]="btnId === 2">
+          <div class="page-element">
+            <app-income></app-income>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-block">
+    <div class="page-element">
+      <div class="page-element-header page-element-header-full-line">
+        <h3>
+          Перспективные франшизы
+        </h3>
+      </div>
+      <app-perspectives></app-perspectives>
+    </div>
+  </div>
+</div>
+

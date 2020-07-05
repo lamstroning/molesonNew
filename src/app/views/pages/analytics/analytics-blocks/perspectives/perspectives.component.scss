@@ -1,0 +1,163 @@
+.perspective.horizontal {
+    &::-webkit-scrollbar{width: 0; }
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    overflow: auto;
+    display: flex;
+    margin-right: -30px;
+    margin-left: -30px;
+    &:after {
+      content: '';
+      min-width: 15px;
+      display: block;
+    }
+    &:before {
+      content: '';
+      min-width: 15px;
+      display: block;
+    }
+    .perspective-item {
+      margin: 0 15px;
+      min-width: 224px;
+      height: 151px;
+      .perspective-item-income {
+        font-size: 20px;
+        margin-top: 0;
+      }
+      .perspective-item-title {
+        font-size: 12px;
+      }
+      .perspective-item-logo {
+        width: 31px;
+        height: 31px;
+    }
+  }
+  .btn-more {
+    display: none;
+  }
+}
+.perspective-item {
+  margin-top: 30px;
+  height: 180px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  .perspective-item-logo {
+    width: 42px;
+    margin-right: 10px;
+    height: 42px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+  }
+  .perspective-item-top {
+    display: flex;
+    align-items: center;
+  }
+  .perspective-item-income {
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 2px;
+  }
+  .perspective-item-name {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .perspective-item-title {
+    font-size: 14px;
+  }
+}
+.btn-more {
+  margin-top: 40px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: #FF9F19;
+  color: white
+}
+@media screen and (max-width: 1024px) {
+  .perspective {
+    &::-webkit-scrollbar{width: 0; }
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    overflow: auto;
+    display: flex;
+    margin-right: -30px;
+    margin-left: -30px;
+    &:after {
+      content: '';
+      min-width: 15px;
+      display: block;
+    }
+    &:before {
+      content: '';
+      min-width: 15px;
+      display: block;
+    }
+    .perspective-item {
+      margin: 0 15px;
+      min-width: 224px;
+      height: 151px;
+      .perspective-item-income {
+        font-size: 20px;
+        margin-top: 0;
+      }
+      .perspective-item-title {
+        font-size: 12px;
+      }
+      .perspective-item-logo {
+        width: 31px;
+        height: 31px;
+      }
+    }
+  }
+  .btn-more {
+    color: black;
+    background-color: transparent;
+    border: 2px solid #FF9F19;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-top: 13px;
+    &:hover {
+      background-color: #FF9F19;
+      color: white
+    }
+  }
+}
+@media screen and (max-width: 480px){
+  .perspective {
+
+    &:after {
+      min-width: 27px;
+
+    }
+    &:before {
+      min-width: 27px;
+
+    }
+    .perspective-item {
+      margin: 0 4px;
+      min-width: 239px;
+      height: 180px;
+      .perspective-item-income {
+        margin-top: 4px;
+        font-size: 25px;
+      }
+      .perspective-item-title {
+
+      }
+      .perspective-item-logo {
+        width: 42px;
+        height: 42px;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<div class="page-element">
+  <div class="card-item">
+    <div class="card-item-img" [routerLink]="['/news-detail', newCard.id]" [style.background-image]="'url('+newCard.img+')'"></div>
+    <div class="card-item-body">
+      <div class="card-item-title">{{newCard.name}}</div>
+      <div class="card-item-short-desc">{{newCard.textPreview}}</div>
+    </div>
+    <div class="card-item-bottom">
+      <div class="card-item-col">
+        <div class="card-item-data">{{newCard.date}}</div>
+      </div>
+      <div class="card-item-col">
+        <div class="card-item-views">
+          <div class="card-item-views-ico"  [inlineSVG]="'/assets/svg-icon/news/views.svg'"></div>
+          <div class="card-item-views-count">{{newCard.views}}</div>
+        </div>
+        <div class="card-item-likes" (click)="newCard.myLike = !newCard.myLike">
+          <div class="card-item-likes-ico" [style.color]="newCard.myLike ? '#E74B4B' : '#828E96'" [inlineSVG]="'/assets/svg-icon/news/like.svg'"></div>
+          <div class="card-item-likes-count">{{newCard.like + newCard.myLike}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

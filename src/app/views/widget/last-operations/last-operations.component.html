@@ -1,7 +1,7 @@
 <div class="page-element ml-0 mr-0">
   <div class="page-element-header p-0 pb-4 page-element-header-full-line d-flex justify-content-between">
     <div class="page-element-header-title">Последние действия</div>
-    <div class="btn btn-primary">еще</div>
+    <div class="btn-header btn btn-primary desktop-show font-weight-bold" [routerLink]="'/operations'">Ещё</div>
   </div>
   <div class="page-body">
     <div class="hor-line"></div>
@@ -16,4 +16,5 @@
         </div>
     </div>
   </div>
+  <div class="btn btn-secondary mobile-show pt-2 pb-2" [routerLink]="'/operations'">Подробнее</div>
 </div>

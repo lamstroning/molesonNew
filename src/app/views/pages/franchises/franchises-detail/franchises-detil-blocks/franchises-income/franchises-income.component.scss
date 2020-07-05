@@ -1,0 +1,75 @@
+.income {
+
+  .income-header {
+    display: flex;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #33051C2C;
+    margin-bottom: 10px;
+    .income-header-present-block {
+      font-size: 24px;
+      color: white;
+      margin-right: 20px;
+      width: 94px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #31B984;
+      border-radius: 4px;
+    }
+
+    .income-header-title {
+
+    }
+  }
+
+  .income-body {
+
+    .income-body-row {
+      margin-top: 20px;
+      .income-finish {
+        width: 71px;
+        height: 71px;
+        background: #31B984;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+      .income-body-finish-desc {
+        font-size: 14px;
+        padding: 0 3px;
+        text-align: center;
+      }
+      .income-body-finish-title {
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+      }
+      .income-body-title {
+        font-size: 14px;
+      }
+      .income-body-cost {
+        font-weight: bold;
+        font-size: 20px;
+      }
+      .income-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        background-color: #31B984;
+        height: 50px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .income-btn.finish-btn {
+        background-color: #FF9F19;
+      }
+    }
+  }
+}

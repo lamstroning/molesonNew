@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-analitics',
@@ -7,6 +7,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 })
 export class AnaliticsComponent implements OnInit {
   @ViewChild('canvas', { static: true })
+  @Input() showHeader = true;
   canvas: ElementRef<HTMLCanvasElement>;
   angle = 0;
   sum = 4000;

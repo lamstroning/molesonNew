@@ -5,24 +5,24 @@
         <div class="copyright">© Moleson AG 2020</div>
       </div>
       <div class="footer-link-block">
-        <div class="link-stack">
-          <div class="footer-title">Навигация</div>
-          <div class="footer-link">Главная</div>
+        <div class="link-stack" [class.show-links]="first" (click)="first = !first">
+          <div class="footer-title arrow-dropdown a-d-b">Навигация</div>
+          <div class="footer-link first-footer-link">Главная</div>
           <div class="footer-link">Проекты</div>
           <div class="footer-link">Новости</div>
           <div class="footer-link">Документация</div>
           <div class="footer-link">Помощь</div>
         </div>
-        <div class="link-stack">
-          <div class="footer-title">Мой профиль</div>
-          <div class="footer-link">Мои инвестиции</div>
+        <div class="link-stack" [class.show-links]="second" (click)="second = !second">
+          <div class="footer-title arrow-dropdown a-d-b">Мой профиль</div>
+          <div class="footer-link first-footer-link">Мои инвестиции</div>
           <div class="footer-link">Управление профилем</div>
           <div class="footer-link">Мои операции</div>
           <div class="footer-link">Верификация</div>
         </div>
-        <div class="link-stack">
-          <div class="footer-title">Информация</div>
-          <div class="footer-link">Пользовательское соглашение</div>
+        <div class="link-stack" [class.show-links]="third" (click)="third = !third">
+          <div class="footer-title arrow-dropdown a-d-b">Информация</div>
+          <div class="footer-link first-footer-link">Пользовательское соглашение</div>
           <div class="footer-link">Политика конфиденциальности</div>
           <div class="footer-link">Диверсификация рисков</div>
           <div class="footer-link">Партнёрам</div>

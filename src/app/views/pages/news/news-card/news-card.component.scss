@@ -1,0 +1,72 @@
+.page-element {
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  animation: fadeUp 1s;
+  position: relative;
+  top:0;
+}
+.card-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+.card-item-img {
+  height: 155px;
+  cursor: pointer;
+}
+.card-item-body {
+  padding: 20px;
+  .card-item-title {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .card-item-short-desc {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+.card-item-bottom {
+  padding: 0 20px 20px 20px;
+  display: flex;
+  font-size: 12px;
+  margin-top: auto;
+  justify-content: space-between;
+}
+.card-item-col {
+  display: flex;
+}
+.card-item-data {
+}
+.card-item-views {
+  display: flex;
+  user-select: none;
+  .card-item-views-ico {
+    margin-right: 7px;
+  }
+  .card-item-views-count {
+  }
+}
+.card-item-likes {
+  user-select: none;
+  margin-left: 20px;
+  display: flex;
+  cursor: pointer;
+  .card-item-likes-ico {
+    margin-right: 7px;
+  }
+  .card-item-likes-count {
+  }
+}
+@keyframes fadeUp {
+  from {
+    position: relative;
+    top: -40px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}

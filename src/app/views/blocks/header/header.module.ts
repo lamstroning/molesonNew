@@ -10,20 +10,19 @@ import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    ProfileComponent,
-    LangComponent,
+    // HeaderComponent,
+    // ProfileComponent,
+    // LangComponent,
 
   ],
   imports: [
     CommonModule,
     InlineSVGModule.forRoot(),
-    BlocksModule,
-    RouterModule,
+  //   RouterModule,
   ],
   providers: [],
     exports: [
-        HeaderComponent,
+        // HeaderComponent,
 
     ],
   bootstrap: []

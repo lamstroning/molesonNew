@@ -1,31 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-
-import { ViewsModule } from './views/views.module';
-import {NotFoundComponent} from './views/pages/notFound/notfound.component';
-import {RouterModule, Routes} from '@angular/router';
-import {ViewsComponent} from './views/views.component';
-
-const appRoutes: Routes = [
-  { path: 'views', component: ViewsComponent}
-];
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {ViewsModule} from './views/views.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     ViewsModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
+  exports: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

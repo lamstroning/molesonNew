@@ -18,7 +18,6 @@ export class NewsDetailComponent implements OnInit {
     private activateRoute: ActivatedRoute,
     private newsService: NewsService
   ) {
-
     this.subscription = activateRoute.params.subscribe(params => this.id = params.id);
   }
   ngOnInit() {

@@ -18,15 +18,15 @@ import {AnalyticsComponent} from '../pages/analytics/analytics.component';
 import {OperationsComponent} from '../pages/operations/operations.component';
 import {NewsDetailComponent} from '../pages/news/news-detail/news-detail.component';
 import {FranchisesDetailComponent} from '../pages/franchises/franchises-detail/franchises-detail.component';
-import {CabinetComponent} from '../pages/auth/cabinet/cabinet.component';
-import {VerificationComponent} from '../pages/auth/cabinet/verification/verification.component';
-import {ProfileComponent} from '../pages/auth/cabinet/profile/profile.component';
-import {SettingsComponent} from '../pages/auth/cabinet/settings/settings.component';
-import {Step1Component} from '../pages/auth/cabinet/verification/verification-steps/step1/step1.component';
-import {Step2Component} from '../pages/auth/cabinet/verification/verification-steps/step2/step2.component';
-import {Step4Component} from '../pages/auth/cabinet/verification/verification-steps/step4/step4.component';
-import {Step5Component} from '../pages/auth/cabinet/verification/verification-steps/step5/step5.component';
-import {Step3Component} from '../pages/auth/cabinet/verification/verification-steps/step3/step3.component';
+import {CabinetComponent} from '../pages/cabinet/cabinet.component';
+import {VerificationComponent} from '../pages/cabinet/verification/verification.component';
+import {ProfileComponent} from './header/header-elements/profile/profile.component';
+import {SettingsComponent} from '../pages/cabinet/settings/settings.component';
+import {Step1Component} from '../pages/cabinet/verification/verification-steps/step1/step1.component';
+import {Step2Component} from '../pages/cabinet/verification/verification-steps/step2/step2.component';
+import {Step4Component} from '../pages/cabinet/verification/verification-steps/step4/step4.component';
+import {Step5Component} from '../pages/cabinet/verification/verification-steps/step5/step5.component';
+import {Step3Component} from '../pages/cabinet/verification/verification-steps/step3/step3.component';
 import {WithdrawalComponent} from '../pages/balance/withdrawal/withdrawal.component';
 import {BalancePageComponent} from '../pages/balance/balance.component';
 import { ClientStatusComponent } from './aside/elements/client-status/client-status.component';
@@ -34,151 +34,139 @@ import { MenuComponent } from './aside/elements/menu/menu.component';
 import { ClientLinkComponent } from './aside/elements/client-link/client-link.component';
 import { InviteComponent } from './aside/elements/invite/invite.component';
 import {PartnersAnalyticsComponent} from '../pages/partners/partners-analytics/partners-analytics.component';
-import {AuthComponent} from '../pages/auth/auth/auth.component';
+import {HeaderComponent} from './header/header.component';
+import {LangComponent} from './header/header-elements/lang/lang.component';
 
-const appRoutes: Routes = [
-  {
-    path: 'auth',
-    component: AuthComponent,
-  },
-  {
-    path: '',
-    component: ViewsComponent,
-    children: [
-      {
-        path: '',
-        children: [
-          {
-            path: '',
-            redirectTo: '/dashboard',
-            pathMatch: 'full',
-          },
-          {
-            path: 'analytics',
-            component: AnalyticsComponent
-          },
-          {
-            path: 'operations',
-            component: OperationsComponent
-          }
-        ]
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: 'my-wallet',
-        component: MyWalletComponent
-      },
-      {
-        path: 'franchises',
-        component: FranchisesComponent
-      },
-      {
-        path: 'franchises-detail/:id',
-        component: FranchisesDetailComponent
-      },
-      {
-        path: 'news',
-        component: NewsComponent,
-      },
-      {
-        path: 'news-detail/:id',
-        component: NewsDetailComponent
-      },
-      {
-        path: 'partners',
-        component: PartnersComponent,
-        children: [
-          {
-            path: '',
-            pathMatch: 'full',
-            redirectTo: 'analytics'
-          },
-          {
-            path: 'analytics',
-            component: PartnersAnalyticsComponent
-          },
-        ]
-      },
-      {
-        path: 'docs',
-        component: DocsComponent
-      },
-      {
-        path: 'help',
-        component: HelpComponent
-      },
-      {
-        path: 'balance',
-        component: BalancePageComponent,
-        children: [
-          {
-            path: '',
-            pathMatch: 'full',
-            redirectTo: 'withdrawal'
-          },
-          {
-            path: 'withdrawal',
-            component: WithdrawalComponent
-          }
-        ]
-      },
-      {
-        path: 'cabinet',
-        component: CabinetComponent,
-        children: [
-          {
-            path: '',
-            pathMatch: 'full',
-            redirectTo: 'profile'
-          },
-          {
-            path: 'verification',
-            component: VerificationComponent,
-            children: [
-              {
-                path: '',
-                pathMatch: 'full',
-                redirectTo: 'step1'
-              },
-              {
-                path: 'step1',
-                component: Step1Component
-              },
-              {
-                path: 'step2',
-                component: Step2Component
-              },
-              {
-                path: 'step3',
-                component: Step3Component
-              },
-              {
-                path: 'step4',
-                component: Step4Component
-              },
-              {
-                path: 'step5',
-                component: Step5Component
-              },
-            ]
-          },
-          {
-            path: 'profile',
-            component: ProfileComponent
-          },
-          {
-            path: 'settings',
-            component: SettingsComponent
-          },
-
-        ]
-      },
-    ]
-  }
-];
+// const appRoutes: Routes = [
+//   {
+//     path: '',
+//     component: ViewsComponent,
+//     children: [
+//
+//         {
+//           path: 'analytics',
+//           component: AnalyticsComponent
+//         },
+//         {
+//           path: 'operations',
+//           component: OperationsComponent
+//         },
+//       {
+//         path: 'dashboard',
+//         loadChildren: () => import('../pages/dashboard/dashboard.module').then(mod => mod.DashboardModule),
+//       },
+//       {
+//         path: 'my-wallet',
+//         component: MyWalletComponent
+//       },
+//       {
+//         path: 'franchises',
+//         component: FranchisesComponent
+//       },
+//       {
+//         path: 'franchises-detail/:id',
+//         component: FranchisesDetailComponent
+//       },
+//       {
+//         path: 'news',
+//         component: NewsComponent,
+//       },
+//       {
+//         path: 'news-detail/:id',
+//         component: NewsDetailComponent
+//       },
+//       {
+//         path: 'partners',
+//         component: PartnersComponent,
+//         children: [
+//           {
+//             path: '',
+//             pathMatch: 'full',
+//             redirectTo: 'analytics'
+//           },
+//           {
+//             path: 'analytics',
+//             component: PartnersAnalyticsComponent
+//           },
+//         ]
+//       },
+//       {
+//         path: 'docs',
+//         component: DocsComponent
+//       },
+//       {
+//         path: 'help',
+//         component: HelpComponent
+//       },
+//       {
+//         path: 'balance',
+//         component: BalancePageComponent,
+//         children: [
+//           {
+//             path: '',
+//             pathMatch: 'full',
+//             redirectTo: 'withdrawal'
+//           },
+//           {
+//             path: 'withdrawal',
+//             component: WithdrawalComponent
+//           }
+//         ]
+//       },
+//       {
+//         path: 'cabinet',
+//         component: CabinetComponent,
+//         children: [
+//           {
+//             path: '',
+//             pathMatch: 'full',
+//             redirectTo: 'profile'
+//           },
+//           {
+//             path: 'verification',
+//             component: VerificationComponent,
+//             children: [
+//               {
+//                 path: '',
+//                 pathMatch: 'full',
+//                 redirectTo: 'step1'
+//               },
+//               {
+//                 path: 'step1',
+//                 component: Step1Component
+//               },
+//               {
+//                 path: 'step2',
+//                 component: Step2Component
+//               },
+//               {
+//                 path: 'step3',
+//                 component: Step3Component
+//               },
+//               {
+//                 path: 'step4',
+//                 component: Step4Component
+//               },
+//               {
+//                 path: 'step5',
+//                 component: Step5Component
+//               },
+//             ]
+//           },
+//           {
+//             path: 'profile',
+//             component: ProfileComponent
+//           },
+//           {
+//             path: 'settings',
+//             component: SettingsComponent
+//           },
+//
+//         ]
+//       },
+//     ]
+//   }
+// ];
 
 @NgModule({
   declarations: [
@@ -188,18 +176,24 @@ const appRoutes: Routes = [
     ClientStatusComponent,
     MenuComponent,
     ClientLinkComponent,
-    InviteComponent
+    InviteComponent,
+    HeaderComponent,
+    ProfileComponent,
+    LangComponent,
   ],
   imports: [
-    RouterModule.forChild(appRoutes),
+    // RouterModule.forChild(appRoutes),
+    RouterModule,
     InlineSVGModule.forRoot(),
-    CommonModule
+    CommonModule,
+    HeaderModule
   ],
   providers: [],
   exports: [
     AsideComponent,
     FooterComponent,
-    WalletComponent
+    WalletComponent,
+    HeaderComponent
   ],
   bootstrap: []
 })

@@ -1,30 +1,41 @@
-
-import { NgModule } from '@angular/core';
-import { WorkspaceComponent } from './analytics-blocks/workspace/workspace.component';
-import { IncomeComponent } from './analytics-blocks/income/income.component';
+import {NgModule} from '@angular/core';
+import {WorkspaceComponent} from './analytics-blocks/workspace/workspace.component';
+import {IncomeComponent} from './analytics-blocks/income/income.component';
 import {CommonModule} from '@angular/common';
-import { PerspectivesComponent } from './analytics-blocks/perspectives/perspectives.component';
+import {PerspectivesComponent} from '../../widget/perspectives/perspectives.component';
+import {RouterModule, Routes} from '@angular/router';
+import {AnalyticsComponent} from './analytics.component';
+import {InlineSVGModule} from 'ng-inline-svg';
+import {WidgetModule} from '../../widget/widget.module';
 
-
+const routes: Routes = [
+  {
+    path: '',
+    component: AnalyticsComponent
+  }
+];
 
 @NgModule({
   declarations: [
+    AnalyticsComponent,
     WorkspaceComponent,
     IncomeComponent,
-    PerspectivesComponent
   ],
 
   imports: [
-    CommonModule
+    RouterModule.forChild(routes),
+    CommonModule,
+    InlineSVGModule,
+    WidgetModule
   ],
   providers: [],
   exports: [
     WorkspaceComponent,
     IncomeComponent,
-    PerspectivesComponent
   ],
   bootstrap: []
 })
 
 
-export class AnalyticsModule { }
+export class AnalyticsModule {
+}

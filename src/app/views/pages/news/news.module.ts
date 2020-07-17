@@ -2,28 +2,34 @@
 import { NgModule } from '@angular/core';
 import {NewsService} from '../../../core/news/news.service';
 import { NewsCardComponent } from './news-card/news-card.component';
-import { NewsBreakingComponent } from './news-breaking/news-breaking.component';
 import {InlineSVGModule} from 'ng-inline-svg';
-import {RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from '@angular/common';
+import {NewsComponent} from './news.component';
+import {WidgetModule} from '../../widget/widget.module';
 
-
+const routes: Routes = [
+  {
+    path: '',
+    component: NewsComponent,
+  }
+];
 
 @NgModule({
   declarations: [
     NewsCardComponent,
-    NewsBreakingComponent
+    NewsComponent,
   ],
 
-    imports: [
-        InlineSVGModule,
-        RouterModule,
-        CommonModule,
-    ],
+  imports: [
+    InlineSVGModule,
+    RouterModule.forChild(routes),
+    CommonModule,
+    WidgetModule,
+  ],
   providers: [NewsService],
   exports: [
     NewsCardComponent,
-    NewsBreakingComponent
   ],
   bootstrap: []
 })

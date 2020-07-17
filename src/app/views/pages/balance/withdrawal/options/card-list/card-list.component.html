@@ -1,0 +1,16 @@
+<div class="card-list-title">Выберите карту</div>
+<div class="card-list">
+  <div class="save-card">
+    <div *ngFor="let card of saveCard" class="card-item" [style.background-image]="'url('+card.background+')'">
+      <div class="card-number">**** **** **** {{card.number}}</div>
+      <div class="card-bottom">
+        <div class="card-date">{{card.dateMonth}}/{{card.dateYear}}</div>
+        <div class="card-ico" [inlineSVG]="card.ico"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card-item">
+    <div class="card-title">Добавить карту</div>
+    <div class="plus-btn">+</div>
+  </div>
+</div>

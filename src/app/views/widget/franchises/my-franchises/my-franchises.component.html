@@ -63,7 +63,7 @@
                   <p class="final-cost-title">Общая стоимость</p>
                   <b class="final-cost">100 000 $ / 6 966 336 ₽</b>
                 </div>
-                <div class="btn btn-franchise btn-secondary">Подробнее</div>
+                <div class="btn btn-franchise btn-secondary" [routerLink]="['/franchises-detail', item.id]">Подробнее</div>
               </div>
             </div>
             <div *ngIf="item.progress > 100" class="progress-container">
@@ -86,7 +86,7 @@
                 <p>Стоимость</p>
                 <b class="final-cost">4 000 $</b>
               </div>
-                <div class="btn btn-secondary btn-franchise">Подробнее</div>
+                <div class="btn btn-secondary btn-franchise" [routerLink]="['/franchises-detail', item.id]">Подробнее</div>
               </div>
             </div>
           </div>

@@ -23,8 +23,13 @@
     </div>
     <div class="profile-block-mail">
       <div class="page-element">
-        <div class="mail-status">Почта подтверждена</div>
-        <div class="mail-input"><input class="default-input" type="text"></div>
+        <div class="mail-status">
+          <div class="success-ico" [inlineSVG]="'/assets/svg-icon/success.svg'"></div>
+          Почта подтверждена
+        </div>
+        <div class="mail-input">
+          <input class="default-input" type="text">
+        </div>
         <div class="moleson-btn moleson-btn-secondary">изменить</div>
       </div>
     </div>
@@ -53,9 +58,21 @@
           <div class="input-row">
             <div class="default-input-title">Дата рождения</div>
             <div class="input-select-row">
-              <input type="text" class="default-input">
-              <input type="text" class="default-input">
-              <input type="text" class="default-input">
+              <div class="custom-arrow-dropdown default-field">
+                <select class="form-control">
+                  <option *ngFor="let i of year">{{i}}</option>
+                </select>
+              </div>
+              <div class="custom-arrow-dropdown default-field">
+                <select class="form-control">
+                  <option *ngFor="let i of month">{{i}}</option>
+                </select>
+              </div>
+              <div class="custom-arrow-dropdown default-field">
+                <select class="form-control">
+                  <option *ngFor="let i of days">{{i}}</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="input-row">

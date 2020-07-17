@@ -1,0 +1,16 @@
+.page-element-header {
+  padding: 0 0 20px 0;
+}
+.breaking-news {
+  border-top: 1px solid #E6E9EA;
+  padding: 20px 30px;
+  margin-left: -30px;
+  margin-right: -30px;
+  .breaking-news-title {
+    font-size: 18px;
+  }
+  .breaking-news-date {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}

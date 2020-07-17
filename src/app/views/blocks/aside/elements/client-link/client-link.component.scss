@@ -1,0 +1,37 @@
+
+.client-link-title {
+  font-weight: bold;
+}
+.client-link-subtitle {
+  font-size: 14px;
+  line-height: 19px;
+  margin-top: 2px;
+}
+.client-link-row {
+  margin-top: 2px;
+  .default-input {
+    padding: 5px 15px;
+    font-size: 14px;
+  }
+}
+.client-link-social {
+  margin-top: 16px;
+  .client-link-social-title {
+    font-size: 12px;
+  }
+  .client-link-social-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    .client-link-social-block {
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+      background: #F4F4F5;
+      border-radius: 4px;
+    }
+  }
+}

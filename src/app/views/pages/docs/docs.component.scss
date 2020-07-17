@@ -1,0 +1,42 @@
+.docs-row {
+  border-bottom: 1px solid #F4F4F5;
+  padding: 30px 0;
+  align-items: center;
+  display: flex;
+  &:last-child {
+    border: none;
+  }
+  .docs-ico {
+    margin-right: 10px;
+  }
+  .download-size {
+    margin-left: auto;
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+}
+.block-header {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .block-header {
+    padding: 0 16px;
+    margin-top: 15px;
+    display: flex;
+  }
+  .page-element {
+    background: transparent;
+    padding: 0;
+    .page-element-header {
+      display: none;
+    }
+  }
+  .docs-row {
+    margin: 16px;
+    border-radius: 4px;
+    border: none;
+    padding: 16px;
+    background: white;
+
+  }
+}

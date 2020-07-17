@@ -2,9 +2,15 @@
   <div class="left-menu page-element m-0">
     <div *ngFor="let menuItem of menu.leftMenu" class="left-menu-item" [routerLink]="'/' + menuItem.link"
          [routerLinkActive]="'left-menu-item-active'">
-      <div class="menu-ico" [inlineSVG]="menuItem.icon"></div>
+      <div class="menu-ico" [inlineSVG]="router.isActive( menuItem.link, false) ? menuItem.icon.replace('.svg', '-active.svg') :  menuItem.icon"></div>
       <div class="menu-title">{{menuItem.title}}</div>
     </div>
+  </div>
+  <div class="page-element">
+    <app-client-status></app-client-status>
+  </div>
+  <div class="page-element client-link">
+  <app-client-link></app-client-link>
   </div>
   <div class="inviter-person page-element ml-0 mr-0 arrow-dropdown a-d-b">
     <p>Ваш пригласитель</p>

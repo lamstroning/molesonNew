@@ -1,0 +1,7 @@
+<div class="page-element-header">
+  <div class="page-element-header-title">Срочные новости</div>
+</div>
+<div *ngFor="let item of news" class="breaking-news">
+  <div class="breaking-news-title">{{item.title}}</div>
+  <div class="breaking-news-date">{{item.data}}</div>
+</div>

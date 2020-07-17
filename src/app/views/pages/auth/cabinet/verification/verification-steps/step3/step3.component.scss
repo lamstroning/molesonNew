@@ -1,0 +1,28 @@
+.recommend {
+  padding-top: 40px;
+  .recommend-img {
+    background-position: 50%;
+    background-image: url("/assets/svg-icon/recommend.svg");
+    width: 80%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    height: 150px;
+  }
+  .recommend-title {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+  }
+  .recommend-desc {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+.recommend-btn {
+  margin: 0 auto;
+  display: block;
+  max-width: 207px;
+}

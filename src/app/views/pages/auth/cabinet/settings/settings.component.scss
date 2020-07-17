@@ -1,0 +1,39 @@
+.settings {
+  display: flex;
+  .settings-col {
+    max-width: 530px;
+    width: 100%;
+  }
+  .settings-col.settings-col-small {
+    max-width: 370px;
+    width: 100%;
+    margin-right: 30px;
+  }
+}
+.input-row {
+  margin-top: 30px;
+  .moleson-btn {
+    max-width: 158px;
+  }
+}
+@media screen and (max-width: 1480px) {
+  .settings {
+   flex-direction: column;
+    .settings-col {
+      padding: 0 15px;
+      max-width: 100%;
+    }
+    .settings-col.settings-col-small {
+      max-width: 100%;
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .input-row {
+    .moleson-btn {
+      max-width: 100%;
+    }
+  }
+}

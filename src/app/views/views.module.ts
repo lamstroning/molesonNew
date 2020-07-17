@@ -30,10 +30,14 @@ import { OperationsComponent } from './pages/operations/operations.component';
 import {NewsModule} from './pages/news/news.module';
 import {NewsDetailComponent} from './pages/news/news-detail/news-detail.component';
 import {FranchisesModule} from './pages/franchises/franchises.module';
-import { CabinetComponent } from './pages/auth/cabinet/cabinet.component';
-import { ProfileComponent } from './pages/auth/cabinet/profile/profile.component';
-import { SettingsComponent } from './pages/auth/cabinet/settings/settings.component';
-import { VerificationComponent } from './pages/auth/cabinet/verification/verification.component';
+import {CabinetModule} from './pages/auth/cabinet/cabinet-module';
+import {CabinetComponent} from './pages/auth/cabinet/cabinet.component';
+import { WithdrawalComponent } from './pages/balance/withdrawal/withdrawal.component';
+import {BalancePageComponent} from './pages/balance/balance.component';
+import {BalancePageModule} from './pages/balance/balance-page.module';
+import {PartnersAnalyticsComponent} from './pages/partners/partners-analytics/partners-analytics.component';
+import { AuthComponent } from './pages/auth/auth/auth.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
 
 
 @NgModule({
@@ -43,6 +47,7 @@ import { VerificationComponent } from './pages/auth/cabinet/verification/verific
     ViewsComponent,
     MyWalletComponent,
     FranchisesComponent,
+    CabinetComponent,
     NewsComponent,
     NewsWidgetComponent,
     PartnersComponent,
@@ -56,10 +61,11 @@ import { VerificationComponent } from './pages/auth/cabinet/verification/verific
     TopFranchisesComponent,
     AnalyticsComponent,
     OperationsComponent,
-    CabinetComponent,
-    ProfileComponent,
-    SettingsComponent,
-    VerificationComponent,
+    PartnersAnalyticsComponent,
+    WithdrawalComponent,
+    BalancePageComponent,
+    AuthComponent,
+    RegisterComponent
   ],
     imports: [
         DashboardModule,
@@ -71,11 +77,15 @@ import { VerificationComponent } from './pages/auth/cabinet/verification/verific
         RouterModule,
         AnalyticsModule,
         NewsModule,
-        FranchisesModule
+        CabinetModule,
+        FranchisesModule,
+        BalancePageModule,
+        HelpModule
     ],
   providers: [FranchisesService],
   exports: [
-    SocialLinksComponent
+    SocialLinksComponent,
+    LastOperationsComponent
   ],
   bootstrap: []
 })

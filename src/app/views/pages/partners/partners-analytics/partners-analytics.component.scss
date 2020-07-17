@@ -1,0 +1,305 @@
+.partners-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 9px;
+  .partners-block {
+    margin-right: 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 290px;
+    width: 100%;
+    height: 129px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 20px;
+    .partners-block-name {
+      padding-right: 40px;
+      line-height: 16px;
+      font-size: 14px;
+    }
+    .partners-block-cost {
+      font-size: 25px;
+      line-height: 28px;
+      font-weight: bold;
+    }
+    &:last-child {
+      padding: 20px 18px;
+    }
+    &:nth-child(3n + 3) {
+      margin-right: 0;
+    }
+  }
+  .partners-block-stars-row {
+    display: flex;
+    width: 56px;
+    justify-content: space-between;
+
+    .partners-block-star {
+      display: flex;
+    }
+  }
+  .partners-block-info {
+    position: relative;
+    top: 3px;
+  }
+  .black-block {
+    background-color: #051C2C;
+    color: white;
+    .partners-block-status {
+      padding-left: 14px;
+      font-size: 18px;
+      position: relative;
+      top: -1px;
+      display: flex;
+      align-items: center;
+      &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background-color: #31B984;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.partners-row {
+  height: 69px;
+  background-color: white;
+  margin-top: 20px;
+  line-height: 18px;
+  border-radius: 5px;
+  padding: 14px 20px 11px 20px;
+  font-size: 14px;
+  display: grid;
+  grid-template-columns: 35px 130px 120px repeat(4, 1fr) 20px;
+}
+.col-name {
+  max-width: 50px;
+}
+.more-btn {
+  transform: rotate(180deg);
+}
+.pagination {
+  margin-top: 30px;
+  .pagination-number-row {
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+    .pagination-number {
+      height: 39px;
+      width: 39px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      &.active-number {
+        border-radius: 5px;
+        background-color: #051C2C;
+        color: white;
+      }
+    }
+  }
+  .pagination-btn {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 39px;
+    width: 39px;
+    border-radius: 5px;
+    &.disable-btn {
+      opacity: 0.7;
+    }
+    &.btn-prev {
+      transform: rotate(90deg);
+      margin-left: 30px;
+    }
+    &.btn-next {
+      margin-right: 30px;
+      transform: rotate(-90deg);
+    }
+  }
+}
+.partners-row-img {
+  width: 21px;
+  height: 21px;
+  background-position: 50%;
+  background-size: contain;
+  border-radius: 50%;
+  position: relative;
+  left: -5px;
+  &:first-child {
+    left: 0;
+  }
+
+  &:last-child {
+    left: -10px;
+  }
+}
+
+.partners-row-col {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.partners-block {
+  display: flex;
+}
+.partners-lists {
+  margin-top: 50px;
+  .partners-lists-title {
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 31px;
+  }
+  .partners-row-header {
+    padding: 0 55px 0 55px;
+    font-size: 12px;
+    margin-top: 29px;
+    line-height: 14px;
+    grid-gap: 25px;
+    display: grid;
+    grid-template-columns: 100px repeat(4, 1fr) 138px;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .partners-container {
+    justify-content: space-between;
+    .partners-block {
+      max-width: 48%;
+      margin-right: 20px;
+      &:nth-child(3n + 3) {
+        margin-right: 20px;
+      }
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .btn-more {
+    background-color: #051C2C;
+    width: 33px;
+    height: 19px;
+    display: flex;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+  }
+  .partners-row {
+    height: auto;
+    padding: 20px 30px;
+    margin: 40px 0;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+    .partners-row-head {
+      border-bottom: 1px solid #cdd2d5;
+      margin-right: -30px;
+      padding: 0 30px 20px 30px;
+      margin-left: -30px;
+      grid-column: span 3;
+      display: flex;
+      justify-content: space-between;
+    }
+    .partners-row-col {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .partners-row-col-name {
+      opacity: 0.7;
+    }
+    .partners-row-col-value {
+      display: flex;
+      margin-top: 15px;
+      font-size: 16px;
+      &.fsz-14 {
+        font-size: 14px;
+      }
+    }
+    .data-block {
+      display: flex;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .partners-row {
+    grid-template-columns: 1fr;
+    grid-template-areas:  "post-1"
+                          "post-2"
+                          "post-3"
+                          "post-4"
+                          "post-5"
+                          "post-6";
+    .partners-row-head {
+      grid-column: span 1;
+      .partners-row-col {
+        border-bottom: 0;
+        flex-direction: column;
+      }
+    }
+    .partners-row-col {
+      padding-bottom: 15px;
+      flex-direction: row;
+      border-bottom: 1px solid #051C2C33;
+      justify-content: space-between;
+
+    }
+  }
+  .partners-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-left: 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    &:after {
+      min-width: 1px;
+      content:'';
+    }
+    &::-webkit-scrollbar { width: 0; }
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    .partners-block {
+      min-width: 239px;
+      max-width: 239px;
+      margin-right: 24px!important;
+    }
+  }
+  .partners-col-1 {
+    grid-area: post-1;
+  }
+  .partners-col-2 {
+    grid-area: post-2;
+  }
+  .partners-col-3 {
+    grid-area: post-3;
+  }
+  .partners-col-4 {
+    grid-area: post-4;
+  }
+  .partners-col-5 {
+    grid-area: post-5;
+  }
+  .partners-col-6 {
+    border-bottom: 0!important;
+    grid-area: post-6;
+  }
+}

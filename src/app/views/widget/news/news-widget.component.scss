@@ -11,15 +11,25 @@
   align-items: center;
   white-space: nowrap;
 }
+.news-col[_ngcontent-piq-c14] {
+
+}
 .news-col {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:last-child {
+    max-width: 370px;
+    margin-left: auto;
+  }
   &:first-child{
     margin-right: 30px;
   }
-  height: 100%;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
   .news-block {
+    border-radius: 5px;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     padding: 30px;

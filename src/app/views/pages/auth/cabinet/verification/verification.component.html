@@ -1,1 +1,29 @@
-<p>verification works!</p>
+<div class="steps-row">
+  <div class="step-block">
+    <div class="step" id="step1" [routerLink]="'step1'" [routerLinkActive]="'active-step'">
+      <div class="svg-success-ico" [inlineSVG]="'/assets/svg-icon/success.svg'"></div>
+    </div>
+    <div class="step-title">Зарегистрироваться</div>
+  </div>
+  <div class="step-block">
+    <div class="step" id="step2" [routerLink]="'step2'" [routerLinkActive]="'active-step'"></div>
+    <div class="step-title">Подтвердить электронную почту</div>
+  </div>
+  <div class="step-block">
+    <div class="step" id="step3" [routerLink]="'step3'" [routerLinkActive]="'active-step'"></div>
+    <div class="step-title">Контактная информация</div>
+  </div>
+  <div class="step-block">
+    <div class="step" id="step4" [routerLink]="'step4'" [routerLinkActive]="'active-step'"></div>
+    <div class="step-title">Проверка личности</div>
+  </div>
+  <div class="step-block">
+    <div class="step" id="step5" [routerLink]="'step5'" [routerLinkActive]="'active-step'"></div>
+    <div class="step-title">Завершение</div>
+  </div>
+</div>
+<div class="main-block">
+  <div class="page-element">
+    <router-outlet></router-outlet>
+  </div>
+</div>

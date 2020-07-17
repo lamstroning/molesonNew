@@ -1,0 +1,48 @@
+.card-title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+}
+.verification-finish {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  .verification-col {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    .verification-title {
+      margin-bottom: 30px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .verification-li {
+      margin-top: 15px;
+      display: flex;
+      font-size: 14px;
+      max-width: 200px;
+      .success-ico {
+        margin-right: 15px;
+        display: flex;
+        width: 14px;
+        height: 10px;
+        color: #31B984;
+      }
+    }
+  }
+  .moleson-btn {
+    margin-top: 30px;
+  }
+}
+
+@media screen  and (max-width: 480px) {
+  .card-title {
+    font-size: 22px;
+  }
+  .verification-finish {
+    flex-direction: column;
+    .verification-col {
+      width: 100%;
+    }
+  }
+}

@@ -2,14 +2,12 @@
   <div class="balance-mobile">
     <div class="balance-row left-block">
       <div class="balance-block">
-        <p>Баланс</p>
-        <p>
-          <b>1 200 $</b>
-        </p>
+       <div class="balance-block">Баланс</div>
+       <div class="balance-cost">1 200 $</div>
       </div>
       <div class="balance-block desktop-show">
         <div class="btn balance-btn btn-success">Пополнить счёт</div>
-        <div class="btn balance-btn btn-outline-white">Вывести</div>
+        <div class="btn balance-btn btn-outline-white" [routerLink]="'/balance/withdrawal'">Вывести</div>
       </div>
     </div>
     <hr class="balance-line">
@@ -30,6 +28,6 @@
   </div>
   <div class="balance-block tablet-show">
     <div class="btn btn-success">Пополнить счёт</div>
-    <div class="btn btn-outline-white">Вывести</div>
+    <div class="btn btn-outline-white" [routerLink]="'/balance/withdrawal'">Вывести</div>
   </div>
 </div>

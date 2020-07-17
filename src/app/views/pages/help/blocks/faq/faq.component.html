@@ -1,0 +1,10 @@
+<div class="faq-row" [class.faq-body-open]="open">
+  <div class="faq-col">
+    <div class="faq-title" (click)="open = !open">{{title}}</div>
+    <div class="faq-body">{{body}}</div>
+  </div>
+  <div class="faq-btn" (click)="open = !open">
+    <div class="faq-line-btn"></div>
+    <div class="faq-line-btn"></div>
+  </div>
+</div>

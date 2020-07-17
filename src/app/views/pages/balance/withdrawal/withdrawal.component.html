@@ -1,0 +1,51 @@
+<div class="page-area">
+  <div class="main-block">
+    <div class="block-header">
+      <div class="back-btn" [routerLink]="'/dashboard'">
+        <div [inlineSVG]="'/assets/svg-icon/arrow.svg'" class="back-btn-arrow"></div>
+        Назад
+      </div>
+      <div class="block-header-title">
+        <h2>Вывести</h2>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="history-withdrawal">
+        <div class="history-col">
+          <div class="history-title">Средств на балансе</div>
+          <div class="history-balance">1 200 $</div>
+        </div>
+        <div class="history-col">
+          <div class="moleson-btn moleson-btn-outline-white">История выводов</div>
+        </div>
+      </div>
+      <div class="pay-systems">
+        <div class="pay-systems-title">Куда вывести?</div>
+        <div class="pay-system-container">
+          <div *ngFor="let item of paySystems" class="pay-system-block" [class.active-card]="idActive === item.id" (click)="activeCard(item.id)">
+            <div class="pay-system-icons-row">
+              <div *ngFor="let ico of item.ico" class="pay-system-ico" [inlineSVG]="ico"></div>
+            </div>
+            <div class="pay-system-title">
+              {{item.name}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="output-options">
+
+      </div>
+      <div class="sum-input">
+        <app-card-list *ngIf="idActive === 0"></app-card-list>
+        <app-yandex *ngIf="idActive === 1"></app-yandex>
+        <app-paypal *ngIf="idActive === 2"></app-paypal>
+        <app-webmoney *ngIf="idActive === 3"></app-webmoney>
+      </div>
+    </div>
+  </div>
+  <div class="right-block">
+
+  </div>
+</div>
+

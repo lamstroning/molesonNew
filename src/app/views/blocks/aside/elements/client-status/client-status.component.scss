@@ -1,0 +1,56 @@
+.client-status-header {
+  background: radial-gradient(138.48% 2564.53% at -0.37% 53.47%, #FFFFFF 0%, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0) 100%), #051C2C;
+  border-radius: 5px 5px 0 0;
+  margin-left: -30px;
+  margin-right: -30px;
+  margin-top: -30px;
+  padding: 12px 27px;
+  color: #FFFFFF;
+  .client-status-header-subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+  .client-status-header-block {
+    display: flex;
+    align-items: center;
+    .client-status-header-point {
+      width: 7px;
+      margin-right: 10px;
+      height: 7px;
+      background: #31B984;
+      border-radius: 50%;
+    }
+    .client-status-header-title {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+}
+.client-status-body-row {
+  margin-left: -3px;
+  border-bottom: 1px solid #CDD2D5;
+  padding: 15px 0;
+  .client-status-row-title {
+    font-size: 14px;
+    opacity: 0.8;
+    padding-right: 20px;
+    line-height: 17px;
+  }
+  .client-status-row-statistic {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 8px;
+    line-height: 17px;
+  }
+}
+.statistic-green {
+  border-bottom: 0;
+  padding-bottom: 0;
+  .client-status-row-title {
+    margin-top: -2px;
+  }
+  .client-status-row-statistic {
+    color: #31B984;
+    font-size: 20px;
+  }
+}

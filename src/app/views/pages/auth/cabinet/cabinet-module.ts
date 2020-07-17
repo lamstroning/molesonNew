@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import {InlineSVGModule} from 'ng-inline-svg';
 import {RouterModule} from '@angular/router';
-import {VerificationComponent} from './verification/verification.component';
 import {ProfileComponent} from './profile/profile.component';
 import {SettingsComponent} from './settings/settings.component';
+import {VerificationModule} from './verification/verification.module';
+import {CabinetComponent} from './cabinet.component';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
-    VerificationComponent,
     ProfileComponent,
     SettingsComponent,
   ],
@@ -15,6 +16,8 @@ import {SettingsComponent} from './settings/settings.component';
   imports: [
     InlineSVGModule,
     RouterModule,
+    VerificationModule,
+    CommonModule
   ],
   providers: [],
   exports: [
@@ -24,4 +27,4 @@ import {SettingsComponent} from './settings/settings.component';
 })
 
 
-export class NewsModule { }
+export class CabinetModule { }

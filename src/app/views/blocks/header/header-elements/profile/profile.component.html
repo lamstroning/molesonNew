@@ -3,10 +3,10 @@
   <div class="profile-avatar" [style.background-image]="'url(/assets/img/avatars/profile.png)'"></div>
   <div class="profile-info arrow-dropdown">
     <div class="profile-name">Уорен Баффет</div>
-    <div class="profile-status">Инветсор</div>
+    <div class="profile-status">Инвестор</div>
   </div>
   <div class="open-block">
-    <div class="open-block-row">
+    <div class="open-block-row" [routerLink]="'/cabinet/verification'">
       <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/forbidden.svg)'"></div>
       <div>
         <div class="open-block-title">Аккаунт не верифицирован</div>
@@ -17,12 +17,12 @@
       <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/profile.svg)'"></div>
       <div class="open-block-title">Управление профилем</div>
     </div>
-    <div class="open-block-row">
+    <div class="open-block-row" [routerLink]="'/cabinet/settings'">
       <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/settings.svg)'"></div>
       <div class="open-block-title">Настройки</div>
     </div>
     <div class="open-block-row">
-      <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/cross-red.svg)'"></div>
+      <div class="open-block-ico" [routerLink]="'/auth'" [style.background-image]="'url(/assets/svg-icon/profile/cross-red.svg)'"></div>
       <div class="open-block-title">Выход</div>
     </div>
   </div>
@@ -42,16 +42,16 @@
         <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/forbidden.svg)'" style="width: 23px;height: 23px;"></div>
         <div>
           <div class="open-block-title">Аккаунт не верифицирован</div>
-          <div class="open-block-link">Верифицировать</div>
+          <div class="open-block-link"  [routerLink]="'/cabinet/verification'">Верифицировать</div>
         </div>
       </div>
       <div class="open-block-row">
         <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/profile.svg)'" style="width: 16px;height: 19px;"></div>
-        <div class="open-block-title">Управление профилем</div>
+        <div class="open-block-title" [routerLink]="'/cabinet'">Управление профилем</div>
       </div>
       <div class="open-block-row">
         <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/settings.svg)'" style="width: 16px;height: 12px;"></div>
-        <div class="open-block-title">Настройки</div>
+        <div class="open-block-title" [routerLink]="'/cabinet/settings'">Настройки</div>
       </div>
       <div class="open-block-row">
         <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/cross-red.svg)'" style="width: 10px;height: 10px;"></div>

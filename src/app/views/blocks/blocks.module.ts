@@ -22,8 +22,25 @@ import {CabinetComponent} from '../pages/auth/cabinet/cabinet.component';
 import {VerificationComponent} from '../pages/auth/cabinet/verification/verification.component';
 import {ProfileComponent} from '../pages/auth/cabinet/profile/profile.component';
 import {SettingsComponent} from '../pages/auth/cabinet/settings/settings.component';
+import {Step1Component} from '../pages/auth/cabinet/verification/verification-steps/step1/step1.component';
+import {Step2Component} from '../pages/auth/cabinet/verification/verification-steps/step2/step2.component';
+import {Step4Component} from '../pages/auth/cabinet/verification/verification-steps/step4/step4.component';
+import {Step5Component} from '../pages/auth/cabinet/verification/verification-steps/step5/step5.component';
+import {Step3Component} from '../pages/auth/cabinet/verification/verification-steps/step3/step3.component';
+import {WithdrawalComponent} from '../pages/balance/withdrawal/withdrawal.component';
+import {BalancePageComponent} from '../pages/balance/balance.component';
+import { ClientStatusComponent } from './aside/elements/client-status/client-status.component';
+import { MenuComponent } from './aside/elements/menu/menu.component';
+import { ClientLinkComponent } from './aside/elements/client-link/client-link.component';
+import { InviteComponent } from './aside/elements/invite/invite.component';
+import {PartnersAnalyticsComponent} from '../pages/partners/partners-analytics/partners-analytics.component';
+import {AuthComponent} from '../pages/auth/auth/auth.component';
 
 const appRoutes: Routes = [
+  {
+    path: 'auth',
+    component: AuthComponent,
+  },
   {
     path: '',
     component: ViewsComponent,
@@ -72,7 +89,18 @@ const appRoutes: Routes = [
       },
       {
         path: 'partners',
-        component: PartnersComponent
+        component: PartnersComponent,
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'analytics'
+          },
+          {
+            path: 'analytics',
+            component: PartnersAnalyticsComponent
+          },
+        ]
       },
       {
         path: 'docs',
@@ -81,6 +109,21 @@ const appRoutes: Routes = [
       {
         path: 'help',
         component: HelpComponent
+      },
+      {
+        path: 'balance',
+        component: BalancePageComponent,
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'withdrawal'
+          },
+          {
+            path: 'withdrawal',
+            component: WithdrawalComponent
+          }
+        ]
       },
       {
         path: 'cabinet',
@@ -93,7 +136,34 @@ const appRoutes: Routes = [
           },
           {
             path: 'verification',
-            component: VerificationComponent
+            component: VerificationComponent,
+            children: [
+              {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'step1'
+              },
+              {
+                path: 'step1',
+                component: Step1Component
+              },
+              {
+                path: 'step2',
+                component: Step2Component
+              },
+              {
+                path: 'step3',
+                component: Step3Component
+              },
+              {
+                path: 'step4',
+                component: Step4Component
+              },
+              {
+                path: 'step5',
+                component: Step5Component
+              },
+            ]
           },
           {
             path: 'profile',
@@ -102,7 +172,8 @@ const appRoutes: Routes = [
           {
             path: 'settings',
             component: SettingsComponent
-          }
+          },
+
         ]
       },
     ]
@@ -113,7 +184,11 @@ const appRoutes: Routes = [
   declarations: [
     AsideComponent,
     FooterComponent,
-    WalletComponent
+    WalletComponent,
+    ClientStatusComponent,
+    MenuComponent,
+    ClientLinkComponent,
+    InviteComponent
   ],
   imports: [
     RouterModule.forChild(appRoutes),

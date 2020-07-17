@@ -1,1 +1,53 @@
-<p>help works!</p>
+<div class="page-area">
+  <div class="main-block">
+    <div class="block-header">
+      <div class="back-btn" [routerLink]="'/dashboard'">
+        <div [inlineSVG]="'/assets/svg-icon/arrow.svg'" class="back-btn-arrow"></div>
+        Назад
+      </div>
+      <div class="block-header-title">
+        <h2>Помощь</h2>
+      </div>
+    </div>
+    <div class="main-body">
+      <div class="main-block-col mobile-show">
+        <div class="page-element">
+          <app-question></app-question>
+        </div>
+      </div>
+      <div class="main-block-col weight-main-col">
+        <div class="page-element">
+          <div class="page-element-header">
+            <div class="page-element-header-title big-size-title">Частые вопросы</div>
+          </div>
+          <app-faq *ngFor="let q of faq" [body]="q.body" [title]="q.title"></app-faq>
+        </div>
+      </div>
+      <div class="main-left-col  desktop-show">
+        <div class="page-element">
+          <div class="page-element-header page-element-header-full-line">
+            <div class="page-element-header-title">Возник вопрос?</div>
+            <div class="page-element-header-subtitle">Служба поддержки 24/7</div>
+          </div>
+          <app-question></app-question>
+        </div>
+        <div class="page-element">
+          <div class="page-element-header page-element-header-full-line">
+            <div class="page-element-header-title">Онлайн-консультация</div>
+          </div>
+          <app-form></app-form>
+        </div>
+      </div>
+      <div class="main-block-col mobile-show">
+        <div class="page-element">
+          <app-form></app-form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-block">
+    <div class="page-element">
+      <app-social-links></app-social-links>
+    </div>
+  </div>
+</div>

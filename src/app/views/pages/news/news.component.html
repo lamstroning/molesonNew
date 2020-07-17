@@ -22,8 +22,12 @@
     <div *ngIf="newsList.length > maxElements" class="catalog-btn" (click)="maxElements = newsList.length">Смотреть еще</div>
   </div>
   <div class="right-block">
-    <app-news-breaking></app-news-breaking>
-    <app-social-links></app-social-links>
+    <div class="page-element mt-0">
+      <app-news-breaking></app-news-breaking>
+    </div>
+    <div class="page-element">
+      <app-social-links></app-social-links>
+    </div>
   </div>
 </div>
 

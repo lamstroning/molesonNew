@@ -1,26 +1,25 @@
 .wallet-block {
   display: flex;
+  margin-right: 4px;
+  margin-top: 4px;
   justify-content: space-around;
 }
 .current-block {
-  margin: 0 15px;
-  p {
+  margin-right: 41px;
+  &:last-child {
+    margin-right: 3px;
+  }
+  .current-block-sum {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .current-block-wallet{
     font-size: 12px;
-    margin: 0;
-    b{
-      font-size: 16px;
-    }
+    line-height: 14px;
   }
 }
 
 @media screen and (max-width: 1680px) {
-  .current-block {
-    p {
-      b{
-        font-size: 16px;
-      }
-    }
-  }
 }
 
 @media screen and (max-width: 1024px) {

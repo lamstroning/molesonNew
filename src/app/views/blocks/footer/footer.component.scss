@@ -73,26 +73,30 @@ footer {
   .social-ico {
     display: flex;
     align-items: center;
+    background-color: #E6E9EA;
+    width: 50px;
+    height: 35px;
+    border-radius: 3px;
     justify-content: center;
   }
-  #vk {
-    background-color: #4A76A8;
-  }
-  #fb {
-    background-color: #3B5998;
-  }
-  #youtube {
-    background-color: #DA271E;
-  }
-  #inst {
-    background: linear-gradient(84.83deg, #F4BF6F 0%, #E24443 35.79%, #A2249F 73.02%, #B91995 96.5%);
-  }
-  #telegram {
-    background-color: #419FD9;
-  }
-  #whatsapp {
-    background-color: #29A71A;
-    }
+  //#vk {
+  //  background-color: #4A76A8;
+  //}
+  //#fb {
+  //  background-color: #3B5998;
+  //}
+  //#youtube {
+  //  background-color: #DA271E;
+  //}
+  //#inst {
+  //  background: linear-gradient(84.83deg, #F4BF6F 0%, #E24443 35.79%, #A2249F 73.02%, #B91995 96.5%);
+  //}
+  //#telegram {
+  //  background-color: #419FD9;
+  //}
+  //#whatsapp {
+  //  background-color: #29A71A;
+  //  }
 }
 @media screen and (max-width: 1480px){
   footer {

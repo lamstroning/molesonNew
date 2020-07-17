@@ -9,10 +9,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 30px 30px 40px;
+  padding: 35px 30px 35px 40px;
 
   &:last-child {
-    max-width: 727px;
+    max-width: 737px;
+    padding-bottom: 30px;
+    padding-top: 28px;
+  }
+}
+.balance-block.desktop-show {
+  .btn.balance-btn.btn-success {
+    margin-left: 0;
+  }
+  .btn.balance-btn.btn-outline-white {
+    margin-right: 0;
   }
 }
 .balance-btn {
@@ -35,12 +45,10 @@
 .balance-block {
   color: white;
 
-  p {
-    margin-bottom: 0;
-  }
-
-  b {
+  .balance-cost {
+    font-weight: bold;
     font-size: 50px;
+    line-height: 65px;
   }
 
   .btn {
@@ -52,7 +60,7 @@
 
 .balance-statistic {
   .balance-statistic-title {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 16px;
     color: #FFFFFF;
   }
@@ -68,13 +76,13 @@
   font-weight: bold;
   font-size: 25px;
   position: relative;
-  margin-left: 20px;
+  margin-left: 23px;
 
   &:after {
     top: 10px;
     content: '';
     position: absolute;
-    left: -20px;
+    left: -22px;
     height: 17px;
     width: 12px;
     background-repeat: no-repeat;

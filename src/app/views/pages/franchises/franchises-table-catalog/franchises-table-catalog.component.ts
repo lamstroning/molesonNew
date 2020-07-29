@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FranchisesModel} from '../../../../core/franchises/_models/franchises.model';
-import {FranchisesService} from '../../../../core/franchises/franchises.service';
+import {FranchisesService} from '../../../../core/franchises/_services/franchises.service';
 
 @Component({
   selector: 'app-franchises-table-catalog',

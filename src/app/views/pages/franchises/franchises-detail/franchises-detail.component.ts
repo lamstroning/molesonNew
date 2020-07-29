@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FranchisesService} from '../../../../core/franchises/franchises.service';
+import {FranchisesService} from '../../../../core/franchises/_services/franchises.service';
 import {FranchisesModel} from '../../../../core/franchises/_models/franchises.model';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';

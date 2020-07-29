@@ -1,13 +1,15 @@
-<div class="profile-block">
+<div *ngIf="user" class="profile-block">
   <div class="profile-block-col small-col">
     <div class="page-element">
       <div class="profile-block-avatar">
         <div class="profile-block-avatar-header">
-          <div class="profile-current-avatar"></div>
-          <div class="profile-current-name">Уорен Баффет</div>
+          <div class="profile-current-avatar" [style.background-image]="'url(' + user.picture + ')'"
+               id="pict-load"></div>
+          <div class="profile-current-name">{{user.fullName}}</div>
         </div>
         <div class="profile-block-avatar-body">
           <div class="profile-avatar-info">
+            <input type="file" class="custom-drag-and-drop" (change)="loadImg($event.target)">
             <div class="profile-avatar-info-title">Ваша фотография</div>
             <div class="profile-avatar-info-desc">
               <p>Формат: jpeg, png</p>
@@ -32,6 +34,13 @@
         </div>
         <div class="moleson-btn moleson-btn-secondary">изменить</div>
       </div>
+      <div class="page-element">
+        <div class="input-row">
+          <div class="mail-status" >Телефон</div>
+          <input type="text" class="default-input" [(ngModel)]="user.phone">
+        </div>
+        <div class="moleson-btn moleson-btn-secondary" (click)="updatePhone()">изменить</div>
+      </div>
     </div>
   </div>
   <div class="profile-block-col">
@@ -41,6 +50,7 @@
         <div class="moleson-btn moleson-btn-outline-green">Верифицировать</div>
       </div>
     </div>
+    <app-notification [type]="notificationType" [text]="notificationText"></app-notification>
     <div class="profile-block-information">
       <div class="page-element">
         <div class="page-element-header page-element-header-full-line">
@@ -49,47 +59,84 @@
         <div class="information-body">
           <div class="input-row">
             <div class="default-input-title">Фамилия</div>
-            <input type="text" class="default-input">
+            <input type="text" class="default-input" [(ngModel)]="fullname[0]">
           </div>
           <div class="input-row">
             <div class="default-input-title">Имя</div>
-            <input type="text" class="default-input">
+            <input type="text" class="default-input" [(ngModel)]="fullname[1]">
+          </div>
+          <div class="input-row">
+            <div class="default-input-title">Отчество</div>
+            <input type="text" class="default-input" [(ngModel)]="fullname[2]">
+          </div>
+          <div class="input-row">
+            <div class="default-input-title">Пол</div>
+            <label>
+              <input type="radio" name="gender" value="м" [(ngModel)]="user.gender">
+              мужской
+            </label>
+            <label>
+              <input type="radio" name="gender" value="ж" [(ngModel)]="user.gender">
+              женский
+            </label>
           </div>
           <div class="input-row">
             <div class="default-input-title">Дата рождения</div>
             <div class="input-select-row">
               <div class="custom-arrow-dropdown default-field">
-                <select class="form-control">
+                <select class="form-control" [(ngModel)]="date[0]">
                   <option *ngFor="let i of year">{{i}}</option>
                 </select>
               </div>
               <div class="custom-arrow-dropdown default-field">
-                <select class="form-control">
-                  <option *ngFor="let i of month">{{i}}</option>
+                <select class="form-control" [(ngModel)]="date[1]">
+                  <option *ngFor="let i of month; let val = index"
+                          value="{{convertDate(2, val + 1 + '')}}">{{i}}</option>
                 </select>
               </div>
               <div class="custom-arrow-dropdown default-field">
-                <select class="form-control">
+                <select class="form-control" [(ngModel)]="date[2]">
                   <option *ngFor="let i of days">{{i}}</option>
                 </select>
               </div>
             </div>
           </div>
           <div class="input-row">
-            <div class="default-input-title">Город проживания</div>
-            <input type="text" class="default-input"></div>
-          <div class="input-row">
-            <div class="default-input-title">Отчество</div>
-            <input type="text" class="default-input">
+            <div class="default-input-title">Адрес регистрации</div>
+            <input type="text" class="default-input" [(ngModel)]="user.registrationAddress">
           </div>
           <div class="input-row">
-            <div class="default-input-title">Телефон</div>
-            <input type="text" class="default-input">
+            <div class="default-input-title">Номер паспорта</div>
+            <input type="text" class="default-input" [(ngModel)]="user.passportId">
           </div>
-          <div class="moleson-btn moleson-btn-secondary">Сохранить изменения</div>
+          <div class="input-row">
+            <div class="default-input-title">Гражданство</div>
+            <input type="text" class="default-input" [(ngModel)]="user.citizenship">
+          </div>
+          <div class="input-row">
+            <div class="default-input-title">Кем выдан</div>
+            <input type="text" class="default-input" [(ngModel)]="user.issued">
+          </div>
+          <div class="input-row">
+            <div class="default-input-title">Дата выдачи</div>
+            <input type="text" class="default-input" [(ngModel)]="user.dateIssued">
+          </div>
+          <div class="input-row">
+            <div class="default-input-title">Код подразделения</div>
+            <input type="text" class="default-input" [(ngModel)]="user.departmentCode">
+          </div>
+          <div class="input-row">
+            <div class="default-input-title">ИНН</div>
+            <input type="text" class="default-input" [(ngModel)]="user.INN">
+          </div>
+          <div class="input-row">
+            <div class="default-input-title">СНИЛС</div>
+            <input type="text" class="default-input" [(ngModel)]="user.SNILS">
+          </div>
+          <div class="moleson-btn moleson-btn-secondary" (click)="update()">Сохранить изменения</div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
+<app-loading *ngIf="!user"></app-loading>

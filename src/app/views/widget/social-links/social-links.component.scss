@@ -13,11 +13,15 @@
 .social-link-name {
   display: none;
 }
+
 .social-link-ico {
   min-width: 20px;
   min-height: 20px;
   background-position: 50%;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .row-social {
   margin-top: 30px;

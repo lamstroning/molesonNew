@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from '../../../../core/auth/_models/user.models';
+import {AuthService} from '../../../../core/auth/_services/auth.service';
+import {TokenService} from '../../../../core/token/token.service';
 
 @Component({
   selector: 'app-withdrawal',
@@ -7,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WithdrawalComponent implements OnInit {
   idActive = 0;
+  user: User;
   paySystems: PaySystem[] = [
     {
       id: 0,
@@ -33,12 +37,21 @@ export class WithdrawalComponent implements OnInit {
       ico: ['/assets/svg-icon/card/webmoney.svg']
     },
   ];
-  constructor() { }
+  constructor(private authService: AuthService, private tokenService: TokenService) { }
 
   activeCard(id: number) {
     this.idActive = id;
   }
   ngOnInit() {
+    this.tokenService.getUserByToken().subscribe(
+      next => {
+        this.user = next;
+        console.log(this.user);
+      },
+      err => console.log(err),
+      () => {
+        console.log('accept');
+      });
   }
 
 }

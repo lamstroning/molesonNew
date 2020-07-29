@@ -5,6 +5,8 @@
   height: 100%;
   justify-content: space-between;
   align-items: flex-start;
+  position: relative;
+  z-index: 10;
 }
 .arrow-up {
   position: relative;
@@ -90,6 +92,17 @@
     align-items: flex-start;
     font-weight: bold;
     padding: 30px;
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0.2;
+      z-index: 0;
+    }
     .status-block {
       display: flex;
       align-items: center;
@@ -241,9 +254,10 @@
     flex-direction: column;
     padding: 0;
     .card-franchise-img {
-      padding: 0;
+      padding: 20px;
       max-width: 100%;
-      position: static;
+      left: 0;
+      top: 0;
       height: 130px;
     }
     .page-element-header {

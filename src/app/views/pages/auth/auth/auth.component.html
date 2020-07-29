@@ -1,1 +1,26 @@
-<p>auth works!</p>
+<app-notification [type]="msgType" [text]="msgText"></app-notification>
+
+<div class="auth-form-body">
+  <div class="auth-form-body-row">
+    <label>Введите ваш Email</label>
+    <input type="text" [(ngModel)]="email" class="default-input">
+  </div>
+  <div class="auth-form-body-row password-row">
+    <label>Введите пароль</label>
+    <input type="password" [(ngModel)]="pass" class="default-input">
+    <div class="password-options">
+      <label for="save-password" class="save-password">
+        <div class="custom-checkbox">
+          <input id="save-password" type="checkbox">
+        </div>
+        Запомнить пароль
+      </label>
+      <div class="reset-password">Забыли пароль?</div>
+    </div>
+  </div>
+  <div class="auth-form-body-row">
+<!--    <div class="btn moleson-btn-secondary" [routerLink]="'/dashboard'" (click)="login()">Войти</div>-->
+    <button class="btn moleson-btn-secondary" (click)="login()" [class.btnDisable]="formLoad" [disabled]="formLoad">Войти</button>
+  </div>
+  <app-social-auth [title]="'Или войдите через социальную сеть'"></app-social-auth>
+</div>

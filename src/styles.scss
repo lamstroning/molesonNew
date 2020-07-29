@@ -1,5 +1,9 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import './assets/fonts/stylesheet.css';
+:focus {
+  outline: none;
+}
+
 html{
   &::-webkit-scrollbar{width: 0; }
   -ms-overflow-style: none;
@@ -190,6 +194,14 @@ h3.page-element-title {
 svg {
   fill: currentColor;
 
+}
+.custom-drag-and-drop {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
 }
 .page-element {
   overflow: hidden;

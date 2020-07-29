@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {NewsModel} from '../../../../core/news/_models/news.model';
-import {NewsService} from '../../../../core/news/news.service';
+import {NewsService} from '../../../../core/news/_services/news.service';
 
 @Component({
   selector: 'app-news-detail',

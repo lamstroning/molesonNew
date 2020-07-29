@@ -10,6 +10,9 @@ import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {PerspectivesComponent} from './perspectives/perspectives.component';
 import {NewsBreakingComponent} from './news-breaking/news-breaking.component';
+import { NotificationComponent } from './notification/notification.component';
+import {InlineSVGModule} from 'ng-inline-svg';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,14 @@ import {NewsBreakingComponent} from './news-breaking/news-breaking.component';
     NewsWidgetComponent,
     SocialLinksComponent,
     NewsBreakingComponent,
+    NotificationComponent,
+    LoadingComponent,
   ],
-  imports: [
-    RouterModule,
-    CommonModule
-  ],
+    imports: [
+        RouterModule,
+        CommonModule,
+        InlineSVGModule
+    ],
   exports: [
     AnaliticsComponent,
     BalanceComponent,
@@ -37,6 +43,8 @@ import {NewsBreakingComponent} from './news-breaking/news-breaking.component';
     SocialLinksComponent,
     PerspectivesComponent,
     NewsBreakingComponent,
+    NotificationComponent,
+    LoadingComponent
   ]
 })
 

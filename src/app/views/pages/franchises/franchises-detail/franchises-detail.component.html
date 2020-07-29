@@ -47,12 +47,16 @@
         <div class="detail-card-body">
           <div class="detail-card-body-info">
             <div class="page-element">
-              <div class="detail-card-body-info-title">История Black Star Wear</div>
-              <div class="detail-card-body-info-text">Российский бренд модной, молодежной одежды BLACK STAR WEAR был впервые запущен в 2010 году в составе музыкального лейбла BLACK STAR INC известным артистом Тимати и его партнером и другом Пашу. Первоначально бренд включал в себя всего несколько футболок с авторскими принтами в ограниченном количестве, но в результате стремительного роста популярности, было принято решение о расширении марки. На данный момент бренд BLACK STAR WEAR развивается самостоятельно.</div>
+              <div class="detail-card-body-info-title">История {{currentFranchise.name}}</div>
+              <div class="detail-card-body-info-text">{{currentFranchise.companyHistory}}</div>
               <div class="detail-card-body-info-title">Описание франшизы</div>
-              <div class="detail-card-body-info-text">Российский бренд модной, молодежной одежды BLACK STAR WEAR был впервые запущен в 2010 году в составе музыкального лейбла BLACK STAR INC известным артистом Тимати и его партнером и другом Пашу. Первоначально бренд включал в себя всего несколько футболок с авторскими принтами в ограниченном количестве, но в результате стремительного роста популярности, было принято решение о расширении марки. На данный момент бренд BLACK STAR WEAR развивается самостоятельно.</div>
+              <div class="detail-card-body-info-text">{{currentFranchise.detailDesc}}</div>
               <div class="detail-card-body-info-title">Преимущества</div>
-              <div class="detail-card-body-info-text">Минимальный риск, прибыльный бизнес при экономии ресурсов и времени на формирование стандартов товаров и услуг, бизнес-процессов, маркетинг и рекламу.</div>
+              <div class="detail-card-body-info-text">
+                <ul class="detail-card-body-advantages">
+                  <li *ngFor="let advantages of currentFranchise.advantages">{{advantages}}</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="detail-card-body-graphics">

@@ -3,20 +3,42 @@ import {InlineSVGModule} from 'ng-inline-svg';
 import { RouterModule, Routes} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {AuthComponent} from './auth/auth.component';
+import { AuthMainComponent } from './auth-main/auth-main.component';
+import {FirstStageRegisterComponent} from './register/first-stage/register-first.component';
+import {SecondStageRegisterComponent} from './register/second-stage/register-second.component';
+import { RegisterComponent } from './register/register.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ResetPasswordCodeComponent } from './reset-password/reset-password-code/reset-password-code.component';
+import {FormsModule} from '@angular/forms';
+import { SocialAuthComponent } from './social-auth/social-auth.component';
+import {WidgetModule} from '../../widget/widget.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: AuthComponent,
+    component: AuthMainComponent,
     children: [
       {
         path: '',
-        redirectTo: '/auth',
+        redirectTo: '/auth/login',
         pathMatch: 'full'
       },
       {
-        path: 'auth',
+        path: 'register',
+        redirectTo: 'register/',
+        pathMatch: 'full'
+      },
+      {
+        path: 'register/:id',
+        component: RegisterComponent,
+      },
+      {
+        path: 'login',
         component: AuthComponent
+      },
+      {
+        path: 'auth',
+        component: AuthMainComponent,
       },
     ]
   }
@@ -24,13 +46,22 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AuthComponent
+    AuthComponent,
+    AuthMainComponent,
+    FirstStageRegisterComponent,
+    SecondStageRegisterComponent,
+    RegisterComponent,
+    ResetPasswordComponent,
+    ResetPasswordCodeComponent,
+    SocialAuthComponent
   ],
 
   imports: [
     InlineSVGModule,
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    FormsModule,
+    WidgetModule
   ],
   providers: [],
   exports: [

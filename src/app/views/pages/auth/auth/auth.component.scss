@@ -1,0 +1,127 @@
+.btnDisable {
+  background-color: #50606c;
+  position: relative;
+  &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+  }
+}
+.auth-form-body{
+  .default-input {
+    background-color: white;
+    height: 50px;
+  }
+  .auth-form-body-row {
+    margin-top: 28px;
+    .btn {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      justify-content: center;
+      width: 100%;
+      height: 50px;
+      margin-top: 39px;
+    }
+    .custom-checkbox{
+      margin-right: 10px;
+      height: 14px;
+      width: 14px;
+      border:1px solid black;
+      padding-left: 0;
+      &:before {
+        width: 100%;
+        height: 100%;
+      }
+      input:before {
+        top:0;
+        width: 10px;
+      }
+    }
+    label {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 21px;
+    }
+    .password-options {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      .save-password {
+        display: flex;
+        margin-top: -4px;
+        cursor: pointer;
+        align-items: center;
+      }
+      .reset-password {
+        color: #FF9F19;
+        cursor: pointer;
+        text-decoration: underline;
+        font-size: 14px;
+      }
+    }
+  }
+  .social-title {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .social-row {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 14px;
+    .social-block {
+      border-radius: 3px;
+      height: 39px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      &:last-child {
+        margin-right: 0;
+      }
+      .social-block-ico {
+        color: white;
+      }
+      .social-block-name {
+        margin-left: 10px;
+        color:white;
+      }
+    }
+  }
+  .password-row {
+    margin-top: 32px;
+  }
+}
+@media screen and (max-width: 1024px) {
+
+  .auth-form-body{
+    .social-row {
+      .social-block {
+        width: 30%;
+        justify-content: center;
+        .social-block-name {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .auth-form-body {
+    .social-row {
+      .social-block {
+        width: 32%;
+        .social-block-name {
+          display: none;
+        }
+      }
+    }
+  }
+}

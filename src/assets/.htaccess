@@ -1,0 +1,15 @@
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin: http://lk.moleson.pro/
+   	Header set Access-Control-Allow-Methods: *
+   	Header always set Access-Control-Allow-Headers: 'Origin, Content-Type, X-Auth-Token, content-type'
+</IfModule>
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+
+    RewriteEngine On
+	RewriteRule ^api/([^/]*)$ http://api.moleson.pro/api/$1 [L]
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+</IfModule>

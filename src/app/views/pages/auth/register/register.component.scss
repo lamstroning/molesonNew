@@ -1,0 +1,21 @@
+.register-container-area {
+  overflow-x: hidden;
+  .register-container {
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    right: 0;
+    transition: 0.2s;
+    .register-container-block {
+      min-width: 100%;
+    }
+  }
+  &.next-stage {
+    .register-container {
+      right: 100%;
+    }
+  }
+}
+
+
+

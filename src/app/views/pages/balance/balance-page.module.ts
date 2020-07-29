@@ -6,22 +6,42 @@ import { PaypalComponent } from './withdrawal/options/paypal/paypal.component';
 import { WebmoneyComponent } from './withdrawal/options/webmoney/webmoney.component';
 import {CommonModule} from '@angular/common';
 import {InlineSVGModule} from 'ng-inline-svg';
+import {RouterModule, Routes} from '@angular/router';
+import {BalancePageComponent} from './balance.component';
+import {WithdrawalComponent} from './withdrawal/withdrawal.component';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: BalancePageComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'withdrawal',
+        pathMatch: 'full'
+      },
+      {
+        path: 'withdrawal',
+        component: WithdrawalComponent
+      },
+    ]
+  }
+];
 
 @NgModule({
   declarations: [
-
     CardListComponent,
-
     YandexComponent,
-
+    WithdrawalComponent,
     PaypalComponent,
-
-    WebmoneyComponent],
+    WebmoneyComponent,
+    BalancePageComponent
+  ],
 
   imports: [
     CommonModule,
-    InlineSVGModule
+    InlineSVGModule,
+    RouterModule.forChild(routes),
   ],
   providers: [],
   exports: [

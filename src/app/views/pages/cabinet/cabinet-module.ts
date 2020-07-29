@@ -7,15 +7,9 @@ import {VerificationModule} from './verification/verification.module';
 
 import {CommonModule} from '@angular/common';
 import {CabinetComponent} from './cabinet.component';
-import {Step2Component} from './verification/verification-steps/step2/step2.component';
-import {Step4Component} from './verification/verification-steps/step4/step4.component';
-import {Step1Component} from './verification/verification-steps/step1/step1.component';
-import {Step5Component} from './verification/verification-steps/step5/step5.component';
-import {Step3Component} from './verification/verification-steps/step3/step3.component';
-import {VerificationComponent} from './verification/verification.component';
-import {AppRoutingModule} from '../../../app-routing.module';
-import {ViewsModule} from '../../views.module';
+
 import {WidgetModule} from '../../widget/widget.module';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -50,12 +44,13 @@ const routes: Routes = [
     CabinetComponent
   ],
 
-  imports: [
-    RouterModule.forChild(routes),
-    InlineSVGModule,
-    CommonModule,
-    WidgetModule
-  ],
+    imports: [
+        RouterModule.forChild(routes),
+        InlineSVGModule,
+        CommonModule,
+        WidgetModule,
+        FormsModule
+    ],
   providers: [],
   exports: [RouterModule],
   bootstrap: []

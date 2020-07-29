@@ -3,7 +3,7 @@ import {FranchisesHeadComponent} from './franchises-head/franchises-head.compone
 import {InlineSVGModule} from 'ng-inline-svg';
 import {FranchisesBlockCatalogComponent} from './franchises-block-catalog/franchises-block-catalog.component';
 import {FranchisesTableCatalogComponent} from './franchises-table-catalog/franchises-table-catalog.component';
-import {FranchisesService} from '../../../core/franchises/franchises.service';
+import {FranchisesService} from '../../../core/franchises';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';

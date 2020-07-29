@@ -1,4 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
+import {AuthService} from '../../../../../core/auth/_services/auth.service';
+import {User} from '../../../../../core/auth/_models/user.models';
+import {TokenService} from '../../../../../core/token/token.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,9 +11,23 @@ import {Component, HostListener, OnInit} from '@angular/core';
 export class ProfileComponent implements OnInit {
   open = false;
   width = window.innerWidth;
-  constructor() { }
+  user: User;
+  constructor(private authService: AuthService, private tokenService: TokenService) { }
 
   ngOnInit() {
+    // console.log(this.authService.getUserByToken());
+    document.addEventListener('click', () => {
+      this.open = false;
+    });
+    this.tokenService.getUserByToken().subscribe(
+      next => {
+        this.user = next;
+        console.log(this.user);
+      },
+      err => console.log(err),
+      () => {
+        console.log('accept');
+      });
   }
   openBlock(open: boolean, event: Event) {
     event.stopPropagation();
@@ -20,5 +37,8 @@ export class ProfileComponent implements OnInit {
   onResize(event: any) {
     this.open = false;
     this.width = event.target.innerWidth;
+  }
+  logout() {
+    this.authService.logout();
   }
 }

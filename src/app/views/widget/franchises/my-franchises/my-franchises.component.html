@@ -53,15 +53,15 @@
                 </div>
               </div>
               <div class="progress-info progress-info-last">
-                <p>45 участников</p>
+                <p>0 участников</p>
                 <p>
-                  доступно <b>60 000 $</b>
+                  доступно <b>{{item.allCost - item.balance}} $</b>
                 </p>
               </div>
               <div class="card-bottom">
                 <div>
                   <p class="final-cost-title">Общая стоимость</p>
-                  <b class="final-cost">100 000 $ / 6 966 336 ₽</b>
+                  <b class="final-cost"> {{item.allCost}} $ / {{item.allCost * 71}} ₽</b>
                 </div>
                 <div class="btn btn-franchise btn-secondary" [routerLink]="['/franchises-detail', item.id]">Подробнее</div>
               </div>

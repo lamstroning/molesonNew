@@ -9,9 +9,18 @@
 }
 .client-link-row {
   margin-top: 2px;
+  position: relative;
   .default-input {
     padding: 5px 15px;
     font-size: 14px;
+  }
+  .copy-text {
+    background-image: url(/assets/svg-icon/copy.svg);
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 27px;
+    right: 10px;
   }
 }
 .client-link-social {

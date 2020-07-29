@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FranchisesService} from '../../../core/franchises/franchises.service';
+import {FranchisesService} from '../../../core/franchises/_services/franchises.service';
 
 @Component({
   selector: 'app-franchises',

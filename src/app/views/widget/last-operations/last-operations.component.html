@@ -8,8 +8,8 @@
       <div *ngFor="let item of operation" class="operation-list">
         <div>
           <div class="operation-list-type" [style.background-color]="item.status"></div>
-          <div class="operation-list-title">{{item.title}}</div>
-          <div class="operation-list-money">{{item.event}}</div>
+          <div class="operation-list-title">{{item.typeAction}}</div>
+          <div class="operation-list-money">{{(item.quantity * 0.01).toFixed(2)}} $</div>
         </div>
         <div class="operation-list-date">{{item.date}}</div>
       </div>

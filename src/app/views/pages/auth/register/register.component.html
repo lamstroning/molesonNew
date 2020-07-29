@@ -1,1 +1,10 @@
-<p>register works!</p>
+<div class="register-container-area" [class.next-stage]="nextStage">
+  <div class="register-container">
+    <div class="register-container-block">
+      <app-register-first [(nextStage)]="nextStage" [(regDate)]="regDate"></app-register-first>
+    </div>
+    <div class="register-container-block">
+      <app-register-second [regDate]="regDate"></app-register-second>
+    </div>
+  </div>
+</div>

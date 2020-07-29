@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./views.component.scss']
 })
 export class ViewsComponent implements OnInit {
-
+  loading = false;
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => {this.loading = true; }, 1000);
   }
 
 }

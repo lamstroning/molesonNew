@@ -4,7 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {InlineSVGModule} from 'ng-inline-svg';
 import {CommonModule} from '@angular/common';
 import {WidgetModule} from '../../../widget/widget.module';
-import {NewsService} from '../../../../core/news/news.service';
+import {NewsService} from '../../../../core/news';
 
 const routes: Routes = [
   {

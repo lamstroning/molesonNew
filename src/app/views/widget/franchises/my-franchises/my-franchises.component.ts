@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FranchisesService} from '../../../../core/franchises/franchises.service';
+import {FranchisesService} from '../../../../core/franchises';
 import {FranchisesModel} from '../../../../core/franchises/_models/franchises.model';
 
 @Component({

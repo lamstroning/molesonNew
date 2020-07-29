@@ -1,8 +1,9 @@
-<div *ngIf="width > 1024" class="profile-block" (click)="openBlock(true, $event)" [class.open-profile-block]="open">
+<div *ngIf="width > 1024 && user" class="profile-block" (click)="openBlock(true, $event)" [class.open-profile-block]="open">
   <div class="close" (click)="openBlock(false, $event)"></div>
-  <div class="profile-avatar" [style.background-image]="'url(/assets/img/avatars/profile.png)'"></div>
+<!--  <div class="profile-avatar" [style.background-image]="'url(/assets/img/avatars/profile.png)'"></div>-->
+  <div class="profile-avatar" [style.background-image]="'url(' + user.picture + ')'"></div>
   <div class="profile-info arrow-dropdown">
-    <div class="profile-name">Уорен Баффет</div>
+    <div class="profile-name">{{user.fullName}}</div>
     <div class="profile-status">Инвестор</div>
   </div>
   <div class="open-block">
@@ -21,7 +22,7 @@
       <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/settings.svg)'"></div>
       <div class="open-block-title">Настройки</div>
     </div>
-    <div class="open-block-row" [routerLink]="'/auth'">
+    <div class="open-block-row" (click)="logout()">
       <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/cross-red.svg)'"></div>
       <div class="open-block-title">Выход</div>
     </div>
@@ -53,7 +54,7 @@
         <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/settings.svg)'" style="width: 16px;height: 12px;"></div>
         <div class="open-block-title" [routerLink]="'/cabinet/settings'">Настройки</div>
       </div>
-      <div class="open-block-row">
+      <div class="open-block-row" (click)="logout()">
         <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/cross-red.svg)'" style="width: 10px;height: 10px;"></div>
         <div class="open-block-title">Выход</div>
       </div>

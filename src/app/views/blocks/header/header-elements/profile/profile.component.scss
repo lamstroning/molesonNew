@@ -6,17 +6,18 @@
   left: 0;
   height: 70px;
   top: 0;
-  width: 284px;
+  //width: 84px;
   padding-right: 29px;
   align-items: center;
 }
 .profile-avatar {
-  width: 42px;
+  min-width: 42px;
   height: 42px;
   border: 1px solid white;
   border-radius: 50%;
   background-position: 50%;
   margin-right: 15px;
+  background-size: cover;
 }
 .profile-info {
   position: relative;

@@ -1,7 +1,7 @@
 
 import { NgModule } from '@angular/core';
-import {NewsService} from '../../../core/news/news.service';
-import { NewsCardComponent } from './news-card/news-card.component';
+import {NewsService} from '../../../core/news';
+import {NewsCardComponent} from './news-card/news-card.component';
 import {InlineSVGModule} from 'ng-inline-svg';
 import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from '@angular/common';

@@ -1,0 +1,20 @@
+<app-notification [type]="msgType" [text]="msgText"></app-notification>
+
+<div class="auth-form-body">
+  <div class="auth-form-body-row">
+    <label>Ваше ФИО</label>
+    <input type="text" [(ngModel)]="fullname" class="default-input">
+  </div>
+  <div class="auth-form-body-row password-row">
+    <label>Ваш логин</label>
+    <input [(ngModel)]="username" type="text" class="default-input">
+  </div>
+  <div class="auth-form-body-row password-row">
+    <label>Введите код пригласителя</label>
+    <input type="text" class="default-input" [(ngModel)]="referralLink">
+  </div>
+  <div class="auth-form-body-row">
+    <div class="btn moleson-btn-secondary" (click)="switchStage()">Далее</div>
+  </div>
+  <app-social-auth [title]="'Зарегистрируйтесь через социальную сеть:'"></app-social-auth>
+</div>

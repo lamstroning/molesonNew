@@ -18,119 +18,165 @@
 
 <div class="partners-lists desktop-show">
   <div class="partners-lists-title">Структура регистраций</div>
-  <div class="partners-row-header">
+  <div class="partners-row-header grid-row">
     <div class="partners-row-col">
-      <div class="col-name">Имя</div>
+      <div class="col-name"> </div>
+    </div>
+    <div class="partners-row-col">
+      <div class="col-name">Ур.</div>
     </div>
     <div class="partners-row-col">
       <div class="col-sum-my">
-        Сумма покупок (личная)
+        Клиент
       </div>
     </div>
     <div class="partners-row-col">
       <div class="col-sum-franchise">
-        Сумма покупок (франшизы)
+
       </div>
     </div>
     <div class="partners-row-col">
       <div class="col-count">
-        Кол-во приглашенных
+        Личные<br>инвестиции
       </div>
     </div>
     <div class="partners-row-col">
       <div class="col-sum-struct">
-        Сума покупок в структуре
+        Доли франшиз
+      </div>
+    </div>
+    <div class="partners-row-col">
+      <div class="col-sum-struct">
+        Количество регистраций
+      </div>
+    </div>
+    <div class="partners-row-col">
+      <div class="col-sum-struct">
+        Общая сумма<br> инвестиций
       </div>
     </div>
     <div class="partners-row-col">
       <div class="col-data">
-        Дата регистрации/дата последнего визита
+        Дата регистрации<br>дата последнего визита
+      </div>
+    </div>
+    <div class="partners-row-col">
+      <div class="col-data">
+
       </div>
     </div>
   </div>
-  <div *ngFor="let row of partnersList" class="partners-row">
-    <div class="partners-row-col col-btn">
+
+  <div class="partners-row grid-row">
+    <div class="partners-col">
       <div class="more-btn" [inlineSVG]="'/assets/svg-icon/partners/arrow.svg'"></div>
     </div>
-    <div class="partners-row-col">
-      <div class="col-name">
-        {{row.name}}
-      </div>
+    <div class="partners-col">
+      <div class="partners-lvl">1</div>
     </div>
-    <div class="partners-row-col">
-      <div class="col-sum-my">{{number_formatted(row.cost)}} $</div>
+    <div class="partners-col">Алексей Митрохин</div>
+    <div class="partners-col">
+      <div class="info-ico" [inlineSVG]="'/assets/svg-icon/partners/info.svg'"></div>
     </div>
-    <div class="partners-row-col col-sum-franchise">
-      <div *ngFor="let ico of row.icons" class="partners-row-img" [style.background-image]="'url('+ico+')'"></div>
+    <div class="partners-col">600$</div>
+    <div class="partners-col">
+      <div class="ico"></div>
+      <div class="ico"></div>
+      <div class="ico"></div>
     </div>
-    <div class="partners-row-col">
-      <div class="col-count">
-        {{row.partners.length}}
-      </div>
+    <div class="partners-col">32</div>
+    <div class="partners-col">10 600 $</div>
+    <div class="partners-col partners-col-data">
+      <div>10.05.2020</div>
+      <div>12.07.2020</div>
     </div>
-    <div class="partners-row-col">
-      <div class="col-sum-struct">{{number_formatted(row.sum)}} $</div>
-    </div>
-    <div class="partners-row-col col-data">
-      <div class="data-block">
-        <div class="data-block-row">
-          {{row.dataReg}}
-        </div>
-        <div class="data-block-row">
-          {{row.dataVisit}}
-        </div>
-      </div>
-    </div>
-    <div class="partners-row-col">
-      <div class="col-info" [inlineSVG]="'/assets/svg-icon/partners/info.svg'"></div>
+    <div class="partners-col">
+      <div class="star"></div>
     </div>
   </div>
-</div>
+<!--  <div *ngFor="let row of partnersList" class="partners-row">-->
+<!--    <div class="partners-row-col col-btn">-->
+<!--      <div class="more-btn" [inlineSVG]="'/assets/svg-icon/partners/arrow.svg'"></div>-->
+<!--    </div>-->
+<!--    <div class="partners-row-col">-->
+<!--      <div class="col-name">-->
+<!--        {{row.name}}-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="partners-row-col">-->
+<!--      <div class="col-sum-my">{{number_formatted(row.cost)}} $</div>-->
+<!--    </div>-->
+<!--    <div class="partners-row-col col-sum-franchise">-->
+<!--      <div *ngFor="let ico of row.icons" class="partners-row-img" [style.background-image]="'url('+ico+')'"></div>-->
+<!--    </div>-->
+<!--    <div class="partners-row-col">-->
+<!--      <div class="col-count">-->
+<!--        {{row.partners.length}}-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="partners-row-col">-->
+<!--      <div class="col-sum-struct">{{number_formatted(row.sum)}} $</div>-->
+<!--    </div>-->
+<!--    <div class="partners-row-col col-data">-->
+<!--      <div class="data-block">-->
+<!--        <div class="data-block-row">-->
+<!--          {{row.dataReg}}-->
+<!--        </div>-->
+<!--        <div class="data-block-row">-->
+<!--          {{row.dataVisit}}-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="partners-row-col">-->
+<!--      <div class="col-info" [inlineSVG]="'/assets/svg-icon/partners/info.svg'"></div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
-<div class="partners-lists mobile-show">
-  <div *ngFor="let row of partnersList" class="partners-row">
-    <div class="partners-row-head partners-col-1">
-      <div class="partners-row-col">
-        <div class="partners-row-col-name">Имя</div>
-        <div class="partners-row-col-value font-weight-bold">{{row.name}}</div>
-      </div>
-      <div class="col-info" [inlineSVG]="'/assets/svg-icon/partners/info.svg'"></div>
-    </div>
-    <div class="partners-row-col partners-col-2">
-      <div class="partners-row-col-name">Сумма покупок <br>(личная)</div>
-      <div class="partners-row-col-value">{{row.cost}} $</div>
-    </div>
-    <div class="partners-row-col partners-col-3">
-      <div class="partners-row-col-name">Сумма покупок <br>(франшизы)</div>
-      <div class="partners-row-col-value fsz-14">
-        <div *ngFor="let ico of row.icons" class="partners-row-img" [style.background-image]="'url('+ico+')'"></div>
-      </div>
-    </div>
-    <div class="partners-row-col partners-col-4">
-      <div class="partners-row-col-name">Сума покупок<br> в структуре</div>
-      <div class="partners-row-col-value fsz-14">{{row.sum}} $</div>
-    </div>
-    <div class="partners-row-col partners-col-6">
-      <div class="partners-row-col-name">Кол-во<br> приглашенных</div>
-      <div class="partners-row-col-value">{{row.partners.length}}
-        <div class="btn-more" [inlineSVG]="'/assets/svg-icon/partners/arrow-white.svg'"></div>
-      </div>
-    </div>
-    <div class="partners-row-col partners-col-5">
-      <div class="partners-row-col-name">Дата регистрации/<br>дата последнего визита</div>
-      <div class="partners-row-col-value">
-        <div class="data-block">
-          <div class="data-block-row">
-            {{row.dataReg}}/
-          </div>
-          <div class="data-block-row">
-            {{row.dataVisit}}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!--<div class="partners-lists mobile-show">-->
+<!--  <div *ngFor="let row of partnersList" class="partners-row">-->
+<!--    <div class="partners-row-head partners-col-1">-->
+<!--      <div class="partners-row-col">-->
+<!--        <div class="partners-row-col-name">Имя</div>-->
+<!--        <div class="partners-row-col-value font-weight-bold">{{row.name}}</div>-->
+<!--      </div>-->
+<!--      <div class="col-info" [inlineSVG]="'/assets/svg-icon/partners/info.svg'"></div>-->
+<!--    </div>-->
+<!--    <div class="partners-row-col partners-col-2">-->
+<!--      <div class="partners-row-col-name">Сумма покупок <br>(личная)</div>-->
+<!--      <div class="partners-row-col-value">{{row.cost}} $</div>-->
+<!--    </div>-->
+<!--    <div class="partners-row-col partners-col-3">-->
+<!--      <div class="partners-row-col-name">Сумма покупок <br>(франшизы)</div>-->
+<!--      <div class="partners-row-col-value fsz-14">-->
+<!--        <div *ngFor="let ico of row.icons" class="partners-row-img" [style.background-image]="'url('+ico+')'"></div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="partners-row-col partners-col-4">-->
+<!--      <div class="partners-row-col-name">Сума покупок<br> в структуре</div>-->
+<!--      <div class="partners-row-col-value fsz-14">{{row.sum}} $</div>-->
+<!--    </div>-->
+<!--    <div class="partners-row-col partners-col-6">-->
+<!--      <div class="partners-row-col-name">Кол-во<br> приглашенных</div>-->
+<!--      <div class="partners-row-col-value">{{row.partners.length}}-->
+<!--        <div class="btn-more" [inlineSVG]="'/assets/svg-icon/partners/arrow-white.svg'"></div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="partners-row-col partners-col-5">-->
+<!--      <div class="partners-row-col-name">Дата регистрации/<br>дата последнего визита</div>-->
+<!--      <div class="partners-row-col-value">-->
+<!--        <div class="data-block">-->
+<!--          <div class="data-block-row">-->
+<!--            {{row.dataReg}}/-->
+<!--          </div>-->
+<!--          <div class="data-block-row">-->
+<!--            {{row.dataVisit}}-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 <div class="pagination">
   <div class="pagination-btn btn-next disable-btn" [inlineSVG]="'/assets/svg-icon/partners/arrow.svg'"></div>

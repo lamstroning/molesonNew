@@ -2,14 +2,23 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {NotFoundComponent} from './views/pages/notFound/notfound.component';
 import {ViewsComponent} from './views/views.component';
-import {DashboardComponent} from './views/pages/dashboard/dashboard.component';
-
+import {AuthGuard} from './core/auth/_guard/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: ViewsComponent,
+    canActivate: [AuthGuard],
     children: [
+      {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
+      },
+      {
+        path: 'balance',
+        loadChildren: () => import('./views/pages/balance/balance-page.module').then(mod => mod.BalancePageModule),
+      },
       {
         path: 'docs',
         loadChildren: () => import('./views/pages/docs/docs.module').then(mod => mod.DocsModule),
@@ -62,18 +71,19 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'ref/:id',
+    redirectTo: '/auth/register/:id',
+    pathMatch: 'full'
+  },
+  {
     path: 'auth',
     loadChildren: () => import('./views/pages/auth/auth.module').then(mod => mod.AuthModule),
   },
-
-
-  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-  // {path: '**', component: NotFoundComponent},
+  {path: '**', component: NotFoundComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

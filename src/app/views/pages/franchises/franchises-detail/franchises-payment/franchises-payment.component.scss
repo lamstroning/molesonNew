@@ -1,0 +1,34 @@
+.moleson-btn-green {
+  width: 144px;
+  height: 45px;
+}
+.moleson-btn.moleson-btn-secondary {
+  max-width: 210px;
+  margin-top: 30px;
+}
+.payment-container {
+  max-width: 610px;
+  .balance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .balance-count {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+}
+.input-row {
+  margin-top: 30px;
+  justify-content: flex-start;
+  display: flex;
+  .input-block {
+    margin-right: 30px;
+    .default-input-title {
+      font-size: 14px;
+    }
+    .default-input {
+      background-color: white;
+    }
+  }
+}

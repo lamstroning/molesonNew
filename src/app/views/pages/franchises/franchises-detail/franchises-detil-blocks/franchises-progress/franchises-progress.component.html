@@ -1,7 +1,7 @@
 <div class="progress-container">
   <div class="progress-header">
     <div class="status-point" [style.background-color]="franchise.color"></div>
-    <div class="status-title">{{franchise.status}}</div>
+    <div class="status-title">{{franchise.status.title}}</div>
   </div>
   <div class="progress-body">
     <div class="progress-row">
@@ -14,8 +14,8 @@
       </div>
     </div>
     <div class="progress-row">
-      <div class="progress-participant">{{franchise.participant}} участнков</div>
-      <div class="progress-participant">Доступно {{franchise.allCostDollars}} $</div>
+      <div class="progress-participant">{{franchise.investors.length}} участнков</div>
+      <div class="progress-participant">Доступно {{franchise.formatCost}} $</div>
     </div>
   </div>
 </div>

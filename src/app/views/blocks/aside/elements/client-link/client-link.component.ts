@@ -2,7 +2,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {User} from '../../../../../core/auth/_models/user.models';
 import {AuthService} from '../../../../../core/auth/_services/auth.service';
 import {TokenService} from '../../../../../core/token/token.service';
-import {ReferralService} from '../../../../../core/referral/referral.service';
+import {ReferralService} from '../../../../../core/referral/_services/referral.service';
 
 @Component({
   selector: 'app-client-link',

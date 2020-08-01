@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FranchisesModel} from '../../../../../../core/franchises/_models/franchises.model';
+import {FranchisesModel} from '../../../../../../core/franchises';
 
 @Component({
   selector: 'app-franchises-income',
@@ -11,6 +11,7 @@ export class FranchisesIncomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.franchise);
   }
 
 }

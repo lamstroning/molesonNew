@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FranchisesModel} from '../../../../core/franchises/_models/franchises.model';
-import {FranchisesService} from '../../../../core/franchises/_services/franchises.service';
+import {FranchisesModel, FranchisesService} from '../../../../core/franchises';
 
 @Component({
   selector: 'app-franchises-block-catalog',

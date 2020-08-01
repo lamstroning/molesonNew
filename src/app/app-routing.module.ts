@@ -45,6 +45,11 @@ const routes: Routes = [
           .then(mod => mod.FranchisesDetailModule)
       },
       {
+        path: 'franchises-detail/:id/payment',
+        loadChildren: () => import('./views/pages/franchises/franchises-detail/franchises-payment/franchises-payment.module')
+          .then(mod => mod.FranchisesPaymentModule)
+      },
+      {
         path: 'operations',
         loadChildren: () => import('./views/pages/operations/operations.module').then(mod => mod.OperationsModule),
       },

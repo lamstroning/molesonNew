@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FranchisesService} from '../../../../core/franchises';
-import {FranchisesModel} from '../../../../core/franchises/_models/franchises.model';
+import {FranchisesModel} from '../../../../core/franchises';
 
 @Component({
   selector: 'app-my-franchises',
@@ -9,14 +9,15 @@ import {FranchisesModel} from '../../../../core/franchises/_models/franchises.mo
 })
 
 export class MyFranchisesComponent implements OnInit {
-
-  franchises: FranchisesModel[];
+  franchises: FranchisesModel[] = [];
   constructor(private franchisesService: FranchisesService) { }
 
   ngOnInit() {
-    this.franchisesService.reloadList();
-    this.franchises = this.franchisesService.franchisesList;
+    this.franchisesService.getFranchises('key').subscribe(res => {
+      this.franchises.push(new FranchisesModel(res));
+    }, err => {
+      console.warn(err);
+    });
   }
-
 }
 

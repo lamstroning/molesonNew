@@ -1,5 +1,4 @@
-
-<div class="page-area">
+<div *ngIf="!loading" class="page-area">
   <div class="main-block">
     <div class="block-header">
       <div class="back-btn" [routerLink]="'/dashboard'">
@@ -24,10 +23,10 @@
             </div>
           </div>
           <div class="detail-card-img-area">
-            <div class="detail-card-img" [style.background-image]="'url('+currentFranchise.img+')'"></div>
-            <div class="detail-card-img-slider">
-              <div *ngFor="let img of currentFranchise.imgList" class="detail-card-img-slide" [style.background-image]="'url('+img+')'"></div>
-            </div>
+            <div class="detail-card-img" [style.background-image]="'url('+currentFranchise.picture+')'"></div>
+<!--            <div class="detail-card-img-slider">-->
+<!--              <div *ngFor="let img of currentFranchise.imgList" class="detail-card-img-slide" [style.background-image]="'url('+img+')'"></div>-->
+<!--            </div>-->
           </div>
         </div>
         <div class="mobile-block">
@@ -47,16 +46,18 @@
         <div class="detail-card-body">
           <div class="detail-card-body-info">
             <div class="page-element">
-              <div class="detail-card-body-info-title">История {{currentFranchise.name}}</div>
-              <div class="detail-card-body-info-text">{{currentFranchise.companyHistory}}</div>
-              <div class="detail-card-body-info-title">Описание франшизы</div>
-              <div class="detail-card-body-info-text">{{currentFranchise.detailDesc}}</div>
-              <div class="detail-card-body-info-title">Преимущества</div>
-              <div class="detail-card-body-info-text">
-                <ul class="detail-card-body-advantages">
-                  <li *ngFor="let advantages of currentFranchise.advantages">{{advantages}}</li>
-                </ul>
-              </div>
+              {{currentFranchise.detailedDescription}}
+<!--              <div class="detail-card-body-info-title">История {{currentFranchise.name}}</div>-->
+<!--              <div class="detail-card-body-info-title">История {{currentFranchise.name}}</div>-->
+<!--              <div class="detail-card-body-info-text">{{currentFranchise.companyHistory}}</div>-->
+<!--              <div class="detail-card-body-info-title">Описание франшизы</div>-->
+<!--              <div class="detail-card-body-info-text">{{currentFranchise.detailDesc}}</div>-->
+<!--              <div class="detail-card-body-info-title">Преимущества</div>-->
+<!--              <div class="detail-card-body-info-text">-->
+<!--                <ul class="detail-card-body-advantages">-->
+<!--                  <li *ngFor="let advantages of currentFranchise.advantages">{{advantages}}</li>-->
+<!--                </ul>-->
+<!--              </div>-->
             </div>
           </div>
           <div class="detail-card-body-graphics">
@@ -96,13 +97,13 @@
             </div>
           </div>
       </div>
-      <div *ngIf="!currentFranchise" class="detail-card">
+      <div *ngIf="!currentFranchise && !loading" class="detail-card">
         <div class="page-element">
           Франшиза была удалена, или еще не создана!
         </div>
       </div>
     </div>
-  <div class="right-block">
+  <div *ngIf="currentFranchise && !loading" class="right-block">
     <div class="page-element page-element-top">
       <app-franchises-progress [franchise]="currentFranchise"></app-franchises-progress>
     </div>
@@ -111,4 +112,4 @@
     </div>
   </div>
 </div>
-
+<app-loading *ngIf="loading"></app-loading>

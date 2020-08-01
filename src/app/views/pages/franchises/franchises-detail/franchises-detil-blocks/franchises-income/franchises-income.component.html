@@ -1,7 +1,7 @@
 <div *ngIf="franchise.progress < 100" class="income">
   <div class="income-header">
     <div class="income-header-present-block">
-      {{franchise.precent}}
+      {{franchise.profitability}}
     </div>
     <div class="income-header-title">
       Прогнозируемая доходность в год
@@ -11,17 +11,17 @@
     <div class="income-body-row">
       <div class="income-body-title">Общая стоимость франшизы</div>
       <div class="income-body-cost">
-        {{franchise.allCostDollars}} $ / {{franchise.allCost}} ₽
+        {{franchise.formatCost}} $ / {{franchise.formatCostRub}} ₽
       </div>
     </div>
     <div class="income-body-row">
       <div class="income-body-title">Стоимость доли</div>
       <div class="income-body-cost">
-        {{franchise.divideCost}} $ / {{franchise.divideCost * 69}} ₽
+        {{franchise.stock.price}} $ / {{franchise.stock.price * 69}} ₽
       </div>
     </div>
     <div class="income-body-row">
-      <div class="income-btn">Купить долю</div>
+      <div class="income-btn" [routerLink]="'./payment'">Купить долю</div>
     </div>
   </div>
 </div>

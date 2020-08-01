@@ -38,6 +38,9 @@ export class User extends BaseModel {
   accessToken: string;
   balance: number;
   picture: any;
+  passport_page_1: any;
+  passport_page_2: any;
+  passport_page_3: any;
   phone: number;
   clear(): void {
     this.accessLevel = new AccessLevel();

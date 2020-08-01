@@ -1,7 +1,7 @@
 <div class="container-fluid p-0">
   <header [class.open-header]="open">
     <div class="header-container">
-      <div class="logo" [inlineSVG]="'/assets/svg-icon/logo.svg'"></div>
+      <div class="logo" [routerLink]="'/'" [inlineSVG]="'/assets/svg-icon/header-logo.svg'"></div>
       <div class="burger-btn" (click)="open = !open"></div>
     </div>
     <div *ngIf="width > 1024" class="header-container ml-auto">

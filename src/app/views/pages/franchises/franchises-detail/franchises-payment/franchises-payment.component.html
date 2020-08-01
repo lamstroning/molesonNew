@@ -1,0 +1,49 @@
+<div class="page-area" *ngIf="user">
+  <div class="main-block">
+    <div class="block-header mobile-show">
+      <div class="back-btn" [routerLink]="'/dashboard'">
+        <div [inlineSVG]="'/assets/svg-icon/arrow.svg'" class="back-btn-arrow"></div>
+        Назад
+      </div>
+      <div class="block-header-title">
+        <h2>Покупка франшизы "{{currentFranchise.name}}"</h2>
+      </div>
+    </div>
+    <div class="payment-container">
+      <div class="page-element">
+        <div class="balance">
+          <div class="balance-col">
+            <div class="balance-title">На вашем счету</div>
+            <div class="balance-count">
+              {{(user.balance * 0.01).toFixed(2)}} $
+            </div>
+          </div>
+          <div class="balance-col">
+            <div class="moleson-btn moleson-btn-green">Пополнить счёт</div>
+          </div>
+        </div>
+      </div>
+      <div class="balance">
+        <div class="balance-col">
+          <div class="balance-title">стоимость доли</div>
+          <div class="balance-count">
+<!--            {{(user.balance * 0.01).toFixed(2)}} $-->
+              100 $
+          </div>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-block">
+          <div class="default-input-title">Колличество долей к покупке</div>
+          <input type="text" class="default-input" (change)="checkValidate()" [(ngModel)]="count">
+        </div>
+        <div class="input-block">
+          <div class="default-input-title">Вы заплатите</div>
+          <input type="text" class="default-input" [value]="+count !== +count ? 0 : count * 100" disabled>
+        </div>
+      </div>
+      <div class="moleson-btn moleson-btn-secondary" (click)="buy()">Купить</div>
+    </div>
+  </div>
+</div>
+<app-loading *ngIf="!user"></app-loading>

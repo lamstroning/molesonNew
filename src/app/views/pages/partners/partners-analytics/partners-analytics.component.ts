@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ReferralService, PartnersList} from '../../../../core/referral';
 
 @Component({
   selector: 'app-partners-analytics',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./partners-analytics.component.scss']
 })
 export class PartnersAnalyticsComponent implements OnInit {
+  partnersList: PartnersList[] = [];
   blocks = [
     {
       name: 'Количество регистраций по личной ссылке',
@@ -33,294 +35,27 @@ export class PartnersAnalyticsComponent implements OnInit {
       dollars: true
     },
   ];
-  partnersList: Partners[] = [
-    {
-      name: 'Дмитрий Лебедев',
-      cost: 200,
-      sum: 10200,
-      icons: [
-        '/assets/img/franchises/col-ico.png',
-        '/assets/img/franchises/dodo-ico.png',
-        '/assets/img/franchises/black-ico.png'
-      ],
-      dataReg: '10.05.2020',
-      dataVisit: '12.07.2020',
-      partners: [
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        },
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        }
-      ]
-    },
-    {
-      name: 'Дмитрий Лебедев',
-      cost: 200,
-      sum: 10200,
-      icons: [
-        '/assets/img/franchises/col-ico.png',
-        '/assets/img/franchises/dodo-ico.png',
-        '/assets/img/franchises/black-ico.png'
-      ],
-      dataReg: '10.05.2020',
-      dataVisit: '12.07.2020',
-      partners: [
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        },
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        }
-      ]
-    },
-    {
-      name: 'Дмитрий Лебедев',
-      cost: 200,
-      sum: 10200,
-      icons: [
-        '/assets/img/franchises/col-ico.png',
-        '/assets/img/franchises/dodo-ico.png',
-        '/assets/img/franchises/black-ico.png'
-      ],
-      dataReg: '10.05.2020',
-      dataVisit: '12.07.2020',
-      partners: [
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        },
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        }
-      ]
-    },
-    {
-      name: 'Дмитрий Лебедев',
-      cost: 200,
-      sum: 10200,
-      icons: [
-        '/assets/img/franchises/col-ico.png',
-        '/assets/img/franchises/dodo-ico.png',
-        '/assets/img/franchises/black-ico.png'
-      ],
-      dataReg: '10.05.2020',
-      dataVisit: '12.07.2020',
-      partners: [
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        },
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        }
-      ]
-    },
-    {
-      name: 'Дмитрий Лебедев',
-      cost: 200,
-      sum: 10200,
-      icons: [
-        '/assets/img/franchises/col-ico.png',
-        '/assets/img/franchises/dodo-ico.png',
-        '/assets/img/franchises/black-ico.png'
-      ],
-      dataReg: '10.05.2020',
-      dataVisit: '12.07.2020',
-      partners: [
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        },
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        }
-      ]
-    },
-    {
-      name: 'Дмитрий Лебедев',
-      cost: 200,
-      sum: 10200,
-      icons: [
-        '/assets/img/franchises/col-ico.png',
-        '/assets/img/franchises/dodo-ico.png',
-        '/assets/img/franchises/black-ico.png'
-      ],
-      dataReg: '10.05.2020',
-      dataVisit: '12.07.2020',
-      partners: [
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        },
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        }
-      ]
-    },
-    {
-      name: 'Дмитрий Лебедев',
-      cost: 200,
-      sum: 10200,
-      icons: [
-        '/assets/img/franchises/col-ico.png',
-        '/assets/img/franchises/dodo-ico.png',
-        '/assets/img/franchises/black-ico.png'
-      ],
-      dataReg: '10.05.2020',
-      dataVisit: '12.07.2020',
-      partners: [
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        },
-        {
-          name: 'Дмитрий Лебедев',
-          cost: 200,
-          sum: 10200,
-          icons: [
-            '/assets/img/franchises/col-ico.png',
-            '/assets/img/franchises/dodo-ico.png',
-            '/assets/img/franchises/black-ico.png'
-          ],
-          dataReg: '10.05.2020',
-          dataVisit: '12.07.2020',
-          partners: null
-        }
-      ]
-    },
-  ];
+
+
   number_formatted(num: number) {
     return num.toString().replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1' + ' ');
   }
-  constructor() { }
+
+  constructor(private referralService: ReferralService) {
+  }
 
   ngOnInit() {
+    this.referralService.getReferralList().subscribe(res => {
+
+        for (const item of res.data) {
+          this.partnersList.push(new PartnersList(item));
+        }
+        console.log(this.partnersList);
+      },
+      err => {
+        console.warn(err);
+      }
+    );
   }
 
 }

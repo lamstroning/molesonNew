@@ -33,6 +33,7 @@
   padding-bottom: 30px;
   .step-block-body-row {
     margin-top: 40px;
+    position: relative;
     .step-block-body-title {
       font-weight: bold;
       font-size: 18px;
@@ -74,6 +75,38 @@
     }
   }
 
+}
+.img-row {
+  margin-top: 30px;
+  transition: 0.2s;
+  max-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  &.img-row-hide {
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+  }
+  .img-row-col {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    .img-load-title {
+      margin-left: 15px;
+    }
+    .img-load {
+      width: 50px;
+      height: 50px;
+      background-size: cover;
+    }
+    .img-size {
+      margin-right: 20px;
+    }
+    .remove-ico {
+      cursor: pointer;
+    }
+  }
 }
 
 @media screen and (max-width: 480px) {

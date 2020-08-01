@@ -58,6 +58,9 @@ export class SecondStageRegisterComponent implements OnInit {
       res => {
         this.msgType = 'success-msg';
         this.msgText = 'на ваш Email отправлено сообщение для подтверждения регистрации';
+        this.authService.login(this.regDate.email, this.regDate.password).subscribe(next => {
+          console.log(next);
+        });
         console.log(res);
       },
       err => {

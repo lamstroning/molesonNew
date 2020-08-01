@@ -5,11 +5,11 @@
       <div *ngFor="let franchise of franchises | slice:0:3" class="page-element">
         <div class="franchise-status">
           <div class="d-flex align-items-center">
-            <div class="franchise-status-dot" [style.background-color]="getColor(franchise.status)"></div>
-            <div class="franchise-status-title">{{franchise.status}}</div>
+            <div class="franchise-status-dot" [style.background-color]="franchise.color"></div>
+            <div class="franchise-status-title">{{franchise.status ? franchise.status.title : '' }}</div>
           </div>
           <div class="precent mobile-show">
-            +{{franchise.precent + ' %'}}
+            +{{franchise.profitability + ' %'}}
           </div>
         </div>
         <div class="franchise-body">
@@ -24,7 +24,7 @@
           </div>
           <div class="franchise-body-block desktop-show">
             <div class="precent">
-              + {{franchise.precent + ' %'}}
+              + {{franchise.profitability + ' %'}}
             </div>
           </div>
           <div class="franchise-body-block progress-body">
@@ -37,13 +37,13 @@
               </div>
               <div class="d-flex align-items-center">
                 <div class="progress-bar">
-                  <div class="progress-bar-full" [style.width]="'53%'"></div>
+                  <div class="progress-bar-full" [style.width]="franchise.progress + '%'"></div>
                 </div>
               </div>
               <div class="d-flex justify-content-between mt-2">
-                <p>45 уч.</p>
+                <p>{{franchise.investors.length}} уч.</p>
                 <p>
-                  <b class="final-cost">60 000 $</b>
+                  <b class="final-cost">{{franchise.formatCost}} $</b>
                 </p>
               </div>
             </div>
@@ -53,9 +53,9 @@
               <p class="last-title">Общая стоимость</p>
               <p>
                 <b class="last-cost">
-                  <span>100 000 $</span>
+                  <span>{{franchise.formatCost}} $</span>
                   <span class="separate">/</span>
-                  <span>6 966 336 ₽</span>
+                  <span>{{franchise.formatCostRub}} ₽</span>
                 </b>
               </p>
             </div>

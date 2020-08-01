@@ -4,21 +4,25 @@
     <div class="my-franchises-area">
       <div *ngFor="let item of franchises | slice:0:3" class="page-element p-0 ml-0 mr-0">
         <div class="card-franchise">
-          <div class="card-franchise-img" [style.background-image]="'url(' + item.img + ') '">
+          <div class="card-franchise-img" [style.background-image]="'url(' + item.picture + ') '">
             <div class="card-franchise-img-row">
-              <div *ngIf="item.progress < 100" class="status-block">
-                <div class="status-block-point" [style.background-color]="'#FF9F19'"></div>
-                Сбор инвестиций
+              <div class="status-block">
+                <div class="status-block-point" [style.background-color]="item.color"></div>
+                {{item.status ? item.status.title : ''}}
               </div>
-              <div *ngIf="item.progress === 100" class="status-block">
-                <div class="status-block-point" [style.background-color]="'#FF9F19'"></div>
-                Запуск
-              </div>
-              <div *ngIf="item.progress > 100" class="status-block">
-                <div class="status-block-point" [style.background-color]="'#31B984'"></div>
-                В работе
-              </div>
-              <div class="precent-block" [class.fill-precent]="item.progress > 100">22 %</div>
+<!--              <div *ngIf="item.progress < 100" class="status-block">-->
+<!--                <div class="status-block-point" [style.background-color]="'#FF9F19'"></div>-->
+<!--                Сбор инвестиций-->
+<!--              </div>-->
+<!--              <div *ngIf="item.progress === 100" class="status-block">-->
+<!--                <div class="status-block-point" [style.background-color]="'#FF9F19'"></div>-->
+<!--                Запуск-->
+<!--              </div>-->
+<!--              <div *ngIf="item.progress > 100" class="status-block">-->
+<!--                <div class="status-block-point" [style.background-color]="'#31B984'"></div>-->
+<!--                В работе-->
+<!--              </div>-->
+              <div class="precent-block" [class.fill-precent]="item.progress > 100">{{item.profitability}} %</div>
             </div>
             <div class="card-franchise-img-row mobile-show">
               <p class="create-data m-0">01.02.2020</p>
@@ -53,17 +57,17 @@
                 </div>
               </div>
               <div class="progress-info progress-info-last">
-                <p>0 участников</p>
+                <p>{{item.investors.length}} участников</p>
                 <p>
-                  доступно <b>{{item.allCost - item.balance}} $</b>
+                  доступно <b>{{item.formatCost}} $</b>
                 </p>
               </div>
               <div class="card-bottom">
                 <div>
                   <p class="final-cost-title">Общая стоимость</p>
-                  <b class="final-cost"> {{item.allCost}} $ / {{item.allCost * 71}} ₽</b>
+                  <b class="final-cost"> {{item.formatCost}} $ / {{item.formatCostRub}} ₽</b>
                 </div>
-                <div class="btn btn-franchise btn-secondary" [routerLink]="['/franchises-detail', item.id]">Подробнее</div>
+                <div class="btn btn-franchise btn-secondary" [routerLink]="['/franchises-detail', item._id]">Подробнее</div>
               </div>
             </div>
             <div *ngIf="item.progress > 100" class="progress-container">
@@ -86,7 +90,7 @@
                 <p>Стоимость</p>
                 <b class="final-cost">4 000 $</b>
               </div>
-                <div class="btn btn-secondary btn-franchise" [routerLink]="['/franchises-detail', item.id]">Подробнее</div>
+                <div class="btn btn-secondary btn-franchise" [routerLink]="['/franchises-detail', item._id]">Подробнее</div>
               </div>
             </div>
           </div>

@@ -1,9 +1,9 @@
 <div class="my-franchises-area">
   <div *ngFor="let item of franchisesService.franchisesList; let i = index" class="page-element" [class.first-child]="i % 3 === 0">
     <div class="card-franchise">
-      <div class="card-franchise-img" [style.background-image]="'url(' + item.img + ') '">
+      <div class="card-franchise-img" [style.background-image]="'url(' + item.picture + ') '">
         <div class="card-franchise-img-row ">
-          <p class="create-data">01.02.2020</p>
+          <p class="create-data">{{item.dateCreate}}</p>
           <p class="country-block">Россия</p>
         </div>
         <div class="card-franchise-img-row">
@@ -19,7 +19,7 @@
             <div class="status-block-point" [style.background-color]="'#31B984'"></div>
             В работе
           </div>
-          <div class="precent-block" [class.fill-precent]="item.progress > 100">22 %</div>
+          <div class="precent-block" [class.fill-precent]="item.progress > 100">{{item.profitability}} %</div>
         </div>
       </div>
       <div class="card-franchise-info">
@@ -33,7 +33,8 @@
             </div>
           </div>
         </div>
-        <div *ngIf="item.progress <= 100" class="progress-container">
+<!--        <div *ngIf="item.progress <= 100" class="progress-container">-->
+        <div class="progress-container">
           <div class="progress-info">
             <div class="progress-precent">Прогресс</div>
             <div class="progress-precent-num">{{item.progress}} %</div>
@@ -45,7 +46,7 @@
             </div>
           </div>
           <div class="progress-info progress-info-last">
-            <div>45 участников</div>
+            <div>{{item.investors.length}} участников</div>
             <div>
               60 000 $
             </div>
@@ -53,34 +54,34 @@
           <div class="card-bottom">
             <div>
               <div class="final-cost-title">Общая стоимость</div>
-              <div class="final-cost">100 000 $ / 6 966 336 ₽</div>
+              <div class="final-cost">{{item.formatCost}} $ / {{item.formatCostRub}} ₽</div>
             </div>
-            <div class="btn-franchise" [routerLink]="['/franchises-detail', item.id]">Подробнее</div>
+            <div class="btn-franchise" [routerLink]="['/franchises-detail', item._id]">Подробнее</div>
           </div>
         </div>
-        <div *ngIf="item.progress > 100" class="progress-container">
-          <div class="progress-container-result">
-            <div class="result-block">
-              <div class="result-title">Рост с момента покупки</div>
-              <div class="result-cost arrow-up" style="color: #31B984;font-weight: bold">450 $ (10%)</div>
-            </div>
-            <div class="result-block">
-              <div class="result-title">Начисленно дивидендов</div>
-              <div class="result-cost">1 000 $</div>
-            </div>
-          </div>
-          <div class="card-bottom border-top">
-            <div class="desktop-show count-part">
-              <p>Кол-во долей</p>
-              <b class="final-cost">40</b>
-            </div>
-            <div class="desktop-show">
-              <p>Стоимость</p>
-              <b class="final-cost">4 000 $</b>
-            </div>
-            <div class="btn-franchise" [routerLink]="['/franchises-detail', item.id]" >Подробнее</div>
-          </div>
-        </div>
+<!--        <div *ngIf="item.progress > 100" class="progress-container">-->
+<!--          <div class="progress-container-result">-->
+<!--            <div class="result-block">-->
+<!--              <div class="result-title">Рост с момента покупки</div>-->
+<!--              <div class="result-cost arrow-up" style="color: #31B984;font-weight: bold">450 $ (10%)</div>-->
+<!--            </div>-->
+<!--            <div class="result-block">-->
+<!--              <div class="result-title">Начисленно дивидендов</div>-->
+<!--              <div class="result-cost">1 000 $</div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="card-bottom border-top">-->
+<!--            <div class="desktop-show count-part">-->
+<!--              <p>Кол-во долей</p>-->
+<!--              <b class="final-cost">40</b>-->
+<!--            </div>-->
+<!--            <div class="desktop-show">-->
+<!--              <p>Стоимость</p>-->
+<!--              <b class="final-cost">4 000 $</b>-->
+<!--            </div>-->
+<!--            <div class="btn-franchise" [routerLink]="['/franchises-detail', item.id]" >Подробнее</div>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
     </div>
   </div>

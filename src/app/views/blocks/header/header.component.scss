@@ -29,7 +29,7 @@ header  {
   }
   .logo {
     color: white;
-    width: 126px;
+    cursor: pointer;
     height: 23px;
     margin-left: 25px;
     margin-bottom: 8px;
@@ -94,6 +94,9 @@ header  {
       }
       .lang-block {
       }
+    }
+    .logo {
+      margin-left: 0;
     }
   }
 }

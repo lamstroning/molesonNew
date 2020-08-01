@@ -1,9 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
-import {User} from '../auth/_models/user.models';
-import {concatMap} from 'rxjs/operators';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {TokenService} from '../token/token.service';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {TokenService} from '../../token/token.service';
 
 
 const API_URL = '/api/user/';
@@ -11,7 +9,6 @@ const API_URL = '/api/user/';
 @Injectable({
   providedIn: 'root'
 })
-
 
 export class ReferralService {
 
@@ -24,5 +21,11 @@ export class ReferralService {
   }
   updateLink() {
     this.http.post(API_URL + 'update/referralLink', {link: ReferralService.keyGen()}, {headers: this.tokenService.getUserTokenHeader()});
+  }
+  getReferralList(): Observable<any> {
+    return this.http.post<any>(API_URL + 'referral',
+      {link: ReferralService.keyGen()},
+      {headers: this.tokenService.getUserTokenHeader()
+      });
   }
 }

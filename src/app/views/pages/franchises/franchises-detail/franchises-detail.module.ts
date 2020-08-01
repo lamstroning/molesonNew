@@ -10,7 +10,7 @@ import {FranchisesProgressComponent} from './franchises-detil-blocks/franchises-
 const routes: Routes = [
   {
     path: '',
-    component: FranchisesDetailComponent
+    component: FranchisesDetailComponent,
   }
 ];
 
@@ -24,7 +24,7 @@ const routes: Routes = [
   declarations: [
     FranchisesIncomeComponent,
     FranchisesProgressComponent,
-    FranchisesDetailComponent
+    FranchisesDetailComponent,
   ]
 })
 export class FranchisesDetailModule {}

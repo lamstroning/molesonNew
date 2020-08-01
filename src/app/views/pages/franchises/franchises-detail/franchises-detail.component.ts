@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {FranchisesService} from '../../../../core/franchises/_services/franchises.service';
-import {FranchisesModel} from '../../../../core/franchises/_models/franchises.model';
+import {Component, OnInit} from '@angular/core';
+import {FranchisesService} from '../../../../core/franchises';
+import {FranchisesModel} from '../../../../core/franchises';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
+import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-franchises-detail',
@@ -13,14 +14,24 @@ export class FranchisesDetailComponent implements OnInit {
 
   currentFranchise: FranchisesModel;
   private subscription: Subscription;
-  id: number;
-  constructor(public franchisesService: FranchisesService,  private activateRoute: ActivatedRoute) { }
+  id: string;
+  loading = true;
+
+  constructor(public franchisesService: FranchisesService, private activateRoute: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.subscription = this.activateRoute.params.subscribe(params => this.id = params.id);
-    this.currentFranchise = this.franchisesService.franchisesList.find(item => {
-      return (item.id === +this.id);
-    });
+    const result = this.franchisesService.getFranchisesById(this.id, 'all');
+    result.subscribe(
+      res => {
+        this.currentFranchise = new FranchisesModel(res);
+        console.log(res);
+      }, err => {
+        console.warn(err);
+      }, () => {
+        this.loading = false;
+      }
+    );
   }
-
 }

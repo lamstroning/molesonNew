@@ -37,6 +37,9 @@ export class AuthService {
   updateUser(data: FormData): Observable<any> {
     return this.http.post<any>(API_USERS_URL + '/user/update', data, { headers: this.tokenService.getUserTokenHeader() });
   }
+  updatePassport(data: FormData): Observable<any> {
+    return this.http.post<any>(API_USERS_URL + '/user/update/passport', data, { headers: this.tokenService.getUserTokenHeader() });
+  }
 
 
 

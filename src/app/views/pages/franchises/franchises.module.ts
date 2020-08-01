@@ -14,6 +14,7 @@ import {FranchisesProgressComponent} from './franchises-detail/franchises-detil-
 import {FranchisesComponent} from './franchises.component';
 import {WidgetModule} from '../../widget/widget.module';
 import {FranchisesDetailModule} from './franchises-detail/franchises-detail.module';
+import { FranchisesPaymentComponent } from './franchises-detail/franchises-payment/franchises-payment.component';
 
 const routes: Routes = [
   {

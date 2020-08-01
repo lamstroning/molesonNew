@@ -7,6 +7,8 @@ import { Step2Component } from './verification-steps/step2/step2.component';
 import { Step3Component } from './verification-steps/step3/step3.component';
 import { Step4Component } from './verification-steps/step4/step4.component';
 import { Step5Component } from './verification-steps/step5/step5.component';
+import {FormsModule} from '@angular/forms';
+import {WidgetModule} from '../../../widget/widget.module';
 
 const routes: Routes = [
   {
@@ -55,6 +57,8 @@ const routes: Routes = [
   imports: [
     InlineSVGModule,
     RouterModule.forChild(routes),
+    FormsModule,
+    WidgetModule,
   ],
   providers: [],
   exports: [

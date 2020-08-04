@@ -31,6 +31,9 @@ export class AuthComponent implements OnInit, OnDestroy {
     if (msg === 'Invalid password!') {
       return 'Не верный пароль';
     }
+    if (msg.details !== undefined && msg.data === 'Not verified email') {
+      return 'На вашу почту было выслано письмо с подтверждением, подвердите ваш Email, чтобы начать работу с площадкой';
+    }
     if (msg.details !== undefined && msg.details[0].message === '"email" must be a valid email') {
       return 'Не верный формат "email"';
     }

@@ -13,6 +13,7 @@ export class TopFranchisesComponent implements OnInit {
 
   ngOnInit() {
     this.franchisesService.getFranchises('key').subscribe(res => {
+      console.log(res);
       // for (const item of res.data) {
       //   this.franchises.push(new FranchisesModel(item));
       // }

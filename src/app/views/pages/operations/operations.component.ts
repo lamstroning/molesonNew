@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {OperationsService} from '../../../core/operations';
 
 @Component({
   selector: 'app-operations',
@@ -82,9 +83,12 @@ export class OperationsComponent implements OnInit {
       ]
     }
   ];
-  constructor() { }
+  constructor(
+    public operationsService: OperationsService,
+  ) { }
 
   ngOnInit() {
+    this.operationsService.getList();
   }
 
 }

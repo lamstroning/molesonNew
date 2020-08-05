@@ -11,27 +11,27 @@ export class PartnersAnalyticsComponent implements OnInit {
   blocks = [
     {
       name: 'Количество регистраций по личной ссылке',
-      cost: 20,
+      cost: 0,
       dollars: false
     },
     {
       name: 'Общее количество регистраций в структуре',
-      cost: 120,
+      cost: 0,
       dollars: false
     },
     {
       name: 'Сумма покупок долей (общая)',
-      cost: 143200,
+      cost: 0,
       dollars: true
     },
     {
       name: 'Сумма агентских вознаграждений',
-      cost: 14970,
+      cost: 0,
       dollars: true
     },
     {
       name: 'Средний показатель суммы инвестирования действующих инвесторов',
-      cost: 1205,
+      cost: 0,
       dollars: true
     },
   ];

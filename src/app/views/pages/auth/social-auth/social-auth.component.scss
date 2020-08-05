@@ -9,11 +9,13 @@
   margin-top: 14px;
   .social-block {
     border-radius: 3px;
+    cursor: pointer;
     height: 39px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 12px;
+    width: 45%;
     &:last-child {
       margin-right: 0;
     }
@@ -30,7 +32,7 @@
 
   .social-row {
     .social-block {
-      width: 30%;
+      width: 45%;
       justify-content: center;
       .social-block-name {
         font-size: 14px;

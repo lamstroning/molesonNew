@@ -1,4 +1,15 @@
-
+.btnDisable {
+  background-color: #50606c;
+  position: relative;
+  &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+  }
+}
 
 .auth-form-body{
   .default-input {
@@ -7,6 +18,22 @@
   }
   .auth-form-body-row {
     margin-top: 28px;
+    position: relative;
+    .show-password {
+      width: 18px;
+      height: 13px;
+      position: absolute;
+      top: 53px;
+      cursor: pointer;
+      right: 20px;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url('/assets/svg-icon/hide-pass.svg');
+      &.show-pass {
+        background-image: url('/assets/svg-icon/show-pass.svg');
+      }
+    }
     .btn {
       display: flex;
       align-items: center;
@@ -25,6 +52,9 @@
       top: 3px;
       border:1px solid black;
       padding-left: 0;
+      &+a {
+        color: #ff9f19;
+      }
       &:before {
         width: 100%;
         height: 100%;

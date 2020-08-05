@@ -9,7 +9,6 @@ import {of} from 'rxjs';
 })
 export class SecondStageRegisterComponent implements OnInit {
   @Input() regDate: RegDate;
-  email: string;
   password: string;
   passwordRepeat: string;
 
@@ -17,33 +16,47 @@ export class SecondStageRegisterComponent implements OnInit {
   accept1 = false;
   accept2 = false;
   msgText: string;
-
+  inputType = 'password';
+  inputTypeRes = 'password';
+  formLoad = false;
   constructor(private authService: AuthService) {
   }
-
+  showNotification(type: string, text: string, time: number = 5000) {
+    this.msgType = type;
+    this.msgText = text;
+    this.formLoad = false;
+    if (time > 0) {
+      setTimeout(() => {
+        this.msgText = '';
+        this.msgType = 'hidden-msg';
+      }, time);
+    }
+  }
   register() {
+    this.formLoad = true;
     this.msgType = 'hidden-msg';
     if (this.passwordRepeat !== this.password) {
-      this.msgType = 'error-msg';
-      this.msgText = 'Пароли не совпадают';
+      this.showNotification('error-msg', 'Пароли не совпадают');
+      return;
+    }
+    if (!this.password || this.password.length < 8) {
+      this.showNotification('error-msg', 'Длина пароля должна быть не меньше 8 символов');
       return;
     }
     if (!this.accept1) {
-      this.msgType = 'error-msg';
-      this.msgText = 'подтвердите согласие на обработку персональных данных';
+      this.showNotification('error-msg', 'Подтвердите согласие на обработку персональных данных');
       return;
     }
     if (!this.accept2) {
-      this.msgType = 'error-msg';
-      this.msgText = 'Ознакомтесь со всеми положениями и правилами использования.';
+      this.showNotification('error-msg', 'Ознакомтесь со всеми положениями и правилами использования.');
       return;
     }
-    this.regDate.email = this.email;
+    console.log(this.regDate.email);
     this.regDate.password = this.password;
     const req = new FormData();
-    req.append('fullname', this.regDate.fullname);
-    req.append('username', this.regDate.username);
-    req.append('password', this.regDate.password);
+    req.append('fullname', 'x');
+    req.append('username', this.regDate.email);
+    req.append('password', this.password);
     req.append('email', this.regDate.email);
     if (this.regDate.referralLink) {
       req.append('referral', this.regDate.referralLink);
@@ -55,29 +68,24 @@ export class SecondStageRegisterComponent implements OnInit {
       return;
     }
     resultRequest.subscribe(
-      res => {
-        this.msgType = 'success-msg';
-        this.msgText = 'на ваш Email отправлено сообщение для подтверждения регистрации';
-        this.authService.login(this.regDate.email, this.regDate.password).subscribe(next => {
-          console.log(next);
-        });
-        console.log(res);
+      () => {
+        this.formLoad = false;
+        this.showNotification('success-msg', 'На ваш Email отправлено сообщение для подтверждения регистрации');
+        // setTimeout(() => {
+        //   this.authService.login(this.regDate.email, this.regDate.password).subscribe();
+        // }, 2000);
       },
       err => {
-        if (err.data._message === 'User validation failed') {
-          this.msgType = 'error-msg';
-          this.msgText = 'Имя пользователя уже занято';
-          return;
-        }
+        console.warn(err);
+        this.formLoad = false;
         if (err.data.error === 'Email error') {
-          this.msgType = 'error-msg';
-          this.msgText = 'Email не найден';
+          this.showNotification('error-msg', 'Ошибка');
           return;
         }
-        console.log(err);
+      }, () => {
+        this.formLoad = false;
       }
     );
-    console.log(this.regDate);
   }
 
   ngOnInit() {

@@ -9,9 +9,10 @@ import {SecondStageRegisterComponent} from './register/second-stage/register-sec
 import { RegisterComponent } from './register/register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ResetPasswordCodeComponent } from './reset-password/reset-password-code/reset-password-code.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SocialAuthComponent } from './social-auth/social-auth.component';
 import {WidgetModule} from '../../widget/widget.module';
+import {RecaptchaModule} from 'angular-google-recaptcha';
 
 const routes: Routes = [
   {
@@ -61,7 +62,11 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CommonModule,
     FormsModule,
-    WidgetModule
+    WidgetModule,
+    RecaptchaModule.forRoot({
+      siteKey: '6LfoIbkZAAAAAAXFpHZHWalfycp3N23CJhFKr4Rg'
+    }),
+    ReactiveFormsModule
   ],
   providers: [],
   exports: [

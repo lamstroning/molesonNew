@@ -1,22 +1,20 @@
 <app-notification [type]="msgType" [text]="msgText"></app-notification>
 <div class="auth-form-body">
-  <div class="auth-form-body-row">
-    <label>Введите ваш Email</label>
-    <input type="text" [(ngModel)]="email" class="default-input">
-  </div>
   <div class="auth-form-body-row password-row">
     <label>Придумайте пароль</label>
-    <input type="password" [(ngModel)]="password" class="default-input">
+    <input [type]="inputType" [(ngModel)]="password" class="default-input">
+    <div class="show-password" [class.show-pass]="inputType === 'password'" (click)="inputType = inputType === 'password' ? 'text' : 'password'"></div>
   </div>
   <div class="auth-form-body-row password-row">
     <label>Подтвердите пароль</label>
-    <input type="password" [(ngModel)]="passwordRepeat" class="default-input">
+    <input [type]="inputTypeRes" [(ngModel)]="passwordRepeat" class="default-input">
+    <div class="show-password" [class.show-pass]="inputTypeRes === 'password'" (click)="inputTypeRes = inputTypeRes === 'password' ? 'text' : 'password'"></div>
     <div class="password-options">
       <label for="accept-date" class="save-password">
         <div class="custom-checkbox">
           <input id="accept-date" [(ngModel)]="accept1" type="checkbox">
         </div>
-        Согласие на обработку персональных данных
+        <a href="/assets/docs/politika_konfidentsialnosti.docx" download>Согласие на обработку персональных данных</a>
       </label>
     </div>
     <div class="password-options">
@@ -24,12 +22,12 @@
         <div class="custom-checkbox">
           <input id="accept-info" [(ngModel)]="accept2" type="checkbox">
         </div>
-        Я ознакомлен со всеми положениями и правилами использования.
+        <a href="/assets/docs/Terms_of_Use_v18.5.20.docx" download>Я ознакомлен со всеми положениями и правилами использования.</a>
       </label>
     </div>
   </div>
   <div class="auth-form-body-row">
-    <div class="btn moleson-btn-secondary" (click)="register()">Зарегистрироваться</div>
+    <div class="btn moleson-btn-secondary" (click)="register()" [class.btnDisable]="formLoad">Зарегистрироваться</div>
   </div>
   <app-social-auth [title]="'Зарегистрируйтесь через социальную сеть:'"></app-social-auth>
 </div>

@@ -26,7 +26,7 @@
                   <div class="operations-title">{{operationItem.typeAction}}</div>
                 </div>
                 <div class="operations-col">
-                  <div class="operations-sum" [style.color]="operationItem.status">{{operationItem.type ? '+' : '-'}}{{operationItem.quantity}} $</div>
+                  <div class="operations-sum" [style.color]="operationItem.status">{{operationItem.type ? '+' : '-'}}{{(operationItem.quantity * 0.01).toFixed(2)}} $</div>
                 </div>
               </div>
             </div>

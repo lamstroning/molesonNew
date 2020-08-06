@@ -12,11 +12,13 @@ class MenuConfig {
       icon: 'card',
       title: 'Франшизы'
     },
+    /*
     {
       link: 'news',
       icon: 'news',
       title: 'Новости'
     },
+     */
     {
       link: 'partners',
       icon: 'partner',

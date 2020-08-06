@@ -14,7 +14,7 @@ export class FranchisesPaymentComponent implements OnInit {
   currentFranchise: FranchisesModel;
   private subscription: Subscription;
   id: string;
-  count = '1';
+  count: any = '1';
   user: User;
 
   constructor(

@@ -100,18 +100,20 @@ header  {
     }
   }
 }
-@media screen and (max-width: 1024px) {
-  .open-header {
-    max-height: 100%;
-    overflow-y: auto;
-    .header-element {
-      opacity: 1;
-    }
-    .burger-btn {
-      transform: rotate(90deg);
-      background-image: url("/assets/svg-icon/cross.svg");
-    }
+.open-header {
+  max-height: 100%;
+  overflow-y: auto;
+  .header-element {
+    opacity: 1;
   }
+  .burger-btn {
+    transform: rotate(90deg);
+    background-image: url("/assets/svg-icon/cross.svg");
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1024px) {
   header {
     z-index: 10000;
     position: fixed;

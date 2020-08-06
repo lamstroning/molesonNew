@@ -10,6 +10,7 @@ import {TokenService} from '../../../../../core/token/token.service';
 })
 export class ProfileComponent implements OnInit {
   open = false;
+  openMobile = false;
   width = window.innerWidth;
   user: User;
   constructor(private authService: AuthService, private tokenService: TokenService) { }

@@ -56,7 +56,7 @@ export class ProfileComponent implements OnInit {
       this.date[i++] = this.convertDate(2, item);
     }
     res = this.date.join('.');
-    console.log(this.date);
+    // console.log(this.date);
     return (res);
   }
 

@@ -17,7 +17,7 @@
         </p>
       </div>
       <div class="header-element profile">
-        <a *ngIf="user._id != null" href="#" class="btn balance-btn btn-outline-white payrexx-modal-window" data-href="https://moleson.payrexx.com/pay?tid=7df69168&referenceId={{user._id}}">Пополнить счёт</a>
+        <a *ngIf="user != null" href="#" class="btn balance-btn btn-outline-white payrexx-modal-window" data-href="https://moleson.payrexx.com/pay?tid=7df69168&referenceId={{user._id}}">Пополнить счёт</a>
       </div>
       <div class="header-element profile">
        <app-profile></app-profile>

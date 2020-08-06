@@ -21,7 +21,7 @@ export class OperationsService {
     this.operationList = [];
     this.operationListDateHash = [];
     this.transactionGet().subscribe(res => {
-      console.log(res);
+      // console.log(res);
       for (const item of res.data) {
         const operation = new OperationsModel(item);
         this.operationList.push(operation);
@@ -29,7 +29,6 @@ export class OperationsService {
           this.operationListDateHash[operation.date_month_title] = [];
         }
         this.operationListDateHash[operation.date_month_title].push(operation);
-        console.log(this.operationListDateHash);
       }
     }, err => {
       console.warn(err);

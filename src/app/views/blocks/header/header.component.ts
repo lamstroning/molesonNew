@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {TokenService} from '../../../core/token/token.service';
+import {User} from '../../../core/auth/_models/user.models';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +11,20 @@ import {Router} from '@angular/router';
 export class HeaderComponent implements OnInit {
   width;
   open = false;
-  constructor(private router: Router) {
+  user: User;
+
+  constructor(
+    private router: Router,
+    private tokenService: TokenService) {
   }
   ngOnInit() {
     this.width = window.innerWidth;
     this.router.events.subscribe(() => this.open = false);
+    this.tokenService.getUserByToken().subscribe(res => {
+      this.user = res;
+    }, err => {
+      console.warn(err);
+    });
   }
 
   @HostListener('window:resize', ['$event'])

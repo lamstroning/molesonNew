@@ -6,15 +6,18 @@
     </div>
     <div *ngIf="width > 1024" class="header-container ml-auto">
       <div class="header-element wallet-block">
-        <app-wallet></app-wallet>
+        <!--app-wallet></app-wallet-->
       </div>
       <div class="header-element contact-block">
         <p>
-          <b>8 (800) 200 30 30</b>
+          <!--b>8 (800) 200 30 30</b-->
         </p>
-        <p>
-          moleson@yandex.ru
+        <p class="mt-2">
+          info@moleson.pro
         </p>
+      </div>
+      <div class="header-element profile">
+        <a *ngIf="user._id != null" href="#" class="btn balance-btn btn-outline-white payrexx-modal-window" data-href="https://moleson.payrexx.com/pay?tid=7df69168&referenceId={{user._id}}">Пополнить счёт</a>
       </div>
       <div class="header-element profile">
        <app-profile></app-profile>

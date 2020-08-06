@@ -28,11 +28,11 @@
     </div>
   </div>
 </div>
-<div *ngIf="width <= 1024">
+<div *ngIf="width <= 1024 && user">
   <div class="profile-block">
-    <div class="profile-avatar" [style.background-image]="'url(/assets/img/avatars/profile.png)'"></div>
+    <div class="profile-avatar" [style.background-image]="'url(' + user.picture + ')'"></div>
     <div class="profile-info arrow-dropdown">
-      <div class="profile-name">Уорен Баффет</div>
+      <div class="profile-name">{{user.fullName}}</div>
       <div class="profile-status">Инветсор</div>
     </div>
   </div>

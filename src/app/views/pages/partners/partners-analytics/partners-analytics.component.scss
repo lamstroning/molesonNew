@@ -31,6 +31,66 @@
       margin-right: 0;
     }
   }
+
+  .partners-block-wide {
+    margin-right: 0px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+    padding: 20px;
+    .partners-block-name {
+      padding-right: 40px;
+      line-height: 16px;
+      font-size: 14px;
+    }
+    .partners-block-cost {
+      font-size: 25px;
+      line-height: 28px;
+      font-weight: bold;
+    }
+    &:last-child {
+      padding: 20px 18px;
+    }
+    &:nth-child(3n + 3) {
+      margin-right: 0;
+    }
+    .partners-block-stars-row {
+      display: flex;
+      width: 90px;
+      margin-right: 18px;
+      justify-content: space-between;
+      align-items: center;
+
+      .partners-block-star {
+        display: flex;
+        width: 18px;
+      }
+    }
+    .bigger-icon {
+      width: 18px;
+      height: 18px;
+    }
+    .partners-block-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+    }
+    .partners-block-title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      display: flex;
+      align-items: start;
+      padding-top: 8px;
+    }
+  }
+
   .partners-block-stars-row {
     display: flex;
     width: 56px;
@@ -196,6 +256,16 @@
 .partners-block {
   display: flex;
 }
+@media screen and (max-width: 4000px) {
+  .gradient-block {
+    background: #051C2C;
+    background-image: url("/assets/svg-icon/partners/waves.svg");
+    background-image: url("/assets/svg-icon/partners/waves.svg"), linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+}
 
 @media screen and (max-width: 1320px) {
   .partners-container {
@@ -211,6 +281,7 @@
       }
     }
   }
+
 }
 
 @media screen and (max-width: 1024px) {
@@ -264,6 +335,8 @@
     display: flex;
     justify-content: center;
   }
+
+
 }
 
 @media screen and (max-width: 480px) {
@@ -329,4 +402,8 @@
     border-bottom: 0!important;
     grid-area: post-6;
   }
+  .gradient-block {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%), #051C2C;
+  }
+
 }

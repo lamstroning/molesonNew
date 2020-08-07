@@ -256,6 +256,133 @@
 .partners-block {
   display: flex;
 }
+.moleson-card {
+  border: 0px;
+  width: 30%;
+
+  // Header
+  > .card-header {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%), #051C2C;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    //height: $card-header-height;
+    min-height: 70px;
+    .status-head {
+      margin-top: 8px;
+    }
+
+    // Title
+    .card-title {
+      display: flex;
+      align-items: center;
+      margin-left: 0;
+      color: #FFFFFF !important;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+
+      //flex-wrap: wrap;
+
+      .card-icon {
+        margin-right: 0.75rem;
+        line-height: 0;
+
+        i {
+          font-size: 1.25rem;
+          color: #7E8299;
+          line-height: 0;
+
+          &:after,
+          &:before {
+            line-height: 0;
+          }
+        }
+
+      }
+
+      &,
+      .card-label {
+        font-weight: 500;
+        font-size: 1.275rem;
+        color: #181C32;
+      }
+
+      .card-label {
+        margin: 0 0.75rem 0 0;
+        flex-wrap: wrap;
+      }
+
+      // Description
+      small {
+        color: #B5B5C3;
+        font-size: 1rem;
+      }
+    }
+    .card-subtitle {
+      color: white;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    // Toolbar
+    .card-toolbar {
+      display: flex;
+      align-items: center;
+      margin: 0.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    // Line tabs integration
+    &.card-header-tabs-line {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      align-items: stretch;
+
+      .card-toolbar {
+        margin: 0;
+      }
+
+      .nav {
+        border-bottom-color: transparent;
+
+        .nav-item {
+          align-items: stretch;
+        }
+
+        .nav-link {
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+        }
+      }
+    }
+
+    &.card-header-right {
+      justify-content: flex-end;
+    }
+  }
+
+  // Body
+  > .card-body {
+    padding: 2rem 2rem;
+  }
+
+  // Footer
+  > .card-footer {
+    background-color: transparent;
+  }
+  .level-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .card-text {
+      margin-top: 12px;
+      margin-bottom: 0px;
+    }
+  }
+}
 @media screen and (max-width: 4000px) {
   .gradient-block {
     background: #051C2C;
@@ -264,7 +391,17 @@
     background-repeat: no-repeat;
     background-position: right;
   }
+  .level-cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
+  .moleson-card {
+    border: 0px;
+    width: 30%;
+  }
 }
 
 @media screen and (max-width: 1320px) {
@@ -335,11 +472,23 @@
     display: flex;
     justify-content: center;
   }
+  .level-cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .moleson-card {
+    border: 0px;
+    width: 100%;
+    margin-bottom: 18px;
+  }
 
 
 }
 
 @media screen and (max-width: 480px) {
+
 
   .partners-row {
     grid-template-columns: 1fr;

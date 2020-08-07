@@ -383,6 +383,20 @@
     }
   }
 }
+.marketing-ul {
+  li {
+    list-style: square;
+    color: #31B984;
+    font-size: 24px;
+  }
+  li li {
+    color: #FF9800;
+  }
+  li span {
+    color: #051C2C;
+    font-size: 16px;
+  }
+}
 @media screen and (max-width: 4000px) {
   .gradient-block {
     background: #051C2C;

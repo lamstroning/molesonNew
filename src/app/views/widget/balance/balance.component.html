@@ -6,7 +6,7 @@
        <div class="balance-cost">{{(user.balance * 0.01).toFixed(2)}} $</div>
       </div>
       <div class="balance-block desktop-show">
-        <a href="#" class="btn balance-btn btn-success payrexx-modal-window" data-href="https://moleson.payrexx.com/pay?tid=7df69168&referenceId={{user._id}}">Пополнить счёт</a>
+        <a href="#" class="btn balance-btn btn-success payrexx-modal-window" target="_blank" data-href="https://moleson.payrexx.com/pay?tid=7df69168&referenceId={{user._id}}">Пополнить счёт</a>
         <div class="btn balance-btn btn-outline-white" [routerLink]="'/balance/withdrawal'">Вывести</div>
       </div>
     </div>

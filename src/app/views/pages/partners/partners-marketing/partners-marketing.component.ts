@@ -7,7 +7,7 @@ import {FranchisesModel, FranchisesService} from '../../../../core/franchises';
   styleUrls: ['../partners-analytics/partners-analytics.component.scss']
 })
 export class PartnersMarketingComponent implements OnInit {
-  private width: number;
+  public width: number;
   constructor() { }
 
   ngOnInit() {

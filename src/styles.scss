@@ -183,6 +183,16 @@ h3.page-element-title {
     color: black!important;
   }
 }
+.btn-outline-green {
+  border-color: #31B984!important;
+  color: white!important;
+  font-weight: bold;
+  &:hover {
+    background-color: white!important;
+    color: black!important;
+  }
+}
+
 .btn-outline-secondary {
   border-color: #FF9F19!important;
   color: black!important;

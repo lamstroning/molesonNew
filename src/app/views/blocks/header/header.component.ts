@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
     this.width = window.innerWidth;
     this.router.events.subscribe(() => this.open = false);
     this.tokenService.getUserByToken().subscribe(res => {
+      console.log(res);
       this.user = res;
     }, err => {
       console.warn(err);

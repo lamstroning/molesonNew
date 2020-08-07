@@ -149,3 +149,163 @@
   <h3>Повышение статуса</h3>
   <div>Таблица условий повышения статуса партнёра</div>
 </div>
+
+<table class="table white-table" *ngIf="width > 1024">
+  <thead>
+  <tr>
+    <th scope="col">Партнёрский статус</th>
+    <th scope="col">Личные инвестиции</th>
+    <th scope="col">Количество регистрации по личной ссылке</th>
+    <th scope="col">Сумма собственных инвестиций и привлечённых по личной ссылке</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row" class="font-weight-bolder">Агент</th>
+    <td>0</td>
+    <td>0 (завершить верификацию, принять условия партнёрского соглашения)</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <th scope="row" class="font-weight-bolder">Инвест-агент</th>
+    <td>500 $</td>
+    <td>5 (пользователи с минимальными инвестициями 100 $)</td>
+    <td>1 000   $</td>
+  </tr>
+  <tr>
+    <th scope="row" class="font-weight-bolder">Инвест-брокер</th>
+    <td>1 500 $</td>
+    <td>3 (пользователи со статус партнёра “Инвест-агент”)</td>
+    <td>2 000 $</td>
+  </tr>
+  </tbody>
+</table>
+<div *ngIf="width <= 1024" class="my-franchises" xmlns="http://www.w3.org/1999/html">
+  <div class="slider">
+    <div class="my-franchises-area">
+      <div class="page-element p-0 ml-0 mr-0">
+        <div class="card-franchise">
+          <div class="card-franchise-info">
+            <div class="page-element-header p-0">
+              <div class="franchise-head">
+                <div class="name-block-big">
+                  <p>Партнерский статус</p>
+                  <p><b>Агент</b></p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Личные инвестиции</p>
+                <p class="name-digit">0</p>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Количество регистрации по личной ссылке</p>
+                <p class="name-digit">0</p>
+                <p class="name-notes">(завершить верификацию, принять условия партнёрского соглашения)</p>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Сумма собственных инвестиций и привлечённых по личной ссылке</p>
+                <p class="name-digit">0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-element p-0 ml-0 mr-0">
+        <div class="card-franchise">
+          <div class="card-franchise-info">
+            <div class="page-element-header p-0">
+              <div class="franchise-head">
+                <div class="name-block-big">
+                  <p>Партнерский статус</p>
+                  <p><b>Инвест-агент</b></p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Личные инвестиции</p>
+                <p class="name-digit">500 $</p>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Количество регистрации по личной ссылке</p>
+                <p class="name-digit">5</p>
+                <p class="name-notes">(пользователи с минимальными инвестициями 100 $)</p>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Сумма собственных инвестиций и привлечённых по личной ссылке</p>
+                <p class="name-digit">1 000 $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-element p-0 ml-0 mr-0">
+        <div class="card-franchise">
+          <div class="card-franchise-info">
+            <div class="page-element-header p-0">
+              <div class="franchise-head">
+                <div class="name-block-big">
+                  <p>Партнерский статус</p>
+                  <p><b>Инвест-брокер</b></p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Личные инвестиции</p>
+                <p class="name-digit">1 500 $</p>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Количество регистрации по личной ссылке</p>
+                <p class="name-digit">3</p>
+                <p class="name-notes">(пользователи со статус партнёра “Инвест-агент”)</p>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Сумма собственных инвестиций и привлечённых по личной ссылке</p>
+                <p class="name-digit">2 000 $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="pt-5 pb-2">
+  <h3>Условия маркетинг-плана Moleson</h3>
+  <div>Таблица условий повышения статуса партнёра</div>
+  <ul>
+    <li>вывод средств начинается от 100$</li>
+    <li>вывод брокерских вознаграждений доступен при наличии личных инвестиций не менее 200$</li>
+    <li>статус партнёра меняется автоматически при выполнении условий</li>
+    <li>
+      повышение статуса партнёра зависит от трёх условий:
+      <ol>
+        <li>Объём личных инвестиций</li>
+        <li>Суммарный объём инвестиций привлечённых по личной ссылке</li>
+        <li>Суммарный объём привлечённых инвестиций</li>
+      </ol>
+    </li>
+    <li>без ограничений по количеству личных приглашений в проект</li>
+    <li>сохранение порядка клиентской структуры</li>
+    <li>согласование инвестиций свыше 15000$ </li>
+  </ul>
+</div>

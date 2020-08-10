@@ -51,6 +51,10 @@ export class TokenService {
     return this.token;
   }
 
+  getVerificationStep() {
+    return 3;
+  }
+
   getUser() {
     return this.user;
   }

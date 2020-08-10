@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TokenService} from '../../../../core/token/token.service';
 
 @Component({
   selector: 'app-verification',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerificationComponent implements OnInit {
 
-  constructor() { }
+  constructor(public tokenService: TokenService) { }
 
   ngOnInit() {
   }
 
+  getStep() {
+    return this.tokenService.getVerificationStep();
+  }
+
+  getStepClass(step) {
+    if ( step > this.getStep() ) {
+      return 'step';
+    }
+    return 'step complete-step';
+  }
 }

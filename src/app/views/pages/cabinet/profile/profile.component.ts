@@ -80,6 +80,7 @@ export class ProfileComponent implements OnInit {
   }
 
   toDataURL(url, callback) {
+    console.log(url);
     const xhr = new XMLHttpRequest();
     xhr.onload = () => {
       const reader = new FileReader();
@@ -114,14 +115,35 @@ export class ProfileComponent implements OnInit {
     if (this.user.picture[0] === '.') {
       this.user.picture = this.user.picture.slice(1);
     }
-    const url = 'http://lk.moleson.pro' + this.user.picture;
+    // const url = 'https://lk.moleson.pro' + this.user.picture;
+    const url = '/api/user/update/avatar';
+    console.log(url);
     if (type === 'svg') {
       type += '+xml';
     }
+    /*
     this.toDataURL(url, dataUrl => {
       const file = new File([dataUrl], 'passport', {type});
       req.append('passport', file);
     });
+     */
+    //const queryString = new URLSearchParams(new FormData(myForm)).toString()
+
+    this.authService.updateUser(req).subscribe(res => {
+      this.notificationType = 'success-msg';
+      this.notificationText = 'Данные успешно изменены';
+      console.log(res);
+    }, err => {
+      this.notificationType = 'error-msg';
+      if (err.error.data === 'It is not allowed to change personal data') {
+        this.notificationText = 'Данные нельзя измененить';
+      } else {
+        this.notificationText = 'Необходимо заполнить все поля формы';
+      }
+      console.warn(err);
+    });
+
+    /*
     this.toDataURL(url, dataUrl => {
       const file = new File([dataUrl], 'avatar', {type});
       req.append('avatar', file);
@@ -139,6 +161,7 @@ export class ProfileComponent implements OnInit {
         console.warn(err);
       });
     });
+     */
     this.scrollTo(window, 0, 100);
   }
 

@@ -49,6 +49,15 @@ header  {
       padding-top: 16px;
       padding-left: 45px;
     }
+
+    .balance-button {
+      min-width: 243px;
+      margin-left: 3px;
+      line-height: 20px;
+      padding-top: 16px;
+      padding-left: 45px;
+    }
+
     .lang-block {
       min-width: 100px;
       max-width: 117px;
@@ -92,6 +101,11 @@ header  {
       .contact-block {
         min-width: 180px;
       }
+
+      .balance-button {
+        min-width: 243px;
+      }
+
       .lang-block {
       }
     }

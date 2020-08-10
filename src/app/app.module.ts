@@ -4,6 +4,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ViewsModule} from './views/views.module';
 import {RecaptchaModule} from 'angular-google-recaptcha';
+import {TokenService} from './core/token/token.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import {RecaptchaModule} from 'angular-google-recaptcha';
     ViewsModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [TokenService],
   exports: [],
   bootstrap: [AppComponent]
 })

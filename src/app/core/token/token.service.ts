@@ -12,8 +12,10 @@ const API_USERS_URL = 'api';
 
 export class TokenService {
   token: string = null;
+  user: User;
 
   constructor(private http: HttpClient) {
+    this.user = null;
   }
 
   setToken(token: string) {
@@ -21,9 +23,13 @@ export class TokenService {
   }
 
   getUserByToken(): Observable<User> {
+    if ( this.user !== null ) {
+      return of(this.user);
+    }
     return this.http.post<any>(API_USERS_URL + '/user/token', {},
       {headers: this.getUserTokenHeader()}).pipe(concatMap(res => {
         if (res.status === 'success') {
+          this.user = res.data;
           return of(res.data);
         } else {
           return null;
@@ -43,5 +49,9 @@ export class TokenService {
 
   getUserToken() {
     return this.token;
+  }
+
+  getUser() {
+    return this.user;
   }
 }

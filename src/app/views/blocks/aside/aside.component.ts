@@ -1,6 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Menu} from '../../../core/config/menu.config';
 import {Router} from '@angular/router';
+import {TokenService} from '../../../core/token/token.service';
 
 @Component({
   selector: 'app-aside',
@@ -11,7 +12,8 @@ export class AsideComponent implements OnInit {
   menu = Menu;
   open = false;
   width = window.innerWidth;
-  constructor(public router: Router) {
+  constructor(public router: Router,
+              public tokenService: TokenService) {
    console.log(router.isActive('dashboard', false));
   }
 

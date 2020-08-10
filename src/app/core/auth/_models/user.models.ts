@@ -1,6 +1,8 @@
 import {RegUserMoleson} from './reg-data.model';
 import {AccessLevel} from './access-level';
 import {BaseModel} from '../../_base/crud/models/_base.model';
+import {ReferralService} from '../../referral';
+import {ReferralUserModel} from '../../referral/_models/referral-user.model';
 
 export class User extends BaseModel {
   INN: string;
@@ -42,6 +44,7 @@ export class User extends BaseModel {
   passport_page_2: any;
   passport_page_3: any;
   phone: number;
+  referral: ReferralUserModel;
   clear(): void {
     this.accessLevel = new AccessLevel();
     this.regDate = new RegUserMoleson();
@@ -77,5 +80,6 @@ export class User extends BaseModel {
     this.urlMailConfirmation = '';
     this.username = '';
     this._id = '';
+    this.referral = new ReferralUserModel(null);
   }
 }

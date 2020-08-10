@@ -13,10 +13,12 @@
   <div class="page-element client-link">
   <app-client-link></app-client-link>
   </div>
-  <div class="inviter-person page-element ml-0 mr-0 arrow-dropdown a-d-b">
-    <p>Ваш пригласитель</p>
-    <p><b>Дмитрий Иванов</b></p>
-  </div>
+  <ng-container *ngIf="tokenService.getUser()!== null">
+    <div *ngIf="tokenService.getUser().referral.fullName!== null" class="inviter-person page-element ml-0 mr-0 a-d-b">
+      <p>Ваш пригласитель</p>
+      <p><b>{{tokenService.getUser().referral.fullName}}</b></p>
+    </div>
+  </ng-container>
 </div>
 
 <div *ngIf="width <= 1024" class="left-block">

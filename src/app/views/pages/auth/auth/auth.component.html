@@ -18,6 +18,16 @@
 <!--      <div class="reset-password">Забыли пароль?</div>-->
     </div>
   </div>
+
+  <div class="mt-3">
+    <recaptcha
+      [formControl]="myRecaptcha"
+      (scriptLoad)="onScriptLoad()"
+      (scriptError)="onScriptError()"
+    >
+    </recaptcha>
+  </div>
+
   <div class="auth-form-body-row">
 <!--    <div class="btn moleson-btn-secondary" [routerLink]="'/dashboard'" (click)="login()">Войти</div>-->
     <button class="btn moleson-btn-secondary" (click)="login()" [class.btnDisable]="formLoad" [disabled]="formLoad">Войти</button>

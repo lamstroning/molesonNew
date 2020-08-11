@@ -198,11 +198,6 @@ export class ProfileComponent implements OnInit {
     } else {
       this.initUserFromForm();
       req = this.createRequest();
-      console.log(req);
-      for (var value of req.values()) {
-        console.log(value);
-      }
-
       console.log('form valid');
     }
     if (type === 'svg') {

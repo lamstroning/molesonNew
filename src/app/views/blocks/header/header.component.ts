@@ -27,4 +27,8 @@ export class HeaderComponent implements OnInit {
       this.open = false;
     }
   }
+
+  goto_url(url: string) {
+    window.location.href = url;
+  }
 }

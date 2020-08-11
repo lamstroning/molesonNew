@@ -15,9 +15,9 @@
         <div class="franchise-body">
           <div class="franchise-body-block">
             <div class="main-info">
-              <div class="avatar" [style.background-image]="'url(' + franchise.picture + ')'"></div>
+              <div class="avatar" [routerLink]="['/franchises-detail', franchise._id]" [style.background-image]="'url(' + franchise.picture + ')'"></div>
               <div>
-                <div class="franchise-title">{{franchise.name}}</div>
+                <div class="franchise-title"  [routerLink]="['/franchises-detail', franchise._id]">{{franchise.name}}</div>
                 <div class="franchise-adresse">{{franchise.adresse}}</div>
               </div>
             </div>

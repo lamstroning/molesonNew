@@ -33,11 +33,10 @@ export class Step4Component implements OnInit {
   ];
   notificationType = 'hidden-msg';
   notificationText = '';
-  constructor(private authService: AuthService, private tokenService: TokenService) { }
+  constructor(private authService: AuthService, public tokenService: TokenService) { }
 
   ngOnInit() {
     this.tokenService.getUserByToken().subscribe(res => {
-      console.log(res);
       this.scan[0].img = res.passport_page_1;
       this.scan[1].img = res.passport_page_2;
       this.scan[2].img = res.passport_page_3;

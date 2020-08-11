@@ -455,6 +455,12 @@ svg {
 mb-12 {
   margin-bottom: 12px;
 }
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
 @media screen and (max-width: 1024px) {
   .mobile-show {
     display: block;

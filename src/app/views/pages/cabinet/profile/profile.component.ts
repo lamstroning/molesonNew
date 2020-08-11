@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {User} from '../../../../core/auth/_models/user.models';
 import {AuthService} from '../../../../core/auth/_services/auth.service';
 import {TokenService} from '../../../../core/token/token.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -31,14 +32,22 @@ export class ProfileComponent implements OnInit {
   avatar: string;
   notificationType = 'hidden-msg';
   notificationText = '';
+  form: FormGroup;
+  private form_in_progress: boolean;
 
-  constructor(private authService: AuthService, private tokenService: TokenService) {
 
+  constructor(
+    private authService: AuthService,
+    // tslint:disable-next-line:variable-name
+    protected _formBuilder: FormBuilder,
+    private tokenService: TokenService) {
+    this.form_in_progress = false;
   }
 
   ngOnInit() {
     this.tokenService.getUserByToken().subscribe(res => {
       this.user = res;
+      console.log(this.user);
       this.checkUserData();
     });
     for (let i = 1; i <= 31; i++) {
@@ -47,6 +56,27 @@ export class ProfileComponent implements OnInit {
     for (let i = 1930; i <= 2002; i++) {
       this.year.push(i);
     }
+  }
+
+  initFormData() {
+    this.form = this._formBuilder.group({
+      fullname0: [this.fullname[0], Validators.required],
+      fullname1: [this.fullname[1], Validators.required],
+      fullname2: [this.fullname[2], Validators.required],
+      gender: [this.user.gender, [Validators.required]],
+      date0: [this.date[0], [Validators.required]],
+      date1: [this.date[1], [Validators.required]],
+      date2: [this.date[2], [Validators.required]],
+      citizenship: [this.user.citizenship, Validators.required],
+      passportId: [this.user.passportId, Validators.required],
+      issued: [this.user.issued, Validators.required],
+      dateIssued: [this.user.dateIssued, Validators.required],
+      departmentCode: [this.user.departmentCode, Validators.required],
+      registrationAddress: [this.user.registrationAddress, Validators.required],
+      SNILS: [this.user.SNILS, Validators.required],
+      INN: [this.user.INN, Validators.required],
+      // phone: [this.user.phone, Validators.required],
+    });
   }
 
   formatDate() {
@@ -77,6 +107,7 @@ export class ProfileComponent implements OnInit {
     if (this.user.picture === undefined) {
       this.user.picture = '/assets/svg-icon/user.png';
     }
+    this.initFormData();
   }
 
   toDataURL(url, callback) {
@@ -109,6 +140,36 @@ export class ProfileComponent implements OnInit {
     }, false);
   }
 
+  initUserFromForm() {
+    const fullName = '';
+    this.user.fullName = fullName.concat(
+      this.form.get('fullname0').value,
+      ' ',
+      this.form.get('fullname1').value,
+      ' ',
+      this.form.get('fullname2').value
+    );
+
+    this.user.gender = this.form.get('gender').value;
+    this.user.registrationAddress = this.form.get('registrationAddress').value;
+    this.user.passportId = this.form.get('passportId').value;
+    this.user.citizenship = this.form.get('citizenship').value;
+    this.user.issued = this.form.get('issued').value;
+    this.user.dateIssued = this.form.get('dateIssued').value;
+    this.user.departmentCode = this.form.get('departmentCode').value;
+    this.user.INN = this.form.get('INN').value;
+    this.user.SNILS = this.form.get('SNILS').value;
+
+    const birthday = '';
+    this.user.birthday = birthday.concat(
+      this.form.get('date0').value,
+      '.',
+      this.form.get('date1').value,
+      '.',
+      this.form.get('date2').value,
+      );
+  }
+
   send(req: FormData) {
     // let type = 'image/jpeg' + this.user.picture.split('.').pop();
     let type = 'image/jpeg';
@@ -118,6 +179,32 @@ export class ProfileComponent implements OnInit {
     // const url = 'https://lk.moleson.pro' + this.user.picture;
     const url = '/api/user/update/avatar';
     console.log(url);
+    // console.log(this.form.controls);
+
+    /*
+    for(const field in this.form.controls) { // 'field' is a string
+      const control = this.form.get(field);
+      if ( control.status === 'INVALID' ) {
+        console.log(field);
+        console.log(control);
+      } else {
+      }
+    }
+     */
+
+    if (!this.form.valid) {
+      console.log('invalid form');
+      return false;
+    } else {
+      this.initUserFromForm();
+      req = this.createRequest();
+      console.log(req);
+      for (var value of req.values()) {
+        console.log(value);
+      }
+
+      console.log('form valid');
+    }
     if (type === 'svg') {
       type += '+xml';
     }
@@ -193,8 +280,14 @@ export class ProfileComponent implements OnInit {
 
   update() {
     this.notificationType = 'loading';
+    this.form_in_progress = true;
     this.user.fullName = this.fullname.join(' ');
     this.user.birthday = this.formatDate();
+    const req = this.createRequest();
+    this.send(req);
+  }
+
+  createRequest() {
     const req = new FormData();
     req.append('fullName', this.user.fullName);
     req.append('gender', this.user.gender);
@@ -208,6 +301,16 @@ export class ProfileComponent implements OnInit {
     req.append('SNILS', this.user.SNILS);
     req.append('INN', this.user.INN);
     req.append('phone', this.user.phone ? this.user.phone.toString() : ' ');
-    this.send(req);
+    return req;
+  }
+
+  getErrorClass(controlName: string) {
+    if ( !this.form_in_progress ) {
+      return '';
+    }
+    if ( this.form.controls[controlName].status === 'INVALID' ) {
+      return 'error';
+    }
+    return '';
   }
 }

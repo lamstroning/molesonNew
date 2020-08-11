@@ -52,6 +52,7 @@ export class TokenService {
   }
 
   getVerificationStep() {
+    // return 3;
     let step = 3;
     if ( this.user !== null ) {
       if ( this.user.isEdit ) {

@@ -5,6 +5,8 @@ import {AppComponent} from './app.component';
 import {ViewsModule} from './views/views.module';
 import {RecaptchaModule} from 'angular-google-recaptcha';
 import {TokenService} from './core/token/token.service';
+import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,11 +14,18 @@ import {TokenService} from './core/token/token.service';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     ViewsModule,
     AppRoutingModule,
   ],
   providers: [TokenService],
-  exports: [],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

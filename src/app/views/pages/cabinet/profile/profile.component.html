@@ -30,9 +30,9 @@
           Почта подтверждена
         </div>
         <div class="mail-input">
-          <input class="default-input" type="text">
+          <input class="default-input" type="text" [(ngModel)]="user.email" disabled>
         </div>
-        <div class="moleson-btn moleson-btn-secondary">изменить</div>
+        <!--div class="moleson-btn moleson-btn-secondary">изменить</div-->
       </div>
       <div class="page-element">
         <div class="input-row">
@@ -53,30 +53,31 @@
     <app-notification [type]="notificationType" [text]="notificationText"></app-notification>
     <div class="profile-block-information">
       <div class="page-element">
+        <form [formGroup]="form">
         <div class="page-element-header page-element-header-full-line">
           <div class="page-element-title">Личная инофрмация</div>
         </div>
         <div class="information-body">
-          <div class="input-row">
+          <div class="input-row {{getErrorClass('fullname0')}}">
             <div class="default-input-title">Фамилия</div>
-            <input type="text" class="default-input" [(ngModel)]="fullname[0]">
+            <input type="text" class="default-input" formControlName="fullname0">
           </div>
-          <div class="input-row">
+          <div class="input-row {{getErrorClass('fullname1')}}">
             <div class="default-input-title">Имя</div>
-            <input type="text" class="default-input" [(ngModel)]="fullname[1]">
+            <input type="text" class="default-input" formControlName="fullname1">
           </div>
-          <div class="input-row">
+          <div class="input-row {{getErrorClass('fullname2')}}">
             <div class="default-input-title">Отчество</div>
-            <input type="text" class="default-input" [(ngModel)]="fullname[2]">
+            <input type="text" class="default-input" formControlName="fullname2">
           </div>
-          <div class="input-row">
+          <div class="input-row {{getErrorClass('gender')}}">
             <div class="default-input-title">Пол</div>
             <label>
-              <input type="radio" name="gender" value="м" [(ngModel)]="user.gender">
+              <input type="radio" name="gender" value="м" formControlName="gender">
               мужской
             </label>
             <label>
-              <input type="radio" name="gender" value="ж" [(ngModel)]="user.gender">
+              <input type="radio" name="gender" value="ж" formControlName="gender">
               женский
             </label>
           </div>
@@ -84,57 +85,58 @@
             <div class="default-input-title">Дата рождения</div>
             <div class="input-select-row">
               <div class="custom-arrow-dropdown default-field">
-                <select class="form-control" [(ngModel)]="date[0]">
+                <select class="form-control {{getErrorClass('date0')}}"  formControlName="date0">
                   <option *ngFor="let i of year">{{i}}</option>
                 </select>
               </div>
               <div class="custom-arrow-dropdown default-field">
-                <select class="form-control" [(ngModel)]="date[1]">
+                <select class="form-control {{getErrorClass('date1')}}" formControlName="date1">
                   <option *ngFor="let i of month; let val = index"
                           value="{{convertDate(2, val + 1 + '')}}">{{i}}</option>
                 </select>
               </div>
               <div class="custom-arrow-dropdown default-field">
-                <select class="form-control" [(ngModel)]="date[2]">
+                <select class="form-control {{getErrorClass('date2')}}" formControlName="date2">
                   <option *ngFor="let i of days">{{i}}</option>
                 </select>
               </div>
             </div>
           </div>
-          <div class="input-row">
+          <div class="input-row {{getErrorClass('registrationAddress')}}">
             <div class="default-input-title">Адрес регистрации</div>
-            <input type="text" class="default-input" [(ngModel)]="user.registrationAddress">
+            <input type="text" class="default-input" formControlName="registrationAddress">
           </div>
-          <div class="input-row">
+          <div class="input-row {{getErrorClass('passportId')}}">
             <div class="default-input-title">Номер паспорта</div>
-            <input type="text" class="default-input" [(ngModel)]="user.passportId">
+            <input type="text" class="default-input" formControlName="passportId">
           </div>
-          <div class="input-row">
+          <div class="input-row {{getErrorClass('citizenship')}}">
             <div class="default-input-title">Гражданство</div>
-            <input type="text" class="default-input" [(ngModel)]="user.citizenship">
+            <input type="text" class="default-input" formControlName="citizenship">
           </div>
-          <div class="input-row">
+          <div class="input-row {{getErrorClass('issued')}}">
             <div class="default-input-title">Кем выдан</div>
-            <input type="text" class="default-input" [(ngModel)]="user.issued">
+            <input type="text" class="default-input" formControlName="issued">
           </div>
-          <div class="input-row">
+          <div class="input-row {{getErrorClass('dateIssued')}}">
             <div class="default-input-title">Дата выдачи</div>
-            <input type="text" class="default-input" [(ngModel)]="user.dateIssued">
+            <input type="text" class="default-input" formControlName="dateIssued">
           </div>
-          <div class="input-row">
+          <div class="input-row {{getErrorClass('departmentCode')}}">
             <div class="default-input-title">Код подразделения</div>
-            <input type="text" class="default-input" [(ngModel)]="user.departmentCode">
+            <input type="text" class="default-input" formControlName="departmentCode">
           </div>
-          <div class="input-row">
+          <div class="input-row {{getErrorClass('INN')}}">
             <div class="default-input-title">ИНН</div>
-            <input type="text" class="default-input" [(ngModel)]="user.INN">
+            <input type="text" class="default-input" formControlName="INN">
           </div>
-          <div class="input-row">
+          <div class="input-row {{getErrorClass('SNILS')}}">
             <div class="default-input-title">СНИЛС</div>
-            <input type="text" class="default-input" [(ngModel)]="user.SNILS">
+            <input type="text" class="default-input" formControlName="SNILS">
           </div>
           <div class="moleson-btn moleson-btn-secondary" (click)="update()">Сохранить изменения</div>
         </div>
+        </form>
       </div>
     </div>
   </div>

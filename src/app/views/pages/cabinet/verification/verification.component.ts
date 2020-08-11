@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TokenService} from '../../../../core/token/token.service';
 import {Router} from '@angular/router';
+import {ApiConfig} from '../../../../core/config/api.config';
 
 @Component({
   selector: 'app-verification',
@@ -10,7 +11,8 @@ import {Router} from '@angular/router';
 export class VerificationComponent implements OnInit {
 
   constructor(public tokenService: TokenService,
-              private router: Router) { }
+              protected router: Router,
+              protected apiConfig: ApiConfig) { }
 
   ngOnInit() {
     this.jumpToActualStep();
@@ -36,7 +38,7 @@ export class VerificationComponent implements OnInit {
       nextStep = this.getStep();
     }
 
-    const result = jumpStep.concat('/cabinet/verification/step', nextStep.toString());
+    const result = jumpStep.concat(this.apiConfig.cabinetVerifiction, 'step', nextStep.toString());
     this.router.navigate([result]);
   }
   getNextStep( step: number ) {
@@ -50,5 +52,13 @@ export class VerificationComponent implements OnInit {
       return 'active-step';
     }
     return '';
+  }
+  protectStep(step: number) {
+    if ( this.tokenService.getVerificationStep() < step ) {
+      const jumpStep = '';
+      this.router.navigate(
+        [jumpStep.concat(this.apiConfig.cabinetVerifiction, 'step', this.tokenService.getVerificationStep().toString())]
+      );
+    }
   }
 }

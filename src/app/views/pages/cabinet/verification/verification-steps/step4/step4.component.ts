@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../../../../core/auth/_services/auth.service';
 import {TokenService} from '../../../../../../core/token/token.service';
+import {VerificationComponent} from '../../verification.component';
+import {Router} from '@angular/router';
+import {ApiConfig} from '../../../../../../core/config/api.config';
 
 const MB = 1048576;
 const KB = 1024;
@@ -10,7 +13,7 @@ const KB = 1024;
   templateUrl: './step4.component.html',
   styleUrls: ['./step4.component.scss']
 })
-export class Step4Component implements OnInit {
+export class Step4Component extends VerificationComponent implements OnInit {
   scan: FileType[] = [
     {
       name: null,
@@ -33,9 +36,20 @@ export class Step4Component implements OnInit {
   ];
   notificationType = 'hidden-msg';
   notificationText = '';
-  constructor(private authService: AuthService, public tokenService: TokenService) { }
+  constructor(private authService: AuthService,
+              public tokenService: TokenService,
+              protected router: Router,
+              protected apiConfig: ApiConfig) {
+    super(
+      tokenService,
+      router,
+      apiConfig
+    );
+  }
 
   ngOnInit() {
+    this.protectStep(4);
+
     this.tokenService.getUserByToken().subscribe(res => {
       this.scan[0].img = res.passport_page_1;
       this.scan[1].img = res.passport_page_2;

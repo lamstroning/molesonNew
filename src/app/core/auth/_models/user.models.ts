@@ -24,6 +24,7 @@ export class User extends BaseModel {
   gender: string;
   isInstallmentPlan: boolean;
   isVerified: boolean;
+  isEdit: boolean;
   isVerifiedMail: boolean;
   issued: string;
   level: number;
@@ -65,6 +66,7 @@ export class User extends BaseModel {
     this.gender = '';
     this.isInstallmentPlan = false;
     this.isVerified = false;
+    this.isEdit = true;
     this.isVerifiedMail = false;
     this.passportId = '';
     this.passport = '';

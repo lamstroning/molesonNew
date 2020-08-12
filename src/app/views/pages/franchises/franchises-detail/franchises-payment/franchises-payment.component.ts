@@ -34,14 +34,34 @@ export class FranchisesPaymentComponent implements OnInit {
   }
   buy() {
     // Проверить можно ли юзеру покупать
+    if ( !this.checkUserIsVerified() ) {
+      this.toastr.error('Для покупки франшизы вам нужно пройти верификацию', 'Ошибка покупки франшизы');
+      return false;
+    }
+
     // Проверить баланс
-    this.toastr.success('Hello world!', 'Toastr fun!');
 
     this.franchisesService.buyFranchise(this.currentFranchise._id + '', +this.count).subscribe(res => {
       console.log(res);
+      if (res.status === 'success') {
+        this.toastr.success('Куплено долей: ' + res.data.data.stocks, 'Операция успешна');
+      }
     },
-        err => console.warn(err)
+        err => {
+          console.warn(err);
+          console.log(err.error.data);
+
+          // tslint:disable-next-line:variable-name
+          let error_message = 'Неизвестная ошибка';
+          if (err.error.data === 'Insufficient funds') {
+            error_message = 'Недостаточно средств на счету';
+          }
+          this.toastr.error(error_message, 'Ошибка покупки франшизы');
+        }
     );
+  }
+  checkUserIsVerified() {
+    return this.user.isVerified;
   }
   ngOnInit() {
     this.tokenService.getUserByToken().subscribe(res => {

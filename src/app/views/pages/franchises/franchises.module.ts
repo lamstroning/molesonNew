@@ -15,6 +15,8 @@ import {FranchisesComponent} from './franchises.component';
 import {WidgetModule} from '../../widget/widget.module';
 import {FranchisesDetailModule} from './franchises-detail/franchises-detail.module';
 import { FranchisesPaymentComponent } from './franchises-detail/franchises-payment/franchises-payment.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
 
 const routes: Routes = [
   {
@@ -36,7 +38,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
-    WidgetModule
+    WidgetModule,
   ],
   providers: [FranchisesService],
   exports: [

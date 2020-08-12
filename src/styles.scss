@@ -1,5 +1,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import './assets/fonts/stylesheet.css';
+@import '~ngx-toastr/toastr';
+
 :focus {
   outline: none;
 }

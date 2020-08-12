@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ViewsModule} from './views/views.module';
-import {RecaptchaModule} from 'angular-google-recaptcha';
 import {TokenService} from './core/token/token.service';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';

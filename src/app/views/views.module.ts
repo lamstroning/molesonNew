@@ -11,6 +11,8 @@ import {BlocksModule} from './blocks/blocks.module';
 import {HeaderModule} from './blocks/header/header.module';
 import {WidgetModule} from './widget/widget.module';
 import {NotFoundComponent} from './pages/notFound/notfound.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import {NotFoundComponent} from './pages/notFound/notfound.component';
     RouterModule,
     CommonModule,
     WidgetModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [FranchisesService],
   exports: [

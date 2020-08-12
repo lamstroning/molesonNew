@@ -4,6 +4,7 @@ import {Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {TokenService} from '../../../../../core/token/token.service';
 import {User} from '../../../../../core/auth/_models/user.models';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-franchises-payment',
@@ -20,7 +21,8 @@ export class FranchisesPaymentComponent implements OnInit {
   constructor(
     public franchisesService: FranchisesService,
     private activateRoute: ActivatedRoute,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private toastr: ToastrService,
   ) { }
   checkValidate() {
     const res = parseInt(this.count, 10);
@@ -31,6 +33,10 @@ export class FranchisesPaymentComponent implements OnInit {
     }
   }
   buy() {
+    // Проверить можно ли юзеру покупать
+    // Проверить баланс
+    this.toastr.success('Hello world!', 'Toastr fun!');
+
     this.franchisesService.buyFranchise(this.currentFranchise._id + '', +this.count).subscribe(res => {
       console.log(res);
     },

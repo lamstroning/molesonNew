@@ -1,22 +1,15 @@
 <div class="progress-container">
-  my stat
   <div class="progress-header">
-    <div class="status-point" [style.background-color]="franchise.color"></div>
-    <div class="status-title">{{franchise.status.title}}</div>
+    <div class="status-title">На вашем счете</div>
   </div>
   <div class="progress-body">
     <div class="progress-row">
-      <div class="progress-title">Прогресс</div>
-      <div class="progress-present">{{franchise.progress + '%'}}</div>
+      <div class="progress-title">Количество долей</div>
+      <div class="progress-present">{{transactionsCount}}</div>
     </div>
     <div class="progress-row">
-      <div class="progress-bar">
-        <div class="progress-bar-full"  [style.background-color]="franchise.color" [style.width]="franchise.progress + '%'"></div>
-      </div>
-    </div>
-    <div class="progress-row">
-      <div class="progress-participant">{{franchise.investors.length}} участнков</div>
-      <div class="progress-participant">Доступно {{franchise.formatCost}} $</div>
+      <div class="progress-title">Стоимость</div>
+      <div class="progress-present">{{transactionsSum}} $</div>
     </div>
   </div>
 </div>

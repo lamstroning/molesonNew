@@ -7,6 +7,7 @@ export class OperationsModel {
   user: string;
   status: string;
   typeAction: string;
+  typeActionRaw: string;
   type: boolean;
   ico: string;
   typeIco: string;
@@ -24,6 +25,7 @@ export class OperationsModel {
     this._id = item._id;
     this.user = item.user;
     this.typeIco = 'svg';
+    this.typeActionRaw = item.typeAction;
 
     if (item.typeAction === 'input') {
       this.status = '#31b984';

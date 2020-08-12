@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   openMobile = false;
   width = window.innerWidth;
   user: User;
-  constructor(private authService: AuthService, private tokenService: TokenService) { }
+  constructor(private authService: AuthService, public tokenService: TokenService) { }
 
   ngOnInit() {
     // console.log(this.authService.getUserByToken());
@@ -23,13 +23,14 @@ export class ProfileComponent implements OnInit {
     this.tokenService.getUserByToken().subscribe(
       next => {
         this.user = next;
-        // console.log(this.user);
+        console.log(this.user);
       },
       err => console.log(err),
       () => {
         // console.log('accept');
       });
   }
+
   openBlock(open: boolean, event: Event) {
     event.stopPropagation();
     this.open = open;

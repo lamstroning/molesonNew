@@ -3,10 +3,10 @@
     <div class="client-status-header-subtitle">Клиентский статус</div>
     <div class="client-status-header-block">
       <div class="client-status-header-point"></div>
-      <div class="client-status-header-title">Инвест-брокер</div>
+      <div class="client-status-header-title" *ngIf="tokenService.getUser() !== null">{{tokenService.getUserStatus()}}</div>
     </div>
   </div>
-  <div class="client-status-body">
+  <!--div class="client-status-body">
     <div class="client-status-body-row">
       <div class="client-status-row-title">Колличество регистраций по личной ссылке</div>
       <div class="client-status-row-statistic">17</div>
@@ -23,5 +23,5 @@
       <div class="client-status-row-title">Агентские вознаграждения</div>
       <div class="client-status-row-statistic ">100 $</div>
     </div>
-  </div>
+  </div-->
 </div>

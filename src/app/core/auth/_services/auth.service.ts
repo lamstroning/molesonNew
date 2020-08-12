@@ -49,6 +49,7 @@ export class AuthService {
 
   logout() {
     this.tokenService.setToken(null);
+    this.tokenService.setUser(null);
     localStorage.clear();
     this.router.navigateByUrl('/auth');
   }

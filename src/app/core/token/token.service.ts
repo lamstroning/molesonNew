@@ -22,10 +22,15 @@ export class TokenService {
     this.token = token;
   }
 
+  setUser(user: User) {
+    this.user = user;
+  }
+
   getUserByToken(): Observable<User> {
     if ( this.user !== null ) {
       return of(this.user);
     }
+    console.log('getUserByToken');
     return this.http.post<any>(API_USERS_URL + '/user/token', {},
       {headers: this.getUserTokenHeader()}).pipe(concatMap(res => {
         if (res.status === 'success') {
@@ -48,6 +53,7 @@ export class TokenService {
   }
 
   getUserToken() {
+    console.log(this.token);
     return this.token;
   }
 
@@ -69,5 +75,17 @@ export class TokenService {
 
   getUser() {
     return this.user;
+  }
+
+  getUserStatus() {
+    const statuses = {
+      1: 'Агент',
+      2: 'Инвест-агент',
+      3: 'Инвест-брокер'
+    };
+    if ( statuses[this.user.level] === undefined ) {
+      return 'Агент';
+    }
+    return statuses[this.user.level];
   }
 }

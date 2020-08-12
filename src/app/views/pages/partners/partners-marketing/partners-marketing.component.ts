@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FranchisesModel, FranchisesService} from '../../../../core/franchises';
+import {TokenService} from '../../../../core/token/token.service';
 
 @Component({
   selector: 'app-partners-marketing',
@@ -8,7 +9,7 @@ import {FranchisesModel, FranchisesService} from '../../../../core/franchises';
 })
 export class PartnersMarketingComponent implements OnInit {
   public width: number;
-  constructor() { }
+  constructor(public tokenService: TokenService) { }
 
   ngOnInit() {
     this.width = window.innerWidth;

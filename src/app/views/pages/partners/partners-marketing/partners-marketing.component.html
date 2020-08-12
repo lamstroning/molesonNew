@@ -7,7 +7,7 @@
     </div>
     <div class="partners-block-info">
       <div class="partners-block-name">Ваш клиентский статус:</div>
-      <div class="partners-block-title">Инвест-агент</div>
+      <div class="partners-block-title" *ngIf="tokenService.getUser()">{{tokenService.getUserStatus()}}</div>
     </div>
   </div>
   <!--div *ngFor="let block of blocks" class="partners-block">

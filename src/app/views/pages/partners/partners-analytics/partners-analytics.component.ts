@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ReferralService, PartnersList} from '../../../../core/referral';
+import {TokenService} from '../../../../core/token/token.service';
 
 @Component({
   selector: 'app-partners-analytics',
@@ -41,7 +42,8 @@ export class PartnersAnalyticsComponent implements OnInit {
     return num.toString().replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1' + ' ');
   }
 
-  constructor(private referralService: ReferralService) {
+  constructor(private referralService: ReferralService,
+              public tokenService: TokenService) {
   }
 
   ngOnInit() {

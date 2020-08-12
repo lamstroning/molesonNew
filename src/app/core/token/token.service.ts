@@ -77,15 +77,35 @@ export class TokenService {
     return this.user;
   }
 
-  getUserStatus() {
-    const statuses = {
-      1: 'Агент',
-      2: 'Инвест-агент',
-      3: 'Инвест-брокер'
-    };
-    if ( statuses[this.user.level] === undefined ) {
-      return 'Агент';
+  getAccessLevel() {
+    return this.user.accessLevel.lvl;
+  }
+
+  isAgent() {
+    if ( this.getAccessLevel() === 2 ) {
+      return true;
     }
-    return statuses[this.user.level];
+    return false;
+  }
+
+  getUserStatus() {
+    if ( this.user.accessLevel.lvl === 2 ) {
+      const agentStatuses = {
+        1: 'Агент',
+        2: 'Инвест-агент',
+        3: 'Инвест-брокер'
+      };
+      if ( agentStatuses[this.user.level] === undefined ) {
+        return 'Агент';
+      }
+      return agentStatuses[this.user.level];
+    }
+    if ( this.user.accessLevel.lvl === 99 ) {
+      return 'Admin';
+    }
+    if ( this.user.accessLevel.lvl === 1 ) {
+      return 'Инвестор';
+    }
+    return 'Клиент';
   }
 }

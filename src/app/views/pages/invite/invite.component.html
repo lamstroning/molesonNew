@@ -1,0 +1,18 @@
+<div class="page-area">
+  <div class="main-block">
+    <div class="page-element">
+      <div class="page-element-header page-element-header-full-line">
+        <div class="page-element-header-title">Расскажи о Moleson</div>
+        <p>Распространяй информацию о проекте и получай дополнительные вознаграждения</p>
+      </div>
+      <div *ngIf="user" class="client-link">
+        <div class="client-link-title">Ссылка</div>
+        <div class="client-link-subtitle">Личная ссылка для приглашения в проект</div>
+        <div class="client-link-row">
+          <input #selectInput class="default-input" value="lk.moleson.pro/ref/{{user.referralLink}}">
+          <div class="copy-text" (click)="copyText()"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

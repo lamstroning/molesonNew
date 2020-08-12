@@ -61,6 +61,7 @@ export class AuthService {
           console.log(next);
           localStorage.setItem('auth-token', next.data.accessToken);
           this.tokenService.setToken(next.data.accessToken);
+          this.tokenService.setUser(next.data);
           return of<User>(next.data);
         } else {
           return null;

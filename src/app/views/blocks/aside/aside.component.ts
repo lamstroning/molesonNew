@@ -14,10 +14,18 @@ export class AsideComponent implements OnInit {
   width = window.innerWidth;
   constructor(public router: Router,
               public tokenService: TokenService) {
-   console.log(router.isActive('dashboard', false));
+   // console.log(router.isActive('dashboard', false));
   }
 
   ngOnInit() {
+    if ( this.tokenService.getUser() !== null && !this.menu.menuSliced ) {
+      this.menu.menuSliced = true;
+      if ( !this.tokenService.isAgent() ) {
+        this.menu.leftMenu.splice(2, 1);
+      } else {
+        this.menu.leftMenu.splice(3, 1);
+      }
+    }
   }
 
   @HostListener('window:resize', ['$event'])

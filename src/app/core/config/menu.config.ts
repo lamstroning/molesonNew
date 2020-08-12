@@ -28,7 +28,7 @@ class MenuConfig {
     {
       link: 'invite',
       icon: 'partner',
-      title: 'Пригласи друга'
+      title: 'Пригласить в проект'
     },
     {
       link: 'docs',

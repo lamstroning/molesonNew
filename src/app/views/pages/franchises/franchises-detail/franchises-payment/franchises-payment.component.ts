@@ -21,7 +21,7 @@ export class FranchisesPaymentComponent implements OnInit {
   constructor(
     public franchisesService: FranchisesService,
     private activateRoute: ActivatedRoute,
-    private tokenService: TokenService,
+    public tokenService: TokenService,
     private toastr: ToastrService,
   ) { }
   checkValidate() {

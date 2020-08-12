@@ -17,7 +17,7 @@ export class FranchisesService {
 
   constructor(private http: HttpClient, private tokenService: TokenService) {
     this.getFranchises('all').subscribe(res => {
-      console.log(res);
+      // console.log(res);
       this.franchisesList.push(new FranchisesModel(res));
 
       // for (const item of res) {

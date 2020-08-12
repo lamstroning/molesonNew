@@ -11,7 +11,7 @@ export class FranchisesIncomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.franchise);
+    // console.log(this.franchise);
   }
 
 }

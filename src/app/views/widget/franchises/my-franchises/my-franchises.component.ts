@@ -13,7 +13,7 @@ export class MyFranchisesComponent implements OnInit {
   constructor(private franchisesService: FranchisesService) { }
 
   ngOnInit() {
-    this.franchisesService.getFranchises('key').subscribe(res => {
+    this.franchisesService.getFranchises('my').subscribe(res => {
       this.franchises.push(new FranchisesModel(res));
     }, err => {
       console.warn(err);

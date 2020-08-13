@@ -7,18 +7,18 @@
     <div class="profile-status">{{tokenService.getUserStatus()}}</div>
   </div>
   <div class="open-block">
-    <div class="open-block-row" [routerLink]="'/cabinet/verification'">
+    <div *ngIf="!tokenService.getUser().isVerified" class="open-block-row" (click)="goToRoute('/cabinet/verification', $event)">
       <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/forbidden.svg)'"></div>
       <div>
         <div class="open-block-title">Аккаунт не верифицирован</div>
         <div class="open-block-link">Верифицировать</div>
       </div>
     </div>
-    <div class="open-block-row" [routerLink]="'/cabinet'">
+    <div class="open-block-row" (click)="goToRoute('/cabinet', $event)">
       <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/profile.svg)'"></div>
       <div class="open-block-title">Управление профилем</div>
     </div>
-    <div class="open-block-row" [routerLink]="'/cabinet/settings'">
+    <div class="open-block-row" (click)="goToRoute('/cabinet/settings', $event)">
       <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/settings.svg)'"></div>
       <div class="open-block-title">Настройки</div>
     </div>
@@ -39,7 +39,7 @@
   <div class="mobile-header-title arrow-dropdown a-d-b" [class.open-profile-block]="openMobile" (click)="openMobile = !openMobile">
     Профиль
     <div class="open-block">
-      <div class="open-block-row">
+      <div *ngIf="!tokenService.getUser().isVerified" class="open-block-row">
         <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/forbidden.svg)'" style="width: 23px;height: 23px;"></div>
         <div>
           <div class="open-block-title">Аккаунт не верифицирован</div>

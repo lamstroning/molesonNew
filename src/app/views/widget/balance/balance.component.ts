@@ -10,7 +10,7 @@ import {TokenService} from '../../../core/token/token.service';
 })
 export class BalanceComponent implements OnInit {
   user: User;
-  constructor(private authService: AuthService, private tokenService: TokenService) { }
+  constructor(private authService: AuthService, public tokenService: TokenService) { }
 
   ngOnInit() {
     this.tokenService.getUserByToken().subscribe(res => {

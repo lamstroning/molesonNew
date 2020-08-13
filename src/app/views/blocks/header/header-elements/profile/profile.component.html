@@ -6,7 +6,7 @@
     <div class="profile-name">{{user.fullName}}</div>
     <div class="profile-status">{{tokenService.getUserStatus()}}</div>
   </div>
-  <div class="open-block">
+  <div class="open-block" [class.open-block-mini]="tokenService.getUser().isVerified">
     <div *ngIf="!tokenService.getUser().isVerified" class="open-block-row" (click)="goToRoute('/cabinet/verification', $event)">
       <div class="open-block-ico" [style.background-image]="'url(/assets/svg-icon/profile/forbidden.svg)'"></div>
       <div>

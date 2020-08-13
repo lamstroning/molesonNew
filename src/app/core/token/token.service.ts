@@ -42,8 +42,7 @@ export class TokenService {
     );
   }
 
-  setAgentStatus(): Observable<User> {
-    console.log('set agent status');
+  setAgentStatus(): Observable<any> {
     return this.http.post<any>(API_USERS_URL + '/user/set/status/agent', {},
       {headers: this.getUserTokenHeader()}).pipe(concatMap(res => {
         return of(res);

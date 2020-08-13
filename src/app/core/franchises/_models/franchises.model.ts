@@ -19,6 +19,8 @@ export class FranchisesModel {
   progress: number;
   allCost: number;
   allCostRub: number;
+  remainCost: number;
+  formatRemainCost: string;
   formatCost: string;
   formatCostRub: string;
   color: string;
@@ -62,6 +64,8 @@ export class FranchisesModel {
   }
   private saveProgress() {
     this.progress = (this.stock.price * this.purchasedShares) / (this.allCost / 100) | 0;
+    this.remainCost = this.allCost - this.allCost * this.progress;
+    this.formatRemainCost = this.remainCost.toLocaleString();
   }
 }
 

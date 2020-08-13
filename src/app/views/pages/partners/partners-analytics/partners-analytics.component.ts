@@ -9,6 +9,7 @@ import {TokenService} from '../../../../core/token/token.service';
 })
 export class PartnersAnalyticsComponent implements OnInit {
   partnersList: PartnersList[] = [];
+  referralsArray: any;
   blocks = [
     {
       name: 'Количество регистраций по личной ссылке',
@@ -44,13 +45,17 @@ export class PartnersAnalyticsComponent implements OnInit {
 
   constructor(private referralService: ReferralService,
               public tokenService: TokenService) {
+    this.referralsArray = {};
   }
 
   ngOnInit() {
     this.referralService.getReferralList().subscribe(res => {
 
         for (const item of res.data) {
-          this.partnersList.push(new PartnersList(item));
+          const partnerItem = new PartnersList(item);
+          this.partnersList.push(partnerItem);
+          this.referralsArray[partnerItem.idUser] = '';
+          this.referralsArray[partnerItem.idUser] = 'test';
         }
         console.log(this.partnersList);
       },
@@ -60,6 +65,11 @@ export class PartnersAnalyticsComponent implements OnInit {
     );
   }
 
+  getTotalReferrals(_id: string) {
+    console.log('total');
+    console.log(_id);
+    return this.referralsArray[_id];
+  }
 }
 
 interface Partners {

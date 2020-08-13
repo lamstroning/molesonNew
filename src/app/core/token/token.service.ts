@@ -30,7 +30,6 @@ export class TokenService {
     if ( this.user !== null ) {
       return of(this.user);
     }
-    console.log('getUserByToken');
     return this.http.post<any>(API_USERS_URL + '/user/token', {},
       {headers: this.getUserTokenHeader()}).pipe(concatMap(res => {
         if (res.status === 'success') {
@@ -42,6 +41,16 @@ export class TokenService {
       })
     );
   }
+
+  setAgentStatus(): Observable<User> {
+    console.log('set agent status');
+    return this.http.post<any>(API_USERS_URL + '/user/set/status/agent', {},
+      {headers: this.getUserTokenHeader()}).pipe(concatMap(res => {
+        return of(res);
+      })
+    );
+  }
+
   getUserTokenHeader(conf?: any) {
     const userToken = localStorage.getItem('auth-token');
     let httpHeaders = new HttpHeaders();

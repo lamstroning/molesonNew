@@ -1,3 +1,47 @@
+.invite {
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    div {
+      padding: 5px;
+      font-size: 14px;
+    }
+    a {
+      color: #FF9F19;
+    }
+  }
+  .h2 {
+    font-family: Gilroy;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: bolder;
+  }
+  .h3 {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 150%;
+  }
+  input {
+    background: white;
+  }
+  .page-area {
+    margin-top: -30px;
+    width: 50%;
+  }
+  .page-element {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .item-shorten {
+    max-width: 290px;
+  }
+}
+
 .docs-row {
   color: #212529;
   border-bottom: 1px solid #F4F4F5;

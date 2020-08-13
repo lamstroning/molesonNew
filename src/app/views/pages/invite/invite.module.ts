@@ -5,6 +5,7 @@ import {InviteComponent} from './invite.component';
 import {InlineSVGModule} from 'ng-inline-svg';
 import {WidgetModule} from '../../widget/widget.module';
 import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
     {
@@ -21,6 +22,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     InlineSVGModule,
     CommonModule,
+    FormsModule,
     WidgetModule
   ],
   providers: [],

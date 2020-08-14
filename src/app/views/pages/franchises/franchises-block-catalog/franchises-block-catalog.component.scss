@@ -2,7 +2,7 @@
 .my-franchises-area {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: flex-start;
 
   .page-element.first-child {
     //margin-left: 0;
@@ -80,7 +80,7 @@
 
           .franchise-head {
             display: flex;
-            justify-content: start;
+            justify-content: flex-start;
 
             .franchise-avatar {
               min-width: 32px;
@@ -184,7 +184,7 @@
   .my-franchises-area {
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: flex-start;
     padding-right: 30px;
 
     .page-element.first-child {

@@ -26,6 +26,7 @@ export class FranchisesModel {
   formatCost: string;
   formatCostRub: string;
   color: string;
+  adresse: string;
   constructor(item: any = clearModel) {
     // this.dateCreate = item.dateCreate;
     this.detailedDescription = item.detailedDescription;
@@ -40,6 +41,7 @@ export class FranchisesModel {
     this.stocks = item.stocks;
     this.stock = item.stock;
     this.status = item.status;
+    this.adresse = 'Москва';
     this.saveCost();
     this.saveProgress();
     this.saveDate(item.dateCreate);
@@ -60,6 +62,12 @@ export class FranchisesModel {
     this.dateCreate = data.toLocaleDateString('ru');
   }
   private saveCost() {
+    if ( this.name === 'COLIZEUM' ) {
+      this.profitability = 26;
+      this.stocks = 2306;
+      console.log(this.stocks);
+
+    }
     this.allCost = +(this.stock.price * this.stocks).toFixed(2);
     this.allCostRub = this.allCost * 70;
     this.formatCost = (this.allCost / 100).toLocaleString();

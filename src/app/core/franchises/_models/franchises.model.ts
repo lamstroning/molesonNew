@@ -18,6 +18,8 @@ export class FranchisesModel {
   status: StatusModel;
   progress: number;
   allCost: number;
+  totalBuy: number;
+  totalBuyFormat: string;
   allCostRub: number;
   remainCost: number;
   formatRemainCost: string;
@@ -64,7 +66,9 @@ export class FranchisesModel {
   }
   private saveProgress() {
     this.progress = (this.stock.price * this.purchasedShares) / (this.allCost / 100) | 0;
-    this.remainCost = this.allCost - this.allCost * this.progress;
+    this.totalBuy = this.stock.price * this.purchasedShares;
+    this.totalBuyFormat = (this.totalBuy / 100).toLocaleString();
+    this.remainCost = (this.allCost - this.totalBuy) / 100;
     this.formatRemainCost = this.remainCost.toLocaleString();
   }
 }

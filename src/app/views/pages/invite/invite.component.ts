@@ -39,6 +39,7 @@ export class InviteComponent implements OnInit {
   copyText() {
     this.linkInput.nativeElement.select();
     document.execCommand('copy');
+    this.toastr.success('Ссылка скопирована в буфер обмена', 'Выполнено успешно');
   }
 
   startPartner() {

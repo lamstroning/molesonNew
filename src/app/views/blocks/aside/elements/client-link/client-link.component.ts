@@ -3,6 +3,7 @@ import {User} from '../../../../../core/auth/_models/user.models';
 import {AuthService} from '../../../../../core/auth/_services/auth.service';
 import {TokenService} from '../../../../../core/token/token.service';
 import {ReferralService} from '../../../../../core/referral/_services/referral.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-client-link',
@@ -16,6 +17,7 @@ export class ClientLinkComponent implements OnInit {
     private authService: AuthService,
     private tokenService: TokenService,
     private referralService: ReferralService,
+    private toastr: ToastrService,
     ) { }
 
   ngOnInit() {
@@ -32,6 +34,7 @@ export class ClientLinkComponent implements OnInit {
   copyText() {
     this.linkInput.nativeElement.select();
     document.execCommand('copy');
+    this.toastr.success('Ссылка скопирована в буфер обмена', 'Выполнено успешно');
   }
 
 }

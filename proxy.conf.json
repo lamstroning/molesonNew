@@ -4,5 +4,12 @@
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
+  },
+  "/upload": {
+    "target": "https://lk.moleson.pro",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
   }
+
 }

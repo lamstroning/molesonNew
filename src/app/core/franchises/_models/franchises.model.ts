@@ -57,6 +57,7 @@ export class FranchisesModel {
   private saveDate(time: number) {
     const data = new Date(time);
     this.dateCreate = data.getDate() + '.' + data.getMonth() + '.' + data.getFullYear();
+    this.dateCreate = data.toLocaleDateString('ru');
   }
   private saveCost() {
     this.allCost = +(this.stock.price * this.stocks).toFixed(2);

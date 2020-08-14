@@ -25,7 +25,7 @@
               <div class="precent-block" [class.fill-precent]="item.progress > 100">{{item.profitability}} %</div>
             </div>
             <div class="card-franchise-img-row mobile-show">
-              <p class="create-data m-0">01.02.2020</p>
+              <p class="create-data m-0">{{item.dateCreate}}</p>
               <p class="country-block m-0">Россия</p>
             </div>
           </div>
@@ -33,13 +33,13 @@
             <div class="page-element-header p-0 page-element-header-line">
               <div class="franchise-head">
                 <div class="franchise-avatar"
-                     [style.background-image]="'url(' + item.ico + ')'"></div>
+                     [style.background-image]="'url(' + item.picture + ')'"></div>
                 <div class="name-block">
                   <p><b class="pre-name">{{item.name}}</b></p>
                   <p class="adresse">{{item.adresse}}</p>
                 </div>
                 <div class="country-col">
-                  <p class="create-data m-0">01.02.2020</p>
+                  <p class="create-data m-0">{{item.dateCreate}}</p>
                   <p class="country-block m-0">Россия</p>
                 </div>
               </div>

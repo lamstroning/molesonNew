@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TokenService} from '../../../core/token/token.service';
 
 @Component({
   selector: 'app-cabinet',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabinetComponent implements OnInit {
 
-  constructor() { }
+  constructor(public tokenService: TokenService) { }
 
   ngOnInit() {
   }

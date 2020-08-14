@@ -194,6 +194,7 @@ export class ProfileComponent implements OnInit {
 
     if (!this.form.valid) {
       console.log('invalid form');
+      this.notificationType = 'hidden-msg';
       return false;
     } else {
       this.initUserFromForm();
@@ -215,6 +216,8 @@ export class ProfileComponent implements OnInit {
       this.notificationType = 'success-msg';
       this.notificationText = 'Данные успешно изменены';
       console.log(res);
+      // Перегружаем страничку, чтобы обновилась инфа юзера
+      window.location.href = '/cabinet/profile';
     }, err => {
       this.notificationType = 'error-msg';
       if (err.error.data === 'It is not allowed to change personal data') {

@@ -44,7 +44,7 @@
     </div>
   </div>
   <div class="profile-block-col">
-    <div class="profile-block-verification">
+    <div class="profile-block-verification" *ngIf="!user.isVerified">
       <div class="page-element">
         <div class="verification-status"></div>
         <div class="moleson-btn moleson-btn-outline-green" [routerLink]="['/cabinet/verification/step4']">Верифицировать</div>

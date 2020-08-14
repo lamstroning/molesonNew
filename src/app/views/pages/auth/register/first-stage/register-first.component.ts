@@ -43,7 +43,15 @@ export class FirstStageRegisterComponent implements OnInit {
   }
 
   constructor(private activateRoute: ActivatedRoute) {
-    this.referralLink = activateRoute.snapshot.params.id;
+    if ( activateRoute.snapshot.params.id === '' ) {
+      if ( localStorage.getItem('referralLink') ) {
+        this.referralLink = localStorage.getItem('referralLink');
+      } else {
+      }
+    } else {
+      this.referralLink = activateRoute.snapshot.params.id;
+      localStorage.setItem('referralLink', this.referralLink);
+    }
   }
 
   switchStage() {

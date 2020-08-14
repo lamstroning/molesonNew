@@ -12,11 +12,15 @@ export class AppComponent implements OnInit {
   constructor(private authService: AuthService, private tokenService: TokenService) { }
 
   ngOnInit() {
-    this.tokenService.getUserByToken().subscribe(res => {
-      // this.user = res;
-    }, err => {
-      console.warn(err);
-    });
+    try {
+      if ( this.tokenService !== null ) {
+        this.tokenService.getUserByToken().subscribe(res => {
+          // this.user = res;
+        }, err => {
+          // console.warn(err);
+        });
+      }
+    } catch (e) {}
   }
 
 }

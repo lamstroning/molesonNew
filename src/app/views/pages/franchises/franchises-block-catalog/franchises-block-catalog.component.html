@@ -26,7 +26,7 @@
         <div class="page-element-header page-element-header-line">
           <div class="franchise-head">
             <div class="franchise-avatar"
-                 [style.background-image]="'url(' + item.ico + ')'"></div>
+                 [style.background-image]="'url(' + item.picture + ')'"></div>
             <div class="name-block">
               <div class="pre-name">{{item.name}}</div>
               <div class="adresse">{{item.adresse}}</div>
@@ -48,7 +48,7 @@
           <div class="progress-info progress-info-last">
             <div>{{item.investors.length}} участников</div>
             <div>
-              60 000 $
+              {{item.formatRemainCost}} $
             </div>
           </div>
           <div class="card-bottom">

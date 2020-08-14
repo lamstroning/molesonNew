@@ -10,27 +10,29 @@
       </div>
     </div>
     <div class="page-element">
-      <div *ngFor="let operation of operationList" class="operations-list">
-        <div class="operations-area">
-          <div class="operations-data">{{operation.data}}</div>
-          <div class="operations-container">
-            <div *ngFor="let operationItem of operation.operation" class="operations-row">
-              <div class="operations-col">
-                <div *ngIf="operationItem.ico !== null" class="operations-bg-ico" [style.background-color]="operationItem.color">
-                  <div *ngIf="operationItem.typeIco === 'svg'" class="operations-ico" [inlineSVG]="operationItem.ico"></div>
-                  <div *ngIf="operationItem.typeIco !== 'svg'" class="operations-ico operations-png-ico" [style.background-image]="'url(' + operationItem.ico + ')'"></div>
+      <ng-container *ngIf="operationsService.operationListDateHash !== null">
+        <div *ngFor="let item of operationsService.operationListDateHash | keyvalue" class="operations-list">
+          <div class="operations-area">
+            <div class="operations-data">{{item.key}}</div>
+            <div class="operations-container">
+              <div *ngFor="let operationItem of item.value" class="operations-row">
+                <div class="operations-col">
+                  <div *ngIf="operationItem.ico !== null" class="operations-bg-ico" [style.background-color]="operationItem.status">
+                    <div *ngIf="operationItem.typeIco === 'svg'" class="operations-ico" [inlineSVG]="operationItem.ico"></div>
+                    <div *ngIf="operationItem.typeIco !== 'svg'" class="operations-ico operations-png-ico" [style.background-image]="'url(' + operationItem.ico + ')'"></div>
+                  </div>
+                  <div *ngIf="operationItem.ico === null" class="operations-bg-ico">
+                  </div>
+                  <div class="operations-title">{{operationItem.typeAction}}</div>
                 </div>
-                <div *ngIf="operationItem.ico === null" class="operations-bg-ico">
+                <div class="operations-col">
+                  <div class="operations-sum" [style.color]="operationItem.status">{{operationItem.type ? '+' : '-'}}{{(operationItem.quantity * 0.01).toFixed(2)}} $</div>
                 </div>
-                <div class="operations-title">{{operationItem.name}}</div>
-              </div>
-              <div class="operations-col">
-                <div class="operations-sum" [style.color]="operationItem.color">{{operationItem.type ? '+' : '-'}}{{operationItem.sum}} $</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </ng-container>
     </div>
   </div>
   <div class="right-block">

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ReferralService, PartnersList} from '../../../../core/referral';
+import {TokenService} from '../../../../core/token/token.service';
 
 @Component({
   selector: 'app-partners-analytics',
@@ -8,30 +9,31 @@ import {ReferralService, PartnersList} from '../../../../core/referral';
 })
 export class PartnersAnalyticsComponent implements OnInit {
   partnersList: PartnersList[] = [];
+  referralsArray: any;
   blocks = [
     {
       name: 'Количество регистраций по личной ссылке',
-      cost: 20,
+      cost: 0,
       dollars: false
     },
     {
       name: 'Общее количество регистраций в структуре',
-      cost: 120,
+      cost: 0,
       dollars: false
     },
     {
       name: 'Сумма покупок долей (общая)',
-      cost: 143200,
+      cost: 0,
       dollars: true
     },
     {
       name: 'Сумма агентских вознаграждений',
-      cost: 14970,
+      cost: 0,
       dollars: true
     },
     {
       name: 'Средний показатель суммы инвестирования действующих инвесторов',
-      cost: 1205,
+      cost: 0,
       dollars: true
     },
   ];
@@ -41,14 +43,19 @@ export class PartnersAnalyticsComponent implements OnInit {
     return num.toString().replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1' + ' ');
   }
 
-  constructor(private referralService: ReferralService) {
+  constructor(private referralService: ReferralService,
+              public tokenService: TokenService) {
+    this.referralsArray = {};
   }
 
   ngOnInit() {
     this.referralService.getReferralList().subscribe(res => {
 
         for (const item of res.data) {
-          this.partnersList.push(new PartnersList(item));
+          const partnerItem = new PartnersList(item);
+          this.partnersList.push(partnerItem);
+          this.referralsArray[partnerItem.idUser] = '';
+          this.referralsArray[partnerItem.idUser] = 'test';
         }
         console.log(this.partnersList);
       },
@@ -58,6 +65,11 @@ export class PartnersAnalyticsComponent implements OnInit {
     );
   }
 
+  getTotalReferrals(_id: string) {
+    console.log('total');
+    console.log(_id);
+    return this.referralsArray[_id];
+  }
 }
 
 interface Partners {

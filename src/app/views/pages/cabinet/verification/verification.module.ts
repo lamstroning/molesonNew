@@ -9,6 +9,7 @@ import { Step4Component } from './verification-steps/step4/step4.component';
 import { Step5Component } from './verification-steps/step5/step5.component';
 import {FormsModule} from '@angular/forms';
 import {WidgetModule} from '../../../widget/widget.module';
+import {CommonModule} from '@angular/common';
 
 const routes: Routes = [
   {
@@ -59,6 +60,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     FormsModule,
     WidgetModule,
+    CommonModule
   ],
   providers: [],
   exports: [

@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from '../../../../core/auth/_services/auth.service';
 import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
@@ -15,6 +16,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   msgText = '';
   formLoad = false;
   authSub: Subscription;
+  myRecaptcha = new FormControl(false);
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {}
@@ -31,6 +33,9 @@ export class AuthComponent implements OnInit, OnDestroy {
     if (msg === 'Invalid password!') {
       return 'Не верный пароль';
     }
+    if (msg === 'Wrong captcha') {
+      return 'Введите капчу';
+    }
     if (msg.details !== undefined && msg.data === 'Not verified email') {
       return 'На вашу почту было выслано письмо с подтверждением, подвердите ваш Email, чтобы начать работу с площадкой';
     }
@@ -41,6 +46,12 @@ export class AuthComponent implements OnInit, OnDestroy {
   }
   login() {
     this.formLoad = true;
+    if (!this.myRecaptcha.value) {
+      this.msgType = 'error-msg';
+      this.msgText = this.translateErrorMsg('Wrong captcha');
+      this.formLoad = false;
+      return ;
+    }
     this.authSub = this.authService.login(this.email, this.pass).subscribe(
       res => {
         console.log(res);
@@ -57,5 +68,12 @@ export class AuthComponent implements OnInit, OnDestroy {
         console.log('xxx');
         this.formLoad = false;
       });
+  }
+  onScriptLoad() {
+    // console.log('Google reCAPTCHA loaded and is ready for use!');
+  }
+
+  onScriptError() {
+    // console.log('Something went long when loading the Google reCAPTCHA');
   }
 }

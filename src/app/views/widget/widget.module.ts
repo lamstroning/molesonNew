@@ -13,6 +13,7 @@ import {NewsBreakingComponent} from './news-breaking/news-breaking.component';
 import { NotificationComponent } from './notification/notification.component';
 import {InlineSVGModule} from 'ng-inline-svg';
 import { LoadingComponent } from './loading/loading.component';
+import {MyWalletComponent} from '../pages/my-wallet/my-wallet.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { LoadingComponent } from './loading/loading.component';
     NewsBreakingComponent,
     NotificationComponent,
     LoadingComponent,
+    MyWalletComponent
   ],
     imports: [
         RouterModule,
@@ -44,7 +46,8 @@ import { LoadingComponent } from './loading/loading.component';
     PerspectivesComponent,
     NewsBreakingComponent,
     NotificationComponent,
-    LoadingComponent
+    LoadingComponent,
+    MyWalletComponent
   ]
 })
 

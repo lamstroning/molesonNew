@@ -6,17 +6,23 @@
       <div class="menu-title">{{menuItem.title}}</div>
     </div>
   </div>
-  <!--<div class="page-element">
-    блок временно скрыть за отсутсвием api
+  <div class="page-element">
    <app-client-status></app-client-status>
-  </div>-->
+  </div>
   <div class="page-element client-link">
   <app-client-link></app-client-link>
   </div>
-  <div class="inviter-person page-element ml-0 mr-0 arrow-dropdown a-d-b">
-    <p>Ваш пригласитель</p>
-    <p><b>Дмитрий Иванов</b></p>
-  </div>
+  <ng-container *ngIf="tokenService.getUser()!== null">
+    <div *ngIf="tokenService.getUser().referral!== undefined" class="inviter-person page-element ml-0 mr-0 a-d-b">
+      <p>Ваш пригласитель</p>
+      <p><b>{{tokenService.getUser().referral.fullName}}</b></p>
+    </div>
+
+    <div *ngIf="tokenService.getUser().referral === undefined" class="inviter-person page-element ml-0 mr-0 a-d-b">
+      <p>Ваш пригласитель</p>
+      <p><b>Moleson</b></p>
+    </div>
+  </ng-container>
 </div>
 
 <div *ngIf="width <= 1024" class="left-block">
@@ -32,10 +38,10 @@
       </div>
     </div>
     </div>
-    <div class="mobile-header-title">
+    <!--div class="mobile-header-title">
       <app-wallet></app-wallet>
-    </div>
-    <div class="inviter-person">
+    </div-->
+    <!--div class="inviter-person">
       <div class="mobile-header-title">
         <p>Ваш пригласитель</p>
         <p><b>Дмитрий Иванов</b></p>
@@ -44,5 +50,5 @@
         <p>Контактная почта</p>
         <p><b>ivanov@yandex.ru</b></p>
       </div>
-    </div>
+    </div-->
 </div>

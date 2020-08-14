@@ -49,6 +49,7 @@ export class AuthService {
 
   logout() {
     this.tokenService.setToken(null);
+    this.tokenService.setUser(null);
     localStorage.clear();
     this.router.navigateByUrl('/auth');
   }
@@ -60,6 +61,7 @@ export class AuthService {
           console.log(next);
           localStorage.setItem('auth-token', next.data.accessToken);
           this.tokenService.setToken(next.data.accessToken);
+          this.tokenService.setUser(next.data);
           return of<User>(next.data);
         } else {
           return null;

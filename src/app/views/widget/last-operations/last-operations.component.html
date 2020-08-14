@@ -1,19 +1,21 @@
-<div class="page-element-header p-0 pb-4 page-element-header-full-line d-flex justify-content-between">
-  <div class="page-element-header-title">Последние действия</div>
-  <div class="btn-header btn btn-primary desktop-show font-weight-bold" [routerLink]="'/operations'">Ещё</div>
-</div>
-<div class="page-body">
-  <div class="hor-line"></div>
-  <div class="operation-history">
-      <div *ngFor="let item of operation" class="operation-list">
-        <div>
-          <div class="operation-list-type" [style.background-color]="item.status"></div>
-          <div class="operation-list-title">{{item.typeAction}}</div>
-          <div class="operation-list-money">{{(item.quantity * 0.01).toFixed(2)}} $</div>
+<ng-container *ngIf="operation.length">
+    <div class="page-element-header p-0 pb-4 page-element-header-full-line d-flex justify-content-between">
+      <div class="page-element-header-title">Последние действия</div>
+      <div class="btn-header btn btn-primary desktop-show font-weight-bold" [routerLink]="'/operations'">Ещё</div>
+    </div>
+    <div class="page-body">
+      <div class="hor-line"></div>
+      <div class="operation-history">
+        <div *ngFor="let item of operation" class="operation-list">
+          <div>
+            <div class="operation-list-type" [style.background-color]="item.status"></div>
+            <div class="operation-list-title">{{item.typeAction}}</div>
+            <div class="operation-list-money">{{(item.quantity * 0.01).toFixed(2)}} $</div>
+          </div>
+          <div class="operation-list-date">{{item.date}}</div>
         </div>
-        <div class="operation-list-date">{{item.date}}</div>
       </div>
-  </div>
-</div>
-<div class="btn btn-secondary mobile-show pt-2 pb-2" [routerLink]="'/operations'">Подробнее</div>
+    </div>
+    <div class="btn btn-secondary mobile-show pt-2 pb-2" [routerLink]="'/operations'">Подробнее</div>
+</ng-container>
 

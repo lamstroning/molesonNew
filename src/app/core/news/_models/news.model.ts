@@ -5,8 +5,8 @@ export class NewsModel {
   textPreview: string;
   textDetail: string;
   img: string;
-  like: number;
-  myLike: boolean;
+  like: any;
+  myLike: any;
   date: string;
   views: number;
   constructor(id: number = 0, titles: TestDesc) {

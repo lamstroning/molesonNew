@@ -73,6 +73,10 @@ const routes: Routes = [
         path: 'help',
         loadChildren: () => import('./views/pages/help/help.module').then(mod => mod.HelpModule),
       },
+      {
+        path: 'invite',
+        loadChildren: () => import('./views/pages/invite/invite.module').then(mod => mod.InviteModule),
+      },
     ]
   },
   {

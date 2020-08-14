@@ -2,14 +2,15 @@
 .my-franchises-area {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
 
   .page-element.first-child {
-    margin-left: 0;
+    //margin-left: 0;
   }
 
   .page-element {
     padding: 0;
-    margin-left: 30px;
+    margin-left: 15px;
     max-width: 290px;
     width: 100%;
     .card-franchise {
@@ -79,7 +80,7 @@
 
           .franchise-head {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
 
             .franchise-avatar {
               min-width: 32px;
@@ -183,11 +184,11 @@
   .my-franchises-area {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     padding-right: 30px;
 
     .page-element.first-child {
-      margin-left: 30px;
+      //margin-left: 30px;
     }
   }
 }

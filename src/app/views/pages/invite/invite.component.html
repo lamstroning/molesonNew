@@ -1,0 +1,34 @@
+<div class="invite">
+  <div class="page-area">
+    <div class="main-block">
+
+      <div *ngIf="!start" class="page-element">
+        <h2>Расскажи о Moleson</h2>
+        <p>Распространяй информацию о проекте и получай дополнительные вознаграждения</p>
+        <div *ngIf="user" class="client-link">
+          <div class="client-link-subtitle">Личная ссылка для приглашения в проект</div>
+          <div class="client-link-row  item-shorten">
+            <input #selectInput class="default-input" value="lk.moleson.pro/ref/{{user.referralLink}}">
+            <div class="copy-text" (click)="copyText()"></div>
+          </div>
+        </div>
+        <p>&nbsp;</p>
+        <h3>Начните зарабатывать вместе с Moleson уже сегодня</h3>
+        <div class="moleson-btn moleson-btn-secondary item-shorten" (click)="startPartner()">Стать партнёром Moleson</div>
+      </div>
+
+      <div *ngIf="start" class="page-element">
+        <h2>Стать партнёром Moleson</h2>
+        <p>Мы открыты к взаимовыгодному сотрудничеству и ценим ваше желание идти к финансовой независимости. Для наших партнёров предусмотрены условия заработка без предварительных личных инвестиций.</p>
+        <p>&nbsp;</p>
+        <h3>Подтвердите ваш партнёрский статус “Агент” и зарабатывайте с поддержкой команды Moleson</h3>
+        <div class="moleson-btn moleson-btn-secondary item-shorten" (click)="confirmPartner()">Подтвердить статус “Агент”</div>
+        <div class="item-shorten flex-row">
+          <div><input [(ngModel)]="agreeCheckbox" type="checkbox"></div>
+          <div>Ознакомлен и принимаю все <a href="/assets/docs/moleson_partner_agreement.docx" download>положения и правила использования</a>.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

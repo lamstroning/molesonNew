@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="tokenService.getUser() !== null">
   <app-header></app-header>
   <div class="container-fluid p-0">
     <div class="page-area">

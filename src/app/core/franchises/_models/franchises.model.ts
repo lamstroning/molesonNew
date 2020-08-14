@@ -18,10 +18,15 @@ export class FranchisesModel {
   status: StatusModel;
   progress: number;
   allCost: number;
+  totalBuy: number;
+  totalBuyFormat: string;
   allCostRub: number;
+  remainCost: number;
+  formatRemainCost: string;
   formatCost: string;
   formatCostRub: string;
   color: string;
+  adresse: string;
   constructor(item: any = clearModel) {
     // this.dateCreate = item.dateCreate;
     this.detailedDescription = item.detailedDescription;
@@ -36,6 +41,7 @@ export class FranchisesModel {
     this.stocks = item.stocks;
     this.stock = item.stock;
     this.status = item.status;
+    this.adresse = 'Москва';
     this.saveCost();
     this.saveProgress();
     this.saveDate(item.dateCreate);
@@ -53,8 +59,15 @@ export class FranchisesModel {
   private saveDate(time: number) {
     const data = new Date(time);
     this.dateCreate = data.getDate() + '.' + data.getMonth() + '.' + data.getFullYear();
+    this.dateCreate = data.toLocaleDateString('ru');
   }
   private saveCost() {
+    if ( this.name === 'COLIZEUM' ) {
+      this.profitability = 26;
+      this.stocks = 2306;
+      console.log(this.stocks);
+
+    }
     this.allCost = +(this.stock.price * this.stocks).toFixed(2);
     this.allCostRub = this.allCost * 70;
     this.formatCost = (this.allCost / 100).toLocaleString();
@@ -62,6 +75,10 @@ export class FranchisesModel {
   }
   private saveProgress() {
     this.progress = (this.stock.price * this.purchasedShares) / (this.allCost / 100) | 0;
+    this.totalBuy = this.stock.price * this.purchasedShares;
+    this.totalBuyFormat = (this.totalBuy / 100).toLocaleString();
+    this.remainCost = (this.allCost - this.totalBuy) / 100;
+    this.formatRemainCost = this.remainCost.toLocaleString();
   }
 }
 

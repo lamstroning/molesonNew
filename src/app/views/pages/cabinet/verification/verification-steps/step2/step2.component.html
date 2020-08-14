@@ -1,7 +1,13 @@
-<div class="recommend">
-  <div class="recommend-img"></div>
-  <div class="recommend-title">Подтвердите электронную почту</div>
-  <div class="recommend-desc">Подтвердите электронную почту, чтобы продолжить прохождение верификации
-  </div>
+<div *ngIf="tokenService.getVerificationStep() > 2" class="card-title">
+  Электронная почта подтверждена
 </div>
-<div class="recommend-btn btn btn-secondary mobile-show" [routerLink]="'../../profile'">Перейти в настройки</div>
+<ng-container *ngIf="tokenService.getVerificationStep() <= 2">
+  <div class="recommend">
+    <div class="recommend-img"></div>
+    <div class="recommend-title">Подтвердите электронную почту</div>
+    <div class="recommend-desc">Подтвердите электронную почту, чтобы продолжить прохождение верификации
+    </div>
+  </div>
+  <div class="recommend-btn btn btn-secondary mobile-show" [routerLink]="'../../profile'">Перейти в настройки</div>
+</ng-container>
+

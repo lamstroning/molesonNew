@@ -4,7 +4,7 @@
     <app-balance></app-balance>
     <app-my-franchises></app-my-franchises>
     <app-top-franchises></app-top-franchises>
-    <app-news-widget></app-news-widget>
+    <!--app-news-widget></app-news-widget-->
   </div>
   <div class="right-area desktop">
     <!-- <div class="page-element mt-0">
@@ -25,10 +25,10 @@
 <div *ngIf="width <= 1024" class="page-block page-block-mobile container-fluid">
   <app-balance></app-balance>
   <app-my-franchises></app-my-franchises>
-  <div class="btns-row">
+  <!--div class="btns-row">
     <div class="btn btn-white" [class.btn-active]="btnId === 0" (click)="scrollSlider(0)">Аналитика</div>
-    <div class="btn btn-white" [class.btn-active]="btnId === 1" (click)="scrollSlider(1)">Действия</div>
-    <div class="btn btn-white" [class.btn-active]="btnId === 2" (click)="scrollSlider(2)">Рекомендации</div>
+    <div class="btn btn-white" [class.btn-active]="btnId === 0" (click)="scrollSlider(0)">Действия</div>
+    <div class="btn btn-white" [class.btn-active]="btnId === 1" (click)="scrollSlider(1)">Рекомендации</div>
   </div>
   <div #slider class="slider" (scroll)="switchBtn($event.target)">
     <div class="slider-container">
@@ -59,9 +59,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div-->
   <app-top-franchises></app-top-franchises>
-  <app-news-widget></app-news-widget>
+  <!--app-news-widget></app-news-widget-->
   <app-social-links></app-social-links>
 </div>
 

@@ -1,1 +1,311 @@
-<p>partners-marketing works!</p>
+<div class="partners-container">
+  <div class="partners-block-wide black-block gradient-block">
+    <div class="partners-block-stars-row">
+      <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
+      <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
+      <div class="partners-block-star bigger-icon start-empty" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start-empty.svg'"></div>
+    </div>
+    <div class="partners-block-info">
+      <div class="partners-block-name">Ваш клиентский статус:</div>
+      <div class="partners-block-title" *ngIf="tokenService.getUser()">{{tokenService.getUserStatus()}}</div>
+    </div>
+  </div>
+  <!--div *ngFor="let block of blocks" class="partners-block">
+    <div class="partners-block-name">{{block.name}}</div>
+    <div class="partners-block-cost">{{number_formatted(block.cost)}} {{block.dollars ? ' $' : ''}}</div>
+  </div-->
+</div>
+<div class="pt-5 pb-2">
+  <h3>Система вознаграждений</h3>
+  <div>Уровни системы вознаграждений партнёра Moleson</div>
+</div>
+<div class="partners-container">
+    <div class="container p-0">
+      <div class="level-cards">
+        <div class="card moleson-card">
+          <div class="card-header">
+            <div class="status-head">
+              <div class="card-subtitle">Статус</div>
+              <div class="card-title">
+                Агент
+              </div>
+            </div>
+            <div class="card-toolbar">
+              <div class="partners-block-stars-row">
+                <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
+                <div class="partners-block-star bigger-icon start-empty" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start-empty.svg'"></div>
+                <div class="partners-block-star bigger-icon start-empty" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start-empty.svg'"></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="card-body">
+            <div class="level-description text-center">
+              <div>
+                <p class="card-text">1 уровень</p>
+                <h3 class="card-title">5%</h3>
+              </div>
+              <div>
+                <p class="card-text">2 уровень</p>
+                <h3 class="card-title">2%</h3>
+              </div>
+              <div>
+                <p class="card-text">3 уровень</p>
+                <h3 class="card-title">0.1%</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card moleson-card">
+          <div class="card-header">
+            <div class="status-head">
+              <div class="card-subtitle">Статус</div>
+              <div class="card-title">
+                Инвест-агент
+              </div>
+            </div>
+            <div class="card-toolbar">
+              <div class="partners-block-stars-row">
+                <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
+                <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
+                <div class="partners-block-star bigger-icon start-empty" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start-empty.svg'"></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="card-body">
+            <div class="level-description text-center">
+              <div>
+                <p class="card-text">1 уровень</p>
+                <h3 class="card-title">8%</h3>
+              </div>
+              <div>
+                <p class="card-text">2 уровень</p>
+                <h3 class="card-title">2%</h3>
+              </div>
+              <div>
+                <p class="card-text">3 уровень</p>
+                <h3 class="card-title">1%</h3>
+              </div>
+              <div>
+                <p class="card-text">4 уровень</p>
+                <h3 class="card-title">0.5%</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card moleson-card">
+          <div class="card-header">
+            <div class="status-head">
+              <div class="card-subtitle">Статус</div>
+              <div class="card-title">
+                Инвест-брокер
+              </div>
+            </div>
+            <div class="card-toolbar">
+              <div class="partners-block-stars-row">
+                <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
+                <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
+                <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="card-body">
+            <div class="level-description text-center">
+              <div>
+                <p class="card-text">1 уровень</p>
+                <h3 class="card-title">10%</h3>
+              </div>
+              <div>
+                <p class="card-text">2 уровень</p>
+                <h3 class="card-title">3%</h3>
+              </div>
+              <div>
+                <p class="card-text">3 уровень</p>
+                <h3 class="card-title">2%</h3>
+              </div>
+              <div>
+                <p class="card-text">4 уровень</p>
+                <h3 class="card-title">0.5%</h3>
+              </div>
+              <div>
+                <p class="card-text">5 уровень</p>
+                <h3 class="card-title">0.5%</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      </div>
+
+
+</div>
+<div class="pt-5 pb-2">
+  <h3>Повышение статуса</h3>
+  <div>Таблица условий повышения статуса партнёра</div>
+</div>
+
+<table class="table white-table" *ngIf="width > 1024">
+  <thead>
+  <tr>
+    <th scope="col">Партнёрский статус</th>
+    <th scope="col">Личные инвестиции</th>
+    <th scope="col">Количество регистрации по личной ссылке</th>
+    <th scope="col">Сумма собственных инвестиций и привлечённых по личной ссылке</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row" class="font-weight-bolder">Агент</th>
+    <td>0</td>
+    <td>0 (завершить верификацию, принять условия партнёрского соглашения)</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <th scope="row" class="font-weight-bolder">Инвест-агент</th>
+    <td>500 $</td>
+    <td>5 (пользователи с минимальными инвестициями 100 $)</td>
+    <td>1 000   $</td>
+  </tr>
+  <tr>
+    <th scope="row" class="font-weight-bolder">Инвест-брокер</th>
+    <td>1 500 $</td>
+    <td>3 (пользователи со статус партнёра “Инвест-агент”)</td>
+    <td>3 000 $</td>
+  </tr>
+  </tbody>
+</table>
+<div *ngIf="width <= 1024" class="my-franchises" xmlns="http://www.w3.org/1999/html">
+  <div class="slider">
+    <div class="my-franchises-area">
+      <div class="page-element p-0 ml-0 mr-0">
+        <div class="card-franchise">
+          <div class="card-franchise-info">
+            <div class="page-element-header p-0">
+              <div class="franchise-head">
+                <div class="name-block-big">
+                  <p>Партнерский статус</p>
+                  <p><b>Агент</b></p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Личные инвестиции</p>
+                <p class="name-digit">0</p>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Количество регистрации по личной ссылке</p>
+                <p class="name-digit">0</p>
+                <p class="name-notes">(завершить верификацию, принять условия партнёрского соглашения)</p>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Сумма собственных инвестиций и привлечённых по личной ссылке</p>
+                <p class="name-digit">0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-element p-0 ml-0 mr-0">
+        <div class="card-franchise">
+          <div class="card-franchise-info">
+            <div class="page-element-header p-0">
+              <div class="franchise-head">
+                <div class="name-block-big">
+                  <p>Партнерский статус</p>
+                  <p><b>Инвест-агент</b></p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Личные инвестиции</p>
+                <p class="name-digit">500 $</p>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Количество регистрации по личной ссылке</p>
+                <p class="name-digit">5</p>
+                <p class="name-notes">(пользователи с минимальными инвестициями 100 $)</p>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Сумма собственных инвестиций и привлечённых по личной ссылке</p>
+                <p class="name-digit">1 000 $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-element p-0 ml-0 mr-0">
+        <div class="card-franchise">
+          <div class="card-franchise-info">
+            <div class="page-element-header p-0">
+              <div class="franchise-head">
+                <div class="name-block-big">
+                  <p>Партнерский статус</p>
+                  <p><b>Инвест-брокер</b></p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Личные инвестиции</p>
+                <p class="name-digit">1 500 $</p>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Количество регистрации по личной ссылке</p>
+                <p class="name-digit">3</p>
+                <p class="name-notes">(пользователи со статус партнёра “Инвест-агент”)</p>
+              </div>
+            </div>
+            <div>
+              <div class="name-block-big">
+                <p>Сумма собственных инвестиций и привлечённых по личной ссылке</p>
+                <p class="name-digit">2 000 $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="pt-5 pb-2">
+  <h3>Условия маркетинг-плана Moleson</h3>
+  <div>Таблица условий повышения статуса партнёра</div>
+  <ul class="marketing-ul">
+    <li><span>вывод средств начинается от 100$</span></li>
+    <li><span>вывод брокерских вознаграждений доступен при наличии личных инвестиций не менее 200$</span></li>
+    <li><span>статус партнёра меняется автоматически при выполнении условий</span></li>
+    <li>
+      <span>повышение статуса партнёра зависит от трёх условий:</span>
+      <ol>
+        <li><span>1. Объём личных инвестиций</span></li>
+        <li><span>2. Суммарный объём инвестиций привлечённых по личной ссылке</span></li>
+        <li><span>3. Суммарный объём привлечённых инвестиций</span></li>
+      </ol>
+    </li>
+    <li><span>без ограничений по количеству личных приглашений в проект</span></li>
+    <li><span>сохранение порядка клиентской структуры</span></li>
+    <li><span>согласование инвестиций свыше 15000$</span></li>
+  </ul>
+</div>

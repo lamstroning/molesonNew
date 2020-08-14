@@ -15,7 +15,7 @@
           <div class="detail-card-header">
             <div class="detail-card-header-block">
               <div class="detail-card-title">{{currentFranchise.name}}</div>
-              <div class="detail-card-adresse">{{currentFranchise.adresse}}</div>
+              <!--div class="detail-card-adresse">{{currentFranchise.adresse}}</div-->
             </div>
             <div class="detail-card-header-block desktop-show">
               <div class="star" [inlineSVG]="'/assets/svg-icon/star.svg'"></div>
@@ -66,7 +66,7 @@
             <div class="detail-card-body-graphics-img"></div>
           </div>
         </div>
-          <div class="slider-block">
+          <!--div class="slider-block">
             <div class="page-element">
             <div class="slider-block-header">
                 <div class="slider-block-title">
@@ -95,7 +95,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div-->
       </div>
       <div *ngIf="!currentFranchise && !loading" class="detail-card">
         <div class="page-element">
@@ -106,6 +106,9 @@
   <div *ngIf="currentFranchise && !loading" class="right-block">
     <div class="page-element page-element-top">
       <app-franchises-progress [franchise]="currentFranchise"></app-franchises-progress>
+    </div>
+    <div class="page-element">
+      <app-franchises-my-stat [franchise]="currentFranchise"></app-franchises-my-stat>
     </div>
     <div class="page-element">
       <app-franchises-income [franchise]="currentFranchise"></app-franchises-income>

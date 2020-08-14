@@ -1,8 +1,15 @@
 {
   "/api": {
-    "target": "http://82.202.172.217",
+    "target": "https://lk.moleson.pro",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/upload": {
+    "target": "https://lk.moleson.pro",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
   }
+
 }

@@ -7,7 +7,7 @@
     </div>
     <div class="partners-block-info">
       <div class="partners-block-name">Клиентский статус</div>
-      <div class="partners-block-status">Инвест-агент</div>
+      <div class="partners-block-status" *ngIf="tokenService.getUser() !== null">{{tokenService.getUserStatus()}}</div>
     </div>
   </div>
   <div *ngFor="let block of blocks" class="partners-block">
@@ -57,7 +57,7 @@
     </div>
     <div class="partners-row-col">
       <div class="col-data">
-        Дата регистрации<br>дата последнего визита
+        Дата регистрации
       </div>
     </div>
     <div class="partners-row-col">
@@ -84,18 +84,17 @@
       <div class="ico"></div>
       <div class="ico"></div>
     </div>
-    <div class="partners-col">32</div>
+    <div class="partners-col">0</div>
     <div class="partners-col">{{item.link.amountOfPurchases}} $</div>
-    <div class="partners-col partners-col-data">
-      <div>10.05.2020</div>
-      <div>12.07.2020</div>
+    <div class="partners-col">
+      <div>{{item.link.dateCreate| date:'d.MM.y' }}</div>
     </div>
     <div class="partners-col">
       <div class="star"></div>
     </div>
   </div>
 
-<div class="pagination">
+<!--div class="pagination">
   <div class="pagination-btn btn-next disable-btn" [inlineSVG]="'/assets/svg-icon/partners/arrow.svg'"></div>
   <div class="pagination-number-row">
     <div class="pagination-number active-number">1</div>
@@ -106,6 +105,6 @@
     <div class="pagination-number">6</div>
   </div>
   <div class="pagination-btn btn-prev" [inlineSVG]="'/assets/svg-icon/partners/arrow.svg'"></div>
-</div>
+</div-->
 
 

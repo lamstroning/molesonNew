@@ -1,8 +1,13 @@
-<div class="recommend">
-  <div class="recommend-img"></div>
-  <div class="recommend-title">Личные данных</div>
-  <div class="recommend-desc">Заполните личные данные чтобы пользоваться всеми возможностями платформы
-    Moleson
-  </div>
+<div *ngIf="tokenService.getVerificationStep() > 3" class="card-title">
+  Личные данные заполнены
 </div>
-<div class="recommend-btn btn btn-secondary mobile-show" [routerLink]="'../../profile'">Перейти в настройки</div>
+<ng-container *ngIf="tokenService.getVerificationStep() <= 3">
+  <div class="recommend">
+    <div class="recommend-img"></div>
+    <div class="recommend-title">Личные данных</div>
+    <div class="recommend-desc">Заполните личные данные чтобы пользоваться всеми возможностями платформы
+      Moleson
+    </div>
+  </div>
+  <div class="recommend-btn btn btn-secondary mobile-show" [routerLink]="'../../profile'">Перейти в настройки</div>
+</ng-container>

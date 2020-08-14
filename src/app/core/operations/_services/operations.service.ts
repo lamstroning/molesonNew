@@ -12,16 +12,23 @@ const API_URL = '/api/user/transaction/';
 
 export class OperationsService {
   operationList: OperationsModel[] = [];
+  operationListDateHash: any = [];
 
   constructor(private http: HttpClient, private tokenService: TokenService) {
     // this.getList();
   }
   getList() {
     this.operationList = [];
+    this.operationListDateHash = [];
     this.transactionGet().subscribe(res => {
-      console.log(res);
+      // console.log(res);
       for (const item of res.data) {
-        this.operationList.push(new OperationsModel(item));
+        const operation = new OperationsModel(item);
+        this.operationList.push(operation);
+        if ( this.operationListDateHash[operation.date_month_title] === undefined ) {
+          this.operationListDateHash[operation.date_month_title] = [];
+        }
+        this.operationListDateHash[operation.date_month_title].push(operation);
       }
     }, err => {
       console.warn(err);

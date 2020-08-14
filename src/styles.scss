@@ -1,5 +1,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import './assets/fonts/stylesheet.css';
+@import '~ngx-toastr/toastr';
+
 :focus {
   outline: none;
 }
@@ -183,6 +185,16 @@ h3.page-element-title {
     color: black!important;
   }
 }
+.btn-outline-green {
+  border-color: #31B984!important;
+  color: white!important;
+  font-weight: bold;
+  &:hover {
+    background-color: white!important;
+    color: black!important;
+  }
+}
+
 .btn-outline-secondary {
   border-color: #FF9F19!important;
   color: black!important;
@@ -442,6 +454,15 @@ svg {
     font-size: 18px;
   }
 }
+mb-12 {
+  margin-bottom: 12px;
+}
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
 @media screen and (max-width: 1024px) {
   .mobile-show {
     display: block;

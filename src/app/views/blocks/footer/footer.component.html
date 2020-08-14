@@ -7,30 +7,30 @@
       <div class="footer-link-block">
         <div class="link-stack" [class.show-links]="first" (click)="first = !first">
           <div class="footer-title arrow-dropdown a-d-b">Навигация</div>
-          <div class="footer-link first-footer-link">Главная</div>
-          <div class="footer-link">Проекты</div>
-          <div class="footer-link">Новости</div>
-          <div class="footer-link">Документация</div>
-          <div class="footer-link">Помощь</div>
+          <div class="footer-link first-footer-link" [routerLink]="'/'">Главная</div>
+          <div class="footer-link" [routerLink]="'/franchises'">Проекты</div>
+          <!--div class="footer-link" [routerLink]="'/news/'">Новости</div-->
+          <div class="footer-link" [routerLink]="'/docs/'">Документация</div>
+          <div class="footer-link" [routerLink]="'/help/'">Помощь</div>
         </div>
         <div class="link-stack" [class.show-links]="second" (click)="second = !second">
           <div class="footer-title arrow-dropdown a-d-b">Мой профиль</div>
-          <div class="footer-link first-footer-link">Мои инвестиции</div>
-          <div class="footer-link">Управление профилем</div>
-          <div class="footer-link">Мои операции</div>
-          <div class="footer-link">Верификация</div>
+          <!--div class="footer-link first-footer-link">Мои инвестиции</div-->
+          <div class="footer-link" [routerLink]="'/cabinet/profile/'">Управление профилем</div>
+          <div class="footer-link" [routerLink]="'/operations/'">Мои операции</div>
+          <div class="footer-link" [routerLink]="'/cabinet/verification/step1'">Верификация</div>
         </div>
         <div class="link-stack" [class.show-links]="third" (click)="third = !third">
           <div class="footer-title arrow-dropdown a-d-b">Информация</div>
           <a class="footer-link first-footer-link" href="/assets/docs/Terms_of_Use_v18.5.20.docx" download>Пользовательское соглашение</a>
           <a class="footer-link" href="/assets/docs/politika_konfidentsialnosti.docx" download>Политика конфиденциальности</a>
-          <div class="footer-link">Диверсификация рисков</div>
-          <div class="footer-link">Партнёрам</div>
+          <a class="footer-link" href="/assets/docs/riski.docx" download>Предупреждение о рисках</a>
+          <!--div class="footer-link">Партнёрам</div-->
         </div>
       </div>
       <div class="footer-contact">
-        <div class="footer-numbers">8 (800) 250-00-99</div>
-        <div class="footer-email">help@moleson.swiss</div>
+        <!--div class="footer-numbers">8 (800) 250-00-99</div-->
+        <div class="footer-email">info@moleson.pro</div>
         <div class="footer-social-block">
           <div class="row">
             <div class="footer-social-link" id="vk">

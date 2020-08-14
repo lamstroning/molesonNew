@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {TokenService} from '../../../core/token/token.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,10 @@ import {Router} from '@angular/router';
 export class HeaderComponent implements OnInit {
   width;
   open = false;
-  constructor(private router: Router) {
+
+  constructor(
+    private router: Router,
+    public tokenService: TokenService) {
   }
   ngOnInit() {
     this.width = window.innerWidth;
@@ -22,5 +26,9 @@ export class HeaderComponent implements OnInit {
     if (this.width > 1024) {
       this.open = false;
     }
+  }
+
+  goto_url(url: string) {
+    window.location.href = url;
   }
 }

@@ -15,9 +15,9 @@
         <div class="franchise-body">
           <div class="franchise-body-block">
             <div class="main-info">
-              <div class="avatar" [style.background-image]="'url(' + franchise.ico + ')'"></div>
+              <div class="avatar" [routerLink]="['/franchises-detail', franchise._id]" [style.background-image]="'url(' + franchise.picture + ')'"></div>
               <div>
-                <div class="franchise-title">{{franchise.name}}</div>
+                <div class="franchise-title"  [routerLink]="['/franchises-detail', franchise._id]">{{franchise.name}}</div>
                 <div class="franchise-adresse">{{franchise.adresse}}</div>
               </div>
             </div>
@@ -32,7 +32,7 @@
               <div class="d-flex justify-content-between mt-2">
                 <p class="mb-2">Прогресс</p>
                 <p class="mb-2">
-                  <b>53%</b>
+                  <b>{{franchise.progress}}%</b>
                 </p>
               </div>
               <div class="d-flex align-items-center">
@@ -43,7 +43,7 @@
               <div class="d-flex justify-content-between mt-2">
                 <p>{{franchise.investors.length}} уч.</p>
                 <p>
-                  <b class="final-cost">{{franchise.formatCost}} $</b>
+                  <b class="final-cost">{{franchise.formatRemainCost}} $</b>
                 </p>
               </div>
             </div>
@@ -53,9 +53,9 @@
               <p class="last-title">Общая стоимость</p>
               <p>
                 <b class="last-cost">
-                  <span>{{franchise.formatCost}} $</span>
+                  <span class="m-cost">{{franchise.formatCost}} $</span>
                   <span class="separate">/</span>
-                  <span>{{franchise.formatCostRub}} ₽</span>
+                  <span class="m-cost">{{franchise.formatCostRub}} ₽</span>
                 </b>
               </p>
             </div>

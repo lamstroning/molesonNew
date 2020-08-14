@@ -23,6 +23,7 @@
   position: relative;
   padding-right: 30px;
   .profile-name {
+    min-width: 100px;
   }
   .profile-status {
     font-size: 12px;
@@ -80,7 +81,10 @@
     pointer-events: auto;
   }
   .open-block {
-    height: 368px;
+    height: 378px;
+  }
+  .open-block-mini {
+    height: 248px;
   }
 }
 @media screen and (max-width: 1024px) {

@@ -23,6 +23,10 @@ const routes: Routes = [
         path: 'analytics',
         component: PartnersAnalyticsComponent
       },
+      {
+        path: 'marketing-plan',
+        component: PartnersMarketingComponent
+      },
     ]
   }
 ];

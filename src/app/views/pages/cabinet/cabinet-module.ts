@@ -9,7 +9,7 @@ import {CommonModule} from '@angular/common';
 import {CabinetComponent} from './cabinet.component';
 
 import {WidgetModule} from '../../widget/widget.module';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -49,7 +49,8 @@ const routes: Routes = [
         InlineSVGModule,
         CommonModule,
         WidgetModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule,
     ],
   providers: [],
   exports: [RouterModule],

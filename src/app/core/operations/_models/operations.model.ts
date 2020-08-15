@@ -26,12 +26,18 @@ export class OperationsModel {
     this.user = item.user;
     this.typeIco = 'svg';
     this.typeActionRaw = item.typeAction;
+    console.log(item.typeAction);
 
     if (item.typeAction === 'input') {
       this.status = '#31b984';
       this.typeAction = 'Пополнение';
       this.ico = '/assets/svg-icon/operation-ico/card-up-balance.svg';
       this.type = true;
+    } else if (item.typeAction === 'pay franchises') {
+      this.typeAction = 'Покупка доли';
+      this.type = false;
+      this.ico = '/assets/svg-icon/operation-ico/card-down-balance.svg';
+      this.status = '#E74B4B';
     } else {
       this.typeAction = 'Вывод';
       this.type = false;

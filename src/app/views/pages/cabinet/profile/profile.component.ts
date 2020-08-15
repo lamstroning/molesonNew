@@ -73,8 +73,8 @@ export class ProfileComponent implements OnInit {
       dateIssued: [this.user.dateIssued, Validators.required],
       departmentCode: [this.user.departmentCode, Validators.required],
       registrationAddress: [this.user.registrationAddress, Validators.required],
-      SNILS: [this.user.SNILS, Validators.required],
-      INN: [this.user.INN, Validators.required],
+      // SNILS: [this.user.SNILS, Validators.required],
+      // INN: [this.user.INN, Validators.required],
       // phone: [this.user.phone, Validators.required],
     });
   }
@@ -157,8 +157,8 @@ export class ProfileComponent implements OnInit {
     this.user.issued = this.form.get('issued').value;
     this.user.dateIssued = this.form.get('dateIssued').value;
     this.user.departmentCode = this.form.get('departmentCode').value;
-    this.user.INN = this.form.get('INN').value;
-    this.user.SNILS = this.form.get('SNILS').value;
+    // this.user.INN = this.form.get('INN').value;
+    // this.user.SNILS = this.form.get('SNILS').value;
 
     const birthday = '';
     this.user.birthday = birthday.concat(
@@ -296,8 +296,8 @@ export class ProfileComponent implements OnInit {
     req.append('dateIssued', this.user.dateIssued);
     req.append('departmentCode', this.user.departmentCode);
     req.append('registrationAddress', this.user.registrationAddress);
-    req.append('SNILS', this.user.SNILS);
-    req.append('INN', this.user.INN);
+    // req.append('SNILS', this.user.SNILS);
+    // req.append('INN', this.user.INN);
     req.append('phone', this.user.phone ? this.user.phone.toString() : ' ');
     return req;
   }

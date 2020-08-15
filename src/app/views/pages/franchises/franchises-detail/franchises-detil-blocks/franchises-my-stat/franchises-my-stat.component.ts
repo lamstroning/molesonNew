@@ -29,7 +29,8 @@ export class FranchisesMyStatComponent implements OnInit {
         const operation = new OperationsModel(item);
         if ( operation.typeActionRaw === 'pay franchises' && item.data._id === this.franchise._id) {
           // console.log(item);
-          this.transactionsCount++;
+
+          this.transactionsCount += item.data.stocks;
           this.transactionsSum += item.quantity * .01;
 
           this.operationList.push(operation);

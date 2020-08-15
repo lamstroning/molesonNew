@@ -52,7 +52,7 @@ export class AuthComponent implements OnInit, OnDestroy {
       this.formLoad = false;
       return ;
     }
-    this.authSub = this.authService.login(this.email, this.pass).subscribe(
+    this.authSub = this.authService.login(this.email.toLowerCase(), this.pass).subscribe(
       res => {
         console.log(res);
         this.formLoad = false;

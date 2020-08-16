@@ -6,6 +6,7 @@ import {catchError, concatMap, map} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import {Form} from '@angular/forms';
 import {TokenService} from '../../token/token.service';
+import {ToastrService} from 'ngx-toastr';
 
 const API_USERS_URL = 'api';
 
@@ -18,6 +19,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router,
+    private toastr: ToastrService,
     private tokenService: TokenService
   ) {}
 
@@ -79,6 +81,12 @@ export class AuthService {
           return res;
         }),
         catchError(err => {
+          let msg = err.error.data;
+          if ( err.error.data === 'User is already' ) {
+            msg = 'Пользователь с такой почтой уже зарегистрирован';
+          }
+          this.toastr.error(msg, 'Ошибка регистрации');
+          console.log(err);
           return err;
         })
       );

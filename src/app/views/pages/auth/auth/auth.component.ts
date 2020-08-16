@@ -3,6 +3,7 @@ import {AuthService} from '../../../../core/auth/_services/auth.service';
 import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
 import {FormControl} from '@angular/forms';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-auth',
@@ -17,7 +18,9 @@ export class AuthComponent implements OnInit, OnDestroy {
   formLoad = false;
   authSub: Subscription;
   myRecaptcha = new FormControl(false);
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService,
+              private toastr: ToastrService,
+              private router: Router) { }
 
   ngOnInit() {}
   ngOnDestroy() {

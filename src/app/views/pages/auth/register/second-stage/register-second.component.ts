@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AuthService} from '../../../../../core/auth/_services/auth.service';
 import {of} from 'rxjs';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-register-second',
@@ -19,7 +20,9 @@ export class SecondStageRegisterComponent implements OnInit {
   inputType = 'password';
   inputTypeRes = 'password';
   formLoad = false;
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+              private toastr: ToastrService,
+              ) {
   }
   showNotification(type: string, text: string, time: number = 5000) {
     this.msgType = type;
@@ -81,6 +84,8 @@ export class SecondStageRegisterComponent implements OnInit {
         if (err.data.error === 'Email error') {
           this.showNotification('error-msg', 'Ошибка');
           return;
+        } else {
+          this.toastr.error(err.data.error, 'Ошибка регистрации');
         }
       }, () => {
         this.formLoad = false;

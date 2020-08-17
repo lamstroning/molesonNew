@@ -15,38 +15,47 @@ export class OperationsService {
   operationListDateHash: any = [];
   operationSumByFranchisesId: any[];
   operationSumTotal: number;
+  calulationsComplete: boolean;
 
   constructor(private http: HttpClient, private tokenService: TokenService) {
     // this.getList();
     this.operationSumTotal = 0;
+    this.calulationsComplete = false;
+    console.log('OperationsService constructor');
   }
   getList() {
-    this.operationList = [];
-    this.operationListDateHash = [];
-    this.operationSumByFranchisesId = [];
-    this.transactionGet().subscribe(res => {
-      // console.log(res);
-      for (const item of res.data) {
-        const operation = new OperationsModel(item);
-        this.operationList.push(operation);
-        if ( this.operationListDateHash[operation.date_month_title] === undefined ) {
-          this.operationListDateHash[operation.date_month_title] = [];
-        }
-        this.operationListDateHash[operation.date_month_title].push(operation);
-        // Формируем сумму по каждой франшизе
-        if ( operation.typeActionRaw === 'pay franchises' ) {
-          if ( this.operationSumByFranchisesId[operation._id] === undefined ) {
-            this.operationSumByFranchisesId[operation._id] = 0;
+    if ( !this.calulationsComplete ) {
+      this.operationList = [];
+      this.operationListDateHash = [];
+      this.operationSumByFranchisesId = [];
+      this.transactionGet().subscribe(res => {
+        // console.log(res);
+        if ( !this.calulationsComplete ) {
+          console.log('get tr list');
+          for (const item of res.data) {
+            const operation = new OperationsModel(item);
+            this.operationList.push(operation);
+            if ( this.operationListDateHash[operation.date_month_title] === undefined ) {
+              this.operationListDateHash[operation.date_month_title] = [];
+            }
+            this.operationListDateHash[operation.date_month_title].push(operation);
+            // Формируем сумму по каждой франшизе
+            if ( operation.typeActionRaw === 'pay franchises' ) {
+              if ( this.operationSumByFranchisesId[operation._id] === undefined ) {
+                this.operationSumByFranchisesId[operation._id] = 0;
+              }
+              this.operationSumByFranchisesId[operation._id] += operation.quantity;
+              this.operationSumTotal += (operation.quantity / 100);
+            }
           }
-          this.operationSumByFranchisesId[operation._id] += operation.quantity;
-          this.operationSumTotal += (operation.quantity / 100);
+          this.calulationsComplete = true;
         }
-      }
-      // console.log(this.operationSumTotal);
-    }, err => {
-      console.warn(err);
-    }, () => {
-    });
+        // console.log(this.operationSumTotal);
+      }, err => {
+        console.warn(err);
+      }, () => {
+      });
+    }
   }
   getoperationSumTotal() {
     return this.operationSumTotal;

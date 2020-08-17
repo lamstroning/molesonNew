@@ -468,7 +468,7 @@ mb-12 {
     display: block;
   }
   .mobile-margin {
-    margin: 16px !important;
+    margin: 32px !important;
   }
   .desktop-show {
     display: none;
@@ -497,6 +497,9 @@ mb-12 {
 @media screen and (max-width: 480px) {
   h2.block-title  {
     font-size: 22px;
+  }
+  .mobile-margin {
+    margin: 16px !important;
   }
   h3.page-element-title  {
     font-size: 18px;

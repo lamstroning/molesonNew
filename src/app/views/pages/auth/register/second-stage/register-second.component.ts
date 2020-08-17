@@ -58,9 +58,9 @@ export class SecondStageRegisterComponent implements OnInit {
     this.regDate.password = this.password;
     const req = new FormData();
     req.append('fullname', 'x');
-    req.append('username', this.regDate.email);
+    req.append('username', this.regDate.email.toLowerCase());
     req.append('password', this.password);
-    req.append('email', this.regDate.email);
+    req.append('email', this.regDate.email.toLowerCase());
     if (this.regDate.referralLink) {
       req.append('referral', this.regDate.referralLink);
     }

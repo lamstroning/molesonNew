@@ -13,13 +13,17 @@ const API_URL = '/api/user/transaction/';
 export class OperationsService {
   operationList: OperationsModel[] = [];
   operationListDateHash: any = [];
+  operationSumByFranchisesId: any[];
+  operationSumTotal: number;
 
   constructor(private http: HttpClient, private tokenService: TokenService) {
     // this.getList();
+    this.operationSumTotal = 0;
   }
   getList() {
     this.operationList = [];
     this.operationListDateHash = [];
+    this.operationSumByFranchisesId = [];
     this.transactionGet().subscribe(res => {
       // console.log(res);
       for (const item of res.data) {
@@ -29,11 +33,23 @@ export class OperationsService {
           this.operationListDateHash[operation.date_month_title] = [];
         }
         this.operationListDateHash[operation.date_month_title].push(operation);
+        // Формируем сумму по каждой франшизе
+        if ( operation.typeActionRaw === 'pay franchises' ) {
+          if ( this.operationSumByFranchisesId[operation._id] === undefined ) {
+            this.operationSumByFranchisesId[operation._id] = 0;
+          }
+          this.operationSumByFranchisesId[operation._id] += operation.quantity;
+          this.operationSumTotal += (operation.quantity / 100);
+        }
       }
+      // console.log(this.operationSumTotal);
     }, err => {
       console.warn(err);
     }, () => {
     });
+  }
+  getoperationSumTotal() {
+    return this.operationSumTotal;
   }
   transactionOutput(): Observable<any> {
     return this.http.post<any>(API_URL + 'output', {}, {headers: this.tokenService.getUserTokenHeader()});

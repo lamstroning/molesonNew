@@ -8,6 +8,9 @@
       <div class="main-area">
         <router-outlet *ngIf="loading"></router-outlet>
         <app-loading *ngIf="!loading"></app-loading>
+        <div *ngIf="width <= 1024" class="page-element client-link mobile-margin">
+          <app-client-link></app-client-link>
+        </div>
       </div>
     </div>
   </div>

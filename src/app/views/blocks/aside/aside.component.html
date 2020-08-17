@@ -41,14 +41,11 @@
     <!--div class="mobile-header-title">
       <app-wallet></app-wallet>
     </div-->
-    <!--div class="inviter-person">
+    <div class="inviter-person">
       <div class="mobile-header-title">
         <p>Ваш пригласитель</p>
-        <p><b>Дмитрий Иванов</b></p>
+        <p *ngIf="tokenService.getUser().referral === undefined"><b>Moleson</b></p>
+        <p *ngIf="tokenService.getUser().referral !== undefined"><b>{{tokenService.getUser().referral.fullName}}</b></p>
       </div>
-      <div class="contacts">
-        <p>Контактная почта</p>
-        <p><b>ivanov@yandex.ru</b></p>
-      </div>
-    </div-->
+    </div>
 </div>

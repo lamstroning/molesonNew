@@ -9,10 +9,10 @@ import {WalletComponent} from './header/header-elements/wallet/wallet.component'
 import {ProfileComponent} from './header/header-elements/profile/profile.component';
 import { ClientStatusComponent } from './aside/elements/client-status/client-status.component';
 import { MenuComponent } from './aside/elements/menu/menu.component';
-import { ClientLinkComponent } from './aside/elements/client-link/client-link.component';
 import { InviteComponent } from './aside/elements/invite/invite.component';
 import {HeaderComponent} from './header/header.component';
 import {LangComponent} from './header/header-elements/lang/lang.component';
+import {SharedModule} from '../../shared.module';
 
 
 @NgModule({
@@ -22,7 +22,6 @@ import {LangComponent} from './header/header-elements/lang/lang.component';
     WalletComponent,
     ClientStatusComponent,
     MenuComponent,
-    ClientLinkComponent,
     InviteComponent,
     HeaderComponent,
     ProfileComponent,
@@ -32,6 +31,7 @@ import {LangComponent} from './header/header-elements/lang/lang.component';
     RouterModule,
     InlineSVGModule.forRoot(),
     CommonModule,
+    SharedModule,
     HeaderModule
   ],
   providers: [],

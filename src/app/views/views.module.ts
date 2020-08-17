@@ -13,6 +13,7 @@ import {WidgetModule} from './widget/widget.module';
 import {NotFoundComponent} from './pages/notFound/notfound.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
+import {SharedModule} from '../shared.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {ToastrModule} from 'ngx-toastr';
     CommonModule,
     WidgetModule,
     BrowserAnimationsModule,
+    SharedModule,
     ToastrModule.forRoot(),
   ],
   providers: [FranchisesService],

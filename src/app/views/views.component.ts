@@ -8,6 +8,7 @@ import {TokenService} from '../core/token/token.service';
 })
 export class ViewsComponent implements OnInit {
   loading = true;
+  width = window.innerWidth;
   constructor(public tokenService: TokenService) { }
 
   ngOnInit() {

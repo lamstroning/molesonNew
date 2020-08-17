@@ -69,7 +69,7 @@ export class FranchisesModel {
 
     }
     this.allCost = +(this.stock.price * this.stocks).toFixed(2);
-    this.allCostRub = this.allCost * 70;
+    this.allCostRub = this.allCost * 72;
     this.formatCost = (this.allCost / 100).toLocaleString();
     this.formatCostRub = (this.allCostRub / 100).toLocaleString();
   }

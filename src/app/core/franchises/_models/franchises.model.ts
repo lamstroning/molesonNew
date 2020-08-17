@@ -65,8 +65,6 @@ export class FranchisesModel {
     if ( this.name === 'COLIZEUM' ) {
       this.profitability = 26;
       this.stocks = 3482;
-      console.log(this.stocks);
-
     }
     this.allCost = +(this.stock.price * this.stocks).toFixed(2);
     this.allCostRub = this.allCost * 72;

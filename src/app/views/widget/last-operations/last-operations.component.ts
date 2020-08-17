@@ -24,7 +24,7 @@ export class LastOperationsComponent implements OnInit {
   ngOnInit() {
     this.operationsService.getList();
     this.operation = this.operationsService.operationList;
-    console.log(this.operation);
+    // console.log(this.operation);
   }
 
 }

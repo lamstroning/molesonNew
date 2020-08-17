@@ -34,7 +34,7 @@ export class AuthComponent implements OnInit, OnDestroy {
       return 'Пользователь не найден, возможно вы не зарегистрированы';
     }
     if (msg === 'Invalid password!') {
-      return 'Не верный пароль';
+      return 'Неверный пароль';
     }
     if (msg === 'Wrong captcha') {
       return 'Введите капчу';
@@ -43,7 +43,7 @@ export class AuthComponent implements OnInit, OnDestroy {
       return 'На вашу почту было выслано письмо с подтверждением, подвердите ваш Email, чтобы начать работу с площадкой';
     }
     if (msg.details !== undefined && msg.details[0].message === '"email" must be a valid email') {
-      return 'Не верный формат "email"';
+      return 'Неверный формат "email"';
     }
     return 'Неизвестная ошибка, попробуйте зайти позже';
   }

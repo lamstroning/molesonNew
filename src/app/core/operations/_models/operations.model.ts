@@ -26,7 +26,7 @@ export class OperationsModel {
     this.user = item.user;
     this.typeIco = 'svg';
     this.typeActionRaw = item.typeAction;
-    console.log(item.typeAction);
+    // console.log(item.typeAction);
 
     if (item.typeAction === 'input') {
       this.status = '#31b984';

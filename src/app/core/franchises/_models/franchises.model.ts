@@ -64,7 +64,7 @@ export class FranchisesModel {
   private saveCost() {
     if ( this.name === 'COLIZEUM' ) {
       this.profitability = 26;
-      this.stocks = 2306;
+      this.stocks = 3482;
       console.log(this.stocks);
 
     }

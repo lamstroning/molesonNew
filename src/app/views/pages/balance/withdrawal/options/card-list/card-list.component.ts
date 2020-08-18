@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardListComponent implements OnInit {
   saveCard: SaveCards[] = [
+    /*
     {
       id: 0,
       number: 1234,
@@ -23,6 +24,7 @@ export class CardListComponent implements OnInit {
       ico: '/assets/svg-icon/card/visa.svg',
       background: '/assets/svg-icon/card/background/visa.png'
     }
+     */
   ];
   constructor() { }
 

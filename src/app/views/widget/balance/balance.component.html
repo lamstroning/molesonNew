@@ -27,7 +27,7 @@
     </div>
   </div>
   <div class="balance-block tablet-show">
-    <div class="btn btn-success">Пополнить счёт</div>
+    <div class="btn btn-success" (click)="tokenService.gotToPayment()">Пополнить счёт</div>
     <div class="btn btn-outline-white" [routerLink]="'/balance/withdrawal'">Вывести</div>
   </div>
 </div>

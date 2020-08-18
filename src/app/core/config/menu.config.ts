@@ -39,7 +39,13 @@ class MenuConfig {
       link: 'help',
       icon: 'help',
       title: 'Помощь'
-    }
+    },
+    {
+      link: 'https://moleson.pro/',
+      icon: 'docs',
+      external: true,
+      title: 'О нас'
+    },
   ];
   constructor() {
     this.leftMenu.forEach(key => {

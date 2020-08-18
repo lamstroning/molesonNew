@@ -1,6 +1,6 @@
 <div *ngIf="width > 1024" class="left-block">
   <div class="left-menu page-element m-0">
-    <div *ngFor="let menuItem of menu.leftMenu" class="left-menu-item" [routerLink]="'/' + menuItem.link"
+    <div *ngFor="let menuItem of menu.leftMenu" class="left-menu-item" (click)="goto(menuItem)" [routerLink]="get_router_link(menuItem)"
          [routerLinkActive]="'left-menu-item-active'">
       <div class="menu-ico" [inlineSVG]="router.isActive( menuItem.link, false) ? menuItem.icon.replace('.svg', '-active.svg') :  menuItem.icon"></div>
       <div class="menu-title">{{menuItem.title}}</div>
@@ -30,7 +30,7 @@
     Навигация
     <div class="dropdown-header">
       <div class="left-menu page-element m-0">
-        <div *ngFor="let menuItem of menu.leftMenu" class="left-menu-item" [routerLink]="'/' + menuItem.link"
+        <div *ngFor="let menuItem of menu.leftMenu" class="left-menu-item" (click)="goto(menuItem)" [routerLink]="get_router_link(menuItem)"
              [routerLinkActive]="'left-menu-item-active'">
           <div class="menu-ico" [inlineSVG]="menuItem.icon"></div>
           <div class="menu-title">{{menuItem.title}}</div>

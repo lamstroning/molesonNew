@@ -33,4 +33,18 @@ export class AsideComponent implements OnInit {
     this.open = false;
     this.width = event.target.innerWidth;
   }
+
+  goto(menuItem: any) {
+    if (menuItem.external) {
+      window.open(menuItem.link, '_blank');
+    }
+  }
+
+  get_router_link(menuItem: any) {
+    if ( menuItem.external ) {
+      return false;
+    } else {
+      return '/' + menuItem.link;
+    }
+  }
 }

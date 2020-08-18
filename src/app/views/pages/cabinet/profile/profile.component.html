@@ -85,18 +85,18 @@
             <div class="default-input-title">Дата рождения</div>
             <div class="input-select-row">
               <div class="custom-arrow-dropdown default-field">
-                <select class="form-control {{getErrorClass('date0')}}"  formControlName="date0">
+                <select class="form-control {{getErrorClass('date0')}}" [value]="form.get('date0').value"  formControlName="date0">
                   <option *ngFor="let i of year">{{i}}</option>
                 </select>
               </div>
               <div class="custom-arrow-dropdown default-field">
-                <select class="form-control {{getErrorClass('date1')}}" formControlName="date1">
+                <select class="form-control {{getErrorClass('date1')}}" [value]="form.get('date1').value" formControlName="date1">
                   <option *ngFor="let i of month; let val = index"
                           value="{{convertDate(2, val + 1 + '')}}">{{i}}</option>
                 </select>
               </div>
               <div class="custom-arrow-dropdown default-field">
-                <select class="form-control {{getErrorClass('date2')}}" formControlName="date2">
+                <select class="form-control {{getErrorClass('date2')}}" [value]="form.get('date2').value" formControlName="date2">
                   <option *ngFor="let i of days">{{i}}</option>
                 </select>
               </div>

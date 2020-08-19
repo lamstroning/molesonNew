@@ -1,6 +1,6 @@
 <div class="partners-container">
   <div class="partners-block-wide black-block gradient-block">
-    <app-stars-row [level]="1"></app-stars-row>
+    <app-stars-row [level]="tokenService.getAgentLevel()" [hideEmpty]="true" [bigger]="true"></app-stars-row>
     <div class="partners-block-info">
       <div class="partners-block-name">Ваш клиентский статус:</div>
       <div class="partners-block-title" *ngIf="tokenService.getUser()">{{tokenService.getUserStatus()}}</div>
@@ -27,11 +27,7 @@
               </div>
             </div>
             <div class="card-toolbar">
-              <div class="partners-block-stars-row">
-                <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
-                <div class="partners-block-star bigger-icon start-empty" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start-empty.svg'"></div>
-                <div class="partners-block-star bigger-icon start-empty" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start-empty.svg'"></div>
-              </div>
+              <app-stars-row [level]="1" [bigger]="true"></app-stars-row>
             </div>
 
           </div>
@@ -62,11 +58,7 @@
               </div>
             </div>
             <div class="card-toolbar">
-              <div class="partners-block-stars-row">
-                <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
-                <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
-                <div class="partners-block-star bigger-icon start-empty" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start-empty.svg'"></div>
-              </div>
+              <app-stars-row [level]="2" [bigger]="true"></app-stars-row>
             </div>
 
           </div>
@@ -101,11 +93,7 @@
               </div>
             </div>
             <div class="card-toolbar">
-              <div class="partners-block-stars-row">
-                <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
-                <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
-                <div class="partners-block-star bigger-icon" [setSVGAttributes]="{width: '100%', height: '100%'}" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
-              </div>
+              <app-stars-row [level]="3" [bigger]="true"></app-stars-row>
             </div>
 
           </div>

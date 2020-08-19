@@ -57,7 +57,7 @@ export class PartnersAnalyticsComponent implements OnInit {
           this.referralsArray[partnerItem.idUser] = '';
           this.referralsArray[partnerItem.idUser] = 'test';
         }
-        console.log(this.partnersList);
+        // console.log(this.partnersList);
       },
       err => {
         console.warn(err);

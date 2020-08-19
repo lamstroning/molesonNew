@@ -1,8 +1,7 @@
 .partners-block-stars-row {
   display: flex;
-  width: 90px;
   margin-right: 18px;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 
   .partners-block-star {
@@ -10,7 +9,14 @@
     width: 18px;
   }
 }
+.fixed-width {
+  width: 60px;
+}
 .bigger-icon {
   width: 18px;
   height: 18px;
+}
+.smaller-icon {
+  width: 12px;
+  height: 12px;
 }

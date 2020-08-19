@@ -100,6 +100,13 @@ export class TokenService {
     window.open('https://moleson.payrexx.com/pay?tid=7df69168&referenceId=' + this.getUser()._id, '_blank');
   }
 
+  getAgentLevel() {
+    if ( this.isAgent() ) {
+      return this.user.level;
+    }
+    return 0;
+  }
+
   getUserStatus() {
     if ( this.user.accessLevel.lvl === 2 ) {
       const agentStatuses = {

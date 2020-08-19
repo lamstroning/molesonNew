@@ -1,10 +1,6 @@
 <div class="partners-container">
   <div class="partners-block black-block">
-    <div class="partners-block-stars-row">
-      <div class="partners-block-star" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
-      <div class="partners-block-star" [inlineSVG]="'/assets/svg-icon/partners/start.svg'"></div>
-      <div class="partners-block-star start-empty" [inlineSVG]="'/assets/svg-icon/partners/start-empty.svg'"></div>
-    </div>
+    <app-stars-row [level]="tokenService.getAgentLevel()" [hideEmpty]="false" [bigger]="true"></app-stars-row>
     <div class="partners-block-info">
       <div class="partners-block-name">Клиентский статус</div>
       <div class="partners-block-status" *ngIf="tokenService.getUser() !== null">{{tokenService.getUserStatus()}}</div>

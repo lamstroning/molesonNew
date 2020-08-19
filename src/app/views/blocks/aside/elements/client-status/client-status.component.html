@@ -2,7 +2,8 @@
   <div class="client-status-header">
     <div class="client-status-header-subtitle">Клиентский статус</div>
     <div class="client-status-header-block">
-      <div class="client-status-header-point"></div>
+      <div *ngIf="!tokenService.isAgent()" class="client-status-header-point"></div>
+      <app-stars-row [level]="tokenService.getAgentLevel()" [hideEmpty]="true" [bigger]="false" [flowWidth]="true"></app-stars-row>
       <div class="client-status-header-title" *ngIf="tokenService.getUser() !== null">{{tokenService.getUserStatus()}}</div>
     </div>
   </div>

@@ -8,6 +8,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {PartnersComponent} from './partners.component';
 import {InlineSVGModule} from 'ng-inline-svg';
 import {CommonModule} from '@angular/common';
+import {SharedModule} from '../../../shared.module';
 
 const routes: Routes = [
   {
@@ -43,7 +44,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
     InlineSVGModule,
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: []

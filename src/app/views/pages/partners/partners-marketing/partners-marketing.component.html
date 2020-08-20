@@ -12,7 +12,7 @@
   </div-->
 </div>
 <div class="pt-5 pb-2">
-  <h3>Система вознаграждений</h3>
+  <div class="bold-title">Система вознаграждений</div>
   <div>Уровни системы вознаграждений партнёра Moleson</div>
 </div>
 <div class="partners-container">
@@ -35,15 +35,15 @@
             <div class="level-description text-center">
               <div>
                 <p class="card-text">1 уровень</p>
-                <h3 class="card-title">5%</h3>
+                <h3 class="percent">5%</h3>
               </div>
               <div>
                 <p class="card-text">2 уровень</p>
-                <h3 class="card-title">2%</h3>
+                <h3 class="percent">2%</h3>
               </div>
               <div>
                 <p class="card-text">3 уровень</p>
-                <h3 class="card-title">0.1%</h3>
+                <h3 class="percent">0,1%</h3>
               </div>
             </div>
           </div>
@@ -66,19 +66,19 @@
             <div class="level-description text-center">
               <div>
                 <p class="card-text">1 уровень</p>
-                <h3 class="card-title">8%</h3>
+                <h3 class="card-title percent">8%</h3>
               </div>
               <div>
                 <p class="card-text">2 уровень</p>
-                <h3 class="card-title">2%</h3>
+                <h3 class="card-title percent">2%</h3>
               </div>
               <div>
                 <p class="card-text">3 уровень</p>
-                <h3 class="card-title">1%</h3>
+                <h3 class="card-title percent">1%</h3>
               </div>
               <div>
                 <p class="card-text">4 уровень</p>
-                <h3 class="card-title">0.5%</h3>
+                <h3 class="card-title percent">0,5%</h3>
               </div>
             </div>
           </div>
@@ -101,23 +101,23 @@
             <div class="level-description text-center">
               <div>
                 <p class="card-text">1 уровень</p>
-                <h3 class="card-title">10%</h3>
+                <h3 class="card-title percent">10%</h3>
               </div>
               <div>
                 <p class="card-text">2 уровень</p>
-                <h3 class="card-title">3%</h3>
+                <h3 class="card-title percent">3%</h3>
               </div>
               <div>
                 <p class="card-text">3 уровень</p>
-                <h3 class="card-title">2%</h3>
+                <h3 class="card-title percent">2%</h3>
               </div>
               <div>
                 <p class="card-text">4 уровень</p>
-                <h3 class="card-title">0.5%</h3>
+                <h3 class="card-title percent">0,5%</h3>
               </div>
               <div>
                 <p class="card-text">5 уровень</p>
-                <h3 class="card-title">0.5%</h3>
+                <h3 class="card-title percent">0,5%</h3>
               </div>
             </div>
           </div>
@@ -130,36 +130,36 @@
 
 </div>
 <div class="pt-5 pb-2">
-  <h3>Повышение статуса</h3>
+  <div class="bold-title">Повышение статуса</div>
   <div>Таблица условий повышения статуса партнёра</div>
 </div>
 
-<table class="table white-table" *ngIf="width > 1024">
+<table class="table white-table vertical-middle" *ngIf="width > 1024">
   <thead>
   <tr>
     <th scope="col">Партнёрский статус</th>
-    <th scope="col">Личные инвестиции</th>
-    <th scope="col">Количество регистрации по личной ссылке</th>
-    <th scope="col">Сумма собственных инвестиций и привлечённых по личной ссылке</th>
+    <th scope="col" class="col-title">Личные инвестиции</th>
+    <th scope="col" class="col-title">Количество регистрации по личной ссылке</th>
+    <th scope="col" class="col-title">Сумма собственных инвестиций и привлечённых по личной ссылке</th>
   </tr>
   </thead>
   <tbody>
   <tr>
-    <th scope="row" class="font-weight-bolder">Агент</th>
+    <th scope="row" class="font-weight-bolder status-title">Агент</th>
     <td>0</td>
-    <td>0 (завершить верификацию, принять условия партнёрского соглашения)</td>
+    <td><div class="desc-row"><div>0</div> <span>(завершить верификацию, принять условия партнёрского соглашения)</span></div></td>
     <td>0</td>
   </tr>
   <tr>
-    <th scope="row" class="font-weight-bolder">Инвест-агент</th>
+    <th scope="row" class="font-weight-bolder status-title">Инвест-агент</th>
     <td>500 $</td>
-    <td>5 (пользователи с минимальными инвестициями 100 $)</td>
+    <td><div class="desc-row"><div>5</div> <span>(пользователи с минимальными инвестициями 100 $)</span></div></td>
     <td>1 000   $</td>
   </tr>
   <tr>
-    <th scope="row" class="font-weight-bolder">Инвест-брокер</th>
+    <th scope="row" class="font-weight-bolder status-title">Инвест-брокер</th>
     <td>1 500 $</td>
-    <td>3 (пользователи со статус партнёра “Инвест-агент”)</td>
+    <td><div class="desc-row"><div>3</div> <span>(пользователи со статус партнёра “Инвест-агент”)</span></div></td>
     <td>3 000 $</td>
   </tr>
   </tbody>
@@ -274,8 +274,7 @@
 </div>
 
 <div class="pt-5 pb-2">
-  <h3>Условия маркетинг-плана Moleson</h3>
-  <div>Таблица условий повышения статуса партнёра</div>
+  <div class="bold-title">Условия маркетинг-плана Moleson</div>
   <ul class="marketing-ul">
     <li><span>вывод средств начинается от 100$</span></li>
     <li><span>вывод брокерских вознаграждений доступен при наличии личных инвестиций не менее 200$</span></li>

@@ -1,3 +1,32 @@
+.percent {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.status-title {
+  min-width: 200px;
+  font-size: 16px !important;
+}
+.col-title {
+  padding-left: .75rem !important;
+}
+.vertical-middle td {
+  vertical-align: middle;
+  font-size: 16px !important;
+}
+.vertical-middle span {
+  font-size: 12px;
+}
+.desc-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  div {
+    padding-right: 8px;
+  }
+}
 .partners-container {
   display: flex;
   flex-wrap: wrap;
@@ -384,16 +413,25 @@
   }
 }
 .marketing-ul {
+  margin-left: 0px;
+
   li {
     list-style: square;
     color: #31B984;
-    font-size: 24px;
+    font-size: 36px;
+    margin-left: 0px;
+    line-height: normal;
   }
   li li {
     color: #FF9800;
   }
   li span {
     color: #051C2C;
+    font-size: 18px;
+    position: relative;
+    top: -6px;
+  }
+  li li span {
     font-size: 16px;
   }
 }

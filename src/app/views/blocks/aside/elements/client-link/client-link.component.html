@@ -8,9 +8,9 @@
   <div class="client-link-social">
     <div class="client-link-social-title">Делитесь в соц. сетях</div>
     <div class="client-link-social-row">
-      <div class="client-link-social-block" [style.color]="'#4A76A8'" [inlineSVG]="'/assets/svg-icon/social/vk.svg'"></div>
-      <div class="client-link-social-block" [style.color]="'#3B5998'" [inlineSVG]="'/assets/svg-icon/social/fb.svg'"></div>
-      <div class="client-link-social-block" [inlineSVG]="'/assets/svg-icon/social/odn.svg'"></div>
+      <div class="client-link-social-block" (click)="share('vk', 'https://lk.moleson.pro/ref/' + user.referralLink)" [style.color]="'#4A76A8'" [inlineSVG]="'/assets/svg-icon/social/vk.svg'"></div>
+      <div class="client-link-social-block" (click)="share('fb', 'https://lk.moleson.pro/ref/' + user.referralLink)" [style.color]="'#3B5998'" [inlineSVG]="'/assets/svg-icon/social/fb.svg'"></div>
+      <div class="client-link-social-block" (click)="share('ok', 'https://lk.moleson.pro/ref/' + user.referralLink)" [inlineSVG]="'/assets/svg-icon/social/odn.svg'"></div>
     </div>
   </div>
 </div>

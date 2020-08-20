@@ -36,5 +36,30 @@ export class ClientLinkComponent implements OnInit {
     document.execCommand('copy');
     this.toastr.success('Ссылка скопирована в буфер обмена', 'Выполнено успешно');
   }
-
+  share(destination: string, link: string) {
+    let destLink = '';
+    const title = 'Moleson Investment Platform';
+    switch (destination) {
+      case 'fb':
+        destLink = 'https://www.facebook.com/sharer.php?src=sp&u=' + link +
+          '&title=' + title;
+        break;
+      case 'ok':
+        destLink = 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.title' + title +
+          '&st.shareUrl=' + link;
+        break;
+      default:
+        destLink = 'https://vk.com/share.php?url=' + link +
+          '&title=' + title;
+        break;
+    }
+    const popup = window.open(destLink, '_blank', `toolbar=no,
+                                    status=no,
+                                    menubar=no,
+                                    scrollbars=yes,
+                                    resizable=yes,
+                                    width=500px,
+                                    height=400px`);
+    popup.moveTo(200, 200);
+  }
 }

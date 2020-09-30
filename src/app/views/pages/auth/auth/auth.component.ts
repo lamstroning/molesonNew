@@ -39,7 +39,7 @@ export class AuthComponent implements OnInit, OnDestroy {
     if (msg === 'Wrong captcha') {
       return 'Введите капчу';
     }
-    if (msg.details !== undefined && msg.data === 'Not verified email') {
+    if (msg === 'Not verified email') {
       return 'На вашу почту было выслано письмо с подтверждением, подвердите ваш Email, чтобы начать работу с площадкой';
     }
     if (msg.details !== undefined && msg.details[0].message === '"email" must be a valid email') {

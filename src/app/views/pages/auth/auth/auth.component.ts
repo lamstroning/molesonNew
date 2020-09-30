@@ -40,7 +40,7 @@ export class AuthComponent implements OnInit, OnDestroy {
       return 'Введите капчу';
     }
     if (msg === 'Not verified email') {
-      return 'На вашу почту было выслано письмо с подтверждением, подвердите ваш Email, чтобы начать работу с площадкой';
+      return 'На вашу почту было выслано письмо с подтверждением, подтвердите ваш Email, чтобы начать работу с площадкой';
     }
     if (msg.details !== undefined && msg.details[0].message === '"email" must be a valid email') {
       return 'Неверный формат "email"';

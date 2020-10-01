@@ -13,6 +13,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SocialAuthComponent } from './social-auth/social-auth.component';
 import {WidgetModule} from '../../widget/widget.module';
 import {RecaptchaModule} from 'angular-google-recaptcha';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
+
 
 const routes: Routes = [
   {
@@ -66,6 +69,7 @@ const routes: Routes = [
     RecaptchaModule.forRoot({
       siteKey: '6LfoIbkZAAAAAAXFpHZHWalfycp3N23CJhFKr4Rg'
     }),
+    NgxMaskModule.forRoot(),
     ReactiveFormsModule
   ],
   providers: [],

@@ -19,6 +19,7 @@ export class FirstStageRegisterComponent implements OnInit {
   referralLink: string;
 
   myRecaptcha = new FormControl(false);
+  phone: string;
 
   showNotification(type: string, text: string, time: number = 5000) {
     this.msgType = type;
@@ -34,6 +35,12 @@ export class FirstStageRegisterComponent implements OnInit {
       const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
       return (reg.test(this.email));
   }
+  checkPhone() {
+    console.log(this.phone);
+    const reg = /^(([0-9]){10})$/im;
+    return (reg.test(this.phone));
+  }
+
   onScriptLoad() {
     console.log('Google reCAPTCHA loaded and is ready for use!');
   }
@@ -59,6 +66,10 @@ export class FirstStageRegisterComponent implements OnInit {
       this.showNotification('error-msg', 'Email не валидный');
       return ;
     }
+    if (!this.checkPhone()) {
+      this.showNotification('error-msg', 'Телефон не валидный');
+      return ;
+    }
     if (!this.myRecaptcha.value) {
       this.showNotification('error-msg', 'Пройдите капчу');
       return ;
@@ -68,6 +79,7 @@ export class FirstStageRegisterComponent implements OnInit {
     this.regDate.username = ' ';
     this.regDate.referralLink = this.referralLink;
     this.regDate.email = this.email;
+    this.regDate.phone = '+7' + this.phone;
     this.nextStageChange.emit(this.nextStage);
     this.regDateChange.emit(this.regDate);
   }

@@ -66,14 +66,23 @@ export class FranchisesModel {
       this.profitability = 26;
       this.stocks = 3482;
     }
-    this.allCost = +(this.stock.price * this.stocks).toFixed(2);
+    if ( this.stock ) {
+      this.allCost = +(this.stock.price * this.stocks).toFixed(2);
+    } else {
+      this.allCost = 0;
+    }
     this.allCostRub = this.allCost * 72;
     this.formatCost = (this.allCost / 100).toLocaleString();
     this.formatCostRub = (this.allCostRub / 100).toLocaleString();
   }
   private saveProgress() {
-    this.progress = (this.stock.price * this.purchasedShares) / (this.allCost / 100) | 0;
-    this.totalBuy = this.stock.price * this.purchasedShares;
+    if ( this.stock ) {
+      this.progress = (this.stock.price * this.purchasedShares) / (this.allCost / 100) | 0;
+      this.totalBuy = this.stock.price * this.purchasedShares;
+    } else {
+      this.progress = 0;
+      this.totalBuy = 0;
+    }
     this.totalBuyFormat = (this.totalBuy / 100).toLocaleString();
     this.remainCost = (this.allCost - this.totalBuy) / 100;
     this.formatRemainCost = this.remainCost.toLocaleString();

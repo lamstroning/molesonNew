@@ -60,6 +60,7 @@ export class SecondStageRegisterComponent implements OnInit {
     req.append('fullname', 'x');
     req.append('username', this.regDate.email.toLowerCase());
     req.append('password', this.password);
+    req.append('phone', this.regDate.phone);
     req.append('email', this.regDate.email.toLowerCase());
     if (this.regDate.referralLink) {
       req.append('referral', this.regDate.referralLink);
@@ -103,6 +104,7 @@ interface RegDate {
   fullname: string;
   username: string;
   email: string;
+  phone: string;
   password: string;
   referralLink: string;
 }

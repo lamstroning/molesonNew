@@ -1,15 +1,22 @@
 {
   "/api": {
-    "target": "https://lk.moleson.pro",
+    "target": "https://test.moleson.pro",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
   },
   "/upload": {
-    "target": "https://lk.moleson.pro",
+    "target": "https://test.moleson.pro",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/test": {
+    "target": "https://test.moleson.pro",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
   }
+
 
 }

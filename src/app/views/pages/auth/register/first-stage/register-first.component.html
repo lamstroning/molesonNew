@@ -5,6 +5,10 @@
     <label>Email</label>
     <input type="email" [(ngModel)]="email" class="default-input">
   </div>
+    <div class="auth-form-body-row">
+      <label>Телефон</label>
+      <input type="phone" [(ngModel)]="phone" prefix="+7" mask="(000) 000 00 00" [showMaskTyped]="true" [validation]="true" class="default-input">
+    </div>
   <div class="mt-3">
     <recaptcha
       [formControl]="myRecaptcha"

@@ -14,6 +14,7 @@ export class FranchisesModel {
   investors: User[];
   _id: string;
   stocks: number;
+  adminStocks: number;
   stock: StockModel;
   status: StatusModel;
   progress: number;
@@ -39,6 +40,7 @@ export class FranchisesModel {
     this.purchasedShares = item.purchasedShares;
     this._id = item._id;
     this.stocks = item.stocks;
+    this.adminStocks = item.adminStocks;
     this.stock = item.stock;
     this.status = item.status;
     this.adresse = 'Москва';
@@ -71,12 +73,16 @@ export class FranchisesModel {
     } else {
       this.allCost = 0;
     }
-    this.allCostRub = this.allCost * 72;
+    this.allCostRub = this.allCost * 77;
     this.formatCost = (this.allCost / 100).toLocaleString();
     this.formatCostRub = (this.allCostRub / 100).toLocaleString();
   }
   private saveProgress() {
     if ( this.stock ) {
+      if ( this.adminStocks > 0 ) {
+        this.purchasedShares += this.adminStocks;
+        // this.purchasedShares += 4000;
+      }
       this.progress = (this.stock.price * this.purchasedShares) / (this.allCost / 100) | 0;
       this.totalBuy = this.stock.price * this.purchasedShares;
     } else {

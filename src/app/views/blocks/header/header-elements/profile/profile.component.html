@@ -1,7 +1,8 @@
 <div *ngIf="width > 1024 && user" class="profile-block" (click)="openBlock(true, $event)" [class.open-profile-block]="open">
   <div class="close" (click)="openBlock(false, $event)"></div>
 <!--  <div class="profile-avatar" [style.background-image]="'url(/assets/img/avatars/profile.png)'"></div>-->
-  <div class="profile-avatar" [style.background-image]="'url(' + user.picture + ')'"></div>
+  <div *ngIf="user.picture" class="profile-avatar" [style.background-image]="'url(' + user.picture + ')'"></div>
+  <div *ngIf="!user.picture" class="profile-avatar" [style.background-image]="'url(/assets/svg-icon/user.png)'"></div>
   <div class="profile-info arrow-dropdown">
     <div class="profile-name">{{user.fullName}}</div>
     <div class="profile-status">{{tokenService.getUserStatus()}}</div>

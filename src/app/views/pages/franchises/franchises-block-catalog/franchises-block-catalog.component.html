@@ -1,6 +1,6 @@
 <div class="my-franchises-area">
   <div *ngFor="let item of franchisesService.franchisesList; let i = index" class="page-element" [class.first-child]="i % 3 === 0">
-    <div class="card-franchise">
+    <div class="card-franchise" [routerLink]="['/franchises-detail', item._id]">
       <div class="card-franchise-img" [style.background-image]="'url(' + item.picture + ') '">
         <div class="card-franchise-img-row ">
           <p class="create-data">{{item.dateCreate}}</p>

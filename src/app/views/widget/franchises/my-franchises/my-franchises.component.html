@@ -3,7 +3,7 @@
   <div class="slider">
     <div class="my-franchises-area">
       <div *ngFor="let item of franchises | slice:0:3" class="page-element p-0 ml-0 mr-0">
-        <div class="card-franchise">
+        <div class="card-franchise" [routerLink]="['/franchises-detail', item._id]">
           <div class="card-franchise-img" [style.background-image]="'url(' + item.picture + ') '">
             <div class="card-franchise-img-row">
               <div class="status-block">

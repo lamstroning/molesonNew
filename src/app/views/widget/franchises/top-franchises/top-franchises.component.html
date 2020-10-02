@@ -2,7 +2,7 @@
   <h2 class="block-title">Проекты франшиз</h2>
   <div class="slider">
     <div class="slider-container">
-      <div *ngFor="let franchise of franchises | slice:0:3" class="page-element">
+      <div *ngFor="let franchise of franchises | slice:0:3" class="page-element"  [routerLink]="['/franchises-detail', franchise._id]">
         <div class="franchise-status">
           <div class="d-flex align-items-center">
             <div class="franchise-status-dot" [style.background-color]="franchise.color"></div>

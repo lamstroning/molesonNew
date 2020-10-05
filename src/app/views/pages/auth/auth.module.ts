@@ -15,7 +15,19 @@ import {WidgetModule} from '../../widget/widget.module';
 import {RecaptchaModule} from 'angular-google-recaptcha';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
+import { FacebookLoginProvider } from 'angularx-social-login';
 
+const config = new AuthServiceConfig([
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('1485170318347408')
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
 
 const routes: Routes = [
   {
@@ -70,9 +82,15 @@ const routes: Routes = [
       siteKey: '6LfoIbkZAAAAAAXFpHZHWalfycp3N23CJhFKr4Rg'
     }),
     NgxMaskModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
+  ],
   exports: [
   ],
   bootstrap: []

@@ -56,6 +56,10 @@ const routes: Routes = [
         path: 'auth',
         component: AuthMainComponent,
       },
+      {
+        path: 'reset',
+        component: ResetPasswordComponent
+      },
     ]
   }
 ];

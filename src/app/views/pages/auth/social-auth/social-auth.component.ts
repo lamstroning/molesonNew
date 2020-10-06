@@ -24,7 +24,7 @@ export class SocialAuthComponent implements OnInit {
 
   signInWithFB(): void {
     console.log('signInWithFB');
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    // this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
   signOut(): void {

@@ -1,7 +1,7 @@
 <div class="auth">
   <div class="auth-img"></div>
   <div class="auth-form">
-    <div class="auth-form-header">
+    <div class="auth-form-header" *ngIf="show_header_buttons()">
       <div class="btn moleson-btn moleson-btn-white" [routerLinkActive]="'active-btn'" [routerLink]="'/auth/login'">Вход</div>
       <div class="btn moleson-btn moleson-btn-white" [routerLinkActive]="'active-btn'" [routerLink]="'/auth/register'">Регистрация</div>
     </div>

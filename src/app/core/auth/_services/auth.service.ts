@@ -42,6 +42,13 @@ export class AuthService {
   updatePassport(data: FormData): Observable<any> {
     return this.http.post<any>(API_USERS_URL + '/user/update/passport', data, { headers: this.tokenService.getUserTokenHeader() });
   }
+  recoveryPassword(email: string): Observable<any> {
+    const body = { email: email };
+    return this.http.post<any>(API_USERS_URL + '/recovery', body);
+  }
+  newPasswordByKey(data: FormData): Observable<any> {
+    return this.http.post<any>(API_USERS_URL + '/password', data);
+  }
 
 
 

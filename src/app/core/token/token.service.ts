@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
+import {Observable, of, throwError} from 'rxjs';
 import {User} from '../auth/_models/user.models';
-import {concatMap} from 'rxjs/operators';
+import {catchError, concatMap} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 const API_USERS_URL = 'api';
 
@@ -14,7 +15,10 @@ export class TokenService {
   token: string = null;
   user: User;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {
     this.user = null;
   }
 
@@ -31,15 +35,27 @@ export class TokenService {
       return of(this.user);
     }
     return this.http.post<any>(API_USERS_URL + '/user/token', {},
-      {headers: this.getUserTokenHeader()}).pipe(concatMap(res => {
+      {headers: this.getUserTokenHeader()}).pipe(
+        concatMap(res => {
         if (res.status === 'success') {
           this.user = res.data;
           return of(res.data);
         } else {
           return null;
         }
+      }),
+      catchError(err => {
+        this.logout();
+        return throwError(err);
       })
     );
+  }
+
+  logout() {
+    this.setToken(null);
+    this.setUser(null);
+    localStorage.clear();
+    this.router.navigateByUrl('/auth');
   }
 
   setAgentStatus(): Observable<any> {

@@ -60,6 +60,10 @@ const routes: Routes = [
         path: 'reset',
         component: ResetPasswordComponent
       },
+      {
+        path: 'reset/confirm',
+        component: ResetPasswordCodeComponent
+      },
     ]
   }
 ];

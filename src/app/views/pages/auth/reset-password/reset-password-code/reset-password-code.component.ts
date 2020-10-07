@@ -14,7 +14,7 @@ export class ResetPasswordCodeComponent implements OnInit {
   password: string;
   passwordRepeat: string;
   recoveryPasswordKey: string;
-  private changeComplete: boolean;
+  public changeComplete: boolean;
 
   constructor(
     private authService: AuthService,

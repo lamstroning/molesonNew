@@ -26,6 +26,7 @@ export class ResetPasswordCodeComponent implements OnInit {
   ngOnInit() {
     this.changeComplete = false;
     this.recoveryPasswordKey = this.get_key_from_request();
+  }
 
   get_key_from_request() {
     const search = window.location.search;

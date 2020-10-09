@@ -9,11 +9,17 @@ import {TokenService} from './core/token/token.service';
 })
 export class AppComponent implements OnInit {
   title = 'moleson';
-  constructor(private authService: AuthService, private tokenService: TokenService) { }
+  constructor(
+    private authService: AuthService,
+    private tokenService: TokenService
+  ) { }
 
   ngOnInit() {
     try {
       if ( this.tokenService !== null ) {
+        if ( window.location.pathname === '/auth/reset/confirm' ) {
+          return false;
+        }
         this.tokenService.getUserByToken().subscribe(res => {
           // this.user = res;
         }, err => {

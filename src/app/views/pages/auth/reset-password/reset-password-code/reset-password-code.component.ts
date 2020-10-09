@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../../../core/auth/_services/auth.service';
 import {ToastrService} from 'ngx-toastr';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-reset-password-code',
@@ -18,11 +19,17 @@ export class ResetPasswordCodeComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private route: ActivatedRoute,
     private toastr: ToastrService,
   ) { }
 
   ngOnInit() {
     this.changeComplete = false;
+    this.recoveryPasswordKey = this.get_key_from_request();
+
+  get_key_from_request() {
+    const search = window.location.search;
+    return search.replace(/^\?key=/, '');
   }
 
   showNotification(type: string, text: string, time: number = 5000) {

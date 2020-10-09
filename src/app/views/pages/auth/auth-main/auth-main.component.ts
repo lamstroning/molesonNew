@@ -14,7 +14,7 @@ export class AuthMainComponent implements OnInit {
   }
 
   show_header_buttons() {
-    if (this.router.url === '/auth/reset' || this.router.url === '/auth/reset/confirm') {
+    if (this.router.url === '/auth/reset' || window.location.pathname === '/auth/reset/confirm') {
       return false;
     }
     return true;

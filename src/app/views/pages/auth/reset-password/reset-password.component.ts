@@ -18,6 +18,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
   formLoad = false;
   myRecaptcha = new FormControl(false);
   authSub: Subscription;
+  sendComplete = false;
 
 
   constructor(
@@ -55,9 +56,10 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
 
     this.authSub = this.authService.recoveryPassword(this.email.toLowerCase()).subscribe(
       res => {
-        console.log(res);
         if ( res.status === 'success' ) {
-          this.router.navigate(['/auth/reset/confirm']);
+          this.showNotification('success-msg', 'Сообщение со ссылкой смены пароля отправлено на почту', 50000);
+          this.sendComplete = true;
+          // this.router.navigate(['/auth/reset/confirm']);
         }
         this.formLoad = false;
         // this.router.navigateByUrl('/dashboard');

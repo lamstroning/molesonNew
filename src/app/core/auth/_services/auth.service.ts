@@ -49,6 +49,9 @@ export class AuthService {
   newPasswordByKey(data: FormData): Observable<any> {
     return this.http.post<any>(API_USERS_URL + '/password', data);
   }
+  changePassword(data: FormData): Observable<any> {
+    return this.http.post<any>(API_USERS_URL + '/user/set/password', data, { headers: this.tokenService.getUserTokenHeader() });
+  }
 
 
 

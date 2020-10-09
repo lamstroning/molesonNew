@@ -7,16 +7,19 @@
       <div class="page-body">
         <div class="input-row">
           <div class="default-input-title">Новый пароль</div>
-          <input type="password" class="default-input">
+          <input type="password" [(ngModel)]="password" class="default-input">
         </div>
         <div class="input-row">
           <div class="default-input-title">Повторите пароль</div>
-          <input type="password" class="default-input">
+          <input type="password" [(ngModel)]="passwordRepeat" class="default-input">
+        </div>
+        <div class="input-row">
+          <div class="moleson-btn moleson-btn-secondary" (click)="changePassword()">Сохранить</div>
         </div>
       </div>
     </div>
   </div>
-  <div class="settings-col">
+  <!--div class="settings-col">
     <div class="page-element">
       <div class="page-element-header page-element-header-full-line">
         <div class="page-element-header-title">Уведомления</div>
@@ -69,5 +72,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div-->
 </div>

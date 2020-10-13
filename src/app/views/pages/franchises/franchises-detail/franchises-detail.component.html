@@ -45,8 +45,7 @@
         </div>
         <div class="detail-card-body">
           <div class="detail-card-body-info">
-            <div class="page-element">
-              {{currentFranchise.detailedDescription}}
+            <div class="page-element" [innerHTML]="currentFranchise.detailedDescription">
 <!--              <div class="detail-card-body-info-title">История {{currentFranchise.name}}</div>-->
 <!--              <div class="detail-card-body-info-title">История {{currentFranchise.name}}</div>-->
 <!--              <div class="detail-card-body-info-text">{{currentFranchise.companyHistory}}</div>-->

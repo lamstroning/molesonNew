@@ -10,6 +10,7 @@ import {CabinetComponent} from './cabinet.component';
 
 import {WidgetModule} from '../../widget/widget.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {SharedModule} from '../../../shared.module';
 
 const routes: Routes = [
   {
@@ -51,6 +52,7 @@ const routes: Routes = [
         WidgetModule,
         FormsModule,
         ReactiveFormsModule,
+        SharedModule
     ],
   providers: [],
   exports: [RouterModule],

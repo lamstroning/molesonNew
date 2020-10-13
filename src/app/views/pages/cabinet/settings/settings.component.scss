@@ -10,11 +10,18 @@
     margin-right: 30px;
   }
 }
+::ng-deep .btn-moleson {
+  margin-top: 10px;
+  background-color: #F4F4F5;
+  color: #7d8891;
+}
+
 .input-row {
   margin-top: 30px;
   .moleson-btn {
     max-width: 158px;
   }
+
 }
 @media screen and (max-width: 1480px) {
   .settings {

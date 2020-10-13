@@ -7,7 +7,9 @@
       <div class="page-body">
         <div class="input-row">
           <div class="default-input-title">Новый пароль</div>
+          <show-hide-password btnStyle="moleson" [btnOutline]="false">
           <input type="password" [(ngModel)]="password" class="default-input">
+          </show-hide-password>
         </div>
         <div class="input-row">
           <div class="default-input-title">Повторите пароль</div>

@@ -16,6 +16,9 @@ export class ResetPasswordCodeComponent implements OnInit {
   passwordRepeat: string;
   recoveryPasswordKey: string;
   public changeComplete: boolean;
+  inputType = 'password';
+  inputTypeRes = 'password';
+
 
   constructor(
     private authService: AuthService,

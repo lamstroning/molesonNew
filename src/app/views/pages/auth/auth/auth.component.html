@@ -7,7 +7,8 @@
   </div>
   <div class="auth-form-body-row password-row">
     <label>Введите пароль</label>
-    <input type="password" [(ngModel)]="pass" class="default-input">
+    <input [type]="inputTypeRes" [(ngModel)]="pass" class="default-input">
+    <div class="show-password" [class.show-pass]="inputTypeRes === 'password'" (click)="inputTypeRes = inputTypeRes === 'password' ? 'text' : 'password'"></div>
     <div class="password-options">
       <label for="save-password" class="save-password">
         <div class="custom-checkbox">

@@ -18,6 +18,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   formLoad = false;
   authSub: Subscription;
   myRecaptcha = new FormControl(false);
+  inputTypeRes = 'password';
   constructor(private authService: AuthService,
               private toastr: ToastrService,
               private router: Router) { }

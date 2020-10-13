@@ -3,6 +3,7 @@ import {User} from '../../../../core/auth/_models/user.models';
 import {AuthService} from '../../../../core/auth/_services/auth.service';
 import {TokenService} from '../../../../core/token/token.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile',
@@ -40,6 +41,7 @@ export class ProfileComponent implements OnInit {
     private authService: AuthService,
     // tslint:disable-next-line:variable-name
     protected _formBuilder: FormBuilder,
+    private toastr: ToastrService,
     private tokenService: TokenService) {
     this.form_in_progress = false;
   }
@@ -269,9 +271,11 @@ export class ProfileComponent implements OnInit {
   updatePhone() {
     this.authService.updatePhone(this.user.phone.toString()).subscribe(
       () => {
-        console.log('Телефон успешно изменен');
+        this.toastr.success('Номер телефона изменен', 'Успешно');
+        // console.log('Телефон успешно изменен');
       }, err => {
-        console.warn(err);
+        this.toastr.error('Не указан номер телефона', 'Ошибка');
+        // console.warn(err);
       }
     );
   }

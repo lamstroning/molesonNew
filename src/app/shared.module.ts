@@ -3,7 +3,6 @@ import {ClientLinkComponent} from './views/blocks/aside/elements/client-link/cli
 import {InlineSVGModule} from 'ng-inline-svg';
 import {CommonModule} from '@angular/common';
 import {StarsRowComponent} from './views/pages/partners/stars-row/stars-row.component';
-import {ShowHidePasswordModule} from 'ngx-show-hide-password';
 @NgModule({
   declarations: [
     ClientLinkComponent,
@@ -11,14 +10,12 @@ import {ShowHidePasswordModule} from 'ngx-show-hide-password';
   ],
   imports: [
     CommonModule,
-    ShowHidePasswordModule,
     InlineSVGModule.forRoot(),
   ],
   providers: [],
   exports: [
     ClientLinkComponent,
     StarsRowComponent,
-    ShowHidePasswordModule,
   ],
   entryComponents: [
   ],

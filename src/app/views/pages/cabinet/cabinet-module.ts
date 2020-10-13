@@ -52,7 +52,6 @@ const routes: Routes = [
         WidgetModule,
         FormsModule,
         ReactiveFormsModule,
-        SharedModule
     ],
   providers: [],
   exports: [RouterModule],

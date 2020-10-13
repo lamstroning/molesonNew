@@ -10,6 +10,8 @@ import {AuthService} from '../../../../core/auth/_services/auth.service';
 export class SettingsComponent implements OnInit {
   password: string;
   passwordRepeat: string;
+  inputType = 'password';
+  inputTypeRes = 'password';
 
   constructor(
     private toastr: ToastrService,

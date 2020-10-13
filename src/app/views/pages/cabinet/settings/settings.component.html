@@ -7,13 +7,13 @@
       <div class="page-body">
         <div class="input-row">
           <div class="default-input-title">Новый пароль</div>
-          <show-hide-password btnStyle="moleson" [btnOutline]="false">
-          <input type="password" [(ngModel)]="password" class="default-input">
-          </show-hide-password>
+          <input [type]="inputType" [(ngModel)]="password" class="default-input">
+          <div class="show-password" [class.show-pass]="inputType === 'password'" (click)="inputType = inputType === 'password' ? 'text' : 'password'"></div>
         </div>
         <div class="input-row">
           <div class="default-input-title">Повторите пароль</div>
-          <input type="password" [(ngModel)]="passwordRepeat" class="default-input">
+          <input [type]="inputTypeRes" [(ngModel)]="passwordRepeat" class="default-input">
+          <div class="show-password" [class.show-pass]="inputTypeRes === 'password'" (click)="inputTypeRes = inputTypeRes === 'password' ? 'text' : 'password'"></div>
         </div>
         <div class="input-row">
           <div class="moleson-btn moleson-btn-secondary" (click)="changePassword()">Сохранить</div>

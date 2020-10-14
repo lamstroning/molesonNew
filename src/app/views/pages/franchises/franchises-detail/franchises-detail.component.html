@@ -45,18 +45,21 @@
         </div>
         <div class="detail-card-body">
           <div class="detail-card-body-info">
-            <div class="page-element" [innerHTML]="currentFranchise.detailedDescription">
-<!--              <div class="detail-card-body-info-title">История {{currentFranchise.name}}</div>-->
-<!--              <div class="detail-card-body-info-title">История {{currentFranchise.name}}</div>-->
-<!--              <div class="detail-card-body-info-text">{{currentFranchise.companyHistory}}</div>-->
-<!--              <div class="detail-card-body-info-title">Описание франшизы</div>-->
-<!--              <div class="detail-card-body-info-text">{{currentFranchise.detailDesc}}</div>-->
-<!--              <div class="detail-card-body-info-title">Преимущества</div>-->
-<!--              <div class="detail-card-body-info-text">-->
-<!--                <ul class="detail-card-body-advantages">-->
-<!--                  <li *ngFor="let advantages of currentFranchise.advantages">{{advantages}}</li>-->
-<!--                </ul>-->
-<!--              </div>-->
+            <!--              <div class="detail-card-body-info-title">История {{currentFranchise.name}}</div>-->
+            <!--              <div class="detail-card-body-info-title">История {{currentFranchise.name}}</div>-->
+            <!--              <div class="detail-card-body-info-text">{{currentFranchise.companyHistory}}</div>-->
+            <!--              <div class="detail-card-body-info-title">Описание франшизы</div>-->
+            <!--              <div class="detail-card-body-info-text">{{currentFranchise.detailDesc}}</div>-->
+            <!--              <div class="detail-card-body-info-title">Преимущества</div>-->
+            <!--              <div class="detail-card-body-info-text">-->
+            <!--                <ul class="detail-card-body-advantages">-->
+            <!--                  <li *ngFor="let advantages of currentFranchise.advantages">{{advantages}}</li>-->
+            <!--                </ul>-->
+            <!--              </div>-->
+            <div class="page-element">
+              <div [innerHTML]="currentFranchise.shortDescription"></div>
+              <div [innerHTML]="currentFranchise.detailedDescription"></div>
+              <div [innerHTML]="currentFranchise.projectionsDescription"></div>
             </div>
           </div>
           <div class="detail-card-body-graphics">

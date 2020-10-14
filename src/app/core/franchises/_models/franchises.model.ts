@@ -5,6 +5,7 @@ import {User} from '../../auth/_models/user.models';
 export class FranchisesModel {
   dateCreate: string;
   detailedDescription: string;
+  projectionsDescription: string;
   shortDescription: string;
   name: string;
   payback: number;
@@ -32,6 +33,7 @@ export class FranchisesModel {
     // this.dateCreate = item.dateCreate;
     this.detailedDescription = item.detailedDescription;
     this.shortDescription = item.shortDescription;
+    this.projectionsDescription = item.projectionsDescription;
     this.name = item.name;
     this.investors = item.investors;
     this.payback = item.payback;
@@ -99,6 +101,7 @@ const clearModel = {
   dateCreate: 0,
   detailedDescription: '',
   shortDescription: '',
+  projectionsDescription: '',
   name: '',
   payback: 0,
   profitability: 0,

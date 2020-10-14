@@ -46,7 +46,7 @@ export class FirstStageRegisterComponent implements OnInit {
   }
 
   onScriptError() {
-    console.log('Something went long when loading the Google reCAPTCHA');
+    console.log('Something went wrong when loading the Google reCAPTCHA');
   }
 
   constructor(private activateRoute: ActivatedRoute) {

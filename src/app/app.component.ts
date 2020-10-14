@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     try {
       if ( this.tokenService !== null ) {
-        if ( window.location.pathname === '/auth/reset/confirm' ) {
+        if ( window.location.pathname === '/auth/reset/confirm' || window.location.pathname.match('/ref|register/') ) {
           return false;
         }
         this.tokenService.getUserByToken().subscribe(res => {

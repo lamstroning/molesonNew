@@ -136,8 +136,14 @@ export class ProfileComponent implements OnInit {
     fls.addEventListener('load', () => {
       document.getElementById('pict-load').style.backgroundImage = 'url(' + fls.result + ')';
       this.authService.updateAvatar(fd).subscribe(
-        res => console.log(res),
-        err => console.log(err)
+        res =>  {
+          this.toastr.success('Фото обновлено успешно', 'Успешно');
+          console.log(res);
+        },
+        err => {
+          this.toastr.error('Не удалось загрузить фото', 'Ошибка');
+          console.log(err);
+        }
       );
     }, false);
   }

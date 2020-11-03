@@ -28,4 +28,10 @@ export class ReferralService {
       {headers: this.tokenService.getUserTokenHeader()
       });
   }
+
+  getReferralStat(): Observable<any> {
+    return this.http.post<any>(API_URL + 'stat',{},
+      {headers: this.tokenService.getUserTokenHeader()});
+  }
+
 }

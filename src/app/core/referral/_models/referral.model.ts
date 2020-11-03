@@ -12,3 +12,16 @@ export class PartnersList {
     this.lvl = item.lvl;
   }
 }
+
+export class PartnersStat {
+  moneyInStructure: number;
+  referralMoney: number;
+  registrations: number;
+  registrationsByLink: number;
+  constructor(item?: any) {
+    this.moneyInStructure = item.moneyInStructure;
+    this.referralMoney = item.referralMoney;
+    this.registrations = item.registrations;
+    this.registrationsByLink = item.registrationsByLink;
+  }
+}

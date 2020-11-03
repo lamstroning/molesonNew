@@ -6,10 +6,12 @@
       <div class="partners-block-status" *ngIf="tokenService.getUser() !== null">{{tokenService.getUserStatus()}}</div>
     </div>
   </div>
-  <div *ngFor="let block of blocks" class="partners-block">
-    <div class="partners-block-name">{{block.name}}</div>
-    <div class="partners-block-cost">{{number_formatted(block.cost)}} {{block.dollars ? ' $' : ''}}</div>
-  </div>
+  <ng-container *ngIf="partnersStat">
+    <div *ngFor="let block of blocks" class="partners-block">
+      <div class="partners-block-name">{{block.name}}</div>
+      <div class="partners-block-cost">{{partnersStat[block.key] ? number_formatted(partnersStat[block.key]) : number_formatted(block.cost)}} {{block.dollars ? ' $' : ''}}</div>
+    </div>
+  </ng-container>
 </div>
 
 <div class="partners-lists desktop-show">

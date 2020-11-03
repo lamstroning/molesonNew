@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ReferralService, PartnersList} from '../../../../core/referral';
+import {ReferralService, PartnersList, PartnersStat} from '../../../../core/referral';
 import {TokenService} from '../../../../core/token/token.service';
 
 @Component({
@@ -10,29 +10,36 @@ import {TokenService} from '../../../../core/token/token.service';
 export class PartnersAnalyticsComponent implements OnInit {
   partnersList: PartnersList[] = [];
   referralsArray: any;
+  partnersStat: PartnersStat;
+
   blocks = [
     {
       name: 'Количество регистраций по личной ссылке',
+      key: 'registrationsByLink',
       cost: 0,
       dollars: false
     },
     {
       name: 'Общее количество регистраций в структуре',
+      key: 'registrations',
       cost: 0,
       dollars: false
     },
     {
       name: 'Сумма покупок долей (общая)',
+      key: 'moneyInStructure',
       cost: 0,
       dollars: true
     },
     {
       name: 'Сумма агентских вознаграждений',
+      key: 'referralMoney',
       cost: 0,
       dollars: true
     },
     {
       name: 'Средний показатель суммы инвестирования действующих инвесторов',
+      key: 'avgSum',
       cost: 0,
       dollars: true
     },
@@ -58,6 +65,16 @@ export class PartnersAnalyticsComponent implements OnInit {
           this.referralsArray[partnerItem.idUser] = 'test';
         }
         // console.log(this.partnersList);
+      },
+      err => {
+        console.warn(err);
+      }
+    );
+    this.referralService.getReferralStat().subscribe(res => {
+        if (res.status === 'success') {
+          this.partnersStat = new PartnersStat(res.data);
+          console.log(this.partnersStat);
+        }
       },
       err => {
         console.warn(err);

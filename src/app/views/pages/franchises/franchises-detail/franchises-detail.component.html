@@ -106,14 +106,14 @@
       </div>
     </div>
   <div *ngIf="currentFranchise && !loading" class="right-block">
-    <div class="page-element page-element-top">
+    <div class="page-element page-element-top" *ngIf="transactionsCount > 0">
       <app-franchises-progress [franchise]="currentFranchise"></app-franchises-progress>
     </div>
-    <div class="page-element">
+    <div class="page-element" *ngIf="transactionsCount > 0">
       <app-franchises-my-stat [franchise]="currentFranchise"></app-franchises-my-stat>
     </div>
     <div class="page-element">
-      <app-franchises-income [franchise]="currentFranchise"></app-franchises-income>
+      <app-franchises-income [franchise]="currentFranchise" [transactionsCount]="transactionsCount"></app-franchises-income>
     </div>
   </div>
 </div>

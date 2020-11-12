@@ -8,6 +8,8 @@ import {FranchisesModel} from '../../../../../../core/franchises';
 })
 export class FranchisesIncomeComponent implements OnInit {
   @Input() franchise: FranchisesModel;
+  @Input() transactionsCount: number;
+
   constructor() { }
 
   ngOnInit() {

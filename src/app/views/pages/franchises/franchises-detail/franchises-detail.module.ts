@@ -7,6 +7,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {FranchisesIncomeComponent} from './franchises-detil-blocks/franchises-income/franchises-income.component';
 import {FranchisesProgressComponent} from './franchises-detil-blocks/franchises-progress/franchises-progress.component';
 import {FranchisesMyStatComponent} from './franchises-detil-blocks/franchises-my-stat/franchises-my-stat.component';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 const routes: Routes = [
   {
@@ -20,7 +21,8 @@ const routes: Routes = [
     WidgetModule,
     InlineSVGModule,
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    NgxGalleryModule
   ],
   declarations: [
     FranchisesIncomeComponent,

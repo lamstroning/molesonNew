@@ -6,6 +6,7 @@ import {ActivatedRoute} from '@angular/router';
 import {filter} from 'rxjs/operators';
 import {OperationsModel} from '../../../../core/operations/_models/operations.model';
 import {OperationsService} from '../../../../core/operations';
+import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
 
 @Component({
   selector: 'app-franchises-detail',
@@ -19,6 +20,9 @@ export class FranchisesDetailComponent implements OnInit {
   operationList: OperationsModel[] = [];
   transactionsCount: number;
   transactionsSum: number;
+  
+  galleryOptions: NgxGalleryOptions[];
+    galleryImages: NgxGalleryImage[];
 
   id: string;
   loading = true;
@@ -37,6 +41,43 @@ export class FranchisesDetailComponent implements OnInit {
     result.subscribe(
       res => {
         this.currentFranchise = new FranchisesModel(res);
+        
+        
+        this.galleryOptions = [
+            {
+                width: '600px',
+                height: '400px',
+                thumbnailsColumns: 4,
+                imageAnimation: NgxGalleryAnimation.Slide
+            },
+            // max-width 800
+            {
+                breakpoint: 800,
+                width: '100%',
+                height: '600px',
+                imagePercent: 80,
+                thumbnailsPercent: 20,
+                thumbnailsMargin: 20,
+                thumbnailMargin: 20
+            },
+            // max-width 400
+            {
+                breakpoint: 400,
+                preview: false
+            }
+        ];
+        
+        this.galleryImages = [];
+        for(var i in this.currentFranchise.imgList){
+            this.galleryImages.push({
+                small: this.currentFranchise.imgList[i],
+                medium: this.currentFranchise.imgList[i],
+                big: this.currentFranchise.imgList[i]
+            });
+        }
+        
+        console.log(this.galleryImages);
+        
         console.log(res);
       }, err => {
         console.warn(err);

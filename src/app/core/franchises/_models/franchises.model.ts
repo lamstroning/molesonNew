@@ -29,6 +29,7 @@ export class FranchisesModel {
   formatCostRub: string;
   color: string;
   adresse: string;
+  imgList: String[];
   constructor(item: any = clearModel) {
     // this.dateCreate = item.dateCreate;
     this.detailedDescription = item.detailedDescription;
@@ -39,6 +40,7 @@ export class FranchisesModel {
     this.payback = item.payback;
     this.profitability = item.profitability;
     this.picture = item.picture;
+    this.imgList = [item.picture, item.picture, item.picture, item.picture, item.picture, item.picture, item.picture];
     this.purchasedShares = item.purchasedShares;
     this._id = item._id;
     this.stocks = item.stocks;

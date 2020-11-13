@@ -24,6 +24,7 @@ export class FranchisesModel {
   totalBuyFormat: string;
   allCostRub: number;
   remainCost: number;
+  remainStocks: number;
   formatRemainCost: string;
   formatCost: string;
   formatCostRub: string;
@@ -44,6 +45,7 @@ export class FranchisesModel {
     this.purchasedShares = item.purchasedShares;
     this._id = item._id;
     this.stocks = item.stocks;
+    this.remainStocks = item.stocks;
     this.adminStocks = item.adminStocks;
     this.stock = item.stock;
     this.status = item.status;
@@ -93,6 +95,7 @@ export class FranchisesModel {
       this.progress = 0;
       this.totalBuy = 0;
     }
+    this.remainStocks -= this.purchasedShares;
     this.totalBuyFormat = (this.totalBuy / 100).toLocaleString();
     this.remainCost = (this.allCost - this.totalBuy) / 100;
     this.formatRemainCost = this.remainCost.toLocaleString();

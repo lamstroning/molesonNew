@@ -2,7 +2,7 @@
   <div *ngIf="franchise.progress < 100" class="income">
     <div class="income-header">
       <div class="income-header-present-block">
-        {{franchise.profitability}}
+        {{franchise.profitability}} %
       </div>
       <div class="income-header-title">
         Прогнозируемая доходность в год
@@ -37,12 +37,12 @@
 
       <div class="progress-row">
         <div class="progress-participant">Для выкупа доступно</div>
-        <div class="progress-participant bold-title">{{franchise.formatCost}} $</div>
+        <div class="progress-participant bold-title">{{franchise.formatRemainCost}} $</div>
       </div>
 
       <div class="progress-row">
         <div class="progress-participant">Долей доступно</div>
-        <div class="progress-participant bold-title">{{franchise.stocks}}</div>
+        <div class="progress-participant bold-title">{{franchise.remainStocks}}</div>
       </div>
 
       <div class="progress-row">
@@ -69,41 +69,13 @@
 
   <div class="income-header">
     <div class="income-header-present-block">
-      {{franchise.profitability}}
+      {{franchise.profitability}} %
     </div>
     <div class="income-header-title">
       Прогнозируемая доходность в год
     </div>
   </div>
 
-  <div class="income-body">
-    <div class="income-body-row">
-      <div class="income-body-title">Общая стоимость франшизы</div>
-      <div class="income-body-cost">
-        {{franchise.formatCost}} $ / {{franchise.formatCostRub}} ₽
-      </div>
-    </div>
-    <div class="income-body-row">
-      <div class="income-body-title">Стоимость доли</div>
-      <div class="income-body-cost" *ngIf="franchise.stock">
-        {{franchise.stock.price * 0.01}} $
-      </div>
-    </div>
-    <div class="income-body-row">
-      <div class="income-btn" [routerLink]="'./payment'">Купить долю</div>
-    </div>
-  </div>
-
-
-
-  <div class="income-header">
-    <div class="income-header-present-block">
-      {{franchise.profitability}}
-    </div>
-    <div class="income-header-title">
-      Прогнозируемая доходность в год
-    </div>
-  </div>
   <div class="income-body">
     <div class="income-body-row">
       <div class="income-body-title">Общая стоимость франшизы</div>

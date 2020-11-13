@@ -31,6 +31,7 @@ export class FranchisesModel {
   color: string;
   adresse: string;
   imgList: String[];
+  imgs: any[];
   constructor(item: any = clearModel) {
     // this.dateCreate = item.dateCreate;
     this.detailedDescription = item.detailedDescription;
@@ -41,7 +42,8 @@ export class FranchisesModel {
     this.payback = item.payback;
     this.profitability = item.profitability;
     this.picture = item.picture;
-    this.imgList = [item.picture, item.picture, item.picture, item.picture, item.picture, item.picture, item.picture];
+    this.imgList = [];
+    this.imgs = item.imgs;
     this.purchasedShares = item.purchasedShares;
     this._id = item._id;
     this.stocks = item.stocks;

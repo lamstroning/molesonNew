@@ -296,6 +296,7 @@
 
 
 
-::ng-deep ngx-gallery .ngx-gallery-layout {
-    flex-direction: row !important;
+::ng-deep ngx-gallery  {
+  width: 100%;
+    //flex-direction: row !important;
 }

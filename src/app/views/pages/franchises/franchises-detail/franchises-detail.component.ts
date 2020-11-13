@@ -20,7 +20,7 @@ export class FranchisesDetailComponent implements OnInit {
   operationList: OperationsModel[] = [];
   transactionsCount: number;
   transactionsSum: number;
-  
+
   galleryOptions: NgxGalleryOptions[];
     galleryImages: NgxGalleryImage[];
 
@@ -41,11 +41,11 @@ export class FranchisesDetailComponent implements OnInit {
     result.subscribe(
       res => {
         this.currentFranchise = new FranchisesModel(res);
-        
-        
+
+
         this.galleryOptions = [
             {
-                width: '600px',
+                width: '100%',
                 height: '400px',
                 thumbnailsColumns: 4,
                 imageAnimation: NgxGalleryAnimation.Slide
@@ -66,18 +66,43 @@ export class FranchisesDetailComponent implements OnInit {
                 preview: false
             }
         ];
-        
+
         this.galleryImages = [];
-        for(var i in this.currentFranchise.imgList){
+        if ( this.currentFranchise.picture !== '' ) {
+          this.galleryImages.push({
+            small: this.currentFranchise.picture,
+            medium: this.currentFranchise.picture,
+            big: this.currentFranchise.picture
+          });
+        }
+        console.log(this.currentFranchise.imgs);
+        if ( this.currentFranchise.imgs.length > 0 ) {
+          this.currentFranchise.imgs.forEach(
+            element => {
+              this.galleryImages.push({
+                small: element.uri,
+                medium: element.uri,
+                big: element.uri
+              });
+            }
+          );
+        }
+
+
+
+        /*
+        for(var i in this.currentFranchise.imgs){
             this.galleryImages.push({
                 small: this.currentFranchise.imgList[i],
                 medium: this.currentFranchise.imgList[i],
                 big: this.currentFranchise.imgList[i]
             });
         }
-        
+
+         */
+
         console.log(this.galleryImages);
-        
+
         console.log(res);
       }, err => {
         console.warn(err);

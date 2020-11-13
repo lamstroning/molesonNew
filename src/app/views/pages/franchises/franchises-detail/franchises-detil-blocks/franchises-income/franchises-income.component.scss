@@ -25,11 +25,24 @@
 
   .progress-body {
     margin-top: 20px;
+    font-size: 16px;
     .progress-row {
       display: flex;
+      padding-top: 10px;
       justify-content: space-between;
+      .capitol {
+        text-transform: capitalize;
+      }
+      .status-block-point {
+        margin-top: 7px;
+        float: left;
+        border-radius: 50%;
+        margin-right: 10px;
+        width: 9px;
+        height: 9px;
+      }
       .progress-title {
-        font-size: 14px;
+        font-size: 16px;
       }
       .progress-bar {
         margin: 10px 0;
@@ -46,6 +59,9 @@
         font-weight: bold;
       }
       .progress-participant {
+        font-size: 16px;
+      }
+      .progress-participant-smaller {
         font-size: 12px;
       }
     }

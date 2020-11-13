@@ -1,20 +1,29 @@
 <ng-container *ngIf="transactionsCount === 0">
   <div *ngIf="franchise.progress < 100" class="income">
+    <div class="income-header">
+      <div class="income-header-present-block">
+        {{franchise.profitability}}
+      </div>
+      <div class="income-header-title">
+        Прогнозируемая доходность в год
+      </div>
+    </div>
+
     <div class="progress-body">
 
       <div class="progress-row">
         <div class="progress-participant">Статус</div>
-        <div class="progress-participant bold-title">В работе</div>
+        <div class="progress-participant bold-title"><div class="status-block-point" [style.background-color]="franchise.color"></div>В работе</div>
       </div>
 
       <div class="progress-row">
         <div class="progress-participant">Этап</div>
-        <div class="progress-participant bold-title">{{franchise.status.title}}</div>
+        <div class="progress-participant bold-title capitol"><div class="status-block-point" [style.background-color]="franchise.color"></div>{{franchise.status.title}}</div>
       </div>
 
       <div class="progress-row">
-        <div class="progress-title">Прогресс</div>
-        <div class="progress-present">{{franchise.progress + '%'}}</div>
+        <div class="progress-participant-smaller">Прогресс</div>
+        <div class="progress-participant-smaller">{{franchise.progress + '%'}}</div>
       </div>
       <div class="progress-row">
         <div class="progress-bar">
@@ -22,36 +31,41 @@
         </div>
       </div>
       <div class="progress-row">
-        <div class="progress-participant">Участнков</div>
-        <div class="progress-participant bold-title">{{franchise.investors.length}}</div>
+        <div class="progress-participant-smaller">Участнков</div>
+        <div class="progress-participant-smaller bold-title">{{franchise.investors.length}}</div>
       </div>
 
       <div class="progress-row">
         <div class="progress-participant">Для выкупа доступно</div>
-        <div class="progress-participant bold-title">7777777</div>
+        <div class="progress-participant bold-title">{{franchise.formatCost}} $</div>
       </div>
 
       <div class="progress-row">
         <div class="progress-participant">Долей доступно</div>
-        <div class="progress-participant bold-title">1111</div>
+        <div class="progress-participant bold-title">{{franchise.stocks}}</div>
       </div>
 
       <div class="progress-row">
         <div class="progress-participant">Доходность (% в год)</div>
-        <div class="progress-participant bold-title">24%</div>
+        <div class="progress-participant bold-title">{{franchise.profitability}}</div>
       </div>
 
       <div class="progress-row">
         <div class="progress-participant">Цель</div>
-        <div class="progress-participant bold-title">234234 / 234234</div>
+        <div class="progress-participant bold-title">{{franchise.formatCost}} $ / {{franchise.formatCostRub}} ₽</div>
       </div>
 
+    </div>
+    <div class="income-body">
+      <div class="income-body-row">
+        <div class="income-btn" [routerLink]="'./payment'">Купить долю</div>
+      </div>
     </div>
   </div>
 
 </ng-container>
 
-<div *ngIf="franchise.progress < 100" class="income">
+<div *ngIf="franchise.progress < 100 && transactionsCount > 0" class="income">
 
   <div class="income-header">
     <div class="income-header-present-block">

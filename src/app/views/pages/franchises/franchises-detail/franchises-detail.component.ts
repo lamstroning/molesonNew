@@ -45,9 +45,9 @@ export class FranchisesDetailComponent implements OnInit {
         this.galleryImages = [];
         if ( this.currentFranchise.picture !== '' ) {
           this.galleryImages.push({
-            small: this.currentFranchise.picture,
-            medium: this.currentFranchise.picture,
-            big: this.currentFranchise.picture
+            small: this.currentFranchise.picture.trim(),
+            medium: this.currentFranchise.picture.trim(),
+            big: this.currentFranchise.picture.trim()
           });
         }
         console.log(this.currentFranchise.imgs);
@@ -57,9 +57,9 @@ export class FranchisesDetailComponent implements OnInit {
           this.currentFranchise.imgs.forEach(
             element => {
               this.galleryImages.push({
-                small: element.uri,
-                medium: element.uri,
-                big: element.uri
+                small: element.uri.trim(),
+                medium: element.uri.trim(),
+                big: element.uri.trim()
               });
             }
           );

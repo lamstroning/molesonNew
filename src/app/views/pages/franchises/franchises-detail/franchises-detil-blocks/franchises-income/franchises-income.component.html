@@ -1,13 +1,26 @@
 <ng-container *ngIf="transactionsCount === 0">
+
+
   <div *ngIf="franchise.progress < 100" class="income">
-    <div class="income-header">
-      <div class="income-header-present-block">
-        {{franchise.profitability}} %
+
+
+    <div class="row min-income">
+      <div class="col-md-8 card-title-left flex-middle-left">
+        Информация
       </div>
-      <div class="income-header-title">
-        Прогнозируемая доходность в год
+      <div class="col-md-4">
+        <div class="percent-income">+{{franchise.profitability}} %</div>
       </div>
     </div>
+
+    <div class="row min-income">
+      <div class="col-md-8">
+        <p class="country-icon-rus m-0">Россия</p>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+
 
     <div class="progress-body">
 
@@ -23,7 +36,7 @@
 
       <div class="progress-row">
         <div class="progress-participant-smaller">Прогресс</div>
-        <div class="progress-participant-smaller">{{franchise.progress + '%'}}</div>
+        <div class="progress-participant-smaller bold-title green-text">{{franchise.progress + '%'}}</div>
       </div>
       <div class="progress-row">
         <div class="progress-bar">
@@ -47,7 +60,7 @@
 
       <div class="progress-row">
         <div class="progress-participant">Доходность (% в год)</div>
-        <div class="progress-participant bold-title">{{franchise.profitability}}</div>
+        <div class="progress-participant bold-title green-text">{{franchise.profitability}} %</div>
       </div>
 
       <div class="progress-row">
@@ -58,7 +71,7 @@
     </div>
     <div class="income-body">
       <div class="income-body-row">
-        <div class="income-btn" [routerLink]="'./payment'">Купить долю</div>
+        <div class="income-btn income-btn-orange" [routerLink]="'./payment'">Купить доли</div>
       </div>
     </div>
   </div>

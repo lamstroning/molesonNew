@@ -22,6 +22,26 @@
 
     }
   }
+  .percent-income {
+    font-size: 24px;
+    color: white;
+    width: 94px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #31B984;
+    border-radius: 4px;
+  }
+
+  .min-income {
+    min-width: 300px;
+  }
+  .flex-middle-left {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
 
   .progress-body {
     margin-top: 20px;
@@ -115,6 +135,11 @@
         border-radius: 4px;
         cursor: pointer;
       }
+      .income-btn-orange {
+        background-color: #FF9F19 !important;
+        border-color: #FF9F19 !important;
+      }
+
       .income-btn.finish-btn {
         background-color: #FF9F19;
       }

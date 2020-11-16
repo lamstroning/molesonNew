@@ -37,14 +37,34 @@
             <app-franchises-income [franchise]="currentFranchise"></app-franchises-income>
           </div>
         </div>
-        <div class="btns-row">
-          <div class="btn">О франшизе</div>
-          <div class="btn">Прогнозы</div>
-          <div class="btn">Документация</div>
-          <div class="btn">Задайте вопрос</div>
-        </div>
+
+        <ul ngbNav #nav="ngbNav" class="btns-row">
+          <li ngbNavItem>
+            <a ngbNavLink class="btn">О франшизе</a>
+            <ng-template ngbNavContent>
+              <div [innerHTML]="currentFranchise.shortDescription"></div>
+              <div [innerHTML]="currentFranchise.detailedDescription"></div>
+              <div [innerHTML]="currentFranchise.projectionsDescription"></div>
+            </ng-template>
+          </li>
+          <li ngbNavItem>
+            <a ngbNavLink class="btn">Прогнозы</a>
+            <ng-template ngbNavContent>Прогнозы</ng-template>
+          </li>
+          <li ngbNavItem>
+            <a ngbNavLink class="btn">Документация</a>
+            <ng-template ngbNavContent>Документация</ng-template>
+          </li>
+          <li ngbNavItem>
+            <a ngbNavLink class="btn">Задайте вопрос</a>
+            <ng-template ngbNavContent>Задайте вопрос</ng-template>
+          </li>
+        </ul>
+
         <div class="detail-card-body">
           <div class="detail-card-body-info">
+
+
             <!--              <div class="detail-card-body-info-title">История {{currentFranchise.name}}</div>-->
             <!--              <div class="detail-card-body-info-title">История {{currentFranchise.name}}</div>-->
             <!--              <div class="detail-card-body-info-text">{{currentFranchise.companyHistory}}</div>-->
@@ -57,9 +77,7 @@
             <!--                </ul>-->
             <!--              </div>-->
             <div class="page-element">
-              <div [innerHTML]="currentFranchise.shortDescription"></div>
-              <div [innerHTML]="currentFranchise.detailedDescription"></div>
-              <div [innerHTML]="currentFranchise.projectionsDescription"></div>
+              <div [ngbNavOutlet]="nav"></div>
             </div>
           </div>
           <div class="detail-card-body-graphics">

@@ -8,6 +8,7 @@ import {FranchisesIncomeComponent} from './franchises-detil-blocks/franchises-in
 import {FranchisesProgressComponent} from './franchises-detil-blocks/franchises-progress/franchises-progress.component';
 import {FranchisesMyStatComponent} from './franchises-detil-blocks/franchises-my-stat/franchises-my-stat.component';
 import { NgxGalleryModule } from 'ngx-gallery';
+import {NgbNavModule} from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
     InlineSVGModule,
     CommonModule,
     RouterModule.forChild(routes),
-    NgxGalleryModule
+    NgxGalleryModule,
+    NgbNavModule
   ],
   declarations: [
     FranchisesIncomeComponent,

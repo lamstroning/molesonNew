@@ -17,6 +17,8 @@ import {FranchisesDetailModule} from './franchises-detail/franchises-detail.modu
 import { FranchisesPaymentComponent } from './franchises-detail/franchises-payment/franchises-payment.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
+import {NgbModule, NgbNavModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 const routes: Routes = [
   {
@@ -39,6 +41,8 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes),
     WidgetModule,
+    NgbModule,
+    NgbNavModule
   ],
   providers: [FranchisesService],
   exports: [

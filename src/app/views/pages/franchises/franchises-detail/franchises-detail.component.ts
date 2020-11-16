@@ -7,6 +7,7 @@ import {filter} from 'rxjs/operators';
 import {OperationsModel} from '../../../../core/operations/_models/operations.model';
 import {OperationsService} from '../../../../core/operations';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import 'hammerjs';
 
 @Component({
   selector: 'app-franchises-detail',
@@ -41,6 +42,28 @@ export class FranchisesDetailComponent implements OnInit {
     result.subscribe(
       res => {
         this.currentFranchise = new FranchisesModel(res);
+        this.galleryImages = [];
+        if ( this.currentFranchise.picture !== '' ) {
+          this.galleryImages.push({
+            small: this.currentFranchise.picture,
+            medium: this.currentFranchise.picture,
+            big: this.currentFranchise.picture
+          });
+        }
+        console.log(this.currentFranchise.imgs);
+        let allowThumbnails = false;
+        if ( this.currentFranchise.imgs.length > 0 ) {
+          allowThumbnails = true;
+          this.currentFranchise.imgs.forEach(
+            element => {
+              this.galleryImages.push({
+                small: element.uri,
+                medium: element.uri,
+                big: element.uri
+              });
+            }
+          );
+        }
 
 
         this.galleryOptions = [
@@ -48,6 +71,12 @@ export class FranchisesDetailComponent implements OnInit {
                 width: '100%',
                 height: '400px',
                 thumbnailsColumns: 4,
+                previewCloseOnClick: true,
+                previewCloseOnEsc: true,
+                imageArrows: allowThumbnails,
+                imageSwipe: true,
+                thumbnails: allowThumbnails,
+                preview: allowThumbnails,
                 imageAnimation: NgxGalleryAnimation.Slide
             },
             // max-width 800
@@ -67,26 +96,6 @@ export class FranchisesDetailComponent implements OnInit {
             }
         ];
 
-        this.galleryImages = [];
-        if ( this.currentFranchise.picture !== '' ) {
-          this.galleryImages.push({
-            small: this.currentFranchise.picture,
-            medium: this.currentFranchise.picture,
-            big: this.currentFranchise.picture
-          });
-        }
-        console.log(this.currentFranchise.imgs);
-        if ( this.currentFranchise.imgs.length > 0 ) {
-          this.currentFranchise.imgs.forEach(
-            element => {
-              this.galleryImages.push({
-                small: element.uri,
-                medium: element.uri,
-                big: element.uri
-              });
-            }
-          );
-        }
 
 
 

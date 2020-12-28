@@ -1,0 +1,27 @@
+<div class="page-area">
+  <div class="main-block">
+
+  <div class="block-header">
+    <div class="back-btn" [routerLink]="'/dashboard'">
+      <div [inlineSVG]="'/assets/svg-icon/arrow.svg'" class="back-btn-arrow"></div>
+      Назад
+    </div>
+    <div class="block-header-title">
+      <h2>Пополнить</h2>
+    </div>
+  </div>
+
+    <div class="card-container">
+      <div class="output-row">
+        <div class="output-row-col sum-wallet">
+          <div class="output-row-col-title">Введите сумму пополнения</div>
+          <div class="dollar">$</div>
+          <input type="text" [(ngModel)]="sum">
+        </div>
+        <div class="output-row-col">
+          <div class="moleson-btn moleson-btn-secondary" (click)="make_order()">Пополнить</div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>

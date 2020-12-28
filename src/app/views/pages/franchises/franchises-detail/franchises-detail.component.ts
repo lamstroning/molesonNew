@@ -110,9 +110,9 @@ export class FranchisesDetailComponent implements OnInit {
 
          */
 
-        console.log(this.galleryImages);
+        // console.log(this.galleryImages);
 
-        console.log(res);
+        // console.log(res);
       }, err => {
         console.warn(err);
       }, () => {

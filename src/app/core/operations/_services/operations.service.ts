@@ -21,7 +21,7 @@ export class OperationsService {
     // this.getList();
     this.operationSumTotal = 0;
     this.calulationsComplete = false;
-    console.log('OperationsService constructor');
+    // console.log('OperationsService constructor');
   }
   getList() {
     if ( !this.calulationsComplete ) {
@@ -31,7 +31,7 @@ export class OperationsService {
       this.transactionGet().subscribe(res => {
         // console.log(res);
         if ( !this.calulationsComplete ) {
-          console.log('get tr list');
+          // console.log('get tr list');
           for (const item of res.data) {
             const operation = new OperationsModel(item);
             this.operationList.push(operation);

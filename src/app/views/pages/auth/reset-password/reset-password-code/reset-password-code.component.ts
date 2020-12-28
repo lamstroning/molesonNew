@@ -72,7 +72,7 @@ export class ResetPasswordCodeComponent implements OnInit {
 
     resultRequest.subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         this.formLoad = false;
         this.showNotification('success-msg', 'Пароль изменен успешно');
         this.changeComplete = true;

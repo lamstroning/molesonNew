@@ -70,7 +70,7 @@ export class AuthService {
     return this.http.post<any>(API_USERS_URL + '/login', {email, password}).pipe(
       concatMap(next => {
         if (next.status === 'success') {
-          console.log(next);
+          // console.log(next);
           localStorage.setItem('auth-token', next.data.accessToken);
           this.tokenService.setToken(next.data.accessToken);
           this.tokenService.setUser(next.data);

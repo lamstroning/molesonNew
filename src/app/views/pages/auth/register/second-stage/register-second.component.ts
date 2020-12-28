@@ -54,7 +54,7 @@ export class SecondStageRegisterComponent implements OnInit {
       this.showNotification('error-msg', 'Ознакомтесь со всеми положениями и правилами использования.');
       return;
     }
-    console.log(this.regDate.email);
+    // console.log(this.regDate.email);
     this.regDate.password = this.password;
     const req = new FormData();
     req.append('fullname', 'x');

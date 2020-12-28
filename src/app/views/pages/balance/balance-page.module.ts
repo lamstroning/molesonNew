@@ -9,6 +9,8 @@ import {InlineSVGModule} from 'ng-inline-svg';
 import {RouterModule, Routes} from '@angular/router';
 import {BalancePageComponent} from './balance.component';
 import {WithdrawalComponent} from './withdrawal/withdrawal.component';
+import {BalanceAddComponent} from './balance-add/balance-add.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -24,6 +26,10 @@ const routes: Routes = [
         path: 'withdrawal',
         component: WithdrawalComponent
       },
+      {
+        path: 'add',
+        component: BalanceAddComponent
+      },
     ]
   }
 ];
@@ -35,12 +41,15 @@ const routes: Routes = [
     WithdrawalComponent,
     PaypalComponent,
     WebmoneyComponent,
-    BalancePageComponent
+    BalancePageComponent,
+    BalanceAddComponent
   ],
 
   imports: [
     CommonModule,
     InlineSVGModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
   ],
   providers: [],

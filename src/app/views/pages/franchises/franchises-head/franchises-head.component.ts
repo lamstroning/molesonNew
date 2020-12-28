@@ -24,7 +24,7 @@ export class FranchisesHeadComponent implements OnInit {
     this.franchisesService.catalogBlock = state;
     const scrollAnimation = setInterval(() => {
       this.change.nativeElement.scrollLeft += direct;
-      console.log(this.change.nativeElement.scrollLeft);
+      // console.log(this.change.nativeElement.scrollLeft);
       if (this.change.nativeElement.scrollLeft <= 0
         || this.change.nativeElement.scrollLeft >= 65) {
         clearInterval(scrollAnimation);

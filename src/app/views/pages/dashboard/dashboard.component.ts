@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
     const endScroll = id * (window.innerWidth - 15);
     const direct = scrollBar > endScroll ? -20 : 20;
     scrolling(scrollBar, direct, endScroll, this.slider.nativeElement);
-    console.log(this.slider);
+    // console.log(this.slider);
   }
   // Изменение размера окна
   @HostListener('window:resize', ['$event'])

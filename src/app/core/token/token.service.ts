@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Observable, of, throwError} from 'rxjs';
+import {from, Observable, of, throwError} from 'rxjs';
 import {User} from '../auth/_models/user.models';
-import {catchError, concatMap} from 'rxjs/operators';
+import {catchError, concatMap, filter} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 
@@ -77,7 +77,7 @@ export class TokenService {
   }
 
   getUserToken() {
-    console.log(this.token);
+    // console.log(this.token);
     return this.token;
   }
 
@@ -113,7 +113,20 @@ export class TokenService {
   }
 
   gotToPayment() {
-    window.open('https://moleson.payrexx.com/pay?tid=7df69168&referenceId=' + this.getUser()._id, '_blank');
+
+    this.router.navigateByUrl('/balance/add');
+
+
+    // window.open('https://moleson.payrexx.com/pay?tid=7df69168&referenceId=' + this.getUser()._id, '_blank');
+  }
+
+  get_tinkoff_order( sum ) {
+    const body = {money: sum};
+    return this.http.post<any>(API_USERS_URL + '/user/tinkoff', body, {headers: this.getUserTokenHeader()}).pipe(
+      concatMap(res => {
+        return of(res);
+      })
+    );
   }
 
   getAgentLevel() {

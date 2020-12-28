@@ -49,7 +49,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.tokenService.getUserByToken().subscribe(res => {
       this.user = res;
-      console.log(this.user);
+      // console.log(this.user);
       this.checkUserData();
     });
     for (let i = 1; i <= 31; i++) {
@@ -113,7 +113,7 @@ export class ProfileComponent implements OnInit {
   }
 
   toDataURL(url, callback) {
-    console.log(url);
+    // console.log(url);
     const xhr = new XMLHttpRequest();
     xhr.onload = () => {
       const reader = new FileReader();

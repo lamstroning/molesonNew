@@ -73,7 +73,7 @@ export class PartnersAnalyticsComponent implements OnInit {
     this.referralService.getReferralStat().subscribe(res => {
         if (res.status === 'success') {
           this.partnersStat = new PartnersStat(res.data);
-          console.log(this.partnersStat);
+          // console.log(this.partnersStat);
         }
       },
       err => {

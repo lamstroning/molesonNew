@@ -36,7 +36,7 @@ export class FirstStageRegisterComponent implements OnInit {
       return (reg.test(this.email));
   }
   checkPhone() {
-    console.log(this.phone);
+    // console.log(this.phone);
     const reg = /^(([0-9]){10})$/im;
     return (reg.test(this.phone));
   }

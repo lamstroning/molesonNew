@@ -17,8 +17,8 @@ export class FooterComponent implements OnInit {
 
   openDoc(url: string) {
     this.http.get(url).subscribe(res => {
-      console.log(res);
-    })
+      // console.log(res);
+    });
     // window.open(url);
   }
 }

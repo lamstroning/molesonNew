@@ -46,11 +46,11 @@ export class WithdrawalComponent implements OnInit {
     this.tokenService.getUserByToken().subscribe(
       next => {
         this.user = next;
-        console.log(this.user);
+        // console.log(this.user);
       },
       err => console.log(err),
       () => {
-        console.log('accept');
+        // console.log('accept');
       });
   }
 

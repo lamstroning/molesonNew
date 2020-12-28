@@ -42,7 +42,7 @@ export class FranchisesPaymentComponent implements OnInit {
     // Проверить баланс
 
     this.franchisesService.buyFranchise(this.currentFranchise._id + '', +this.count).subscribe(res => {
-      console.log(res);
+      // console.log(res);
       if (res.status === 'success') {
         this.toastr.success('Куплено долей: ' + res.data.data.stocks, 'Операция успешна');
       }

@@ -8,7 +8,7 @@ import {ToastrService} from 'ngx-toastr';
   styleUrls: ['./balance-add.component.scss']
 })
 export class BalanceAddComponent implements OnInit {
-  public sum: number;
+  public sum: any;
 
   constructor(
     private toastr: ToastrService,
@@ -30,7 +30,7 @@ export class BalanceAddComponent implements OnInit {
       return false;
     }
 
-    const total_sum = (Number.parseInt(this.sum) * 100)*73;
+    const total_sum = (Number.parseInt(this.sum) * 100)*73.5;
 
     this.tokenService.get_tinkoff_order(total_sum).subscribe(
       res => {
